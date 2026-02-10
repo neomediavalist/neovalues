@@ -10,7 +10,7 @@
     <div class="main-container">
     <div class="main-results-wrapper">
         <div class="top-section">
-            <h1>NeoValues 0.1</h1>
+            <h1>NeoValues 0.2</h1>
             <div id="results-container"></div>
         </div>
         
@@ -69,22 +69,19 @@
 
     const results = JSON.parse(localStorage.getItem('quizResults') || '{}');
     const container = document.getElementById('results-container');
-
-    // Order of categories to display horizontally
     const categories = ["economics", "culture", "authority"];
 
     categories.forEach(category => {
         const resultValue = results[category];
         if (resultValue) {
             const wrapper = document.createElement('div');
-            wrapper.className = 'result-item'; // Matches the CSS above
+            wrapper.className = 'result-item';
 
             const img = document.createElement('img');
             img.src = `icons/${resultValue}.svg`; 
             img.className = 'result-icon';
 
             const name = document.createElement('p');
-            // Replace underscores with spaces for cleaner wrapping
             name.innerText = (resultsMapping[category][resultValue] || resultValue).replace(/_/g, ' ');
             name.className = 'result-text';
 
