@@ -1,0 +1,242 @@
+/* style.css */
+/* Update the body to be the light background */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; 
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    /* This is your light background */
+    background-color: rgb(223, 223, 223); 
+    text-align: center;
+    padding: 0;
+    /* Remove the old borders and old box-shadow */
+}
+
+/* Create a new class for the big gray square */
+.main-container {
+    background-color: #949494; /* Your gray background */
+    width: 1700px;              /* Width of the gray square */
+    min-height: 100vh;
+    padding-top: 60px;
+    box-sizing: border-box;
+    
+    /* This creates the shadow from the gray square onto the light background */
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+/* style.css updates */
+#buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 300px;           /* Reserve space for up to 4-5 buttons */
+    justify-content: flex-start; 
+    margin-bottom: auto;     /* Pushes the pair toward the center */
+}
+
+/* style.css */
+button {
+    width: 80%;            
+    max-width: 400px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;      
+    background-color: #333;  
+    color: white;            
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    /* 2. Add shadow to the buttons */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    transform: scale(1.05);  
+    /* Optional: make shadow deeper on hover for a "lifted" effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.question-container {
+    height: 200px;           /* Increased height to ensure long questions fit */
+    display: flex;
+    align-items: center;     /* Keeps the bubble vertically centered in its 250px box */
+    justify-content: center;
+    width: 100%;
+    margin-top: auto;        /* Pushes the pair toward the center */
+}
+
+#question {
+    background-color: #555555; 
+    color: white;
+    padding: 25px 40px;        
+    border-radius: 50px;       
+    
+    /* Change display to flex to enable centering tools */
+    display: flex;
+    align-items: center;    /* Vertically centers text */
+    justify-content: center; /* Horizontally centers text */
+    
+    max-width: 80%;            
+    line-height: 1.4;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    
+    /* Use min-height instead of height to allow growth if needed */
+    min-height: 60px; 
+}
+
+/* style.css additions */
+
+/* style.css updates */
+
+#results-container {
+    display: flex;             
+    justify-content: center;   /* Centers the group of icons on the page */
+    align-items: flex-start;   /* Aligns them at the top so text wrapping doesn't push icons up */
+    gap: 100px;                 /* Space between result items */
+    margin-top: 30px;
+    width: 100%;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;       
+    width: 200px;              /* Fixed width ensures the icon stays centered */
+    text-align: center;        /* Centers the wrapped text */
+}
+
+/* style.css updates */
+
+.result-icon {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+    /* This adds the shadow to the actual icon shape */
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+}
+
+.result-icon:hover {
+    transform: scale(1.1);
+}
+
+.result-text {
+    font-weight: 700;
+    font-size: 1.1rem;         /* Smaller text size */
+    line-height: 1.2;          /* Tighter spacing for wrapped lines */
+    word-wrap: break-word;     /* Ensures long words don't break the layout */
+    margin: 0;
+}
+
+/* style.css updates */
+
+.label-bubble {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.label-bubble:hover {
+    transform: scale(1.1);
+}
+
+.results-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Allows items to push downward */
+    width: 100%;
+    /* This ensures it stays centered horizontally but allows vertical growth */
+}
+
+.main-results-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This is the "magic" line */
+    height: 55vh;   /* Uses 80% of the screen height */
+    width: 100%;
+    padding: 40px 0;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+/* Container to center the paper on the page */
+.license-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.license-bubble {
+    background-color: white;
+    color: #333; /* Dark text for readability on white */
+    
+    /* A4 Proportion (Approximate pixels for screen) */
+    width: 210mm;
+    height: 167mm;
+    
+    /* Ensuring the bubble doesn't change size */
+    flex-shrink: 0; 
+    
+    /* Internal spacing and behavior */
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 20px; /* Kept rounded to match your "bubble" theme */
+    
+    /* Shadow effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    /* Text alignment and scrolling */
+    text-align: left;
+    overflow-y: auto; 
+    line-height: 1.6;
+}
+
+/* Responsive adjustment so it doesn't break on small screens */
+@media (max-width: 210mm) {
+    .license-bubble {
+        width: 90%;
+        height: 80vh;
+    }
+}
+
+.license-footer {
+    display: flex;          /* This restores the button's original width/shape */
+    justify-content: center; /* Centers the button horizontally */
+    width: 100%;
+    margin-top: 40px;       /* Keeps the button lower */
+    padding-bottom: 60px;   /* Adds space at the very bottom */
+}

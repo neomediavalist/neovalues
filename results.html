@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoValues</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+    <div class="main-results-wrapper">
+        <div class="top-section">
+            <h1>NeoValues 0.1</h1>
+            <div id="results-container"></div>
+        </div>
+        
+        <div class="bottom-section">
+            <div id="label"></div>
+        </div>
+    </div>
+
+    <script>
+    const resultsMapping = {
+        "economics": {
+            "corporatism": "Corporatism",
+            "capitalism": "Capitalism",
+            "socialism": "Socialism",
+            "state_capitalism": "State Capitalism",
+            "market_socialism": "Market Socialism",
+            "welfare_capitalism": "Welfare Capitalism",
+            "mutualism": "Mutualism",
+            "syndicalism": "Syndicalism",
+            "distributism": "Distributism",
+            "georgism": "Georgism",
+            "social_georgism": "Social-Georgism",
+            "laissez_faire_georgism": "Laissez-Faire Georgism",
+            "laissez_faire": "Laissez-Faire"
+        },
+        "culture": {
+            "reactionaryism": "Reactionaryism",
+            "conservatism": "Conservatism",
+            "traditionalism": "Traditionalism",
+            "social_progressivism": "Social Progressivism",
+            "progressive_conservatism": "Progressive Conservatism",
+            "progressivism": "Progressivism"
+        },
+        "authority": {
+            "theocracy": "Theocracy",
+            "absolute": "Absolute Monarchy",
+            "totalitarianism": "Totalitarianism",
+            "religious_authoritarianism": "Religious Authoritarianism",
+            "autocracy": "Autocracy",
+            "anarchism": "Anarchism",
+            "partocracy": "Partocracy",
+            "representative_democracy": "Representative Democracy",
+            "direct_democracy": "Direct Democracy",
+            "constitutional": "Constitutional Monarchy",
+            "minarchism": "Minarchism",
+            "meritocracy": "Meritocracy",
+            "technocracy": "Technocracy"
+        }
+    };
+
+    const labelMapping = {
+      "corporatism|reactionaryism|totalitarianism": "Fascism",
+      "laissez_faire|progressivism|representative_democracy": "Neoliberalism",
+      "capitalism|progressivism|representative_democracy": "Ordoliberalism"
+    };
+
+    const results = JSON.parse(localStorage.getItem('quizResults') || '{}');
+    const container = document.getElementById('results-container');
+
+    // Order of categories to display horizontally
+    const categories = ["economics", "culture", "authority"];
+
+    categories.forEach(category => {
+        const resultValue = results[category];
+        if (resultValue) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'result-item'; // Matches the CSS above
+
+            const img = document.createElement('img');
+            img.src = `icons/${resultValue}.svg`; 
+            img.className = 'result-icon';
+
+            const name = document.createElement('p');
+            // Replace underscores with spaces for cleaner wrapping
+            name.innerText = (resultsMapping[category][resultValue] || resultValue).replace(/_/g, ' ');
+            name.className = 'result-text';
+
+            wrapper.appendChild(img);
+            wrapper.appendChild(name);
+            container.appendChild(wrapper);
+        }
+    });
+
+    const labelColors = {
+        "Fascism": "#694F2C",
+        "Neoliberalism": "#54ABC7",
+        "Ordoliberalism": "#518699",
+        "No label available": "#5C5C5C"
+    };
+
+    const combinationKey = [
+        results["economics"], 
+        results["culture"], 
+        results["authority"]
+    ].join("|");
+
+    const finalLabel = labelMapping[combinationKey] || "No label available";
+       const labelDiv = document.getElementById('label');
+       labelDiv.innerText = finalLabel;
+       labelDiv.className = "label-bubble"; 
+       labelDiv.style.backgroundColor = labelColors[finalLabel] || "#7a7a7a";
+
+    </script>
+    </div>
+</body>
