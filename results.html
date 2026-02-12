@@ -10,7 +10,7 @@
     <div class="main-container">
     <div class="main-results-wrapper">
         <div class="top-section">
-            <h1>NeoValues 0.2</h1>
+            <h1>NeoValues 0.3</h1>
             <div id="results-container"></div>
         </div>
         
@@ -57,19 +57,41 @@
             "constitutional": "Constitutional Monarchy",
             "minarchism": "Minarchism",
             "meritocracy": "Meritocracy",
-            "technocracy": "Technocracy"
+            "technocracy": "Technocracy",
+            "stratocracy": "Stratocracy"
+        },
+        "nation": {
+            "Internationalism": "Internationalism",
+            "Cosmopolitanism": "Cosmopolitanism",
+            "civic_nationalism": "Civic Nationalism",
+            "cultural_nationalism": "Cultural Nationalism",
+            "ethnic_nationalism": "Ethnic Nationalism",
+            "pan_nationalism": "Pan-Nationalism",
+            "racial_nationalism": "Racial Nationalism",
+            "Tribalism": "Tribalism"
+        },
+        "foreign": {
+            "Isolationism": "Isolationism",
+            "Non_Interventionism": "Non-Interventionism",
+            "Realpolitik": "Realpolitik",
+            "Imperialism": "Imperialism",
+            "Interventionism": "Interventionism",
+            "Globalism": "Globalism"
         }
     };
 
     const labelMapping = {
-      "corporatism|reactionaryism|totalitarianism": "Fascism",
-      "laissez_faire|progressivism|representative_democracy": "Neoliberalism",
-      "capitalism|progressivism|representative_democracy": "Ordoliberalism"
+      "corporatism|reactionaryism|totalitarianism|cultural_nationalism|Imperialism": "Fascism",
+      "laissez_faire|progressivism|representative_democracy|civic_nationalism|Globalism": "Neoliberalism",
+      "capitalism|progressivism|representative_democracy|civic_nationalism|Globalism": "Ordoliberalism",
+      "state_capitalism|traditionalism|totalitarianism|pan_nationalism|Imperialism": "Nazism",
+      "state_capitalism|traditionalism|totalitarianism|racial_nationalism": "Neonazism",
+      "market_socialism|traditionalism|minarchism|cultural_nationalism|Imperialism": "Neo-Libertarian Falangalism"
     };
 
     const results = JSON.parse(localStorage.getItem('quizResults') || '{}');
     const container = document.getElementById('results-container');
-    const categories = ["economics", "culture", "authority"];
+    const categories = ["economics", "culture", "authority", "nation", "foreign"];
 
     categories.forEach(category => {
         const resultValue = results[category];
@@ -95,13 +117,18 @@
         "Fascism": "#694F2C",
         "Neoliberalism": "#54ABC7",
         "Ordoliberalism": "#518699",
+        "Nazism": "#404040",
+        "Neonazism": "#404040",
+        "Neo-Libertarian Falangalism": "#E8DA02",
         "No label available": "#5C5C5C"
     };
 
     const combinationKey = [
         results["economics"], 
         results["culture"], 
-        results["authority"]
+        results["authority"],
+        results["nation"],
+        results["foreign"]
     ].join("|");
 
     const finalLabel = labelMapping[combinationKey] || "No label available";
