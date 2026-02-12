@@ -213,6 +213,24 @@ button:hover {
 
 /* mobile */
 @media (max-width: 800px) {
+
+    .main-container {
+        padding-top: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .main-results-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        min-height: 65vh;
+        padding: 40px 0;
+    }
+
     #results-container {
         flex-direction: column;
         gap: 40px;
@@ -268,8 +286,8 @@ button:hover {
     }
 
     .result-icon {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         margin-bottom: 20px;
         transition: transform 0.2s;
         filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
@@ -292,5 +310,18 @@ button:hover {
         font-size: 1.1rem;
         transition: transform 0.2s;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #results-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start; 
+    }
+
+    .result-item {
+        width: 100px; 
     }
 }
