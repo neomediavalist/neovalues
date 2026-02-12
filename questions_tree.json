@@ -1,383 +1,554 @@
 {
-  "economics": [
-    { 
-        "id": "e1", 
-        "text": "Who should own the means of production?", 
-        "options": [ 
-            { 
-                "text": "State", 
-                "next": "e21"
-                
-            }, 
-            { 
-                "text": "Private entities", 
-                "next": "e22"
-                
-            },
-            { 
-                "text": "Decentralized worker units", 
-                "next": "e23"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "e21", 
-        "text": "What is the primary objective of this state control?", 
-        "options": [ 
-            { 
-                "text": "Industrial development", 
-                "next": "state_capitalism"
-                
-            }, 
-            { 
-                "text": "Social stability and national unity", 
-                "next": "corporatism"
-                
-            },
-            { 
-                "text": "Equity", 
-                "next": "socialism"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "e22", 
-        "text": "What is your stance on land ownership?", 
-        "options": [ 
-            { 
-                "text": "Land is private property like any other asset", 
-                "next": "e31"
-                
-            }, 
-            { 
-                "text": "Land belongs to the community", 
-                "next": "e32"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "e31", 
-        "text": "How much should the state intervene?", 
-        "options": [ 
-            { 
-                "text": "No taxes, no regulations", 
-                "next": "laissez_faire"
-                
-            }, 
-            { 
-                "text": "High taxes for safety nets", 
-                "next": "welfare_capitalism"
-                
-            },
-            { 
-                "text": "Standard regulation for competition", 
-                "next": "capitalism"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "e32", 
-        "text": "How should the land tax revenue be used?", 
-        "options": [ 
-            { 
-                "text": "Funded as a UBI/Social safety net", 
-                "next": "social_georgism"
-                
-            }, 
-            { 
-                "text": "To fund infrastructure and public goods", 
-                "next": "georgism"
-                
-            },
-            { 
-                "text": "To replace all other taxes", 
-                "next": "laissez_faire_georgism"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "e23", 
-        "text": "How should these decentralized units interact?", 
-        "options": [ 
-            { 
-                "text": "Competing in a market", 
-                "next": "market_socialism"
-                
-            }, 
-            { 
-                "text": "Labor unions should manage the industry", 
-                "next": "syndicalism"
-                
-            },
-            { 
-                "text": "Every individual should own their own small-scale property", 
-                "next": "distributism"
-                
-            },
-            { 
-                "text": "Exchange based on cost-price and zero-interest credit", 
-                "next": "mutualism"
-                
-            }
-        ] 
-    },
-    
-    { "id": "corporatism" },
-    { "id": "mutualism" },
-    { "id": "syndicalism" },
-    { "id": "distributism" },
-    { "id": "capitalism" },
-    { "id": "socialism" },
-    { "id": "georgism" },
-    { "id": "social_georgism" },
-    { "id": "laissez_faire_georgism" },
-    { "id": "state_capitalism" },
-    { "id": "market_socialism" },
-    { "id": "welfare_capitalism" },
-    { "id": "laissez_faire" }
-  ],
-  "culture": [
-    { 
-        "id": "c1", 
-        "text": "How should society view historical traditions, hierarchies, and long-standing social norms?", 
-        "options": [ 
-            { 
-                "text": "They provide the essential foundation for a stable society", 
-                "next": "c21"
-                
-            }, 
-            { 
-                "text": "They should be updated or replaced to ensure equality and liberty", 
-                "next": "c22"
-                
-            },
-            { 
-                "text": "We should modernize social systems while keeping traditional institutions intact", 
-                "next": "progressive_conservatism"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "c21", 
-        "text": "How do you feel about the current direction of modern culture?", 
-        "options": [ 
-            { 
-                "text": "We need to actively return to a previous era's values and overturn recent changes", 
-                "next": "reactionaryism"
-                
-            }, 
-            { 
-                "text": "We should resist further rapid changes and maintain our current heritage", 
-                "next": "c31"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "c31", 
-        "text": "What is the primary reason for maintaining these norms?", 
-        "options": [ 
-            { 
-                "text": "Society reflects objective and ancient values that do not change", 
-                "next": "traditionalism"
-                
-            }, 
-            { 
-                "text": "Change should be slow and organic to avoid breaking the social fabric that works", 
-                "next": "conservatism"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "c22", 
-        "text": "What should be the primary goal of cultural change?", 
-        "options": [ 
-            { 
-                "text": "Dismantling historical power structures to achieve social justice and liberation", 
-                "next": "progressivism"
-                
-            }, 
-            { 
-                "text": "Ensuring the state protects individual rights and equal opportunity for all groups", 
-                "next": "social_progressivism"
-                
-            }
-        ] 
-    },
-    { "id": "reactionaryism" },
-    { "id": "conservatism" },
-    { "id": "traditionalism" },
-    { "id": "social_progressivism" },
-    { "id": "progressivism" },
-    { "id": "progressive_conservatism" }
-  ],
-  "authority": [
-    { 
-        "id": "a1", 
-        "text": "How much power should the state have over the individual?", 
-        "options": [ 
-            { 
-                "text": "The state is necessary to organize society and enforce order", 
-                "next": "a21"
-                
-            }, 
-            { 
-                "text": "The state should only exist to protect property and safety", 
-                "next": "minarchism"
-                
-            },
-            { 
-                "text": "None", 
-                "next": "anarchism"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "a21", 
-        "text": "Should power be concentrated in a single individual or a small, elite group?", 
-        "options": [ 
-            { 
-                "text": "A single person should hold all the power", 
-                "next": "a31"
-                
-            }, 
-            { 
-                "text": "Elite group should rule the state", 
-                "next": "a32"
-                
-            },
-            { 
-                "text": "State is for the people, not people for the state", 
-                "next": "a33"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "a31", 
-        "text": "What is the source of the leader's legitimacy?", 
-        "options": [ 
-            { 
-                "text": "Bloodline or tradition", 
-                "next": "a41"
-                
-            }, 
-            { 
-                "text": "God", 
-                "next": "a42"
-                
-            },
-            { 
-                "text": "Raw power", 
-                "next": "a43"
-            }
-        ] 
-    },
-    { 
-        "id": "a41", 
-        "text": "What power should king have?", 
-        "options": [ 
-            { 
-                "text": "Absolute", 
-                "next": "absolute"
-                
-            }, 
-            { 
-                "text": "Limited", 
-                "next": "constitutional"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "a42", 
-        "text": "State should be run by...", 
-        "options": [ 
-            { 
-                "text": "Priesthood", 
-                "next": "theocracy"
-                
-            }, 
-            { 
-                "text": "Religious but secular leader", 
-                "next": "religious_authoritarianism"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "a43", 
-        "text": "What power should state have?", 
-        "options": [ 
-            { 
-                "text": "The state controls every aspect of public and private life", 
-                "next": "totalitarianism"
-                
-            }, 
-            { 
-                "text": "Power is concentrated, but private life remains autonomous", 
-                "next": "autocracy"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "a32", 
-        "text": "What qualifies this group to lead?", 
-        "options": [ 
-            { 
-                "text": "Scientists, engineers, and data-driven experts", 
-                "next": "technocracy"
-                
-            }, 
-            { 
-                "text": "Those who have shown the most talent or achievement in their fields", 
-                "next": "meritocracy"
-                
-            },
-            { 
-                "text": "A single political party", 
-                "next": "partocracy"
-                
-            }
-        ] 
-    },
-    { 
-        "id": "a33", 
-        "text": "How should the will of the people be exercised?", 
-        "options": [ 
-            { 
-                "text": "Citizens vote on every major policy and law themselves", 
-                "next": "direct_democracy"
-                
-            }, 
-            { 
-                "text": "Citizens elect officials to make decisions on their behalf", 
-                "next": "representative_democracy"
-                
-            }
-        ] 
-    },
-    { "id": "theocracy" },
-    { "id": "absolute" },
-    { "id": "constitutional" },
-    { "id": "totalitarianism" },
-    { "id": "religious_authoritarianism" },
-    { "id": "autocracy" },
-    { "id": "anarchism" },
-    { "id": "minarchism" },
-    { "id": "partocracy" },
-    { "id": "meritocracy" },
-    { "id": "technocracy" },
-    { "id": "representative_democracy" },
-    { "id": "direct_democracy" }
-  ]
+    "economics": [
+        { 
+            "id": "e1", 
+            "text": "Who should own the means of production?", 
+            "options": [ 
+                { 
+                    "text": "State", 
+                    "next": "e21"
+                    
+                }, 
+                { 
+                    "text": "Private entities", 
+                    "next": "e22"
+                    
+                },
+                { 
+                    "text": "Decentralized worker units", 
+                    "next": "e23"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "e21", 
+            "text": "What is the primary objective of this state control?", 
+            "options": [ 
+                { 
+                    "text": "Industrial development", 
+                    "next": "state_capitalism"
+                    
+                }, 
+                { 
+                    "text": "Social stability and national unity", 
+                    "next": "corporatism"
+                    
+                },
+                { 
+                    "text": "Equity", 
+                    "next": "socialism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "e22", 
+            "text": "What is your stance on land ownership?", 
+            "options": [ 
+                { 
+                    "text": "Land is private property like any other asset", 
+                    "next": "e31"
+                    
+                }, 
+                { 
+                    "text": "Land belongs to the community", 
+                    "next": "e32"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "e31", 
+            "text": "How much should the state intervene?", 
+            "options": [ 
+                { 
+                    "text": "No taxes, no regulations", 
+                    "next": "laissez_faire"
+                    
+                }, 
+                { 
+                    "text": "High taxes for safety nets", 
+                    "next": "welfare_capitalism"
+                    
+                },
+                { 
+                    "text": "Standard regulation for competition", 
+                    "next": "capitalism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "e32", 
+            "text": "How should the land tax revenue be used?", 
+            "options": [ 
+                { 
+                    "text": "To fund welfare", 
+                    "next": "social_georgism"
+                    
+                }, 
+                { 
+                    "text": "To fund infrastructure and public goods", 
+                    "next": "georgism"
+                    
+                },
+                { 
+                    "text": "To replace all other taxes", 
+                    "next": "laissez_faire_georgism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "e23", 
+            "text": "How should these decentralized units interact?", 
+            "options": [ 
+                { 
+                    "text": "Competing in a market", 
+                    "next": "market_socialism"
+                    
+                }, 
+                { 
+                    "text": "Labor unions should manage the industry", 
+                    "next": "syndicalism"
+                    
+                },
+                { 
+                    "text": "Every individual should own their own small-scale property", 
+                    "next": "distributism"
+                    
+                },
+                { 
+                    "text": "Exchange based on cost-price and zero-interest credit", 
+                    "next": "mutualism"
+                    
+                }
+            ] 
+        },
+        { "id": "corporatism" },
+        { "id": "mutualism" },
+        { "id": "syndicalism" },
+        { "id": "distributism" },
+        { "id": "capitalism" },
+        { "id": "socialism" },
+        { "id": "georgism" },
+        { "id": "social_georgism" },
+        { "id": "laissez_faire_georgism" },
+        { "id": "state_capitalism" },
+        { "id": "market_socialism" },
+        { "id": "welfare_capitalism" },
+        { "id": "laissez_faire" }
+    ],
+    "culture": [
+        { 
+            "id": "c1", 
+            "text": "How should society view historical traditions, hierarchies, and long-standing social norms?", 
+            "options": [ 
+                { 
+                    "text": "They provide the essential foundation for a stable society", 
+                    "next": "c21"
+                    
+                }, 
+                { 
+                    "text": "They should be updated or replaced to ensure equality and liberty", 
+                    "next": "c22"
+                    
+                },
+                { 
+                    "text": "We should modernize social systems while keeping traditional institutions intact", 
+                    "next": "progressive_conservatism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "c21", 
+            "text": "How do you feel about the current direction of modern culture?", 
+            "options": [ 
+                { 
+                    "text": "We need to actively return to a previous era's values and overturn recent changes", 
+                    "next": "reactionaryism"
+                    
+                }, 
+                { 
+                    "text": "We should resist further rapid changes and maintain our heritage", 
+                    "next": "c31"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "c31", 
+            "text": "What is the primary reason for maintaining these norms?", 
+            "options": [ 
+                { 
+                    "text": "Society reflects objective and ancient values that do not change", 
+                    "next": "traditionalism"
+                    
+                }, 
+                { 
+                    "text": "Change should be slow and organic to avoid breaking the social fabric that works", 
+                    "next": "conservatism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "c22", 
+            "text": "What should be the primary goal of cultural change?", 
+            "options": [ 
+                { 
+                    "text": "Dismantling historical power structures to achieve social justice and liberation", 
+                    "next": "progressivism"
+                    
+                }, 
+                { 
+                    "text": "Ensuring the state protects individual rights and equal opportunity for all groups", 
+                    "next": "social_progressivism"
+                    
+                }
+            ] 
+        },
+        { "id": "reactionaryism" },
+        { "id": "conservatism" },
+        { "id": "traditionalism" },
+        { "id": "social_progressivism" },
+        { "id": "progressivism" },
+        { "id": "progressive_conservatism" }
+    ],
+    "authority": [
+        { 
+            "id": "a1", 
+            "text": "How much power should the state have over the individual?", 
+            "options": [ 
+                { 
+                    "text": "The state is necessary to organize society and enforce order", 
+                    "next": "a21"
+                    
+                }, 
+                { 
+                    "text": "The state should only exist to protect property and safety", 
+                    "next": "minarchism"
+                    
+                },
+                { 
+                    "text": "None", 
+                    "next": "anarchism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "a21", 
+            "text": "Should power be concentrated in a single individual or a small group?", 
+            "options": [ 
+                { 
+                    "text": "A single person should hold all the power", 
+                    "next": "a31"
+                    
+                }, 
+                { 
+                    "text": "Elite group should rule the state", 
+                    "next": "a32"
+                    
+                },
+                { 
+                    "text": "No, state should be ruled by people", 
+                    "next": "a33"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "a31", 
+            "text": "What is the source of the leader's legitimacy?", 
+            "options": [ 
+                { 
+                    "text": "Bloodline or tradition", 
+                    "next": "a41"
+                    
+                }, 
+                { 
+                    "text": "God", 
+                    "next": "a42"
+                    
+                },
+                { 
+                    "text": "Raw power", 
+                    "next": "a43"
+                }
+            ] 
+        },
+        { 
+            "id": "a41", 
+            "text": "What power should king have?", 
+            "options": [ 
+                { 
+                    "text": "Absolute", 
+                    "next": "absolute"
+                    
+                }, 
+                { 
+                    "text": "Limited", 
+                    "next": "constitutional"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "a42", 
+            "text": "State should be run by...", 
+            "options": [ 
+                { 
+                    "text": "Priesthood", 
+                    "next": "theocracy"
+                    
+                }, 
+                { 
+                    "text": "Religious but secular leader", 
+                    "next": "religious_authoritarianism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "a43", 
+            "text": "What power should state have?", 
+            "options": [ 
+                { 
+                    "text": "The state controls every aspect of public and private life", 
+                    "next": "totalitarianism"
+                    
+                }, 
+                { 
+                    "text": "Power is concentrated, but private life remains autonomous", 
+                    "next": "autocracy"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "a32", 
+            "text": "What qualifies this group to lead?", 
+            "options": [ 
+                { 
+                    "text": "Scientists, engineers, and data-driven experts", 
+                    "next": "technocracy"
+                    
+                }, 
+                { 
+                    "text": "Those who have shown the most talent or achievement in their fields", 
+                    "next": "meritocracy"
+                    
+                },
+                { 
+                    "text": "A single political party", 
+                    "next": "partocracy"
+                    
+                },
+                { 
+                    "text": "Military chiefs", 
+                    "next": "stratocracy"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "a33", 
+            "text": "How should the will of the people be exercised?", 
+            "options": [ 
+                { 
+                    "text": "Citizens vote on every major policy and law themselves", 
+                    "next": "direct_democracy"
+                    
+                }, 
+                { 
+                    "text": "Citizens elect officials to make decisions on their behalf", 
+                    "next": "representative_democracy"
+                    
+                }
+            ] 
+        },
+        { "id": "theocracy" },
+        { "id": "absolute" },
+        { "id": "constitutional" },
+        { "id": "totalitarianism" },
+        { "id": "religious_authoritarianism" },
+        { "id": "autocracy" },
+        { "id": "anarchism" },
+        { "id": "minarchism" },
+        { "id": "partocracy" },
+        { "id": "meritocracy" },
+        { "id": "technocracy" },
+        { "id": "representative_democracy" },
+        { "id": "direct_democracy" },
+        { "id": "stratocracy" }
+    ],
+    "nation": [
+        { 
+            "id": "n1", 
+            "text": "What is the primary source of an individual’s identity and loyalty?", 
+            "options": [ 
+                { 
+                    "text": "The global human community", 
+                    "next": "n21"
+                    
+                }, 
+                { 
+                    "text": "A shared legal system, political values, or a common culture within a state.", 
+                    "next": "n22"
+                    
+                },
+                { 
+                    "text": "Biological descent, shared ancestry, or the blood.", 
+                    "next": "n23"
+                    
+                }
+            ] 
+        },
+        {
+        "id": "n21", 
+            "text": "How should the world be organized?", 
+            "options": [ 
+                { 
+                    "text": "Through a cooperative system of sovereign nations working together.", 
+                    "next": "Internationalism"
+                    
+                }, 
+                { 
+                    "text": "Through a borderless world where everyone is a \"citizen of the world.\"", 
+                    "next": "Cosmopolitanism"
+                    
+                }
+            ] 
+        },
+        {
+        "id": "n22", 
+            "text": "What defines the national bond?", 
+            "options": [ 
+                { 
+                    "text": "Adherence to the Constitution, the law, and civic participation.", 
+                    "next": "civic_nationalism"
+                    
+                }, 
+                { 
+                    "text": "Adherence to a specific language, religion, and historical heritage.", 
+                    "next": "cultural_nationalism"
+                    
+                }
+            ] 
+        },
+        {
+        "id": "n23", 
+            "text": "At what scale should biological identity be organized?", 
+            "options": [ 
+                { 
+                    "text": "The local, organic group or clan", 
+                    "next": "Tribalism"
+                    
+                }, 
+                { 
+                    "text": "A specific ethnic group tied to a historical homeland and state", 
+                    "next": "ethnic_nationalism"
+                    
+                },
+                { 
+                    "text": "A broad group of related ethnicities", 
+                    "next": "pan_nationalism"
+                    
+                }, 
+                { 
+                    "text": "The entire race as a single unit, transcending all specific ethnic or national lines", 
+                    "next": "racial_nationalism"
+                    
+                }
+            ] 
+        },
+        { "id": "Internationalism" },
+        { "id": "Cosmopolitanism" },
+        { "id": "civic_nationalism" },
+        { "id": "cultural_nationalism" },
+        { "id": "ethnic_nationalism" },
+        { "id": "pan_nationalism" },
+        { "id": "racial_nationalism" },
+        { "id": "Tribalism" }
+    ],
+    "foreign": [
+        { 
+            "id": "f1", 
+            "text": "What should be the primary goal of our country's actions on the world stage?", 
+            "options": [ 
+                { 
+                    "text": "Protecting our own borders and remaining self-sufficient", 
+                    "next": "f21"
+                    
+                }, 
+                { 
+                    "text": "Managing power dynamics to ensure our national survival and advantage", 
+                    "next": "f22"
+                    
+                },
+                { 
+                    "text": "Spreading our values or maintaining global stability for the good of all", 
+                    "next": "f23"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "f21", 
+            "text": "To what extent should we interact with others?", 
+            "options": [ 
+                { 
+                    "text": "We should have no political, military, or significant economic ties", 
+                    "next": "Isolationism"
+                    
+                }, 
+                { 
+                    "text": "We should trade and talk with others, but strictly refuse to interfere in their internal conflicts or wars", 
+                    "next": "Non_Interventionism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "f22", 
+            "text": "How should we exert our influence?", 
+            "options": [ 
+                { 
+                    "text": "By forming alliances only when they benefit us, regardless of the other country's morals", 
+                    "next": "Realpolitik"
+                    
+                }, 
+                { 
+                    "text": "By actively expanding our territory or controlling other nations' resources and politics to benefit our own", 
+                    "next": "Imperialism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "f23", 
+            "text": "How should we lead the global community?", 
+            "options": [ 
+                { 
+                    "text": "By using our military and political power to step into foreign conflicts to stop bad actors or protect human rights", 
+                    "next": "Interventionism"
+                    
+                }, 
+                { 
+                    "text": "By moving toward a unified global system of laws, open borders, and international governing bodies", 
+                    "next": "Globalism"
+                    
+                }
+            ] 
+        },
+        { "id": "Isolationism" },
+        { "id": "Non_Interventionism" },
+        { "id": "Realpolitik" },
+        { "id": "Imperialism" },
+        { "id": "Interventionism" },
+        { "id": "Globalism" }
+    ]
 }
