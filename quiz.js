@@ -1,5 +1,5 @@
 let questionsByCategory = {};
-let categoryOrder = ["economics", "culture", "authority", "nation", "foreign"];
+let categoryOrder = ["economics", "taxation", "culture", "authority", "nation", "foreign"];
 let currentCategoryIndex = 0;
 let currentQuestions = {};
 let results = {};
@@ -43,6 +43,11 @@ function renderNode(node) {
 
   buttonsDiv.innerHTML = '';
   questionEl.innerText = node.text || "";
+  if (node.options && node.options.length > 3) {
+    buttonsDiv.classList.add('multi-column');
+  } else {
+    buttonsDiv.classList.remove('multi-column');
+  }
 
   node.options.forEach(opt => {
     const btn = document.createElement('button');
