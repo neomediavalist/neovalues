@@ -10,7 +10,7 @@
     <div class="main-container">
     <div class="main-results-wrapper">
         <div class="top-section">
-            <h1>NeoValues 0.3</h1>
+            <h1>NeoValues 0.4</h1>
             <div id="results-container"></div>
         </div>
         
@@ -22,19 +22,33 @@
     <script>
     const resultsMapping = {
         "economics": {
-            "corporatism": "Corporatism",
-            "capitalism": "Capitalism",
-            "socialism": "Socialism",
-            "state_capitalism": "State Capitalism",
-            "market_socialism": "Market Socialism",
             "welfare_capitalism": "Welfare Capitalism",
+            "laissez_faire": "Laissez-Faire",
+            "agorism": "Agorism",
+            "state_capitalism": "State Capitalism",
+            "socialism": "Socialism",
+            "dirigisme": "Dirigisme",
+            "keynesianism": "Keynesianism",
+            "third_way": "Third Way",
+            "neo_corporatism": "Neocorporatism",
+            "corporatism": "Corporatism",
+            "social_corporatism": "Social-Corporatism",
+            "yellow_socialism": "Yellow Socialism",
             "mutualism": "Mutualism",
+            "guild_socialism": "Guild Socialism",
             "syndicalism": "Syndicalism",
-            "distributism": "Distributism",
+            "market_socialism": "Market Socialism",
+            "mutual_distributism": "Mutual-Distributism",
+            "social_distributism": "Social-Distributism",
+            "distributism": "Distributism"
+        },
+        "taxation": {
+            "Voluntaryism": "Voluntaryism",
             "georgism": "Georgism",
             "social_georgism": "Social-Georgism",
-            "laissez_faire_georgism": "Laissez-Faire Georgism",
-            "laissez_faire": "Laissez-Faire"
+            "flat_taxation": "Flat Taxation",
+            "Progressive_Taxation": "Progressive Taxation",
+            "Confiscatory_Taxation": "Confiscatory Taxation"
         },
         "culture": {
             "reactionaryism": "Reactionaryism",
@@ -81,17 +95,25 @@
     };
 
     const labelMapping = {
-      "corporatism|reactionaryism|totalitarianism|cultural_nationalism|Imperialism": "Fascism",
-      "laissez_faire|progressivism|representative_democracy|civic_nationalism|Globalism": "Neoliberalism",
-      "capitalism|progressivism|representative_democracy|civic_nationalism|Globalism": "Ordoliberalism",
-      "state_capitalism|traditionalism|totalitarianism|pan_nationalism|Imperialism": "Nazism",
-      "state_capitalism|traditionalism|totalitarianism|racial_nationalism": "Neonazism",
-      "market_socialism|traditionalism|minarchism|cultural_nationalism|Imperialism": "Neo-Libertarian Falangalism"
+      "corporatism|reactionaryism|totalitarianism|Imperialism": "Fascism",
+      "corporatism|traditionalism|totalitarianism|Imperialism": "Evolianism",
+      "corporatism|progressivism|totalitarianism|Imperialism": "Futurism",
+      "laissez_faire|representative_democracy|civic_nationalism|Globalism": "Neoliberalism",
+      "welfare_capitalism|representative_democracy|civic_nationalism|Globalism": "Ordoliberalism",
+      "state_capitalism|totalitarianism|pan_nationalism|Imperialism": "Nazism",
+      "state_capitalism|totalitarianism|racial_nationalism": "Neonazism",
+      "yellow_socialism|minarchism|Imperialism": "Neo-Libertarian Falangalism",
+      "syndicalism|anarchism": "Anarcho-Syndicalism",
+      "laissez_faire|anarchism": "Anarcho-Capitalism",
+      "mutualism|anarchism": "Anarcho-Mutualism",
+      "market_socialism|anarchism": "Market Anarchism",
+      "Tribalism|anarchism": "National-Anarchism",
+      "laissez_faire|Voluntaryism|conservatism|minarchism|Non_Interventionism": "Paleolibertarianism"
     };
 
     const results = JSON.parse(localStorage.getItem('quizResults') || '{}');
     const container = document.getElementById('results-container');
-    const categories = ["economics", "culture", "authority", "nation", "foreign"];
+    const categories = ["economics", "taxation", "culture", "authority", "nation", "foreign"];
 
     categories.forEach(category => {
         const resultValue = results[category];
@@ -114,28 +136,45 @@
     });
 
     const labelColors = {
+        "No label available": "#5C5C5C",
         "Fascism": "#694F2C",
+        "Evolianism": "#47345C",
+        "Futurism": "#1B2A6B",
         "Neoliberalism": "#54ABC7",
         "Ordoliberalism": "#518699",
         "Nazism": "#404040",
         "Neonazism": "#404040",
         "Neo-Libertarian Falangalism": "#E8DA02",
-        "No label available": "#5C5C5C"
+        "Anarcho-Syndicalism": "#941313",
+        "Anarcho-Capitalism": "#D4CB20",
+        "Anarcho-Mutualism": "#DB8104",
+        "Market Anarchism": "#C74A0A",
+        "National-Anarchism": "#5E2C2C",
+        "Paleolibertarianism": "#660896"
     };
 
     const combinationKey = [
-        results["economics"], 
+        results["economics"],
+        results["taxation"],
         results["culture"], 
         results["authority"],
         results["nation"],
         results["foreign"]
     ].join("|");
 
-    const finalLabel = labelMapping[combinationKey] || "No label available";
-       const labelDiv = document.getElementById('label');
-       labelDiv.innerText = finalLabel;
-       labelDiv.className = "label-bubble"; 
-       labelDiv.style.backgroundColor = labelColors[finalLabel] || "#7a7a7a";
+    const userResults = Object.values(results);
+
+    const matchedKey = Object.keys(labelMapping).find(key => {
+        const requiredParts = key.split('|');
+        return requiredParts.every(part => userResults.includes(part));
+    });
+
+    const finalLabel = matchedKey ? labelMapping[matchedKey] : "No label available";
+
+    const labelDiv = document.getElementById('label');
+    labelDiv.innerText = finalLabel;
+    labelDiv.className = "label-bubble"; 
+    labelDiv.style.backgroundColor = labelColors[finalLabel] || "#7a7a7a";
 
     </script>
     </div>
