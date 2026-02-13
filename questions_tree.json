@@ -2,143 +2,278 @@
     "economics": [
         { 
             "id": "e1", 
-            "text": "Who should own the means of production?", 
+            "text": "What is the ideal way to organize the ownership of property and industry?", 
             "options": [ 
                 { 
-                    "text": "State", 
+                    "text": "Private ownership by individuals or corporations", 
                     "next": "e21"
                     
                 }, 
                 { 
-                    "text": "Private entities", 
+                    "text": "State ownership or central management for the collective good", 
                     "next": "e22"
                     
                 },
                 { 
-                    "text": "Decentralized worker units", 
+                    "text": "Class collaboration where the state organizes society into industrial sectors, unions, or guilds", 
                     "next": "e23"
+                    
+                },
+                { 
+                    "text": "Direct ownership by the workers or through local community/craft collectives", 
+                    "next": "e24"
+                    
+                },
+                { 
+                    "text": "Wide-spread private ownership where every family/individual owns their own small means of production", 
+                    "next": "e25"
                     
                 }
             ] 
         },
         { 
             "id": "e21", 
-            "text": "What is the primary objective of this state control?", 
+            "text": "How should the market operate?", 
             "options": [ 
                 { 
-                    "text": "Industrial development", 
-                    "next": "state_capitalism"
-                    
-                }, 
-                { 
-                    "text": "Social stability and national unity", 
-                    "next": "corporatism"
-                    
-                },
-                { 
-                    "text": "Equity", 
-                    "next": "socialism"
-                    
-                }
-            ] 
-        },
-        { 
-            "id": "e22", 
-            "text": "What is your stance on land ownership?", 
-            "options": [ 
-                { 
-                    "text": "Land is private property like any other asset", 
+                    "text": "With zero state interference; the market is entirely autonomou", 
                     "next": "e31"
                     
                 }, 
                 { 
-                    "text": "Land belongs to the community", 
-                    "next": "e32"
+                    "text": "As a competitive market but with a strong social safety net and moderate regulation", 
+                    "next": "welfare_capitalism"
                     
                 }
             ] 
         },
         { 
             "id": "e31", 
-            "text": "How much should the state intervene?", 
+            "text": "What is the relationship between the Market and the State's authority?", 
             "options": [ 
                 { 
-                    "text": "No taxes, no regulations", 
+                    "text": "The market should exist within the legal framework of a state", 
                     "next": "laissez_faire"
                     
                 }, 
                 { 
-                    "text": "High taxes for safety nets", 
-                    "next": "welfare_capitalism"
+                    "text": "The market should be used as a counter-economic tool to replace the state", 
+                    "next": "agorism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "e22", 
+            "text": "To what degree does the state manage the economy?", 
+            "options": [ 
+                { 
+                    "text": "The state owns the means of production to generate profit for the nation", 
+                    "next": "state_capitalism"
+                    
+                }, 
+                { 
+                    "text": "The state manages the economy to fulfill social needs and eliminate profit-seeking", 
+                    "next": "socialism"
                     
                 },
                 { 
-                    "text": "Standard regulation for competition", 
-                    "next": "capitalism"
+                    "text": "The state doesn't own everything but steers private industry toward national goals", 
+                    "next": "e32"
                     
                 }
             ] 
         },
         { 
             "id": "e32", 
-            "text": "How should the land tax revenue be used?", 
+            "text": "By what primary method should the state influence the private economy?", 
             "options": [ 
                 { 
-                    "text": "To fund welfare", 
-                    "next": "social_georgism"
+                    "text": "Through direct, technocratic planning and state-led investment", 
+                    "next": "dirigisme"
                     
                 }, 
                 { 
-                    "text": "To fund infrastructure and public goods", 
-                    "next": "georgism"
+                    "text": "Through fiscal policy and spending to manage market cycles", 
+                    "next": "keynesianism"
                     
                 },
                 { 
-                    "text": "To replace all other taxes", 
-                    "next": "laissez_faire_georgism"
+                    "text": "Through a synthesis of market competition and social justice", 
+                    "next": "third_way"
                     
                 }
             ] 
         },
         { 
             "id": "e23", 
-            "text": "How should these decentralized units interact?", 
+            "text": "What is the goal of the labor-business relationship?", 
             "options": [ 
                 { 
-                    "text": "Competing in a market", 
-                    "next": "market_socialism"
+                    "text": "By facilitating voluntary, tripartite negotiations (State-Employer-Union) to maintain a stable welfare state", 
+                    "next": "neo_corporatism"
                     
                 }, 
                 { 
-                    "text": "Labor unions should manage the industry", 
-                    "next": "syndicalism"
+                    "text": "By absorbing both unions and businesses into state-run corporations to ensure they serve the national interest above all else", 
+                    "next": "corporatism"
                     
                 },
                 { 
-                    "text": "Every individual should own their own small-scale property", 
-                    "next": "distributism"
+                    "text": "By empowering workers' syndicates to take a leading role over the bourgeoisie within a national-revolutionary framework", 
+                    "next": "social_corporatism"
                     
                 },
                 { 
-                    "text": "Exchange based on cost-price and zero-interest credit", 
-                    "next": "mutualism"
+                    "text": "By creating parallel unions and business groups that negotiate directly for profit-sharing", 
+                    "next": "yellow_socialism"
                     
                 }
             ] 
         },
-        { "id": "corporatism" },
-        { "id": "mutualism" },
-        { "id": "syndicalism" },
-        { "id": "distributism" },
-        { "id": "capitalism" },
+        { 
+            "id": "e24", 
+            "text": "How is the worker-led economy structured?", 
+            "options": [ 
+                { 
+                    "text": "Workers manage their own shops, trading based on \"labor for labor\" value", 
+                    "next": "mutualism"
+                    
+                }, 
+                { 
+                    "text": "Workers manage their crafts through semi-autonomous guilds that coordinate with the community", 
+                    "next": "guild_socialism"
+                    
+                },
+                { 
+                    "text": "A federation of industrial labor unions manages all production directly", 
+                    "next": "syndicalism"
+                    
+                },
+                { 
+                    "text": "Social ownership of production, but goods are traded in a competitive market", 
+                    "next": "market_socialism"
+                    
+                }
+            ] 
+        },
+        { 
+            "id": "e25", 
+            "text": "How should small-scale property be maintained?", 
+            "options": [ 
+                { 
+                    "text": "Through voluntary mutual-aid banks and local co-operation", 
+                    "next": "mutual_distributism"
+                    
+                }, 
+                { 
+                    "text": "Through state intervention to break up large concentrations of capital", 
+                    "next": "social_distributism"
+                    
+                },
+                { 
+                    "text": "Simply as an ideal of \"small is beautiful\" with minimal intervention", 
+                    "next": "distributism"
+                    
+                }
+            ] 
+        },
+        { "id": "welfare_capitalism" },
+        { "id": "laissez_faire" },
+        { "id": "agorism" },
+        { "id": "state_capitalism" },
         { "id": "socialism" },
+        { "id": "dirigisme" },
+        { "id": "keynesianism" },
+        { "id": "third_way" },
+        { "id": "neo_corporatism" },
+        { "id": "corporatism" },
+        { "id": "social_corporatism" },
+        { "id": "yellow_socialism" },
+        { "id": "mutualism" },
+        { "id": "guild_socialism" },
+        { "id": "syndicalism" },
+        { "id": "market_socialism" },
+        { "id": "mutual_distributism" },
+        { "id": "social_distributism" },
+        { "id": "distributism" }
+    ],
+    "taxation": [  
+        { 
+            "id": "t1", 
+            "text": "Is the state's power to tax its citizens legitimate?", 
+            "options": [ 
+                { 
+                    "text": "No; all funding for public services must be strictly voluntary", 
+                    "next": "Voluntaryism"
+                    
+                }, 
+                { 
+                    "text": "Yes; it is a necessary tool for the state to function", 
+                    "next": "t2"
+                    
+                }
+            ] 
+        },
+        {
+            "id": "t2", 
+            "text": "What should be the primary target of taxation?", 
+            "options": [ 
+                { 
+                    "text": "The unearned value of land and natural resources, rather than labor.", 
+                    "next": "t31"
+                    
+                }, 
+                { 
+                    "text": "The income, wealth, or spending of individuals and businesses", 
+                    "next": "t32"
+                    
+                }
+            ] 
+        },
+        {
+            "id": "t31", 
+            "text": "How should the revenue from a tax on land values be utilized?", 
+            "options": [ 
+                { 
+                    "text": "Use the land tax only to fund essential government functions", 
+                    "next": "georgism"
+                    
+                }, 
+                { 
+                    "text": "Use the land tax to fund a social safety net", 
+                    "next": "social_georgism"
+                    
+                }
+            ] 
+        },
+        {
+            "id": "t32", 
+            "text": "How should the burden of taxation be distributed across different income levels?", 
+            "options": [ 
+                { 
+                    "text": "Everyone should pay the exact same percentage of their income", 
+                    "next": "flat_taxation"
+                    
+                }, 
+                { 
+                    "text": "Those with higher incomes should pay a higher percentage", 
+                    "next": "Progressive_Taxation"
+                    
+                },
+                { 
+                    "text": "The state should levy extremely high taxes (approaching 100%) on top wealth or inheritance to prevent any accumulation", 
+                    "next": "Confiscatory_Taxation"
+                    
+                }
+            ] 
+        },
+        { "id": "Voluntaryism" },
         { "id": "georgism" },
         { "id": "social_georgism" },
-        { "id": "laissez_faire_georgism" },
-        { "id": "state_capitalism" },
-        { "id": "market_socialism" },
-        { "id": "welfare_capitalism" },
-        { "id": "laissez_faire" }
+        { "id": "flat_taxation" },
+        { "id": "Progressive_Taxation" },
+        { "id": "Confiscatory_Taxation" }
     ],
     "culture": [
         { 
