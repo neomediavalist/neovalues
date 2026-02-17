@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideology Description</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <img id="ideology-icon" src="" alt="" class="desc-icon">
+        <h1 id="ideology-title">Loading...</h1>
+        
+        <div class="description-box">
+            <p id="ideology-description"></p>
+        </div>
+
+        <div class="button-container">
+            <button id="icon-source-btn" style="display: none;" onclick="openIconSource()">Original Icon Source</button>
+            <div id="original-work-sign" class="original-work-sign">Original Work</div>
+            <button onclick="window.history.back()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        const descriptions = {
+            "welfare_capitalism": "A capitalist economy that includes extensive social welfare policies. It features a market-based system supported by a safety net, including public education, healthcare, and pensions.",
+            "laissez_faire": "An \"arms-off\" economic environment where transactions between private parties are free from government intervention, including regulations, privileges, tariffs, and subsidies.",
+            "agorism": "A revolutionary market anarchism that advocates for the creation of a society based on voluntary exchanges, primarily through \"counter-economics\" (the black and grey markets).",
+            "state_capitalism": "A system where the state undertakes commercial economic activity and the means of production are organized and managed as state-owned enterprises.",
+            "socialism": "A social and economic system characterized by social ownership of the means of production and democratic control or worker self-management of enterprises.",
+            "dirigisme": "An economic system where the state exerts strong directive influence over investment and the market, rather than merely regulating it, common in mid-20th-century France.",
+            "keynesianism": "An economic theory advocating for increased government expenditures and lower taxes to stimulate demand and pull the global economy out of depression.",
+            "third_way": "A centrist position that attempts to reconcile right-wing and left-wing politics by advocating a synthesis of right-wing economics and left-wing social policies.",
+            "neo_corporatism": "A cooperative relationship between the government and major interest groups (like labor unions and business associations) to manage the national economy through negotiation.",
+            "corporatism": "The organization of society into corporate groups—such as agricultural, labor, or scientific—on the basis of their common interests or social functions.",
+            "social_corporatism": "A left-wing model where the state integrates labor and capital into socialized corporations. It aims to eliminate class struggle by subordinating both workers and owners to the national interest, enforcing social justice through state-directed economic harmony.",
+            "yellow_socialism": "A model by Pierre Biétry as an alternative to \"Red\" Marxism. It organizes workers into unions that negotiate profit-sharing with business groups under a strong authoritarian state, emphasizing national cooperation over class war.",
+            "mutualism": "An anarchist school of thought advocating a society where each person might possess a means of production, with trade based on labor-value and mutual credit.",
+            "guild_socialism": "A movement advocating for worker control of industry through a system of national guilds in a reciprocal relationship with a state.",
+            "syndicalism": "A revolutionary strategy where workers' unions (syndicates) seize control of the economy through strikes and direct action to manage society.",
+            "market_socialism": "An economic system where the means of production are publicly or cooperatively owned, but production and consumption are guided by market forces.",
+            "mutual_distributism": "A hybrid focusing on the wide ownership of property (distributism) coupled with mutual aid and cooperative credit systems.",
+            "social_distributism": "A variant of distributism that emphasizes social justice and the common good, often utilizing state mechanisms to ensure property is widely distributed.",
+            "distributism": "An economic ideology holding that the world's productive assets should be widely owned rather than concentrated in the hands of the state or a few individuals.",
+            "Voluntaryism": "A system where the state is prohibited from collecting taxes by force. It relies entirely on voluntary taxation, funding public services through consensual donations, lotteries, or service fees rather than mandatory levies.",
+            "georgism": "An economic philosophy suggesting that people should own the value they produce, but the value derived from land and natural resources should belong to the community.",
+            "social_georgism": "A system combining Georgism with a social safety net. It uses land-value tax revenue to fund welfare and public services.",
+            "flat_taxation": "A tax system with a constant marginal rate, usually applied to personal or corporate income, where everyone pays the same percentage regardless of earnings.",
+            "Progressive_Taxation": "A tax system where the tax rate increases as the taxable amount increases, shifting the burden toward those with higher incomes.",
+            "Confiscatory_Taxation": "An extremely high tax rate—often near 100%—above a certain income threshold, intended to redistribute wealth or limit extreme inequality.",
+            "post_modernism": "A skeptical worldview that questions \"grand narratives,\" objective truth, and traditional authority, emphasizing the role of language, power, and individual perspective.",
+            "civil_liberalism": "A political philosophy emphasizing the protection of individual rights and civil liberties against state interference or social coercion.",
+            "progressivism": "A political philosophy based on the Idea of Progress, asserting that advancements in science, technology, and social organization can improve the human condition.",
+            "social_progressivism": "An emphasis on using government or social action to address social issues such as poverty, inequality, and discrimination to advance society.",
+            "conservative_liberalism": "A variant of liberalism that combines liberal values like freedom and individual rights with more conservative social and cultural stances.",
+            "liberal_conservatism": "A conservative ideology that incorporates liberal views on the economy and individual liberty while maintaining a commitment to traditional institutions.",
+            "progressive_conservatism": "A movement that seeks to combine conservative social principles with progressive policies designed to address social problems and improve living conditions.",
+            "conservatism": "political and social philosophy promoting traditional social institutions and practices, often skeptical of rapid social or political change.",
+            "reactionaryism": "A political viewpoint that favors a return to a previous political state of society, often opposing modern social and political developments.",
+            "paleoconservatism": "A traditionalist form of conservatism emphasizing national identity, regionalism, traditional morality, and an anti-interventionist foreign policy.",
+            "neoreactionaryism": "An anti-democratic movement that rejects the Enlightenment, advocating for a return to older forms of government like absolute monarchy or corporate governance, while maintaining technological advances.",
+            "traditionalism": "A philosophical school asserting a single, metaphysical Truth underlying all major religions. It rejects modernism and secularism, advocating for a return to sacred hierarchies, ancient rituals, and the primordial wisdom of the past.",
+            "theocracy": "A form of government in which a deity is recognized as the supreme ruling authority, giving guidance to human intermediaries who manage day-to-day affairs.",
+            "absolute": "A form of monarchy in which the monarch holds supreme autocratic authority, not restricted by written laws, a constitution, or custom.",
+            "totalitarianism": "A political system where the state recognizes no limits to its authority and strives to regulate every aspect of public and private life.",
+            "religious_authoritarianism": "A system where a dictator seeks political legitimacy by positioning themselves as the primary defender of a specific religion. It uses religious identity to unify the state and suppress dissent.",
+            "autocracy": "A system of government by one person with absolute power, where the ruler's decisions are subject to neither external legal restraints nor regularized mechanisms of popular control.",
+            "anarchism": "A political philosophy that advocates for self-governed societies based on voluntary institutions and the abolition of the state and all non-voluntary hierarchies.",
+            "partocracy": "A form of government where one political party dominate the political process and state apparatus rather than the citizens or individual representative",
+            "representative_democracy": "A system of government where all eligible citizens vote on representatives to pass laws and govern the country on their behalf.",
+            "direct_democracy": "A form of democracy in which people decide on policy initiatives directly, rather than through representatives.",
+            "constitutional": "A form of government where a monarch acts as the head of state within the parameters of a written or unwritten constitution. The monarch’s powers are legally limited, often serving as a symbolic or stabilizing national figurehead.",
+            "minarchism": "A libertarian political philosophy advocating for a \"night-watchman state,\" which only provides protection from aggression, theft, and contract violations.",
+            "meritocracy": "A social or political system in which power and responsibility are vested in individual people based on their demonstrated ability and talent.",
+            "technocracy": "A system of governance where decision-makers are selected on the basis of their expertise in a given area of responsibility, particularly scientific or technical knowledge.",
+            "stratocracy": "A form of government headed by military chiefs, where the military and the state are traditionally or constitutionally the same entity.",
+            "Internationalism": "A political principle advocating for greater political or economic cooperation among nations and peoples for the common good.",
+            "Cosmopolitanism": "The idea that all human beings are members of a single community, based on a shared morality that transcends national and local boundaries.",
+            "civic_nationalism": "A form of nationalism based on shared political values and citizenship within a state, rather than shared ethnicity or race.",
+            "cultural_nationalism": "A form of nationalism where the nation is defined by a shared culture—language, traditions, and heritage—rather than ancestry or race.",
+            "ethnic_nationalism": "A form of nationalism wherein the nation is defined in terms of ethnicity, which always includes some element of shared descent or ancestry.",
+            "pan_nationalism": "A form of nationalism dedicated to the unification of disparate groups into a single nation based on shared cultural, linguistic, or ethnic ties across borders.",
+            "racial_nationalism": "An ideology that defines national identity based on a specific race, often advocating for the preservation or dominance of that race.",
+            "Tribalism": "The rejection of nationalism in favor of a return to primitive, organic tribal identities. It prioritizes kinship, local lineage, and ancient communal bonds.",
+            "Isolationism": "A policy of remaining apart from the affairs or interests of other groups, especially the political affairs of other countries.",
+            "Non_Interventionism": "A foreign policy which holds that political rulers should avoid alliances with other nations and avoid all wars not related to direct self-defense.",
+            "Realpolitik": "A system of politics or principles based on practical rather than moral or ideological considerations.",
+            "Imperialism": "A policy of extending a country's power and influence through diplomacy, economic dominance, or military force over other territories.",
+            "Interventionism": "A policy of proactive activity undertaken by a nation-state to manipulate or influence the economy or politics of another country.",
+            "Globalism": "The operation or planning of economic and foreign policy on a global basis, favoring free trade, open borders, and international cooperation."
+        };
+
+        const iconSources = {
+            "welfare_capitalism": "https://www.veryicon.com/icons/miscellaneous/yuantong-icon/8-public-welfare-relief.html",
+            //"laissez_faire": "",
+            "agorism": "https://commons.wikimedia.org/wiki/File:Agorism-symbol.svg",
+            //"state_capitalism": "",
+            "socialism": "https://commons.wikimedia.org/wiki/File:Hammer_and_sickle.svg",
+            "dirigisme": "https://quark88.github.io/ideosorter/",
+            //"keynesianism": "",
+            "third_way": "https://quark88.github.io/ideosorter/",
+            //"neo_corporatism": "",
+            "corporatism": "https://polcompball.wiki/Corporatism",
+            "social_corporatism": "https://polcompball.wiki/Corporatism",
+            "yellow_socialism": "https://quark88.github.io/ideosorter/",
+            "mutualism": "https://commons.wikimedia.org/wiki/File:Mutualismo.svg",
+            "guild_socialism": "https://www.reddit.com/r/leftistvexillology/comments/1cex7kz/my_take_on_a_flag_for_guild_socialism/",
+            "syndicalism": "https://commons.wikimedia.org/wiki/File:Hammer_Torch_and_Cog_Syndicalism.png",
+            "market_socialism": "https://www.reddit.com/r/leftistvexillology/comments/1kqh025/market_socialism_flag3_versions/",
+            "mutual_distributism": "https://commons.wikimedia.org/wiki/File:Hound_of_Distributism.svg",
+            "social_distributism": "https://commons.wikimedia.org/wiki/File:Hound_of_Distributism.svg",
+            "distributism": "https://commons.wikimedia.org/wiki/File:Hound_of_Distributism.svg",
+            "Voluntaryism": "https://en.wikipedia.org/wiki/File:VforVoluntary_normal.svg",
+            //"georgism": "",
+            "social_georgism": "https://quark88.github.io/ideosorter/",
+            //"flat_taxation": "",
+            //"Progressive_Taxation": "",
+            //"Confiscatory_Taxation": "",
+            "postmodernism": "https://commons.wikimedia.org/wiki/File:Chaos_star.svg",
+            "civil_liberalism": "https://www.reddit.com/r/vexillology/comments/10jfwzi/flag_for_liberalism/",
+            "progressivism": "https://philosophyball.miraheze.org/wiki/Progressivism",
+            "social_progressivism": "https://commons.wikimedia.org/wiki/File:Eiserne_Front_Symbol.svg",
+            "conservative_liberalism": "https://polcompball.wiki/Conservative_Liberalism",
+            "liberal_conservatism": "https://polcompball.wiki/Liberal_Conservatism",
+            "progressive_conservatism": "https://polcompball.wiki/Progressive_Conservatism",
+            "conservatism": "https://commons.wikimedia.org/wiki/File:Republicanlogo.svg",
+            "reactionaryism": "https://polcompball.wiki/Reactionaryism",
+            "paleoconservatism": "https://www.reddit.com/r/vexillology/comments/i80yuz/flag_for_the_american_paleoconservative_movement/",
+            "neoreactionaryism": "https://polcompball.wiki/Neoreactionaryism",
+            //"traditionalism": "",
+            "theocracy": "https://commons.wikimedia.org/wiki/File:Emblem_of_the_Holy_See_(vatican.va).svg",
+            //"absolute": "",
+            "totalitarianism": "https://commons.wikimedia.org/wiki/File:Flag_of_the_National_Fascist_Party_(PNF)_variant_2.svg",
+            "religious_authoritarianism": "https://commons.wikimedia.org/wiki/File:Cross_Santiago.svg",
+            //"autocracy": "",
+            "anarchism": "https://commons.wikimedia.org/wiki/File:Anarchy-symbol.svg",
+            "partocracy": "https://commons.wikimedia.org/wiki/File:Lenin-Silhoutte_.svg",
+            //"representative_democracy": "",
+            //"direct_democracy": "",
+            //"constitutional": "",
+            "minarchism": "https://commons.wikimedia.org/wiki/File:Gadsden_flag.svg",
+            "meritocracy": "https://commons.wikimedia.org/wiki/File:Meritocracy_symbol.jpg",
+            "technocracy": "https://commons.wikimedia.org/wiki/File:TechnocracyMonad.svg",
+            "stratocracy": "https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_the_Hellenic_Republic_(1973-1974).svg",
+            //"Internationalism": "",
+            "Cosmopolitanism": "https://commons.wikimedia.org/wiki/File:International_Flag_of_Planet_Earth.svg",
+            "civic_nationalism": "https://polcompball.wiki/Civic_Nationalism",
+            "cultural_nationalism": "https://polcompball.wiki/Cultural_Nationalism",
+            "ethnic_nationalism": "https://polcompball.wiki/Ethnonationalism",
+            "pan_nationalism": "https://polcompball.wiki/Irredentism",
+            "racial_nationalism": "https://polcompball.wiki/Racial_Nationalism",
+            "Tribalism": "https://polcompball.wiki/Tribalism",
+            "Isolationism": "https://polcompball.wiki/Isolationism",
+            //"Non_Interventionism": "",
+            //"Realpolitik": "",
+            "Imperialism": "https://polcompball.wiki/Imperialism",
+            "Interventionism": "https://commons.wikimedia.org/wiki/File:Flag_of_NATO.svg",
+            "Globalism": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Nations.svg"
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const ideologyId = urlParams.get('id');
+        const category = urlParams.get('cat');
+
+        const titleEl = document.getElementById('ideology-title');
+        const descEl = document.getElementById('ideology-description');
+        const iconEl = document.getElementById('ideology-icon');
+        const sourceBtn = document.getElementById('icon-source-btn');
+        const originalSign = document.getElementById('original-work-sign');
+
+        if (ideologyId && category) {
+            titleEl.innerText = ideologyId.replace(/_/g, ' ').toUpperCase();
+            iconEl.src = `icons/${category}/${ideologyId}.svg`;
+            descEl.innerText = descriptions[ideologyId] || "Description coming soon!";
+
+            if (iconSources[ideologyId] && iconSources[ideologyId] !== "") {
+                sourceBtn.style.display = 'block';
+                originalSign.style.display = 'none';
+            } else {
+                sourceBtn.style.display = 'none';
+                originalSign.style.display = 'block';
+            }
+        }
+
+        if (ideologyId && category) {
+            titleEl.innerText = ideologyId.replace(/_/g, ' ').toUpperCase();
+            iconEl.src = `icons/${category}/${ideologyId}.svg`;
+            descEl.innerText = descriptions[ideologyId] || "Description coming soon!";
+
+            if (iconSources[ideologyId]) {
+                sourceBtn.style.display = 'block';
+            }
+        }
+
+        function openIconSource() {
+            const sourceUrl = iconSources[ideologyId];
+            if (sourceUrl) {
+                window.open(sourceUrl, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

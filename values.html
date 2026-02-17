@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoValues - All Values</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>All Ideologies</h1>
+        <p class="intro-text">Below is a collection of all ideologies included in NeoValues. Click on any icon to view its detailed description and original source.</p>
+        <div id="values-container"></div>
+        <div id="buttons" style="margin-top: 40px; padding-bottom: 60px;">
+            <button onclick="location.href='index.html'">Back to Menu</button>
+        </div>
+    </div>
+
+    <script>
+        const categoryTitles = {
+            "economics": "Economic systems",
+            "taxation": "Taxation policy",
+            "culture": "Cultural values",
+            "authority": "Authority",
+            "nation": "National identity",
+            "foreign": "Foreign policy"
+        };
+        const resultsMapping = {
+            "economics": {
+                "welfare_capitalism": "Welfare Capitalism",
+                "laissez_faire": "Laissez-Faire",
+                "agorism": "Agorism",
+                "state_capitalism": "State Capitalism",
+                "socialism": "Socialism",
+                "dirigisme": "Dirigisme",
+                "keynesianism": "Keynesianism",
+                "third_way": "Third Way",
+                "neo_corporatism": "Neocorporatism",
+                "corporatism": "Corporatism",
+                "social_corporatism": "Social-Corporatism",
+                "yellow_socialism": "Yellow Socialism",
+                "mutualism": "Mutualism",
+                "guild_socialism": "Guild Socialism",
+                "syndicalism": "Syndicalism",
+                "market_socialism": "Market Socialism",
+                "mutual_distributism": "Mutual-Distributism",
+                "social_distributism": "Social-Distributism",
+                "distributism": "Distributism"
+            },
+            "taxation": {
+                "Voluntaryism": "Voluntaryism",
+                "georgism": "Georgism",
+                "social_georgism": "Social-Georgism",
+                "flat_taxation": "Flat Taxation",
+                "Progressive_Taxation": "Progressive Taxation",
+                "Confiscatory_Taxation": "Confiscatory Taxation"
+            },
+            "culture": {
+                "postmodernism": "Postmodernism",
+                "civil_liberalism": "Civil Liberalism",
+                "progressivism": "Progressivism",
+                "social_progressivism": "Social-Progressivism",
+                "conservative_liberalism": "Conservative Liberalism",
+                "liberal_conservatism": "Liberal Conservatism",
+                "progressive_conservatism": "Progressive Conservatism",
+                "conservatism": "Conservatism",
+                "reactionaryism": "Reactionaryism",
+                "paleoconservatism": "Paleoconservatism",
+                "neoreactionaryism": "Neoreactionaryism",
+                "traditionalism": "Traditionalism"
+            },
+            "authority": {
+                "theocracy": "Theocracy",
+                "absolute": "Absolute Monarchy",
+                "totalitarianism": "Totalitarianism",
+                "religious_authoritarianism": "Religious Authoritarianism",
+                "autocracy": "Autocracy",
+                "anarchism": "Anarchism",
+                "partocracy": "Partocracy",
+                "representative_democracy": "Representative Democracy",
+                "direct_democracy": "Direct Democracy",
+                "constitutional": "Constitutional Monarchy",
+                "minarchism": "Minarchism",
+                "meritocracy": "Meritocracy",
+                "technocracy": "Technocracy",
+                "stratocracy": "Stratocracy"
+            },
+            "nation": {
+                "Internationalism": "Internationalism",
+                "Cosmopolitanism": "Cosmopolitanism",
+                "civic_nationalism": "Civic Nationalism",
+                "cultural_nationalism": "Cultural Nationalism",
+                "ethnic_nationalism": "Ethnic Nationalism",
+                "pan_nationalism": "Pan-Nationalism",
+                "racial_nationalism": "Racial Nationalism",
+                "Tribalism": "Tribalism"
+            },
+            "foreign": {
+                "Isolationism": "Isolationism",
+                "Non_Interventionism": "Non-Interventionism",
+                "Realpolitik": "Realpolitik",
+                "Imperialism": "Imperialism",
+                "Interventionism": "Interventionism",
+                "Globalism": "Globalism"
+            }
+        };
+
+        const container = document.getElementById('values-container');
+
+        for (const category in resultsMapping) {
+            const section = document.createElement('div');
+            section.className = 'category-section';
+
+            const title = document.createElement('h2');
+            title.className = 'category-title';
+            title.innerText = categoryTitles[category] || category;
+            
+            section.appendChild(title);
+
+            const flexContainer = document.createElement('div');
+            flexContainer.className = 'values-flex-container';
+
+            for (const id in resultsMapping[category]) {
+                const wrapper = document.createElement('a');
+                wrapper.className = 'result-item'; 
+                wrapper.href = `description.html?id=${id}&cat=${category}`;
+                wrapper.style.textDecoration = 'none';
+                wrapper.style.color = 'inherit';
+
+                const img = document.createElement('img');
+                img.src = `icons/${category}/${id}.svg`;
+                img.className = 'result-icon'; 
+                img.alt = resultsMapping[category][id];
+
+                const name = document.createElement('p');
+                name.innerText = resultsMapping[category][id];
+                name.className = 'result-text'; 
+
+                wrapper.appendChild(img);
+                wrapper.appendChild(name);
+                flexContainer.appendChild(wrapper);
+            }
+
+            section.appendChild(flexContainer);
+            container.appendChild(section);
+        }
+    </script>
+</body>
+</html>
