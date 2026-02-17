@@ -278,79 +278,115 @@
     "culture": [
         { 
             "id": "c1", 
-            "text": "How should society view historical traditions, hierarchies, and long-standing social norms?", 
+            "text": "Which statement best describes your view on the trajectory of human civilization?", 
             "options": [ 
                 { 
-                    "text": "They provide the essential foundation for a stable society", 
+                    "text": "We are gradually moving toward greater reason, liberty, and the correction of ancestral prejudices.", 
                     "next": "c21"
                     
                 }, 
                 { 
-                    "text": "They should be updated or replaced to ensure equality and liberty", 
+                    "text": "We must preserve the inherited wisdom of the past while allowing for cautious, incremental improvement.", 
                     "next": "c22"
                     
                 },
                 { 
-                    "text": "We should modernize social systems while keeping traditional institutions intact", 
-                    "next": "progressive_conservatism"
+                    "text": "Modernity is fundamentally flawed or in a state of terminal entropy; the current order is failing and spiritually hollow.", 
+                    "next": "c23"
+                    
+                },
+                { 
+                    "text": "There is no objective \"progress\" or \"truth\"; there are only competing narratives and structures of power that we must deconstruct.", 
+                    "next": "postmodernism"
                     
                 }
             ] 
         },
         { 
             "id": "c21", 
-            "text": "How do you feel about the current direction of modern culture?", 
+            "text": "What should be the primary objective of cultural evolution?", 
             "options": [ 
                 { 
-                    "text": "We need to actively return to a previous era's values and overturn recent changes", 
-                    "next": "reactionaryism"
+                    "text": "The state should be a neutral arbiter, ensuring equal rights and opportunities for all citizens regardless of their cultural or ethnic identity", 
+                    "next": "civil_liberalism"
                     
                 }, 
                 { 
-                    "text": "We should resist further rapid changes and maintain our heritage", 
-                    "next": "c31"
+                    "text": "We should prioritize the maximum freedom of the individual to define their own lifestyle, liberated from the constraints of traditional dogma", 
+                    "next": "progressivism"
                     
-                }
-            ] 
-        },
-        { 
-            "id": "c31", 
-            "text": "What is the primary reason for maintaining these norms?", 
-            "options": [ 
+                },
                 { 
-                    "text": "Society reflects objective and ancient values that do not change", 
-                    "next": "traditionalism"
-                    
-                }, 
-                { 
-                    "text": "Change should be slow and organic to avoid breaking the social fabric that works", 
-                    "next": "conservatism"
+                    "text": "We must proactively dismantle historical hierarchies and systemic power structures to achieve true social equity", 
+                    "next": "social_progressivism"
                     
                 }
             ] 
         },
         { 
             "id": "c22", 
-            "text": "What should be the primary goal of cultural change?", 
+            "text": "What is the most essential pillar for maintaining social cohesion?", 
             "options": [ 
                 { 
-                    "text": "Dismantling historical power structures to achieve social justice and liberation", 
-                    "next": "progressivism"
+                    "text": "The preservation of individual rights is the highest tradition; the \"old ways\" are best protected by leaving people alone.", 
+                    "next": "conservative_liberalism"
                     
                 }, 
                 { 
-                    "text": "Ensuring the state protects individual rights and equal opportunity for all groups", 
-                    "next": "social_progressivism"
+                    "text": "A synthesis of freedom and the active encouragement of traditional family structures and religious values", 
+                    "next": "liberal_conservatism"
+                    
+                },
+                { 
+                    "text": "We accept modern social shifts but implement them through established institutions", 
+                    "next": "progressive_conservatism"
+                    
+                },
+                { 
+                    "text": "Adherence to the specific customs, religious heritage, and historical identity of one’s own nation and people", 
+                    "next": "conservatism"
                     
                 }
             ] 
         },
-        { "id": "reactionaryism" },
-        { "id": "conservatism" },
-        { "id": "traditionalism" },
-        { "id": "social_progressivism" },
+        { 
+            "id": "c23", 
+            "text": "How should we address the perceived failures of the modern era?", 
+            "options": [ 
+                { 
+                    "text": "We should seek to return to the social hierarchies and political structures of a specific prior era", 
+                    "next": "reactionaryism"
+                    
+                }, 
+                { 
+                    "text": "Rejection of globalism and interventionism in favor of localism, national sovereignty, and the preservation of the distinct", 
+                    "next": "paleoconservatism"
+                    
+                },
+                { 
+                    "text": "A dismissal of democratic cathedra in favor of a clear, centralized, and technocratic authority", 
+                    "next": "neoreactionaryism"
+                    
+                }, 
+                { 
+                    "text": "A rejection of the secular world in favor of the universal, sacred truths found in ancient civilizations", 
+                    "next": "traditionalism"
+                    
+                }
+            ] 
+        },
+        { "id": "postmodernism" },
+        { "id": "civil_liberalism" },
         { "id": "progressivism" },
-        { "id": "progressive_conservatism" }
+        { "id": "social_progressivism" },
+        { "id": "conservative_liberalism" },
+        { "id": "liberal_conservatism" },
+        { "id": "progressive_conservatism" },
+        { "id": "conservatism" },
+        { "id": "reactionaryism" },
+        { "id": "paleoconservatism" },
+        { "id": "neoreactionaryism" },
+        { "id": "traditionalism" }
     ],
     "authority": [
         { 
