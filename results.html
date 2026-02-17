@@ -10,12 +10,19 @@
     <div class="main-container">
     <div class="main-results-wrapper">
         <div class="top-section">
-            <h1>NeoValues 0.4</h1>
+            <h1>NeoValues 0.5</h1>
             <div id="results-container"></div>
         </div>
         
         <div class="bottom-section">
             <div id="label"></div>
+            <p class="intro-text results-instruction">
+                Click on any icon to view its description and original source.
+            </p>
+            
+            <div id="buttons" style="margin-top: 30px;">
+                <button onclick="location.href='index.html'">Back to menu</button>
+            </div>
         </div>
     </div>
 
@@ -51,12 +58,18 @@
             "Confiscatory_Taxation": "Confiscatory Taxation"
         },
         "culture": {
-            "reactionaryism": "Reactionaryism",
-            "conservatism": "Conservatism",
-            "traditionalism": "Traditionalism",
-            "social_progressivism": "Social Progressivism",
+            "postmodernism": "Postmodernism",
+            "civil_liberalism": "Civil Liberalism",
+            "progressivism": "Progressivism",
+            "social_progressivism": "Social-Progressivism",
+            "conservative_liberalism": "Conservative Liberalism",
+            "liberal_conservatism": "Liberal Conservatism",
             "progressive_conservatism": "Progressive Conservatism",
-            "progressivism": "Progressivism"
+            "conservatism": "Conservatism",
+            "reactionaryism": "Reactionaryism",
+            "paleoconservatism": "Paleoconservatism",
+            "neoreactionaryism": "Neoreactionaryism",
+            "traditionalism": "Traditionalism"
         },
         "authority": {
             "theocracy": "Theocracy",
@@ -118,11 +131,14 @@
     categories.forEach(category => {
         const resultValue = results[category];
         if (resultValue) {
-            const wrapper = document.createElement('div');
+            const wrapper = document.createElement('a');
             wrapper.className = 'result-item';
+            wrapper.href = `description.html?id=${resultValue}&cat=${category}`;
+            wrapper.style.textDecoration = 'none';
+            wrapper.style.color = 'inherit';
 
             const img = document.createElement('img');
-            img.src = `icons/${resultValue}.svg`; 
+            img.src = `icons/${category}/${resultValue}.svg`; 
             img.className = 'result-icon';
 
             const name = document.createElement('p');
