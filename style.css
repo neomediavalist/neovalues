@@ -158,8 +158,9 @@ button:hover {
 .main-results-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 55vh;
+    justify-content: flex-start;
+    min-height: 65vh;
+    height: auto;
     width: 100%;
     padding: 40px 0;
 }
@@ -172,8 +173,11 @@ button:hover {
 
 .bottom-section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-bottom: 20px;
+    width: 100%;
+    margin-top: 50px;
 }
 
 .license-container {
@@ -217,6 +221,75 @@ button:hover {
     width: 100%;
     margin-top: 40px;
     padding-bottom: 60px;
+}
+
+/* values */
+.intro-text {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    max-width: 1200px;
+}
+.category-section {
+    width: 90%;
+    max-width: 1400px;
+    margin-bottom: 60px;
+}
+.category-title {
+    font-size: 2rem;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: 700;
+}
+.values-flex-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: left;
+    align-items: flex-start;
+    gap: 60px; 
+    width: 100%;
+}
+
+/* description */
+
+.description-box {
+    background-color: white;
+    color: #333;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+    margin-top: 20px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.desc-icon {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    width: 100%;
+}
+.original-work-sign {
+    display: none;
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #777;
 }
 
 /* mobile */
@@ -345,5 +418,58 @@ button:hover {
 
     .result-item {
         width: 100px; 
+    }
+
+    /* values */
+    .intro-text {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        text-align: center;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .category-section {
+        margin-bottom: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
+        border-bottom: 2px solid #555;
+        padding-bottom: 10px;
+    }
+
+    .values-flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    /* description mobile */
+    .description-box {
+        padding: 20px;
+        width: 85%;
+        font-size: 0.95rem;
+    }
+
+    .desc-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .button-container {
+        margin-top: 20px;
+        gap: 10px;
     }
 }
