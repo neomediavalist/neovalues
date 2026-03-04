@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+    <h1>NeoValues</h1>
+    
+    <div class="license-container">
+        <div class="license-bubble">
+            <pre id="license-text" style="white-space: pre-wrap; font-family: inherit; margin: 0;">Loading license...</pre>
+        </div>
+    </div>
+
+    <div class="license-footer">
+    <div id="buttons">
+        <button onclick="location.href='index.html'">Back</button>
+    </div>
+</div>
+</div>
+
+<script>
+    fetch('LICENSE')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Could not load LICENSE file');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('license-text').innerText = data;
+        })
+        .catch(error => {
+            document.getElementById('license-text').innerText = 'Error loading license: ' + error.message;
+        });
+</script>
+</body>
+</html>
