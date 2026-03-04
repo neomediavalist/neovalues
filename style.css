@@ -143,6 +143,11 @@ button:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+#secondary-label {
+    margin-top: 20px;
+    cursor: default;
+}
+
 .label-bubble:hover {
     transform: scale(1.1);
 }
@@ -292,11 +297,32 @@ button:hover {
     border: 1px solid #777;
 }
 
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.version-icon {
+    width: 35px;
+    height: auto;
+}
+
 /* mobile */
 @media (max-width: 800px) {
 
     .main-container {
         padding-top: 10px;
+    }
+
+    .title-container {
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+    .version-icon {
+        width: 30px;
     }
 
     h1 {
@@ -405,6 +431,15 @@ button:hover {
         font-size: 1.1rem;
         transition: transform 0.2s;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .label-bubble, #secondary-label.label-bubble {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+    }
+
+    #secondary-label {
+        margin-top: 15px;
     }
 
     #results-container {
