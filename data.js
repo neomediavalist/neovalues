@@ -28,8 +28,7 @@ const resultsMapping = {
     },
     "resource_management": {
         "Voluntaryism": "Voluntaryism",
-        "georgism": "Georgism",
-        "social_georgism": "Social-Georgism",
+        "lvt": "Land Value Tax",
         "flat_taxation": "Flat Taxation",
         "Progressive_Taxation": "Progressive Taxation",
         "Confiscatory_Taxation": "Confiscatory Taxation",
@@ -87,6 +86,60 @@ const resultsMapping = {
     }
 };
 
+const subCategories = {
+    "economics": {
+        "welfare": ["welfare_capitalism", "social_capitalism"],
+        "regulated": ["state_capitalism", "dirigisme", "keynesianism", "third_way", "neo_corporatism"],
+        "free_cap": ["laissez_faire", "agorism"],
+        "socialists": ["state_socialism", "free_socialism", "communization", "utopian_socialism", "syndicalism", "guild_socialism"],
+        "market_left": ["agrarian_socialism", "mutualism"],
+        "corpotatists": ["corporatism", "social_corporatism", "yellow_socialism"],
+        "distributist": ["distributism", "social_distributism", "mutual_distributism", "agrarian_socialism"]
+    },
+    "resource_management": {
+        "mainstream_tax": ["flat_taxation", "Progressive_Taxation", "lvt"],
+        "farleft_tax": ["Confiscatory_Taxation", "collective_distribution"]
+    },
+    "culture": {
+        "progressive": ["progressivism", "social_progressivism", "civil_liberalism"],
+        "mainstreamcon": ["conservatism", "liberal_conservatism", "progressive_conservatism", "conservative_liberalism"],
+        "oldways": ["reactionaryism", "paleoconservatism"],
+        "neoold": ["neoreactionaryism", "traditionalism"]
+    },
+    "authority": {
+        "divine": ["theocracy", "absolute", "religious_authoritarianism"],
+        "auth": ["totalitarianism", "autocracy", "partocracy", "stratocracy", "technocracy", "meritocracy"],
+        "mainstreampower": ["representative_democracy", "direct_democracy", "minarchism"]
+    },
+    "nation": {
+        "global": ["Internationalism", "Cosmopolitanism"],
+        "modnat": ["civic_nationalism", "cultural_nationalism"],
+        "hitler": ["ethnic_nationalism", "pan_nationalism", "racial_nationalism", "Tribalism"]
+    },
+    "foreign": {
+        "close": ["Isolationism", "Non_Interventionism", "armed_neutrality"],
+        "neolib": ["Interventionism", "Globalism"]
+    }
+};
+
+const incompatibleSubCategories = {
+    "welfare": "socialists",
+    "free_cap": "socialists",
+
+    "farleft_tax": "mainstream_tax",
+
+    "progressive": "oldways",
+    "progressive": "neoold",
+    "mainstreamcon": "neoold",
+
+    "divine": "mainstreampower",
+    "mainstreampower": "auth",
+
+    "global": "hitler",
+
+    "close": "neolib",
+};
+
 const labelMapping = {
     /* Fascist & Third Position ideologies */
     "syndicalism|collective_distribution|reactionaryism|totalitarianism|cultural_nationalism": "National Syndicalism",
@@ -119,7 +172,7 @@ const labelMapping = {
     "laissez_faire|Voluntaryism|civil_liberalism|anarchism|Cosmopolitanism|Non_Interventionism": "Panarchism",
     "laissez_faire|Voluntaryism|neoreactionaryism|technocracy|Isolationism": "Dark Enlightenment",
     "distributism|anarchism": "Anarcho-Distributism",
-    "laissez_faire|georgism|anarchism": "Geoanarchism",
+    "laissez_faire|lvt|anarchism": "Geoanarchism",
     "laissez_faire|Voluntaryism|postmodernism|anarchism|egoism": "Avaritionism",
     "laissez_faire|Voluntaryism|civil_liberalism|anarchism|Non_Interventionism": "Anarcho-Capitalism",
     "laissez_faire|Voluntaryism|reactionaryism|anarchism|Non_Interventionism": "Hoppeanism",
@@ -127,11 +180,11 @@ const labelMapping = {
     "Tribalism|anarchism": "National-Anarchism",
 
     /* Libertarian ideologies */
-    "laissez_faire|georgism|minarchism": "Geolibertarianism",
+    "laissez_faire|lvt|minarchism": "Geolibertarianism",
     "laissez_faire|flat_taxation|minarchism|civic_nationalism|Interventionism": "Neolibertarianism",
     "laissez_faire|flat_taxation|conservatism|minarchism|cultural_nationalism|Non_Interventionism": "Libertarian Conservatism",
     "laissez_faire|flat_taxation|paleoconservatism|minarchism|ethnic_nationalism|Isolationism": "National Libertarianism",
-    "welfare_capitalism|social_georgism|social_progressivism|minarchism|Non_Interventionism": "Social Libertarianism",
+    "welfare_capitalism|lvt|social_progressivism|minarchism|Non_Interventionism": "Social Libertarianism",
     "welfare_capitalism|flat_taxation|conservative_liberalism|direct_democracy|civic_nationalism|armed_neutrality": "Helvetic Model",
     "laissez_faire|Voluntaryism|conservatism|minarchism|Non_Interventionism": "Paleolibertarianism",
     "laissez_faire|Voluntaryism|progressivism|minarchism|Non_Interventionism": "Bleeding-Heart Libertarianism",
@@ -149,7 +202,8 @@ const labelMapping = {
     "social_capitalism|Progressive_Taxation|liberal_conservatism|representative_democracy|civic_nationalism|Internationalism": "Christian Democracy",
     "welfare_capitalism|Progressive_Taxation|conservatism|representative_democracy|cultural_nationalism": "Paternalistic Conservatism",
     "laissez_faire|flat_taxation|paleoconservatism|representative_democracy|cultural_nationalism|Isolationism": "Paleoconservatism",
-    "welfare_capitalism|conservatism|representative_democracy|civic_nationalism|Interventionism": "Neoconservatism",
+    "welfare_capitalism|liberal_conservatism|representative_democracy|civic_nationalism|Interventionism": "Neoconservatism",
+    "welfare_capitalism|conservative_liberalism|representative_democracy|civic_nationalism|Interventionism": "Neoconservatism",
 
     /* Marxist ideologies */
     "communization|collective_distribution|social_progressivism|Internationalism": "Italian Left Communism",
@@ -230,7 +284,7 @@ const labelColors = {
     "Christian Democracy": "#3C5A99",
     "Paternalistic Conservatism": "#0047AB",
     "Paleoconservatism": "#003366",
-    "Neoconservatism": "#000080",
+    "Neoconservatism": "#25257aff",
 
     /* Marxist ideologies - Crimson and Dark Reds */
     "Italian Left Communism": "#B22222",
@@ -283,8 +337,7 @@ const descriptions = {
     "feudalism": "A medieval social hierarchy based on land ownership and personal loyalty. Nobility granted land to vassals in exchange for military service, while peasants (serfs) lived on and worked the land for protection.",
     // resource_management
     "Voluntaryism": "A system where the state is prohibited from collecting taxes by force. It relies entirely on voluntary taxation, funding public services through consensual donations, lotteries, or service fees rather than mandatory levies.",
-    "georgism": "An economic philosophy suggesting that people should own the value they produce, but the value derived from land and natural resources should belong to the community.",
-    "social_georgism": "A system combining Georgism with a social safety net. It uses land-value tax revenue to fund welfare and public services.",
+    "lvt": "Land Value Tax is a levy on the unimproved value of land, excluding buildings or improvements. It discourages land speculation, promotes efficient usage, and captures socially created value for public benefit.",
     "flat_taxation": "A tax system with a constant marginal rate, usually applied to personal or corporate income, where everyone pays the same percentage regardless of earnings.",
     "Progressive_Taxation": "A tax system where the tax rate increases as the taxable amount increases, shifting the burden toward those with higher incomes.",
     "Confiscatory_Taxation": "An extremely high tax rate—often near 100%—above a certain income threshold, intended to redistribute wealth or limit extreme inequality.",
@@ -366,8 +419,7 @@ const iconSources = {
     "feudalism": "https://en.wikipedia.org/wiki/File:Flag_of_medieval_France.png",
                                 //resource_management
     "Voluntaryism": "https://en.wikipedia.org/wiki/File:VforVoluntary_normal.svg",
-    //"georgism": "",
-    "social_georgism": "https://quark88.github.io/ideosorter/",
+    "lvt": "https://www.reddit.com/r/georgism/comments/ffs4yt/inspired_by_uwufflytimes_design_on_rvexillology_i/",
     //"flat_taxation": "",
     //"Progressive_Taxation": "",
     //"Confiscatory_Taxation": "",
