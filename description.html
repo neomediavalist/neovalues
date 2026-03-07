@@ -28,6 +28,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const ideologyId = urlParams.get('id');
         const category = urlParams.get('cat');
+        const type = urlParams.get('type');
 
         const titleEl = document.getElementById('ideology-title');
         const descEl = document.getElementById('ideology-description');
@@ -35,29 +36,31 @@
         const sourceBtn = document.getElementById('icon-source-btn');
         const originalSign = document.getElementById('original-work-sign');
 
-        if (ideologyId && category) {
-            // Set basic info
-            titleEl.innerText = ideologyId.replace(/_/g, ' ').toUpperCase();
-            iconEl.src = `icons/${category}/${ideologyId}.svg`;
-            
-            // Use descriptions from data.js
-            descEl.innerText = descriptions[ideologyId] || "Description coming soon!";
-
-            // Use iconSources from data.js
-            if (iconSources[ideologyId] && iconSources[ideologyId] !== "") {
-                sourceBtn.style.display = 'block';
-                originalSign.style.display = 'none';
-            } else {
+        if (ideologyId) {
+            if (type === 'ideology') {
+                titleEl.innerText = ideologyId.toUpperCase();
+                iconEl.style.display = 'none';
                 sourceBtn.style.display = 'none';
-                originalSign.style.display = 'block';
+                originalSign.style.display = 'none';
+                descEl.innerText = descriptions[ideologyId] || "Ideology description coming soon!";
+            } else if (category) {
+                titleEl.innerText = ideologyId.replace(/_/g, ' ').toUpperCase();
+                iconEl.src = `icons/${category}/${ideologyId}.svg`;
+                descEl.innerText = descriptions[ideologyId] || "Description coming soon!";
+
+                if (iconSources[ideologyId] && iconSources[ideologyId] !== "") {
+                    sourceBtn.style.display = 'block';
+                    originalSign.style.display = 'none';
+                } else {
+                    sourceBtn.style.display = 'none';
+                    originalSign.style.display = 'block';
+                }
             }
         }
 
         function openIconSource() {
             const sourceUrl = iconSources[ideologyId];
-            if (sourceUrl) {
-                window.open(sourceUrl, '_blank');
-            }
+            if (sourceUrl) window.open(sourceUrl, '_blank');
         }
     </script>
 </body>
