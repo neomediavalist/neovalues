@@ -11,6 +11,8 @@
     <div class="main-container">
         <img id="ideology-icon" src="" alt="" class="desc-icon">
         <h1 id="ideology-title">Loading...</h1>
+
+        <div id="values-icons-container" class="values-flex-container" style="justify-content: center; margin-bottom: 10px; margin-top: 50px;"></div>
         
         <div class="description-box">
             <p id="ideology-description"></p>
@@ -24,44 +26,77 @@
     </div>
 
     <script src="data.js"></script>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const ideologyId = urlParams.get('id');
-        const category = urlParams.get('cat');
-        const type = urlParams.get('type');
+    <script src="data.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ideologyId = urlParams.get('id');
+    const category = urlParams.get('cat');
+    const type = urlParams.get('type');
 
-        const titleEl = document.getElementById('ideology-title');
-        const descEl = document.getElementById('ideology-description');
-        const iconEl = document.getElementById('ideology-icon');
-        const sourceBtn = document.getElementById('icon-source-btn');
-        const originalSign = document.getElementById('original-work-sign');
+    const titleEl = document.getElementById('ideology-title');
+    const descEl = document.getElementById('ideology-description');
+    const iconEl = document.getElementById('ideology-icon');
+    const sourceBtn = document.getElementById('icon-source-btn');
+    const originalSign = document.getElementById('original-work-sign');
+    const valuesIconsContainer = document.getElementById('values-icons-container');
 
-        if (ideologyId) {
-            if (type === 'ideology') {
-                titleEl.innerText = ideologyId.toUpperCase();
-                iconEl.style.display = 'none';
-                sourceBtn.style.display = 'none';
+    if (ideologyId) {
+        if (type === 'ideology') {
+            titleEl.innerText = ideologyId.toUpperCase();
+            iconEl.style.display = 'none';
+            sourceBtn.style.display = 'none';
+            originalSign.style.display = 'none';
+            descEl.innerText = descriptions[ideologyId] || "Ideology description coming soon!";
+
+            const matchedKey = Object.keys(labelMapping).find(key => labelMapping[key] === ideologyId);
+            
+            if (matchedKey) {
+                const requiredValues = matchedKey.split('|');
+                requiredValues.forEach(valId => {
+                    const valCat = Object.keys(resultsMapping).find(cat => resultsMapping[cat][valId]);
+                    
+                    if (valCat) {
+                        const wrapper = document.createElement('a');
+                        wrapper.href = `description.html?id=${valId}&cat=${valCat}`;
+                        wrapper.className = 'result-item';
+                        wrapper.style.width = '120px'; 
+                        wrapper.style.margin = '10px';
+
+                        const img = document.createElement('img');
+                        img.src = `icons/${valCat}/${valId}.svg`;
+                        img.className = 'result-icon';
+                        img.style.width = '100px';
+                        img.style.height = '100px';
+                        img.title = resultsMapping[valCat][valId];
+
+                        wrapper.appendChild(img);
+                        valuesIconsContainer.appendChild(wrapper);
+                    }
+                });
+            }
+        } else if (category) {
+            const prettyName = (resultsMapping[category] && resultsMapping[category][ideologyId]) 
+                               ? resultsMapping[category][ideologyId] 
+                               : ideologyId.replace(/_/g, ' ');
+            
+            titleEl.innerText = prettyName.toUpperCase();
+            iconEl.src = `icons/${category}/${ideologyId}.svg`;
+            descEl.innerText = descriptions[ideologyId] || "Description coming soon!";
+
+            if (iconSources[ideologyId] && iconSources[ideologyId] !== "") {
+                sourceBtn.style.display = 'block';
                 originalSign.style.display = 'none';
-                descEl.innerText = descriptions[ideologyId] || "Ideology description coming soon!";
-            } else if (category) {
-                titleEl.innerText = ideologyId.replace(/_/g, ' ').toUpperCase();
-                iconEl.src = `icons/${category}/${ideologyId}.svg`;
-                descEl.innerText = descriptions[ideologyId] || "Description coming soon!";
-
-                if (iconSources[ideologyId] && iconSources[ideologyId] !== "") {
-                    sourceBtn.style.display = 'block';
-                    originalSign.style.display = 'none';
-                } else {
-                    sourceBtn.style.display = 'none';
-                    originalSign.style.display = 'block';
-                }
+            } else {
+                sourceBtn.style.display = 'none';
+                originalSign.style.display = 'block';
             }
         }
+    }
 
-        function openIconSource() {
-            const sourceUrl = iconSources[ideologyId];
-            if (sourceUrl) window.open(sourceUrl, '_blank');
-        }
-    </script>
+    function openIconSource() {
+        const sourceUrl = iconSources[ideologyId];
+        if (sourceUrl) window.open(sourceUrl, '_blank');
+    }
+</script>
 </body>
 </html>
