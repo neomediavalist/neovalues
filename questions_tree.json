@@ -27,7 +27,7 @@
             "text": "What is the ultimate role of the autonomous market?", 
             "options": [ 
                 { "text": "To function within a minimal legal framework for order", "next": "laissez_faire" }, 
-                { "text": "To act as a tool to bypass and eventually replace the state entirely", "next": "agorism" }
+                { "text": "To act as a tool to bypass and eventually replace the state entirely", "next": "countereconomics" }
             ] 
         },
         { 
@@ -74,6 +74,7 @@
                 { "text": "Subordinating all private interests to the national interest", "next": "corporatism" }, 
                 { "text": "Facilitating peaceful negotiation between state, business, and unions", "next": "neo_corporatism" },
                 { "text": "Empowering workers' syndicates over the bourgeoisie within the state", "next": "social_corporatism" },
+                { "text": "Maximizing the state's treasury and resources through administrative management", "next": "cameralism" },
                 { "text": "Creating parallel unions that cooperate with management for profit-sharing", "next": "yellow_socialism" }
             ] 
         },
@@ -90,7 +91,7 @@
         { "id": "welfare_capitalism" },
         { "id": "social_capitalism" },
         { "id": "laissez_faire" },
-        { "id": "agorism" },
+        { "id": "countereconomics" },
         { "id": "state_capitalism" },
         { "id": "state_socialism" },
         { "id": "dirigisme" },
@@ -111,7 +112,8 @@
         { "id": "social_distributism" },
         { "id": "agrarian_socialism" },
         { "id": "distributism" },
-        { "id": "feudalism" }
+        { "id": "feudalism" },
+        { "id": "cameralism" }
     ],
     "resource_management": [
         { 
@@ -170,6 +172,7 @@
                 { "text": "Adherence to the specific customs, religious heritage, and historical identity of one’s own nation and people", "next": "conservatism" }
             ] 
         },
+
         { 
             "id": "c2.3", 
             "text": "How should we address the perceived failures of the modern era?", 
@@ -177,6 +180,7 @@
                 { "text": "We should seek to return to the social hierarchies and political structures of a specific prior era", "next": "reactionaryism" },
                 { "text": "Rejection of globalism and interventionism in favor of localism, national sovereignty, and the preservation of the distinct", "next": "paleoconservatism" },
                 { "text": "A dismissal of democratic cathedra in favor of a clear, centralized, and technocratic authority", "next": "neoreactionaryism" },
+                { "text": "A synthesis of romantic, traditionalist values with modern technology and industrial power", "next": "reactionary_modernism" },
                 { "text": "A rejection of the secular world in favor of the universal, sacred truths found in ancient civilizations", "next": "traditionalism" }
             ] 
         },
@@ -191,7 +195,8 @@
         { "id": "reactionaryism" },
         { "id": "paleoconservatism" },
         { "id": "neoreactionaryism" },
-        { "id": "traditionalism" }
+        { "id": "traditionalism" },
+        { "id": "reactionary_modernism" }
     ],
     "authority": [
         { 
@@ -200,59 +205,61 @@
             "options": [ 
                 { "text": "The state is necessary to organize society and enforce order", "next": "a2.1" },
                 { "text": "The state should only exist to protect property and safety", "next": "minarchism" },
-                { "text": "None", "next": "anarchism" }
+                { "text": "None; the state is inherently illegitimate", "next": "a2.2" }
             ] 
         },
         { 
             "id": "a2.1", 
-            "text": "Should power be concentrated in a single individual or a small group?", 
+            "text": "How should the governance of the state be structured?", 
             "options": [ 
-                { "text": "A single person should hold all the power", "next": "a3.1" },
-                { "text": "Elite group should rule the state", "next": "a3.2" },
-                { "text": "No, state should be ruled by people", "next": "a3.3" }
+                { "text": "Power should be concentrated in a central executive or leader", "next": "a3.1" },
+                { "text": "Power should be shared between Monarch and Parliament", "next": "constitutional" },
+                { "text": "Power should reside in a distinct class of the 'best' or 'noble' citizens", "next": "a3.2" },
+                { "text": "Power should be exercised by the people or their representatives", "next": "a3.3" }
+            ] 
+        },
+        { 
+            "id": "a2.2", 
+            "text": "In a stateless society, what is the role of a leader?", 
+            "options": [ 
+                { "text": "There are no leaders; total horizontal organization", "next": "anarchism" },
+                { "text": "A symbolic or protective monarch who prevents the emergence of a state", "next": "anarcho_monarchism" }
             ] 
         },
         { 
             "id": "a3.1", 
-            "text": "What is the source of the leader's legitimacy?", 
+            "text": "What is the source or nature of this centralized authority?", 
             "options": [ 
-                { "text": "Bloodline or tradition", "next": "a4.1" },
-                { "text": "God", "next": "a4.2" },
-                { "text": "Raw power", "next": "a4.3" }
-            ] 
-        },
-        { 
-            "id": "a4.1", 
-            "text": "What power should king have?", 
-            "options": [ 
-                { "text": "Absolute", "next": "absolute" },
-                { "text": "Limited", "next": "constitutional" }
+                { "text": "A traditional sovereign based on bloodline or tradition", "next": "absolute" },
+                { "text": "A leader whose authority is derived from divine mandate or religious law", "next": "a4.2" },
+                { "text": "A modern autocrat", "next": "a4.3" },
+                { "text": "A joint-stock corporation where governance is handled by a CEO", "next": "neocameralism" }
             ] 
         },
         { 
             "id": "a4.2", 
-            "text": "State should be run by...", 
+            "text": "How is religious authority applied to the state?", 
             "options": [ 
-                { "text": "Priesthood", "next": "theocracy" },
-                { "text": "Religious but secular leader", "next": "religious_authoritarianism" }
+                { "text": "The state is run directly by the priesthood", "next": "theocracy" },
+                { "text": "A secular leader rules according to religious principles", "next": "religious_authoritarianism" }
             ] 
         },
         { 
             "id": "a4.3", 
-            "text": "What power should state have?", 
+            "text": "To what extent should this central power intervene?", 
             "options": [ 
                 { "text": "The state controls every aspect of public and private life", "next": "totalitarianism" },
-                { "text": "Power is concentrated, but private life remains autonomous", "next": "autocracy" }
+                { "text": "Power is concentrated, but private life remains largely autonomous", "next": "autocracy" }
             ] 
         },
         { 
             "id": "a3.2", 
-            "text": "What qualifies this group to lead?", 
+            "text": "What qualifies this elite group to lead?", 
             "options": [ 
-                { "text": "Scientists, engineers, and data-driven experts", "next": "technocracy" },
-                { "text": "Those who have shown the most talent or achievement in their fields", "next": "meritocracy" },
-                { "text": "A single political party", "next": "partocracy" },
-                { "text": "Military chiefs", "next": "stratocracy" }
+                { "text": "Inherited status and noble birth", "next": "aristocracy" },
+                { "text": "Scientific expertise, engineering, and technical data", "next": "technocracy" },
+                { "text": "Demonstrated talent, achievement, or intellectual merit", "next": "meritocracy" },
+                { "text": "Command within the military hierarchy", "next": "stratocracy" }
             ] 
         },
         { 
@@ -260,7 +267,8 @@
             "text": "How should the will of the people be exercised?", 
             "options": [ 
                 { "text": "Citizens vote on every major policy and law themselves", "next": "direct_democracy" },
-                { "text": "Citizens elect officials to make decisions on their behalf", "next": "representative_democracy" }
+                { "text": "Citizens elect officials to make decisions on their behalf", "next": "representative_democracy" },
+                { "text": "Through a single revolutionary party that represents the working class", "next": "partocracy" }
             ] 
         },
         { "id": "theocracy" },
@@ -276,7 +284,10 @@
         { "id": "technocracy" },
         { "id": "representative_democracy" },
         { "id": "direct_democracy" },
-        { "id": "stratocracy" }
+        { "id": "stratocracy" },
+        { "id": "aristocracy" },
+        { "id": "anarcho_monarchism" },
+        { "id": "neocameralism" }
     ],
     "nation": [
         { 
@@ -284,9 +295,10 @@
             "text": "What is the primary source of an individual’s identity and loyalty?", 
             "options": [ 
                 { "text": "The global human community", "next": "n2.1" }, 
-                { "text": "A shared legal system, political values, or a common culture within a state.", "next": "n2.2" },
-                { "text": "Biological descent, shared ancestry, or the blood.", "next": "n2.3" },
-                { "text": "The unique individual self; all collective identities are artificial constructs.", "next": "egoism" }
+                { "text": "A shared legal system, political values, or common culture", "next": "n2.2" },
+                { "text": "The local community and shared social bonds as the foundation of society", "next": "communitarianism" },
+                { "text": "Biological descent, shared ancestry, or the blood", "next": "n2.3" },
+                { "text": "The unique individual self", "next": "egoism" }
             ] 
         },
         {
@@ -323,7 +335,8 @@
         { "id": "pan_nationalism" },
         { "id": "racial_nationalism" },
         { "id": "Tribalism" },
-        { "id": "egoism" }
+        { "id": "egoism" },
+        { "id": "communitarianism" }
     ],
     "foreign": [
         { 
