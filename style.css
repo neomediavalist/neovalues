@@ -293,6 +293,14 @@ a:hover {
     text-decoration: underline;
 }
 
+.version-text {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-weight: 500;
+    opacity: 0.6;
+    margin-top: -5px; /* Pulls it slightly closer to the title */
+}
+
 /* Mobile */
 @media (max-width: 800px) {
     #results-container, .values-flex-container {
@@ -345,6 +353,30 @@ a:hover {
         white-space: pre-wrap !important;
         word-wrap: break-word;
         font-size: 0.85rem;
+    }
+
+    .category-section .values-flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: left;
+        max-width: 100%;
+    }
+
+    .label-bubble {
+        font-size: 0.8rem !important;
+        padding: 8px 16px !important;
+        margin: 1px !important;
+        width: auto !important;
+        max-width: 90%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .category-title {
+        font-size: 1.2rem;
+        text-align: left;
+        width: 100%;
     }
 
 }
