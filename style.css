@@ -298,7 +298,7 @@ a:hover {
     color: var(--text-dim);
     font-weight: 500;
     opacity: 0.6;
-    margin-top: -5px; /* Pulls it slightly closer to the title */
+    margin-top: -5px;
 }
 
 /* Mobile */
