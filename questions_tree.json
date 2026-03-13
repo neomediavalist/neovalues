@@ -36,7 +36,8 @@
             "options": [ 
                 { "text": "By managing demand through fiscal policy and government spending", "next": "keynesianism" }, 
                 { "text": "By synthesizing market competition with social justice and centrist policy", "next": "third_way" },
-                { "text": "By directing investment and industrial policy through technocratic planning", "next": "dirigisme" }
+                { "text": "By directing investment and industrial policy through technocratic planning", "next": "dirigisme" },
+                { "text": "By facilitating cooperative negotiation between the state, business, and labor unions", "next": "neo_corporatism" }
             ] 
         },
         { 
@@ -72,7 +73,6 @@
             "text": "What is the goal of the state's organization of labor and industry?", 
             "options": [ 
                 { "text": "Subordinating all private interests to the national interest", "next": "corporatism" }, 
-                { "text": "Facilitating peaceful negotiation between state, business, and unions", "next": "neo_corporatism" },
                 { "text": "Empowering workers' syndicates over the bourgeoisie within the state", "next": "social_corporatism" },
                 { "text": "Maximizing the state's treasury and resources through administrative management", "next": "cameralism" },
                 { "text": "Creating parallel unions that cooperate with management for profit-sharing", "next": "yellow_socialism" }
@@ -80,12 +80,27 @@
         },
         { 
             "id": "e2.5", 
-            "text": "How should the distribution of small-scale property be maintained?", 
+            "text": "How do you view the primary mechanism of widespread property distribution?", 
+            "options": [ 
+                { "text": "Through left-wing or social-oriented approaches (cooperatives, state redistribution, agrarianism)", "next": "e3.5" }, 
+                { "text": "Through right-wing or market-oriented approaches (free markets, traditional property rights)", "next": "e3.6" }
+            ] 
+        },
+        { 
+            "id": "e3.5", 
+            "text": "How should this left-wing distributed property be organized?", 
             "options": [ 
                 { "text": "By centering the economy on the peasantry and small-scale farming", "next": "agrarian_socialism" }, 
                 { "text": "By using the state to aggressively break up large capital concentrations", "next": "social_distributism" },
-                { "text": "By using mutual-aid banks and local cooperatives", "next": "mutual_distributism" },
-                { "text": "By promoting 'small is beautiful' with minimal state intervention", "next": "distributism" }
+                { "text": "By using mutual-aid banks and local cooperatives", "next": "mutual_distributism" }
+            ] 
+        },
+        { 
+            "id": "e3.6", 
+            "text": "How should this market-oriented distributed property be maintained?", 
+            "options": [ 
+                { "text": "By promoting 'small is beautiful' with minimal state intervention", "next": "distributism" },
+                { "text": "Through completely free markets and voluntary contracts without state interference", "next": "free_market_distributism" }
             ] 
         },
         { "id": "welfare_capitalism" },
@@ -113,7 +128,8 @@
         { "id": "agrarian_socialism" },
         { "id": "distributism" },
         { "id": "feudalism" },
-        { "id": "cameralism" }
+        { "id": "cameralism" },
+        { "id": "free_market_distributism" }
     ],
     "resource_management": [
         { 
