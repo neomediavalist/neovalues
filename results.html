@@ -13,7 +13,7 @@
         <div class="top-section">
             <div class="title-container">
                 <h1>NeoValues</h1>
-                <img src="version.svg" alt="Version" class="version-icon">
+                <span class="version-text">v1.4</span>
             </div>
             <div id="results-container"></div>
         </div>
@@ -109,10 +109,19 @@
                 return { key, label: labelMapping[key], score: score + penalty };
             })
             .sort((a, b) => b.score - a.score)
-            .filter(item => item.key !== matchedKey);
+            .filter(item => item.label !== finalLabel);
 
-        if (scoredLabels.length > 0) {
-            const nextMatch = scoredLabels[0];
+        const uniqueScoredLabels = [];
+        const seenLabels = new Set();
+        for (const item of scoredLabels) {
+            if (!seenLabels.has(item.label)) {
+                seenLabels.add(item.label);
+                uniqueScoredLabels.push(item);
+            }
+        }
+
+        if (uniqueScoredLabels.length > 0) {
+            const nextMatch = uniqueScoredLabels[0];
             secondaryLabelDiv.innerText = `Next closest match: ${nextMatch.label}`;
             secondaryLabelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(nextMatch.label)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">Next closest match: ${nextMatch.label}</a>`;
             secondaryLabelDiv.className = "label-bubble"; 
