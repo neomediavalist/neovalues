@@ -25,7 +25,8 @@ const resultsMapping = {
         "agrarian_socialism": "Agrarian Socialism",
         "distributism": "Distributism",
         "feudalism": "Feudalism",
-        "cameralism": "Cameralism"
+        "cameralism": "Cameralism",
+        "free_market_distributism": "Free Market Distributism",
     },
     "resource_management": {
         "Voluntaryism": "Voluntaryism",
@@ -100,7 +101,7 @@ const subCategories = {
         "socialists": ["state_socialism", "free_socialism", "communization", "utopian_socialism", "syndicalism", "guild_socialism"],
         "market_left": ["agrarian_socialism", "mutualism"],
         "corpotatists": ["corporatism", "social_corporatism", "yellow_socialism"],
-        "distributist": ["distributism", "social_distributism", "mutual_distributism", "agrarian_socialism"]
+        "distributist": ["distributism", "social_distributism", "mutual_distributism", "agrarian_socialism", "free_market_distributism"]
     },
     "resource_management": {
         "mainstream_tax": ["flat_taxation", "Progressive_Taxation", "lvt"],
@@ -159,11 +160,18 @@ const labelMapping = {
     "state_capitalism|traditionalism|totalitarianism|racial_nationalism": "Neonazism",
     "yellow_socialism|traditionalism|minarchism|ethnic_nationalism|Imperialism": "Neo-Libertarian Falangism",
     "guild_socialism|reactionary_modernism|totalitarianism|ethnic_nationalism|armed_neutrality": "Strasserism",
+    "yellow_socialism|traditionalism|totalitarianism|cultural_nationalism|Imperialism": "Falangism",
+    "agrarian_socialism|paleoconservatism|totalitarianism|cultural_nationalism|Realpolitik": "Agrarian Fascism",
+    "laissez_faire|reactionary_modernism|minarchism|cultural_nationalism|Imperialism": "Libertarian Fascism",
+    "corporatism|postmodernism|totalitarianism|egoism|Imperialism": "Ego-Fascism",
 
     /* Reactionary ideologies */
     "agrarian_socialism|reactionaryism|aristocracy|pan_nationalism|Imperialism": "Volkism",
     "feudalism|conservatism|aristocracy|Tribalism|Imperialism": "Optimateism",
     "social_distributism|traditionalism|religious_authoritarianism|communitarianism|Globalism": "Integralism",
+    "distributism|traditionalism|religious_authoritarianism|communitarianism|Globalism": "Integralism",
+    "corporatism|traditionalism|religious_authoritarianism|communitarianism|Globalism": "Integralism",
+    "laissez_faire|reactionaryism|autocracy|cultural_nationalism|Imperialism": "National Capitalism",
 
     /* Liberal ideologies */
     "laissez_faire|flat_taxation|civil_liberalism|minarchism|civic_nationalism|Non_Interventionism": "Classical Liberalism",
@@ -176,7 +184,8 @@ const labelMapping = {
     /* Left-Anarchist ideologies */
     "syndicalism|collective_distribution|anarchism|Internationalism": "Anarcho-Syndicalism",
     "communization|collective_distribution|social_progressivism|anarchism|Internationalism": "Platformism",
-    "countereconomics|Voluntaryism|social_progressivism|anarchism|Cosmopolitanism": "Left-Agorism",
+    "free_socialism|collective_distribution|social_progressivism|anarchism|Internationalism": "Platformism",
+    "countereconomics|collective_distribution|social_progressivism|anarchism|Cosmopolitanism": "Left-Agorism",
     "free_socialism|postmodernism|anarchism|Cosmopolitanism": "Post-Anarchism",
     "mutualism|anarchism": "Mutualism",
     "market_socialism|anarchism": "Market Anarchism",
@@ -194,27 +203,39 @@ const labelMapping = {
     /* Right-Anarchist ideologies */
     "laissez_faire|Voluntaryism|civil_liberalism|anarchism|Cosmopolitanism|Non_Interventionism": "Panarchism",
     "distributism|anarchism": "Anarcho-Distributism",
+    "mutual_distributism|anarchism": "Anarcho-Distributism",
+    "free_market_distributism|anarchism": "Anarcho-Distributism",
     "countereconomics|lvt|anarchism": "Geoanarchism",
     "countereconomics|Voluntaryism|postmodernism|anarchism|egoism": "Avaritionism",
-    "countereconomics|Voluntaryism|civil_liberalism|anarchism|Non_Interventionism": "Anarcho-Capitalism",
+    "countereconomics|Voluntaryism|anarchism|Non_Interventionism": "Anarcho-Capitalism",
+    "countereconomics|Voluntaryism|anarchism|Isolationism": "Anarcho-Capitalism",
     "countereconomics|Voluntaryism|reactionaryism|anarcho_monarchism|communitarianism|Non_Interventionism": "Hoppeanism",
-    "countereconomics|Voluntaryism|progressivism|anarchism|egoism|Globalism": "Bleeding-Heart Anarcho-Capitalism",
+    "countereconomics|Voluntaryism|reactionaryism|anarcho_monarchism|Tribalism|Non_Interventionism": "Hoppeanism",
+    "countereconomics|Voluntaryism|paleoconservatism|anarcho_monarchism|communitarianism|Non_Interventionism": "Hoppeanism",
+    "countereconomics|Voluntaryism|paleoconservatism|anarcho_monarchism|Tribalism|Non_Interventionism": "Hoppeanism",
+    "countereconomics|Voluntaryism|progressivism|anarchism|Globalism": "Bleeding-Heart Anarcho-Capitalism",
 
     /* Right-Libertarian ideologies */
     "laissez_faire|lvt|minarchism": "Geolibertarianism",
     "laissez_faire|flat_taxation|minarchism|civic_nationalism|Interventionism": "Neolibertarianism",
     "laissez_faire|flat_taxation|conservatism|minarchism|cultural_nationalism|Non_Interventionism": "Libertarian Conservatism",
+    "laissez_faire|flat_taxation|liberal_conservatism|minarchism|cultural_nationalism|Non_Interventionism": "Libertarian Conservatism",
+    "laissez_faire|flat_taxation|progressive_conservatism|minarchism|cultural_nationalism|Non_Interventionism": "Libertarian Conservatism",
+    "laissez_faire|flat_taxation|conservative_liberalism|minarchism|cultural_nationalism|Non_Interventionism": "Libertarian Conservatism",
     "laissez_faire|flat_taxation|paleoconservatism|minarchism|ethnic_nationalism|Isolationism": "National Libertarianism",
     "welfare_capitalism|lvt|social_progressivism|minarchism|Globalism": "Social Libertarianism",
+    "welfare_capitalism|lvt|progressivism|minarchism|Globalism": "Social Libertarianism",
     "welfare_capitalism|flat_taxation|conservative_liberalism|direct_democracy|civic_nationalism|armed_neutrality": "Helvetic Model",
-    "laissez_faire|Voluntaryism|conservatism|minarchism|Non_Interventionism": "Paleolibertarianism",
+    "laissez_faire|Voluntaryism|paleoconservatism|minarchism|Non_Interventionism": "Paleolibertarianism",
     "laissez_faire|Voluntaryism|progressivism|minarchism|egoism|Globalism": "Bleeding-Heart Libertarianism",
-    "laissez_faire|neoreactionaryism|neocameralism|Realpolitik": "Dark Enlightenment",
+    "laissez_faire|neoreactionaryism|neocameralism": "Dark Enlightenment",
+    "countereconomics|neoreactionaryism|neocameralism": "Dark Enlightenment",
 
     /* Socialist ideologies */
     "utopian_socialism|representative_democracy|Internationalism|Non_Interventionism": "Christian Socialism",
-    "state_capitalism|Progressive_Taxation|conservative_liberalism|partocracy|civic_nationalism|Realpolitik": "Dengism",
+    "state_capitalism|Progressive_Taxation|partocracy|civic_nationalism|Realpolitik": "Dengism",
     "state_socialism|collective_distribution|traditionalism|totalitarianism|cultural_nationalism|Imperialism": "National Bolshevism",
+    "state_socialism|collective_distribution|reactionary_modernism|totalitarianism|cultural_nationalism|Imperialism": "National Bolshevism",
     "market_socialism|direct_democracy|progressivism|Internationalism|Globalism": "Democratic Socialism",
     "state_socialism|Confiscatory_Taxation|conservatism|partocracy|civic_nationalism|Realpolitik": "Conservative Socialism",
     "state_socialism|Confiscatory_Taxation|paleoconservatism|civic_nationalism|Isolationism": "Paleosocialism",
@@ -222,20 +243,29 @@ const labelMapping = {
     /* Centre-left */
     "neo_corporatism|Progressive_Taxation|civil_liberalism|representative_democracy|civic_nationalism|Globalism": "Nordic Model",
     "social_capitalism|Progressive_Taxation|social_progressivism|representative_democracy|Internationalism|Globalism": "Social Democracy",
+    "social_capitalism|Progressive_Taxation|progressivism|representative_democracy|Internationalism|Globalism": "Social Democracy",
     "social_capitalism|Progressive_Taxation|conservatism|representative_democracy|civic_nationalism|Realpolitik": "Conservative Social Democracy",
 
     /* Conservative ideologies */
     "welfare_capitalism|Progressive_Taxation|conservatism|representative_democracy|cultural_nationalism|Realpolitik": "National Conservatism",
     "social_capitalism|Progressive_Taxation|liberal_conservatism|representative_democracy|civic_nationalism|Internationalism": "Christian Democracy",
     "social_capitalism|Progressive_Taxation|conservatism|representative_democracy|cultural_nationalism": "Paternalistic Conservatism",
-    "dirigisme|paleoconservatism|representative_democracy|cultural_nationalism|Isolationism": "Paleoconservatism",
+    "social_capitalism|paleoconservatism|representative_democracy|cultural_nationalism|Isolationism": "Buchanan Paleoconservatism",
+    "dirigisme|paleoconservatism|representative_democracy|cultural_nationalism|Isolationism": "Hard Right Paleoconservatism",
+    "cameralism|paleoconservatism|representative_democracy|cultural_nationalism|Isolationism": "Hard Right Paleoconservatism",
+    "distributism|paleoconservatism|representative_democracy|cultural_nationalism|Isolationism": "Old Right Paleoconservatism",
+    "free_market_distributism|paleoconservatism|representative_democracy|cultural_nationalism|Isolationism": "Old Right Paleoconservatism",
     "welfare_capitalism|liberal_conservatism|representative_democracy|civic_nationalism|Interventionism": "Neoconservatism",
-    "dirigisme|paleoconservatism|representative_democracy|civic_nationalism|Interventionism": "Mesoconservatism",
+    "welfare_capitalism|progressive_conservatism|representative_democracy|civic_nationalism|Interventionism": "Neoconservatism",
+    "welfare_capitalism|conservative_liberalism|representative_democracy|civic_nationalism|Interventionism": "Neoconservatism",
+    "welfare_capitalism|paleoconservatism|representative_democracy|civic_nationalism|Interventionism": "Mesoconservatism",
     "welfare_capitalism|liberal_conservatism|representative_democracy|civic_nationalism|Realpolitik": "Rockefeller Republicanism",
+    "social_capitalism|liberal_conservatism|representative_democracy|civic_nationalism|Realpolitik": "Rockefeller Republicanism",
     "welfare_capitalism|conservative_liberalism|representative_democracy|civic_nationalism|Globalism": "Compassionate Conservatism",
 
     /* Marxist ideologies */
     "communization|collective_distribution|social_progressivism|Internationalism": "Italian Left Communism",
+    "state_socialism|collective_distribution|conservatism|partocracy|cultural_nationalism|Isolationism": "Juche",
     "state_socialism|collective_distribution|conservatism|partocracy|cultural_nationalism|Isolationism": "Juche",
     "agrarian_socialism|collective_distribution|social_progressivism|partocracy|cultural_nationalism|Realpolitik": "Mao Zedong Thought",
     "agrarian_socialism|collective_distribution|social_progressivism|partocracy|pan_nationalism|Interventionism": "Maoism–Third Worldism",
@@ -257,13 +287,16 @@ const ideologyGroups = {
         "Futurism", 
         "Nazism", 
         "Neonazism", 
-        "Neo-Libertarian Falangism", 
-        "Strasserism"
+        "Strasserism",
+        "Agrarian Fascism",
+        "Ego-Fascism",
+        "Libertarian Fascism"
     ],
     "Reactionary": [
         "Volkism",
         "Optimateism", 
-        "Integralism"
+        "Integralism",
+        "National Capitalism",
     ],
     "Liberal": [
         "Classical Liberalism", 
@@ -328,7 +361,9 @@ const ideologyGroups = {
         "National Conservatism", 
         "Christian Democracy", 
         "Paternalistic Conservatism", 
-        "Paleoconservatism", 
+        "Buchanan Paleoconservatism",
+        "Hard Right Paleoconservatism",
+        "Old Right Paleoconservatism", 
         "Neoconservatism", 
         "Mesoconservatism",
         "Rockefeller Republicanism",
@@ -364,11 +399,16 @@ const labelColors = {
     "Neonazism": "#2B2B2B",
     "Neo-Libertarian Falangism": "#726e3aff",
     "Strasserism": "#3f1e1eff",
+    "Falangism": "#4a1c1cff",
+    "Agrarian Fascism": "#1f421cff",
+    "Ego-Fascism": "#1e444bff",
+    "Libertarian Fascism": "#7e722eff",
 
     //Reactionary
     "Volkism": "#3b1515ff",
     "Optimateism": "#21273dff",
     "Integralism": "#63a9c5ff",
+    "National Capitalism": "#77632aff",
 
     /* Liberal ideologies */
     "Classical Liberalism": "#71beebff",
@@ -433,7 +473,9 @@ const labelColors = {
     "National Conservatism": "#002366",
     "Christian Democracy": "#3C5A99",
     "Paternalistic Conservatism": "#0047AB",
-    "Paleoconservatism": "#3e216eff",
+    "Buchanan Paleoconservatism": "#442d52ff",
+    "Hard Right Paleoconservatism": "#231431ff",
+    "Old Right Paleoconservatism": "#592572ff",
     "Neoconservatism": "#25257aff",
     "Mesoconservatism": "#3c1e5fff",
     "Rockefeller Republicanism": "#692828ff",
@@ -474,11 +516,16 @@ const descriptions = {
     "Neonazism": "Post-WWII movements seeking to revive Nazi ideology. They typically focus on white supremacy, Holocaust denial, and the preservation of Western culture against perceived threats from immigration, globalization, and minority groups.",
     "Neo-Libertarian Falangism": "An Easter egg. An ideology created by an Albanian on TikTok, combining yellow socialism, anarcho-capitalism, the ideas of Primo de Rivera, and imperialism.",
     "Strasserism": "A radical, 'left-wing' variant of National Socialism. It emphasizes anti-capitalism and worker-led economic structures alongside extreme ethnic nationalism, rejecting the Hitlerite focus on personal dictatorship in favor of a mass-völkisch movement.",
-
+    "Falangism": "A form of National Syndicalism originating in Spain, emphasizing National Catholicism and the unity of classes under a corporate state. It seeks to transcend both capitalism and socialism through a spiritual and national revolution.",
+    "Agrarian Fascism": "An ideology that applies fascist principles to rural society, idealizing the peasantry and small-scale farming as the backbone of the nation. It opposes urban industrialism and seeks a return to an organic, land-based social hierarchy.",
+    "Libertarian Fascism": "Also called Minarcho-Fascism, it is a post-libertarian ideology combining extreme economic liberty with an ultranationalist state. It views individual freedom and national rebirth as interdependent, supporting a minimal but efficient state that governs according to national interest and Social Darwinist principles.",
+    "Ego-Fascism": "A hyperindividualist and ultranationalist ideology inspired by the principle of 'Everything within the state.' It replaces the traditional concept of the state with the 'ego' or a 'union of egoists,' demanding total dominance and the subjugation of others to serve the ego’s self-interest.",
+    
     // reactionary
     "Volkism": "Volkism is a German ethnic-nationalist movement emphasizing \"blood and soil.\" It idealizes a mystical, organic union of a racially pure people (the Volk) rooted in their ancestral land and traditional folklore.",
     "Optimateism": "Authoritarian-right governance by a meritocratic elite. It enforces rigid class hierarchies and aristocratic privileges, prioritizing institutional stability and ancestral traditions over populist or radical democratic reforms.",
     "Integralism": "Integralism is an authoritarian, culturally reactionary, and Distributist ideology. It rejects secularism and Enlightenment values, seeking a society where the state submits to spiritual authority and law is grounded in inherited traditions.",
+    "National Capitalism": "An authoritarian ideology that blends capitalism with nationalism. It argues that market competition should be used to serve the national interest, frequently combining Nazi social principles with economic liberalism.",
 
     /* Liberal ideologies */
     "Classical Liberalism": "The foundational ideology of individual liberty, private property, and free markets. It advocates for a limited \"night-watchman state,\" the rule of law, and civil liberties, viewing government intervention as a threat to freedom.",
@@ -542,7 +589,9 @@ const descriptions = {
     "National Conservatism": "A movement emphasizing national sovereignty, cultural identity, and traditional values. It prioritizes the interests of the nation-state over international cooperation, often advocating for restricted immigration and protectionist economic measures.",
     "Christian Democracy": "Applying Christian social ethics to politics, it balances social conservatism with a social market economy. It emphasizes \"subsidiarity\"—solving problems locally—while maintaining a robust welfare state and democratic institutions.",
     "Paternalistic Conservatism": "Also known as \"One-Nation Conservatism,\" it advocates for state intervention to maintain social stability and assist the poor. It seeks to preserve traditional hierarchies by ensuring the state fulfills its social obligations.",
-    "Paleoconservatism": "A traditionalist ideology focusing on limited government, regional identity, and Western culture. It is characterized by opposition to globalism and foreign intervention, favoring isolationism and protectionist trade policies.",
+    "Buchanan Paleoconservatism": "A variant of paleoconservatism associated with Pat Buchanan. It emphasizes economic protectionism, a non-interventionist foreign policy ('America First'), and a strict defense of traditional social values and national sovereignty.",
+    "Hard Right Paleoconservatism": "An uncompromising form of paleoconservatism that often overlaps with reactionary sentiment. It favors rigid social hierarchies, technocratic or aristocratic governance, and a total rejection of the liberal international order.",
+    "Old Right Paleoconservatism": "Inspired by the pre-WWII American 'Old Right,' this ideology combines anti-interventionism with a distributist or small-scale market approach. It views both big government and big business as threats to local community and liberty.",
     "Neoconservatism": "A philosophy advocating for the active promotion of democracy and liberal values worldwide, often through an interventionist foreign policy. It supports free markets and believes the state must maintain a stable international order.",
     "Mesoconservatism": "A moderate form of conservatism occupying the middle ground between paleoconservatism and neoconservatism. It supports a stable international order and interventionist security while maintaining a strong commitment to domestic traditional values and national identity.",
     "Rockefeller Republicanism": "A moderate to liberal faction of the GOP prevalent in the mid-20th century. It supports a pragmatic blend of fiscal responsibility, social welfare programs, and active internationalism, favoring government-business partnerships over pure laissez-faire economics.",
@@ -587,6 +636,7 @@ const descriptions = {
     "agrarian_socialism": "A movement focusing on the redistribution of land to the peasantry and collective farming. It emphasizes rural communal living and views the farmer, rather than the urban worker, as the revolutionary lead.",
     "feudalism": "A medieval social hierarchy based on land ownership and personal loyalty. Nobility granted land to vassals in exchange for military service, while peasants (serfs) lived on and worked the land for protection.",
     "cameralism": "A form of state management where the economy is organized like a large household, focusing on maximizing the national treasury and resources through expert administrative oversight and centralized coordination.",
+    "free_market_distributism": "A variant of distributism that heavily relies on laissez-faire mechanisms. It argues that in a truly freed market without state privileges, corporate monopolies would naturally collapse, leading to a widespread distribution of small-scale property.",
     // resource_management
     "Voluntaryism": "A system where the state is prohibited from collecting taxes by force. It relies entirely on voluntary taxation, funding public services through consensual donations, lotteries, or service fees rather than mandatory levies.",
     "lvt": "Land Value Tax is a levy on the unimproved value of land, excluding buildings or improvements. It discourages land speculation, promotes efficient usage, and captures socially created value for public benefit.",
@@ -675,6 +725,7 @@ const iconSources = {
     "agrarian_socialism": "https://polcompball.wiki/Agrarian_Socialism",
     "feudalism": "https://en.wikipedia.org/wiki/File:Flag_of_medieval_France.png",
     //"cameralism": "",
+    //"free_market_distributism": "",
                                 //resource_management
     "Voluntaryism": "https://en.wikipedia.org/wiki/File:VforVoluntary_normal.svg",
     "lvt": "https://www.reddit.com/r/georgism/comments/ffs4yt/inspired_by_uwufflytimes_design_on_rvexillology_i/",
