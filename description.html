@@ -6,6 +6,7 @@
     <title>Ideology Description</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
+    <script src="theme.js"></script>
 </head>
 <body>
     <div class="main-container">
@@ -18,7 +19,7 @@
 
         <div class="button-container">
             <button id="icon-source-btn" style="display: none;" onclick="openIconSource()">Original Icon Source</button>
-            <div id="original-work-sign" class="original-work-sign" style="display: none;">Original Work</div>
+            <div id="original-work-sign" class="original-work-sign" style="display: none;">Source not provided</div>
             <button onclick="window.history.back()">Back</button>
         </div>
     </div>
@@ -36,20 +37,26 @@
         const sourceBtn = document.getElementById('icon-source-btn');
         const originalSign = document.getElementById('original-work-sign');
 
-        if (type === 'ideology') {
+        if (!itemId) {
+            titleEl.innerText = "NOT FOUND";
+            descEl.innerText = "No item specified.";
+            iconEl.style.display = 'none';
+            sourceBtn.style.display = 'none';
+            originalSign.style.display = 'none';
+        } else if (type === 'ideology') {
             titleEl.innerText = itemId.toUpperCase();
             iconEl.style.display = 'none';
             sourceBtn.style.display = 'none';
             originalSign.style.display = 'none';
             descEl.innerText = descriptions[itemId] || "Description coming soon!";
-        } 
-        else {
-            const prettyName = (resultsMapping[category] && resultsMapping[category][itemId]) 
-                                ? resultsMapping[category][itemId] 
+        } else {
+            const prettyName = (resultsMapping[category] && resultsMapping[category][itemId])
+                                ? resultsMapping[category][itemId]
                                 : itemId.replace(/_/g, ' ');
-            
+
             titleEl.innerText = prettyName.toUpperCase();
             iconEl.src = `icons/${category}/${itemId}.svg`;
+            iconEl.onerror = () => { iconEl.style.display = 'none'; };
             descEl.innerText = descriptions[itemId] || "Description coming soon!";
 
             if (iconSources[itemId] && iconSources[itemId] !== "") {
