@@ -6,6 +6,7 @@
     <title>NeoValues</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
+    <script src="theme.js"></script>
 </head>
 <body>
     <div class="main-container">
@@ -13,7 +14,7 @@
         <div class="top-section">
             <div class="title-container">
                 <h1>NeoValues</h1>
-                <span class="version-text">v1.4</span>
+                <span class="version-text">v2.0</span>
             </div>
             <div id="results-container"></div>
         </div>
@@ -49,11 +50,16 @@
                 wrapper.style.color = 'inherit';
 
                 const img = document.createElement('img');
-                img.src = `icons/${category}/${resultValue}.svg`; 
+                img.src = `icons/${category}/${resultValue}.svg`;
                 img.className = 'result-icon';
+                img.onerror = () => { img.style.display = 'none'; };
 
                 const name = document.createElement('p');
-                name.innerText = (resultsMapping[category][resultValue] || resultValue).replace(/_/g, ' ');
+                const displayName = (resultsMapping[category] && resultsMapping[category][resultValue])
+                    ? resultsMapping[category][resultValue]
+                    : resultValue.replace(/_/g, ' ');
+
+                name.innerText = displayName;
                 name.className = 'result-text';
 
                 wrapper.appendChild(img);
@@ -62,19 +68,26 @@
             }
         });
 
-        const matchedKey = Object.keys(labelMapping).find(key => {
-            const requiredParts = key.split('|');
-            return requiredParts.every(part => userResults.includes(part));
-        });
+        const matchedKey = Object.keys(labelMapping)
+            .sort((a, b) => b.split('|').length - a.split('|').length)
+            .find(key => {
+                const requiredParts = key.split('|');
+                return requiredParts.every(part => userResults.includes(part));
+            });
 
         const finalLabel = matchedKey ? labelMapping[matchedKey] : "No exact match";
         const labelDiv = document.getElementById('label');
-        labelDiv.innerText = finalLabel;
-        labelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(finalLabel)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">${finalLabel}</a>`;
-        labelDiv.className = "label-bubble"; 
+        labelDiv.className = "label-bubble";
         labelDiv.style.backgroundColor = labelColors[finalLabel] || "#7a7a7a";
+
+        if (matchedKey) {
+            labelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(finalLabel)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">${finalLabel}</a>`;
+        } else {
+            labelDiv.innerText = finalLabel;
+        }
+
         const secondaryLabelDiv = document.getElementById('secondary-label');
-        
+
         const scoredLabels = Object.keys(labelMapping)
             .map(key => {
                 const requiredParts = key.split('|');
@@ -83,8 +96,9 @@
 
                 requiredParts.forEach(reqVal => {
                     const category = Object.keys(resultsMapping).find(cat => resultsMapping[cat][reqVal]);
-                    const userVal = results[category];
+                    if (!category) return;
 
+                    const userVal = results[category];
                     if (!userVal) return;
 
                     const userGroup = Object.keys(subCategories[category] || {}).find(group => 
@@ -96,13 +110,16 @@
 
                     if (userVal === reqVal) {
                         score += 1.0;
-                    } 
-                    else if (userGroup && userGroup === reqGroup) {
+                    } else if (userGroup && userGroup === reqGroup) {
                         score += 0.5;
                     }
 
-                    if (userGroup && reqGroup && incompatibleSubCategories[userGroup]?.includes(reqGroup)) {
-                        penalty = -100;
+                    if (userGroup && reqGroup) {
+                        const userIncompat = incompatibleSubCategories[userGroup] || [];
+                        const reqIncompat = incompatibleSubCategories[reqGroup] || [];
+                        if (userIncompat.includes(reqGroup) || reqIncompat.includes(userGroup)) {
+                            penalty = -100;
+                        }
                     }
                 });
 
@@ -120,14 +137,13 @@
             }
         }
 
-        if (uniqueScoredLabels.length > 0) {
+        if (uniqueScoredLabels.length > 0 && uniqueScoredLabels[0].score > 0) {
             const nextMatch = uniqueScoredLabels[0];
-            secondaryLabelDiv.innerText = `Next closest match: ${nextMatch.label}`;
-            secondaryLabelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(nextMatch.label)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">Next closest match: ${nextMatch.label}</a>`;
-            secondaryLabelDiv.className = "label-bubble"; 
+            secondaryLabelDiv.className = "label-bubble";
             secondaryLabelDiv.style.display = "inline-block";
             secondaryLabelDiv.style.borderColor = labelColors[nextMatch.label] || "#7a7a7a";
             secondaryLabelDiv.style.color = labelColors[nextMatch.label] || "#7a7a7a";
+            secondaryLabelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(nextMatch.label)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">Next closest match: ${nextMatch.label}</a>`;
         } else {
             secondaryLabelDiv.style.display = "none";
         }
