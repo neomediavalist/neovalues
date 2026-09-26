@@ -1,8 +1,8 @@
-let questionsByCategory = {};
-let categoryOrder = ["economics", "resource_management", "culture", "authority", "nation", "foreign"];
-let currentCategoryIndex = 0;
-let currentQuestions = {};
-let results = {};
+let questionsByCategory = {}; 
+let categoryOrder = ["economics", "resource_management", "culture", "authority", "nation", "foreign", "technology"]; 
+let currentCategoryIndex = 0; 
+let currentQuestions = {}; 
+let results = {}; 
 
 fetch('questions_tree.json')
   .then(res => res.json())
@@ -21,11 +21,9 @@ function startCategory(category) {
 function selectOption(nextId) {
   const category = categoryOrder[currentCategoryIndex];
   const node = currentQuestions[nextId];
-
   if (!node.options) {
     results[category] = node.id;
     currentCategoryIndex++;
-
     if (currentCategoryIndex < categoryOrder.length) {
       startCategory(categoryOrder[currentCategoryIndex]);
     } else {
@@ -40,7 +38,6 @@ function selectOption(nextId) {
 function renderNode(node) {
   const questionEl = document.getElementById('question');
   const buttonsDiv = document.getElementById('buttons');
-
   buttonsDiv.innerHTML = '';
   questionEl.innerText = node.text || "";
   if (node.options && node.options.length > 3) {
@@ -48,12 +45,10 @@ function renderNode(node) {
   } else {
     buttonsDiv.classList.remove('multi-column');
   }
-
   node.options.forEach(opt => {
     const btn = document.createElement('button');
     btn.innerText = opt.text;
     if (opt.color) btn.style.backgroundColor = opt.color;
-
     btn.onclick = () => selectOption(opt.next);
     buttonsDiv.appendChild(btn);
   });
