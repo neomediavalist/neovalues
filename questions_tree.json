@@ -404,7 +404,8 @@
       "text": "What forms the primary pillar of the nation?",
       "options": [
         { "text": "Equal citizenship, constitutional laws, and civic duty", "next": "civic_nationalism" },
-        { "text": "A shared cultural, linguistic, or spiritual heritage", "next": "n_heritage_split" }
+        { "text": "A shared cultural, linguistic, or spiritual heritage", "next": "n_heritage_split" },
+        { "text": "In an overarching civilizational sphere, cultural realm, or continental bloc", "next": "civilizationism" }
       ]
     },
     {
@@ -412,7 +413,8 @@
       "text": "Which cultural anchor is most essential to national unity?",
       "options": [
         { "text": "Shared language, traditions, and historical customs", "next": "cultural_nationalism" },
-        { "text": "A shared religious faith and moral doctrine", "next": "religious_nationalism" }
+        { "text": "A shared religious faith and moral doctrine", "next": "religious_nationalism" },
+        { "text": "Living folklore, epic mythology, ancestral spirit, and national awakening", "next": "romantic_nationalism" }
       ]
     },
     {
@@ -448,7 +450,9 @@
     { "id": "racial_nationalism" },
     { "id": "Tribalism" },
     { "id": "egoism" },
-    { "id": "communitarianism" }
+    { "id": "communitarianism" },
+    { "id": "romantic_nationalism" },
+    { "id": "civilizationism" }
   ],
   "foreign": [
     {
@@ -600,5 +604,161 @@
     { "id": "techno_fatalism" },
     { "id": "transhumanism" },
     { "id": "posthumanism" }
+  ],
+  "social_control": [
+    {
+      "id": "sc1",
+      "text": "What is the legitimate scope of state authority over an individual's private conduct, personal habits, and lifestyle?",
+      "options": [
+        {
+          "text": "The state must not infringe on individual autonomy; private life and personal choices belong entirely to the individual.",
+          "next": "sc_liberty"
+        },
+        {
+          "text": "The state has a duty to guide, regulate, or direct personal behavior for public well-being, morality, or social order.",
+          "next": "sc_intervention"
+        }
+      ]
+    },
+    {
+      "id": "sc_liberty",
+      "text": "Where should the primary institutional defense of individual freedom reside?",
+      "options": [
+        {
+          "text": "In strict procedural limits: safeguarding due process, privacy, free speech, and restraining police and surveillance powers.",
+          "next": "civil_libertarianism"
+        },
+        {
+          "text": "In complete lifestyle immunity: the state has zero moral jurisdiction over consensual adult choices, private habits, or vice.",
+          "next": "permissivism"
+        }
+      ]
+    },
+    {
+      "id": "sc_intervention",
+      "text": "What is the primary objective of state intervention into personal conduct?",
+      "options": [
+        {
+          "text": "Protecting public health, safety, and well-being through regulation and vice deterrents without criminalizing private life.",
+          "next": "civic_paternalism"
+        },
+        {
+          "text": "Defending public decency and moral cohesion by outlawing obscenity, vice, and behaviors that degrade social values.",
+          "next": "legal_moralism"
+        },
+        {
+          "text": "Enforcing public security, behavioral conformity, or systematic collective discipline.",
+          "next": "sc_order"
+        }
+      ]
+    },
+    {
+      "id": "sc_order",
+      "text": "Through what mechanism should social order and collective discipline be maintained?",
+      "options": [
+        {
+          "text": "Preemptive monitoring, intelligence gathering, and mass surveillance to prevent crime and maintain security.",
+          "next": "securitism"
+        },
+        {
+          "text": "Correcting personal habits, enforcing public etiquette, and penalizing antisocial behavior to ensure social cohesion.",
+          "next": "disciplinarianism"
+        },
+        {
+          "text": "Subordinating personal life and domestic priorities directly to the collective mission of the state.",
+          "next": "sc_regime"
+        }
+      ]
+    },
+    {
+      "id": "sc_regime",
+      "text": "How absolute should the subordination of civilian life to the state be?",
+      "options": [
+        {
+          "text": "Mobilizing daily life, youth upbringing, and family responsibilities through mandatory civic service and state duty.",
+          "next": "regimentalism"
+        },
+        {
+          "text": "Eradicating the private sphere entirely: reproduction, thought, and conscience are wholly owned by the collective.",
+          "next": "totalism"
+        }
+      ]
+    },
+    { "id": "civil_libertarianism" },
+    { "id": "permissivism" },
+    { "id": "civic_paternalism" },
+    { "id": "legal_moralism" },
+    { "id": "securitism" },
+    { "id": "disciplinarianism" },
+    { "id": "regimentalism" },
+    { "id": "totalism" }
+  ],
+  "territorial_organization": [
+    {
+      "id": "to1",
+      "text": "How should sovereign political authority be distributed across territory and administrative levels?",
+      "options": [
+        {
+          "text": "Power must belong primarily to local communities or sovereign states via voluntary, bottom-up association.",
+          "next": "to_decentralized"
+        },
+        {
+          "text": "Power should be shared or balanced between regional self-rule and a unifying central framework.",
+          "next": "to_balanced"
+        },
+        {
+          "text": "Sovereignty must be undivided and concentrated within a unitary national state.",
+          "next": "to_unitary"
+        }
+      ]
+    },
+    {
+      "id": "to_decentralized",
+      "text": "At what scale should this decentralized sovereignty reside?",
+      "options": [
+        {
+          "text": "Directly in self-governing local communes and city assemblies, federating horizontally through recallable delegates.",
+          "next": "municipalism"
+        },
+        {
+          "text": "In sovereign cantons, states, or republics joined by treaty with unilateral veto and secession rights.",
+          "next": "confederalism"
+        }
+      ]
+    },
+    {
+      "id": "to_balanced",
+      "text": "How should regional autonomy and national cohesion be constitutionally organized?",
+      "options": [
+        {
+          "text": "Dual sovereignty: dividing jurisdictions between autonomous state/provincial governments and a national federation.",
+          "next": "federalism"
+        },
+        {
+          "text": "Devolution: maintaining a unitary state while granting substantial legislative autonomy to distinct historical regions.",
+          "next": "regionalism"
+        }
+      ]
+    },
+    {
+      "id": "to_unitary",
+      "text": "How thoroughly should the national capital control local administration?",
+      "options": [
+        {
+          "text": "Through a standard unitary republic where local administrative departments enforce national legislation uniformly.",
+          "next": "centralism"
+        },
+        {
+          "text": "Total territorial eradication of regional exceptions, local charters, and autonomy, managing everything directly from the center.",
+          "next": "hypercentralism"
+        }
+      ]
+    },
+    { "id": "municipalism" },
+    { "id": "confederalism" },
+    { "id": "federalism" },
+    { "id": "regionalism" },
+    { "id": "centralism" },
+    { "id": "hypercentralism" }
   ]
 }
