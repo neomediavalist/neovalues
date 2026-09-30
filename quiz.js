@@ -1,5 +1,5 @@
 let questionsByCategory = {}; 
-let categoryOrder = ["economics", "resource_management", "culture", "authority", "nation", "foreign", "technology"]; 
+let categoryOrder = ["economics", "resource_management", "culture", "authority", "nation", "foreign", "technology", "social_control", "territorial_organization"]; 
 let currentCategoryIndex = 0; 
 let currentQuestions = {}; 
 let results = {}; 
