@@ -120,7 +120,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 h1 {
@@ -279,11 +279,11 @@ button:hover {
 }
 
 #results-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 140px);
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 28px 20px;
-    margin-top: 20px;
+    gap: 24px 30px;
+    margin-top: 10px;
     margin-bottom: 25px;
     width: 100%;
     box-sizing: border-box;
