@@ -7,22 +7,24 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
     <script src="theme.js"></script>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
 </head>
 <body>
     <div class="main-container">
-        <h1>Contact & Feedback</h1>
+        <h1 data-i18n="contactTitle">Contact & Feedback</h1>
         
         <div class="description-box">
-            <p>
+            <p data-i18n="contactIntro">
                 If you have encountered any issues with the test, have suggestions for new ideologies, or would like to report a bug, please feel free to reach out.
             </p>
-            <p>
+            <p data-i18n-html="contactEmailLabel">
                 <strong>Email:</strong> <a href="mailto:neomediavalist@pm.me">neomediavalist@pm.me</a>
             </p>
         </div>
 
         <div class="button-container">
-            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="location.href='index.html'" data-i18n="back">Back</button>
         </div>
     </div>
 </body>
