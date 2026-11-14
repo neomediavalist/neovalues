@@ -7,59 +7,79 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
     <script src="theme.js"></script>
+    <script src="translations.js"></script>
+    <script src="data.js"></script>
+    <script src="i18n.js"></script>
 </head>
 <body>
     <div class="main-container">
-        <h1>All Values</h1>
-        <p class="intro-text">Below is a collection of all values included in NeoValues. Click on any icon to view its detailed description and original source.</p>
+        <h1 data-i18n="allValuesTitle">All Values</h1>
+        <p class="intro-text" data-i18n="allValuesIntro">
+            Below is a collection of all values included in NeoValues. Click on any icon to view its detailed description and original source.
+        </p>
+
         <div id="values-container"></div>
+
         <div id="buttons" style="margin-top: 40px; padding-bottom: 60px;">
-            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="location.href='index.html'" data-i18n="back">Back</button>
         </div>
     </div>
 
-    <script src="data.js"></script>
-
     <script>
-        const container = document.getElementById('values-container');
+        function renderValues() {
+            const container = document.getElementById('values-container');
+            if (!container) return;
+            container.innerHTML = '';
 
-        for (const category in resultsMapping) {
-            const section = document.createElement('div');
-            section.className = 'category-section';
+            categories.forEach(category => {
+                const valueIds = categoryValues[category];
+                if (!valueIds || valueIds.length === 0) return;
 
-            const title = document.createElement('h2');
-            title.className = 'category-title';
-            title.innerText = categoryTitles[category] || category;
-            
-            section.appendChild(title);
+                const section = document.createElement('div');
+                section.className = 'category-section';
 
-            const flexContainer = document.createElement('div');
-            flexContainer.className = 'values-flex-container';
+                const title = document.createElement('h2');
+                title.className = 'category-title';
+                title.innerText = I18n.getCategoryTitle(category);
+                section.appendChild(title);
 
-            for (const id in resultsMapping[category]) {
-                const wrapper = document.createElement('a');
-                wrapper.className = 'result-item'; 
-                wrapper.href = `description.html?id=${id}&cat=${category}`;
-                wrapper.style.textDecoration = 'none';
-                wrapper.style.color = 'inherit';
+                const flexContainer = document.createElement('div');
+                flexContainer.className = 'values-flex-container';
 
-                const img = document.createElement('img');
-                img.src = `icons/${category}/${id}.svg`;
-                img.className = 'result-icon'; 
-                img.alt = resultsMapping[category][id];
+                valueIds.forEach(id => {
+                    const wrapper = document.createElement('a');
+                    wrapper.className = 'result-item';
+                    wrapper.href = `description.html?id=${id}&cat=${category}`;
+                    wrapper.style.textDecoration = 'none';
+                    wrapper.style.color = 'inherit';
 
-                const name = document.createElement('p');
-                name.innerText = resultsMapping[category][id];
-                name.className = 'result-text'; 
+                    const img = document.createElement('img');
+                    img.src = `icons/${category}/${id}.svg`;
+                    img.className = 'result-icon';
+                    img.alt = I18n.getValueName(category, id);
+                    img.onerror = () => { img.style.display = 'none'; };
 
-                wrapper.appendChild(img);
-                wrapper.appendChild(name);
-                flexContainer.appendChild(wrapper);
-            }
+                    const name = document.createElement('p');
+                    name.innerText = I18n.getValueName(category, id);
+                    name.className = 'result-text';
 
-            section.appendChild(flexContainer);
-            container.appendChild(section);
+                    wrapper.appendChild(img);
+                    wrapper.appendChild(name);
+                    flexContainer.appendChild(wrapper);
+                });
+
+                section.appendChild(flexContainer);
+                container.appendChild(section);
+            });
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderValues();
+        });
+
+        window.addEventListener('languageChanged', () => {
+            renderValues();
+        });
     </script>
 </body>
 </html>
