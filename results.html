@@ -7,153 +7,190 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
     <script src="theme.js"></script>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
 </head>
 <body>
     <div class="main-container">
-    <div class="main-results-wrapper">
-        <div class="top-section">
-            <div class="title-container">
-                <h1>NeoValues</h1>
-                <span class="version-text">v3.5</span>
+        <div class="main-results-wrapper">
+            <div class="top-section">
+                <div class="title-container">
+                    <h1>NeoValues</h1>
+                    <span class="version-text">v4.0</span>
+                </div>
+                <div id="results-container"></div>
             </div>
-            <div id="results-container"></div>
-        </div>
-        
-        <div class="bottom-section">
-            <div id="label"></div>
             
-            <div id="secondary-label"></div>
-
-            <p class="intro-text results-instruction">
-                Click on any icon or label to view its description and original source.
-            </p>
-            
-            <div id="buttons" style="margin-top: 30px;">
-                <button onclick="location.href='index.html'">Back to menu</button>
+            <div class="bottom-section">
+                <div id="label"></div>
+                <div id="secondary-label"></div>
+                <p class="intro-text results-instruction" data-i18n="resultsInstruction">
+                    Click on any icon or label to view its description and original source.
+                </p>
+                
+                <div id="buttons" style="margin-top: 30px;">
+                    <button onclick="location.href='index.html'" data-i18n="backToMenu">Back to menu</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="data.js"></script>
     <script>
-        const results = JSON.parse(localStorage.getItem('quizResults') || '{}');
-        const container = document.getElementById('results-container');
-        const userResults = Object.values(results);
+        function renderResults() {
+            const results = JSON.parse(localStorage.getItem('quizResults') || '{}');
+            const container = document.getElementById('results-container');
+            if (!container) return;
 
-        categories.forEach(category => {
-            const resultValue = results[category];
-            if (resultValue) {
-                const wrapper = document.createElement('a');
-                wrapper.className = 'result-item';
-                wrapper.href = `description.html?id=${resultValue}&cat=${category}`;
-                wrapper.style.textDecoration = 'none';
-                wrapper.style.color = 'inherit';
+            container.innerHTML = '';
 
-                const img = document.createElement('img');
-                img.src = `icons/${category}/${resultValue}.svg`;
-                img.className = 'result-icon';
-                img.onerror = () => { img.style.display = 'none'; };
+            categories.forEach(category => {
+                const resultValue = results[category];
+                if (resultValue) {
+                    const wrapper = document.createElement('a');
+                    wrapper.className = 'result-item';
+                    wrapper.href = `description.html?id=${resultValue}&cat=${category}`;
+                    wrapper.style.textDecoration = 'none';
+                    wrapper.style.color = 'inherit';
 
-                const name = document.createElement('p');
-                const displayName = (resultsMapping[category] && resultsMapping[category][resultValue])
-                    ? resultsMapping[category][resultValue]
-                    : resultValue.replace(/_/g, ' ');
+                    const img = document.createElement('img');
+                    img.src = `icons/${category}/${resultValue}.svg`;
+                    img.className = 'result-icon';
+                    img.onerror = () => { img.style.display = 'none'; };
 
-                name.innerText = displayName;
-                name.className = 'result-text';
+                    const name = document.createElement('p');
+                    name.innerText = I18n.getValueName(category, resultValue);
+                    name.className = 'result-text';
 
-                wrapper.appendChild(img);
-                wrapper.appendChild(name);
-                container.appendChild(wrapper);
-            }
-        });
-
-        const matchedKey = Object.keys(labelMapping)
-            .sort((a, b) => b.split('|').length - a.split('|').length)
-            .find(key => {
-                const requiredParts = key.split('|');
-                return requiredParts.every(part => userResults.includes(part));
+                    wrapper.appendChild(img);
+                    wrapper.appendChild(name);
+                    container.appendChild(wrapper);
+                }
             });
 
-        const finalLabel = matchedKey ? labelMapping[matchedKey] : "No exact match";
-        const labelDiv = document.getElementById('label');
-        labelDiv.className = "label-bubble";
-        labelDiv.style.backgroundColor = labelColors[finalLabel] || "#7a7a7a";
+            // --- 1. EXACT MATCHING ---
+            const exactMatches = [];
+            for (const [ideologyName, requirements] of Object.entries(ideologies)) {
+                const requiredCategories = Object.keys(requirements);
+                const isFullMatch = requiredCategories.every(category => {
+                    const allowed = Array.isArray(requirements[category])
+                        ? requirements[category]
+                        : [requirements[category]];
+                    return allowed.includes(results[category]);
+                });
 
-        if (matchedKey) {
-            labelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(finalLabel)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">${finalLabel}</a>`;
-        } else {
-            labelDiv.innerText = finalLabel;
-        }
+                if (isFullMatch) {
+                    exactMatches.push({
+                        name: ideologyName,
+                        totalRequired: requiredCategories.length
+                    });
+                }
+            }
 
-        const secondaryLabelDiv = document.getElementById('secondary-label');
-        const scoredLabels = Object.keys(labelMapping)
-            .map(key => {
-                const requiredParts = key.split('|');
+            exactMatches.sort((a, b) => b.totalRequired - a.totalRequired);
+            const finalLabel = exactMatches.length > 0 ? exactMatches[0].name : "No exact match";
+
+            const labelDiv = document.getElementById('label');
+            labelDiv.className = "label-bubble";
+            labelDiv.style.backgroundColor = labelColors[finalLabel] || "#7a7a7a";
+            if (finalLabel !== "No exact match") {
+                labelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(finalLabel)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">${I18n.getIdeologyName(finalLabel)}</a>`;
+            } else {
+                labelDiv.innerText = I18n.t("noExactMatch");
+            }
+
+            // --- 2. NEXT CLOSEST MATCH ---
+            const scoredLabels = Object.entries(ideologies).map(([name, requirements]) => {
+                const requiredCategories = Object.keys(requirements);
+                const totalRequired = requiredCategories.length;
                 let score = 0;
                 let penalty = 0;
                 let identicalCount = 0;
                 let broaderCount = 0;
 
-                requiredParts.forEach(reqVal => {
-                    const category = Object.keys(resultsMapping).find(cat => resultsMapping[cat][reqVal]);
-                    if (!category) return;
+                requiredCategories.forEach(category => {
+                    const allowed = Array.isArray(requirements[category])
+                        ? requirements[category]
+                        : [requirements[category]];
                     const userVal = results[category];
                     if (!userVal) return;
-                    const userGroup = Object.keys(subCategories[category] || {}).find(group => 
-                         subCategories[category][group].includes(userVal)
-                    );
-                    const reqGroup = Object.keys(subCategories[category] || {}).find(group => 
-                         subCategories[category][group].includes(reqVal)
-                    );
-                    if (userVal === reqVal) {
+
+                    if (allowed.includes(userVal)) {
                         score += 1.0;
                         identicalCount++;
-                    } else if (userGroup && userGroup === reqGroup) {
-                        score += 0.5;
+                        return;
+                    }
+
+                    const userGroup = Object.keys(subCategories[category] || {}).find(group =>
+                        subCategories[category][group].includes(userVal)
+                    );
+                    if (!userGroup) return;
+
+                    const sharesSubCategory = allowed.some(val => {
+                        const valGroup = Object.keys(subCategories[category] || {}).find(group =>
+                            subCategories[category][group].includes(val)
+                        );
+                        return valGroup === userGroup;
+                    });
+
+                    if (sharesSubCategory) {
+                        score += 0.35;
                         broaderCount++;
                     }
-                    if (userGroup && reqGroup) {
+
+                    const allowedGroups = allowed.map(val =>
+                        Object.keys(subCategories[category] || {}).find(group =>
+                            subCategories[category][group].includes(val)
+                        )
+                    ).filter(Boolean);
+
+                    const isAllIncompatible = allowedGroups.length > 0 && allowedGroups.every(reqGroup => {
                         const userIncompat = incompatibleSubCategories[userGroup] || [];
                         const reqIncompat = incompatibleSubCategories[reqGroup] || [];
-                        if (userIncompat.includes(reqGroup) || reqIncompat.includes(userGroup)) {
-                            penalty = -100;
-                        }
+                        return userIncompat.includes(reqGroup) || reqIncompat.includes(userGroup);
+                    });
+
+                    if (isAllIncompatible) {
+                        penalty = -100;
                     }
                 });
-                return { 
-                    key, 
-                    label: labelMapping[key], 
+
+                const matchPercentage = totalRequired > 0 && penalty === 0
+                    ? (score / totalRequired) * 100
+                    : -100;
+
+                return {
+                    label: name,
                     score: score + penalty,
+                    matchPercentage: Math.round(matchPercentage),
                     identicalCount,
                     broaderCount,
-                    totalRequired: requiredParts.length
+                    totalRequired
                 };
             })
-            .sort((a, b) => b.score - a.score)
-            .filter(item => item.label !== finalLabel);
+            .filter(item => item.label !== finalLabel && item.score > 0)
+            .sort((a, b) => {
+                if (b.matchPercentage !== a.matchPercentage) return b.matchPercentage - a.matchPercentage;
+                if (b.identicalCount !== a.identicalCount) return b.identicalCount - a.identicalCount;
+                return b.totalRequired - a.totalRequired;
+            });
 
-        const uniqueScoredLabels = [];
-        const seenLabels = new Set();
-        for (const item of scoredLabels) {
-            if (!seenLabels.has(item.label)) {
-                seenLabels.add(item.label);
-                uniqueScoredLabels.push(item);
+            const secondaryLabelDiv = document.getElementById('secondary-label');
+            secondaryLabelDiv.innerHTML = '';
+            secondaryLabelDiv.style.display = 'none';
+
+            if (scoredLabels.length > 0 && scoredLabels[0].matchPercentage > 0) {
+                const nextMatch = scoredLabels[0];
+                secondaryLabelDiv.className = "label-bubble";
+                secondaryLabelDiv.style.display = "inline-block";
+                secondaryLabelDiv.style.borderColor = labelColors[nextMatch.label] || "#7a7a7a";
+                secondaryLabelDiv.style.color = labelColors[nextMatch.label] || "#7a7a7a";
+                secondaryLabelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(nextMatch.label)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">${I18n.t("nextClosestMatch")}: ${I18n.getIdeologyName(nextMatch.label)} (${nextMatch.identicalCount}/${nextMatch.totalRequired})</a>`;
             }
         }
 
-        if (uniqueScoredLabels.length > 0 && uniqueScoredLabels[0].score > 0) {
-            const nextMatch = uniqueScoredLabels[0];
-            secondaryLabelDiv.className = "label-bubble";
-            secondaryLabelDiv.style.display = "inline-block";
-            secondaryLabelDiv.style.borderColor = labelColors[nextMatch.label] || "#7a7a7a";
-            secondaryLabelDiv.style.color = labelColors[nextMatch.label] || "#7a7a7a";
-
-            secondaryLabelDiv.innerHTML = `<a href="description.html?id=${encodeURIComponent(nextMatch.label)}&type=ideology" style="color: inherit; text-decoration: none; display: block;">Next closest match: ${nextMatch.label} (${nextMatch.identicalCount}/${nextMatch.totalRequired})</a>`;
-        } else {
-            secondaryLabelDiv.style.display = "none";
-        }
+        document.addEventListener('DOMContentLoaded', renderResults);
+        window.addEventListener('languageChanged', renderResults);
     </script>
-    </div>
 </body>
 </html>
