@@ -7,53 +7,59 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
     <script src="theme.js"></script>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
 </head>
 <body>
     <div class="main-container">
-        <h1>All Ideologies</h1>
-        <p class="intro-text">Below is a collection of all ideologies included in NeoValues, divided by their political category.</p>
+        <h1 data-i18n="allIdeologiesTitle">All Ideologies</h1>
+        <p class="intro-text" data-i18n="allIdeologiesIntro">Below is a collection of all ideologies included in NeoValues, divided by their political category.</p>
         
         <div id="ideologies-container"></div>
         
         <div id="buttons" style="margin-top: 40px; padding-bottom: 60px;">
-            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="location.href='index.html'" data-i18n="back">Back</button>
         </div>
     </div>
 
     <script src="data.js"></script>
     <script>
-        const container = document.getElementById('ideologies-container');
-
-        for (const groupName in ideologyGroups) {
-            const section = document.createElement('div');
-            section.className = 'category-section';
-
-            const title = document.createElement('h2');
-            title.className = 'category-title';
-            title.innerText = groupName;
-            section.appendChild(title);
-
-            const flexContainer = document.createElement('div');
-            flexContainer.className = 'values-flex-container';
-
-            ideologyGroups[groupName].forEach(name => {
-                const bubble = document.createElement('a');
-                bubble.className = 'label-bubble';
-                bubble.href = `description.html?id=${encodeURIComponent(name)}&type=ideology`;
-                bubble.innerText = name;
+        function renderIdeologies() {
+            const container = document.getElementById('ideologies-container');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            for (const groupName in ideologyGroups) {
+                const section = document.createElement('div');
+                section.className = 'category-section';
+                const title = document.createElement('h2');
+                title.className = 'category-title';
+                title.innerText = I18n.getIdeologyGroupTitle(groupName);
+                section.appendChild(title);
                 
-                bubble.style.backgroundColor = labelColors[name] || "#7a7a7a";
-                bubble.style.textDecoration = 'none';
-                bubble.style.fontSize = "1.1rem";
-                bubble.style.margin = "8px";
-                bubble.style.padding = "10px 25px";
-
-                flexContainer.appendChild(bubble);
-            });
-
-            section.appendChild(flexContainer);
-            container.appendChild(section);
+                const flexContainer = document.createElement('div');
+                flexContainer.className = 'values-flex-container';
+                
+                ideologyGroups[groupName].forEach(name => {
+                    const bubble = document.createElement('a');
+                    bubble.className = 'label-bubble';
+                    bubble.href = `description.html?id=${encodeURIComponent(name)}&type=ideology`;
+                    bubble.innerText = I18n.getIdeologyName(name);
+                    bubble.style.backgroundColor = labelColors[name] || "#7a7a7a";
+                    bubble.style.textDecoration = 'none';
+                    bubble.style.fontSize = "1.1rem";
+                    bubble.style.margin = "8px";
+                    bubble.style.padding = "10px 25px";
+                    flexContainer.appendChild(bubble);
+                });
+                
+                section.appendChild(flexContainer);
+                container.appendChild(section);
+            }
         }
+
+        document.addEventListener('DOMContentLoaded', renderIdeologies);
+        window.addEventListener('languageChanged', renderIdeologies);
     </script>
 </body>
 </html>
