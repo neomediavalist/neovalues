@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@300;500;700&display=swap');
 
 :root {
     --bg-color: #18181b;
@@ -97,7 +97,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', 'Nunito', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
     display: flex;
@@ -385,6 +385,18 @@ button:hover {
     transition: var(--smooth-transition);
 }
 
+.original-work-sign.ai-generated-sign {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    cursor: default;
+    text-decoration: none;
+}
+
+.original-work-sign.ai-generated-sign:hover {
+    color: var(--text-dim);
+    text-decoration: none;
+}
+
 a:hover {
     color: var(--accent-primary);
     text-decoration: underline;
@@ -424,6 +436,61 @@ a:hover {
 .footer-icon-link:hover .footer-icon {
     opacity: 1;
     transform: scale(1.12);
+}
+
+.lang-switcher {
+    position: fixed;
+    top: 16px;
+    left: 18px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+}
+
+.lang-btn {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    opacity: 0.75;
+    transition: var(--smooth-transition);
+}
+
+.lang-btn:hover {
+    background: transparent;
+    box-shadow: none;
+    transform: scale(1.12);
+    opacity: 1;
+}
+
+.lang-btn.active,
+.lang-btn.active:hover {
+    background: transparent;
+    box-shadow: none;
+    transform: scale(1.28);
+    opacity: 1;
+}
+
+.lang-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 /* Mobile */
