@@ -3,75 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ideology Description</title>
+    <title>NeoValues - Description</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
     <script src="theme.js"></script>
+    <script src="translations.js"></script>
+    <script src="data.js"></script>
+    <script src="i18n.js"></script>
 </head>
 <body>
+    <button class="theme-toggle-corner" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+        <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+            <path d="M0,0 L250,250 L250,0 Z"></path>
+            <g class="icon-sun" transform="translate(142, 52) scale(2.2)">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </g>
+            <g class="icon-moon" transform="translate(142, 52) scale(2.2)">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </g>
+        </svg>
+    </button>
+
     <div class="main-container">
-        <img id="ideology-icon" src="" alt="" class="desc-icon">
-        <h1 id="ideology-title">Loading...</h1>
-
-        <div class="description-box">
-            <p id="ideology-description"></p>
-        </div>
-
+        <div id="content-wrapper" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
+        
         <div class="button-container">
-            <button id="icon-source-btn" style="display: none;" onclick="openIconSource()">Original Icon Source</button>
-            <div id="original-work-sign" class="original-work-sign" style="display: none;">Source not provided</div>
-            <button onclick="window.history.back()">Back</button>
+            <button id="icon-source-btn" style="display: none;" onclick="openIconSource()" data-i18n="iconSource"></button>
+            <div id="original-work-sign" class="original-work-sign" style="display: none;" data-i18n="sourceNotProvided"></div>
+            <button onclick="window.history.back()" data-i18n="back">Back</button>
         </div>
     </div>
 
-    <script src="data.js"></script>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const itemId = urlParams.get('id');
-        const category = urlParams.get('cat');
-        const type = urlParams.get('type');
+        let currentIconSourceUrl = null;
 
-        const titleEl = document.getElementById('ideology-title');
-        const descEl = document.getElementById('ideology-description');
-        const iconEl = document.getElementById('ideology-icon');
-        const sourceBtn = document.getElementById('icon-source-btn');
-        const originalSign = document.getElementById('original-work-sign');
-
-        if (!itemId) {
-            titleEl.innerText = "NOT FOUND";
-            descEl.innerText = "No item specified.";
-            iconEl.style.display = 'none';
-            sourceBtn.style.display = 'none';
-            originalSign.style.display = 'none';
-        } else if (type === 'ideology') {
-            titleEl.innerText = itemId.toUpperCase();
-            iconEl.style.display = 'none';
-            sourceBtn.style.display = 'none';
-            originalSign.style.display = 'none';
-            descEl.innerText = descriptions[itemId] || "Description coming soon!";
-        } else {
-            const prettyName = (resultsMapping[category] && resultsMapping[category][itemId])
-                                ? resultsMapping[category][itemId]
-                                : itemId.replace(/_/g, ' ');
-
-            titleEl.innerText = prettyName.toUpperCase();
-            iconEl.src = `icons/${category}/${itemId}.svg`;
-            iconEl.onerror = () => { iconEl.style.display = 'none'; };
-            descEl.innerText = descriptions[itemId] || "Description coming soon!";
-
-            if (iconSources[itemId] && iconSources[itemId] !== "") {
-                sourceBtn.style.display = 'block';
-                originalSign.style.display = 'none';
-            } else {
-                sourceBtn.style.display = 'none';
-                originalSign.style.display = 'block';
+        function openIconSource() {
+            if (currentIconSourceUrl) {
+                window.open(currentIconSourceUrl, '_blank', 'noopener,noreferrer');
             }
         }
 
-        function openIconSource() {
-            const sourceUrl = iconSources[itemId];
-            if (sourceUrl) window.open(sourceUrl, '_blank');
+        function renderDescription() {
+            const container = document.getElementById('content-wrapper');
+            const sourceBtn = document.getElementById('icon-source-btn');
+            const noSourceSign = document.getElementById('original-work-sign');
+            if (!container) return;
+
+            container.innerHTML = '';
+            currentIconSourceUrl = null;
+            if (sourceBtn) sourceBtn.style.display = 'none';
+            if (noSourceSign) noSourceSign.style.display = 'none';
+
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            const type = params.get('type');
+            let cat = params.get('cat');
+
+            if (!id) {
+                container.innerHTML = '<p class="description-box">No item specified.</p>';
+                return;
+            }
+
+            if (type === 'ideology') {
+                const header = document.createElement('h1');
+                header.id = 'ideology-title';
+                header.innerText = I18n.getIdeologyName(id);
+                container.appendChild(header);
+
+                let foundGroup = null;
+                for (const [group, list] of Object.entries(ideologyGroups)) {
+                    if (list.includes(id)) {
+                        foundGroup = group;
+                        break;
+                    }
+                }
+                if (foundGroup) {
+                    const badge = document.createElement('div');
+                    badge.className = 'label-bubble';
+                    badge.style.backgroundColor = labelColors[id] || "#7a7a7a";
+                    badge.style.fontSize = "1rem";
+                    badge.style.padding = "6px 20px";
+                    badge.innerText = I18n.getIdeologyGroupTitle(foundGroup);
+                    container.appendChild(badge);
+                }
+
+                const descBox = document.createElement('div');
+                descBox.className = 'description-box';
+                const p = document.createElement('p');
+                p.innerText = I18n.getDescription(id);
+                descBox.appendChild(p);
+                container.appendChild(descBox);
+
+                const reqs = ideologies[id];
+                if (reqs && Object.keys(reqs).length > 0) {
+                    const reqBox = document.createElement('div');
+                    reqBox.className = 'description-box';
+                    reqBox.style.marginTop = '20px';
+
+                    const reqTitle = document.createElement('h3');
+                    reqTitle.style.marginTop = '0';
+                    reqTitle.innerText = I18n.currentLanguage === 'ru' ? 'Необходимые ценности:' : 'Required Values:';
+                    reqBox.appendChild(reqTitle);
+
+                    const list = document.createElement('ul');
+                    list.style.paddingLeft = '20px';
+                    list.style.lineHeight = '1.8';
+
+                    for (const [category, values] of Object.entries(reqs)) {
+                        const li = document.createElement('li');
+                        const catTitle = I18n.getCategoryTitle(category);
+                        const valList = Array.isArray(values) ? values : [values];
+                        const valNames = valList.map(v => 
+                            `<a href="description.html?id=${v}&cat=${category}" style="color: var(--accent-primary); font-weight: 600;">${I18n.getValueName(category, v)}</a>`
+                        ).join(', ');
+
+                        li.innerHTML = `<strong>${catTitle}:</strong> ${valNames}`;
+                        list.appendChild(li);
+                    }
+
+                    reqBox.appendChild(list);
+                    container.appendChild(reqBox);
+                }
+            } else {
+                if (!cat) {
+                    for (const [c, valIds] of Object.entries(categoryValues)) {
+                        if (valIds.includes(id)) {
+                            cat = c;
+                            break;
+                        }
+                    }
+                }
+
+                const title = document.createElement('h1');
+                title.innerText = I18n.getValueName(cat, id);
+                container.appendChild(title);
+
+                if (cat) {
+                    const catBadge = document.createElement('p');
+                    catBadge.className = 'version-text';
+                    catBadge.style.fontSize = '1.1rem';
+                    catBadge.style.marginBottom = '20px';
+                    catBadge.innerText = I18n.getCategoryTitle(cat);
+                    container.appendChild(catBadge);
+
+                    const iconImg = document.createElement('img');
+                    iconImg.src = `icons/${cat}/${id}.svg`;
+                    iconImg.className = 'desc-icon';
+                    iconImg.alt = id;
+                    iconImg.onerror = () => { iconImg.style.display = 'none'; };
+                    container.appendChild(iconImg);
+                }
+
+                const descBox = document.createElement('div');
+                descBox.className = 'description-box';
+                const p = document.createElement('p');
+                p.innerText = I18n.getDescription(id);
+                descBox.appendChild(p);
+                container.appendChild(descBox);
+
+                const rawSource = (typeof iconSources !== 'undefined' && iconSources[id]) ? iconSources[id].trim() : "";
+                const isAiGenerated = rawSource.toLowerCase() === "ai" || (typeof aiGeneratedIcons !== 'undefined' && aiGeneratedIcons.includes(id));
+
+                if (isAiGenerated && noSourceSign) {
+                    noSourceSign.setAttribute('data-i18n', 'aiGenerated');
+                    noSourceSign.innerText = I18n.t("aiGenerated");
+                    noSourceSign.style.display = 'block';
+                } else if (rawSource && sourceBtn) {
+                    currentIconSourceUrl = rawSource;
+                    sourceBtn.innerText = I18n.t("iconSource");
+                    sourceBtn.style.display = 'inline-block';
+                } else if (noSourceSign) {
+                    noSourceSign.setAttribute('data-i18n', 'sourceNotProvided');
+                    noSourceSign.innerText = I18n.t("sourceNotProvided");
+                    noSourceSign.style.display = 'block';
+                }
+            }
         }
+
+        document.addEventListener('DOMContentLoaded', renderDescription);
+        window.addEventListener('languageChanged', renderDescription);
     </script>
 </body>
 </html>
