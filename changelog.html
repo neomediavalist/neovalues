@@ -7,10 +7,34 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
     <script src="theme.js"></script>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
 </head>
 <body>
     <div class="main-container">
-        <h1>Changelog</h1>
+        <h1 data-i18n="changelogTitle">Changelog</h1>
+
+        <div class="description-box">
+            <h3>4.0 - 14.11.2026</h3>
+            <ul>
+                <li>Added localisation for Ukrainian and Russian</li>
+                <li>Overhauled the ideology data structure and matching logic, replacing static combination strings with a flexible schema.</li>
+                <li>Removed the following ideologies: Bordigism, Reform Gaullism, Maoism Third Worldism, Buchanan Paleoconservatism, Hard Right Paleoconservatism, Old Right Paleoconservatism, Centrist Kemalism, Conservative Kemalism, Liberal Kemalism, Socialist Kemalism, Marxism-Kemalism, Ethnonationalist Kemalism, Pekerism, Ecevitism, Neo-Nazism, Liberal Atlanticism, Conservative Atlanticism, Neoconservative Atlanticism, Labour Atlanticism, Libertarian Municipalism, Paternalistic Conservatism, Cybersyn Socialism, Libertarian Helveticism, Techno-Social Liberalism, Platformism</li>
+                <li>Added the following ideologies: Paleoconservatism, Left Kemalism,  Nationalist Kemalism, National Communism, Ego-Mutualism, National Collectivism, Liberal Imperialism, Nazi-Maoism, Putinism, Burgundian System, Savinkovism, Davos System, Mosleyism, Fabian Socialism, Russian Imperial Cult, Ujamaa, Longism, Monarquia Syndicalista, Post-Soviet Autocracy, American Technocracy, Cyber-Federalism, Liberal Meritocracy, Serenissimism</li>
+                <li>Added 3 new economic values: Participatory Economics, Corporatocracy, Hierarchical Communism.</li>
+                <li>Added 2 new culture values: Secular Humanism, Amoralism.</li>
+                <li>Added 3 new authority values: Syndicracy, Demarchy, Polycentrism.</li>
+                <li>Added 1 new nation value: Multiculturalism.</li>
+                <li>Added 3 new foreign policy values: Irredentism, Pacifism, Mercantilism.</li>
+                <li>Added 1 new technological value: Convivialism.</li>
+                <li>Added 2 new social control values: Retributivism, Reputationalism.</li>
+                <li>Added 2 new territorial organization values: Subsidiarity, Suzerainty.</li>
+                <li>Fixed match combinations for ideologies</li>
+                <li>Fixed next closest matching</li>
+                <li>Specifically marked AI generated icons</li>
+                <li>Now ideology page shows required values</li>
+            </ul>
+        </div>
 
         <div class="description-box">
             <h3>3.5 - 19.10.2026</h3>
@@ -185,7 +209,7 @@
         </div>
 
         <div class="button-container">
-            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="location.href='index.html'" data-i18n="back">Back</button>
         </div>
     </div>
 </body>
