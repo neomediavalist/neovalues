@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg" href="icon.svg">
     <script src="theme.js"></script>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
 </head>
 <body>
     <button class="theme-toggle-corner" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
@@ -25,13 +27,13 @@
     <div class="main-container">
         <h1>NeoValues</h1>
         <div id="buttons">
-            <button onclick="location.href='Instruction.html'">Start</button>
-            <button onclick="location.href='values.html'">Values</button>
-            <button onclick="location.href='ideologies.html'">Ideologies</button>
-            <button onclick="location.href='changelog.html'">Changelog</button>
-            <button onclick="location.href='contact.html'">Contact</button>
-            <button onclick="location.href='licpage.html'">License</button>
-            <button onclick="location.href='https://neomediavalist.github.io/mytests/'">Other tests</button>
+            <button onclick="location.href='Instruction.html'" data-i18n="start">Start</button>
+            <button onclick="location.href='values.html'" data-i18n="values">Values</button>
+            <button onclick="location.href='ideologies.html'" data-i18n="ideologies">Ideologies</button>
+            <button onclick="location.href='changelog.html'" data-i18n="changelog">Changelog</button>
+            <button onclick="location.href='contact.html'" data-i18n="contact">Contact</button>
+            <button onclick="location.href='licpage.html'" data-i18n="license">License</button>
+            <button onclick="location.href='https://neomediavalist.github.io/mytests/'" data-i18n="otherTests">Other tests</button>
         </div>
 
         <div class="footer-icons">
