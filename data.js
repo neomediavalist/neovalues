@@ -299,7 +299,8 @@ const ideologyGroups = {
         "National Collectivism",
         "Nazi-Maoism",
         "Savinkovism",
-        "Mosleyism"
+        "Mosleyism",
+        "Revolutionary Nationalism"
     ],
     "Reactionary": [
         "Volkism",
@@ -513,7 +514,8 @@ const ideologyGroups = {
         "Traditionalist Anarcho-Distributism",
         "Crypto-Anarchism",
         "Avaritionism",
-        "Autarchism"
+        "Autarchism",
+        "Agorism"
     ],
     "Accelerationist": [
         "Left-Accelerationism",
@@ -543,7 +545,7 @@ const ideologies = {
     =============================== */
     "National Syndicalism": {
         economics: ["syndicalism", "hierarchical_communism"],
-        culture: "reactionary_modernism",
+        culture: ["reactionary_modernism", "alternative_modernism"],
         authority: ["ethical_statism", "syndicracy"],
         nation: "romantic_nationalism",
         social_control: "regimentalism",
@@ -840,6 +842,16 @@ const ideologies = {
         social_control: "regimentalism",
         territorial_organization: "centralism"
     },
+    "Revolutionary Nationalism": {
+        economics: ["guild_socialism", "syndicalism", "market_socialism", "agrarian_socialism"],
+        resource_management: ["collective_distribution", "Progressive_Taxation", "Confiscatory_Taxation"],
+        culture: ["alternative_modernism", "social_progressivism", "progressivism"],
+        authority: ["syndicracy", "councilism", "referendum_democracy", "communalism"],
+        nation: ["pan_nationalism", "cultural_nationalism", "ethnic_nationalism", "romantic_nationalism"],
+        foreign: ["alter_globalism", "Internationalism", "irredentism"],
+        social_control: ["reputationalism", "civic_paternalism", "disciplinarianism", "regimentalism", "securitism"],
+        territorial_organization: ["subsidiarity", "municipalism", "confederalism", "federalism", "regionalism"]
+    },
 
     /* ===============================
         2. REACTIONARY
@@ -864,7 +876,7 @@ const ideologies = {
         culture: "religious_traditionalism",
         authority: "religious_authoritarianism",
         nation: "communitarianism",
-        territorial_organization: ["regionalism", "centralism"]
+        territorial_organization: ["regionalism", "centralism", "subsidiarity"]
     },
     "National Capitalism": {
         economics: "laissez_faire",
@@ -1783,11 +1795,11 @@ const ideologies = {
         economics: "syndicalism",
         resource_management: ["collective_distribution", "Progressive_Taxation"],
         culture: "social_progressivism",
-        authority: "representative_democracy",
+        authority: ["representative_democracy", "syndicracy"],
         nation: "civic_nationalism",
-        foreign: "Internationalism",
+        foreign: ["Internationalism", "armed_neutrality"],
         social_control: "civil_libertarianism",
-        territorial_organization: ["federalism", "centralism", "regionalism"]
+        territorial_organization: ["federalism", "centralism", "regionalism", "subsidiarity"]
     },
     "Left-Eurasianism": {
         economics: "state_socialism",
@@ -2638,6 +2650,16 @@ const ideologies = {
         social_control: "civil_libertarianism",
         territorial_organization: ["municipalism", "confederalism"]
     },
+    "Agorism": {
+        economics: "countereconomics",
+        resource_management: "Voluntaryism",
+        culture: "civil_liberalism",
+        authority: "anarchism",
+        nation: ["egoism", "Cosmopolitanism"],
+        foreign: "Non_Interventionism",
+        social_control: ["civil_libertarianism", "permissivism"],
+        territorial_organization: ["confederalism", "municipalism"]
+    },
 
     /* ===============================
         15. ACCELERATIONIST
@@ -2841,6 +2863,7 @@ const labelColors = {
     "Nazi-Maoism": "#7a1a1a",
     "Savinkovism": "#5c3317",
     "Mosleyism": "#1a1a36",
+    "Revolutionary Nationalism": "#59202cff",
 
     /* 2. Reactionary */
     "Volkism": "#3b1515ff",
@@ -3055,6 +3078,7 @@ const labelColors = {
     "Crypto-Anarchism": "#3f7a8cff",
     "Avaritionism": "#aeb645ff",
     "Autarchism": "#c2a632ff",
+    "Agorism": "#8c821eff",
 
     /* 15. Accelerationist */
     "Left-Accelerationism": "#c93c3cff",
