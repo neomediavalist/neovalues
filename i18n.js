@@ -1,18 +1,20 @@
 const I18n = {
-    supportedLanguages: ['en', 'uk', 'ru', 'de'],
+    supportedLanguages: ['en', 'uk', 'ru', 'de', 'es'],
     defaultLanguage: 'en',
     currentLanguage: 'en',
     languageNames: {
         en: 'English',
         uk: 'Українська',
         ru: 'Русский',
-        de: 'Deutsch'
+        de: 'Deutsch',
+        es: 'Español'
     },
     languageIcons: {
         en: 'icons/language/en.png',
         uk: 'icons/language/ua.png',
         ru: 'icons/language/ru.png',
-        de: 'icons/language/de.png'
+        de: 'icons/language/de.png',
+        es: 'icons/language/es.png'
     },
 
     init() {

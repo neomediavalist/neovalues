@@ -48,7 +48,9 @@ const categoryValues = {
         "free_market_distributism",
         "parecon",
         "corporatocracy",
-        "hierarchical_communism"
+        "hierarchical_communism",
+        "cybernetic_socialism",
+        "ghent_system"
     ],
     resource_management: [
         "Voluntaryism",
@@ -59,7 +61,9 @@ const categoryValues = {
         "flat_taxation",
         "Progressive_Taxation",
         "Confiscatory_Taxation",
-        "collective_distribution"
+        "collective_distribution",
+        "regressive_taxation",
+        "state_enterprise_revenue"
     ],
     culture: [
         "postmodernism",
@@ -104,7 +108,10 @@ const categoryValues = {
         "neocameralism",
         "syndicracy",
         "demarchy",
-        "polycentrism"
+        "polycentrism",
+        "oligarchy",
+        "semi_constitutional",
+        "ochlocracy"
     ],
     nation: [
         "Cosmopolitanism",
@@ -174,23 +181,29 @@ const categoryValues = {
         "centralism",
         "hypercentralism",
         "subsidiarity",
-        "suzerainty"
+        "suzerainty",
+        "anti_organizationalism",
+        "patchwork"
     ]
 };
 
 const subCategories = {
     "economics": {
-        "welfare": ["social_market", "rhine_capitalism", "paternalistic_capitalism", "social_solidarity_economy", "ordnungspolitik", "residualism", "basic_income_capitalism"],
+        "welfare": ["social_market", "rhine_capitalism", "paternalistic_capitalism", "social_solidarity_economy", "ordnungspolitik", "residualism", "basic_income_capitalism", "ghent_system"],
         "regulated": ["state_capitalism", "dirigisme", "keynesianism", "third_way", "neo_corporatism", "cameralism", "corporatocracy"],
         "free_cap": ["laissez_faire", "countereconomics"],
-        "socialists": ["state_socialism", "free_socialism", "communization", "utopian_socialism", "syndicalism", "guild_socialism", "parecon"],
+        "socialists": ["state_socialism", "free_socialism", "communization", "utopian_socialism", "syndicalism", "guild_socialism", "parecon", "cybernetic_socialism"],
         "market_left": ["agrarian_socialism", "mutualism", "market_socialism"],
         "corporatists": ["corporatism", "social_corporatism", "yellow_socialism", "hierarchical_communism"],
         "distributist": ["distributism", "social_distributism", "mutual_distributism", "free_market_distributism", "feudalism"]
     },
     "resource_management": {
-        "mainstream_tax": ["flat_taxation", "Progressive_Taxation", "lvt", "mixed_lvt", "tariff_funding", "fair_tax"],
-        "farleft_tax": ["Confiscatory_Taxation", "collective_distribution"],
+        "standard_tax": ["flat_taxation", "Progressive_Taxation"],
+        "georgist_tax": ["lvt", "mixed_lvt"],
+        "indirect_tax": ["tariff_funding", "fair_tax"],
+        "regressive_tax": ["regressive_taxation"],
+        "redistributive_tax": ["Confiscatory_Taxation", "collective_distribution"],
+        "state_revenue": ["state_enterprise_revenue"],
         "voluntary_tax": ["Voluntaryism"]
     },
     "culture": {
@@ -202,8 +215,8 @@ const subCategories = {
     },
     "authority": {
         "divine": ["theocracy", "absolute", "religious_authoritarianism"],
-        "auth": ["ethical_statism", "autocracy", "partocracy", "stratocracy", "technocracy", "meritocracy", "aristocracy", "neocameralism"],
-        "mainstreampower": ["representative_democracy", "referendum_democracy", "councilism", "communalism", "digital_democracy", "minarchism", "constitutional", "demarchy"],
+        "auth": ["ethical_statism", "autocracy", "partocracy", "stratocracy", "technocracy", "meritocracy", "aristocracy", "neocameralism", "oligarchy", "semi_constitutional"],
+        "mainstreampower": ["representative_democracy", "referendum_democracy", "councilism", "communalism", "digital_democracy", "minarchism", "constitutional", "demarchy", "ochlocracy"],
         "functional_rep": ["syndicracy"],
         "anarch": ["anarcho_monarchism", "anarchism", "polycentrism"]
     },
@@ -234,7 +247,7 @@ const subCategories = {
         "communal_sc": ["reputationalism"]
     },
     "territorial_organization": {
-        "decentralist": ["municipalism", "confederalism"],
+        "decentralist": ["municipalism", "confederalism", "anti_organizationalism", "patchwork"],
         "balanced_territory": ["federalism", "regionalism", "subsidiarity", "suzerainty"],
         "centralist": ["centralism", "hypercentralism"]
     }
@@ -244,9 +257,13 @@ const incompatibleSubCategories = {
     "welfare": ["socialists"],
     "socialists": ["welfare", "free_cap"],
     "free_cap": ["socialists"],
-    "farleft_tax": ["mainstream_tax", "voluntary_tax"],
-    "mainstream_tax": ["farleft_tax"],
-    "voluntary_tax": ["farleft_tax"],
+    "standard_tax": ["redistributive_tax"],
+    "indirect_tax": ["redistributive_tax"],
+    "regressive_tax": ["redistributive_tax"],
+    "redistributive_tax": ["standard_tax", "indirect_tax", "regressive_tax", "voluntary_tax"],
+    "state_revenue": ["voluntary_tax"],
+    "voluntary_tax": ["redistributive_tax", "state_revenue"],
+    "voluntary_tax": ["redistributive_tax"],
     "progressive": ["oldways", "neoold"],
     "oldways": ["progressive"],
     "neoold": ["progressive", "mainstreamcon"],
@@ -265,285 +282,13 @@ const incompatibleSubCategories = {
     "centralist": ["decentralist"]
 };
 
-const ideologyGroups = {
-    "Third Position": [
-        "National Syndicalism",
-        "Clerical Fascism",
-        "Brazilian Integralism",
-        "Italian Fascism",
-        "Peronism",
-        "Ba'athism",
-        "Sansepolcrismo",
-        "Evolianism",
-        "Futurism",
-        "National-Socialism",
-        "Strasserism",
-        "Falangism",
-        "Agrarian Fascism",
-        "Ecofascism",
-        "Sorelianism",
-        "Rexism",
-        "Legionarianism",
-        "Techno-Fascism",
-        "National Solidarity",
-        "Cosmist Vanguardism",
-        "Duginism",
-        "Fiumanism",
-        "Eneasism",
-        "Social Nationalism",
-        "Ethnocacerismo",
-        "National Primitivism",
-        "Social-Bonapartism",
-        "Tridemism",
-        "Nationalist Kemalism",
-        "National Collectivism",
-        "Nazi-Maoism",
-        "Savinkovism",
-        "Mosleyism",
-        "Revolutionary Nationalism"
-    ],
-    "Reactionary": [
-        "Volkism",
-        "Optimateism",
-        "Integralism",
-        "National Capitalism",
-        "Feudal Monarchism",
-        "Carlism",
-        "Autocratic Monarchism",
-        "Theocratic Distributism",
-        "Reactionary Feudalism",
-        "Clerical Monarchism",
-        "Neo-Absolutism",
-        "Aristocratic Cameralism",
-        "Developmental Theocracy",
-        "Classical Eurasianism",
-        "Mladorossism",
-        "National Social Capitalism",
-        "Right-State Liberalism",
-        "Monarquia Syndicalista",
-        "Serenissimism"
-    ],
-    "Conservative": [
-        "National Conservatism",
-        "Paleoconservatism",
-        "Neoconservatism",
-        "Mesoconservatism",
-        "Red Toryism",
-        "Green Conservatism",
-        "Clerical Conservatism",
-        "Gaullism",
-        "Free-Market Conservatism",
-        "Agrarian Conservatism",
-        "Liberal Toryism",
-        "Social Gaullism",
-        "Neo-Gaullism",
-        "Bonapartist Gaullism",
-        "One-Nation Conservatism",
-        "Conservative Technoliberalism",
-        "Right-Social Authoritarianism",
-        "Kjærsgaardism",
-        "Kekkonism",
-        "Putinism",
-        "Post-Soviet Autocracy"
-    ],
-    "Centrist": [
-        "Radicalism",
-        "Third Way",
-        "Christian Democracy",
-        "Compassionate Conservatism",
-        "Rockefeller Republicanism",
-        "Democratic Transhumanism",
-        "Neo-Solidarism",
-        "Steppe Eurasianism",
-        "Classical Kemalism",
-        "Catholic Social Teaching",
-        "Bleeding-Heart Authoritarianism",
-        "Austro-Corporatism",
-        "Davos System"
-    ],
-    "Centre-Left": [
-        "Nordic Model",
-        "Social Democracy",
-        "Conservative Social Democracy",
-        "Social Distributism",
-        "Liberal Socialism",
-        "Social Georgism",
-        "Agrarian Social Democracy",
-        "Progressive Corporatism",
-        "Left-Gaullism",
-        "Green Social Democracy",
-        "Geo-Social Democracy",
-        "Christian Social Democracy",
-        "Police Labourism",
-        "Left-Social Authoritarianism",
-        "Progressive Social Authoritarianism",
-        "Left-Wing Populism",
-        "Left-Social Democracy",
-        "Social-Helveticism",
-        "Left Kemalism",
-        "Longism"
-    ],
-    "Liberal": [
-        "Classical Liberalism",
-        "Neoliberalism",
-        "National Liberalism",
-        "Social Liberalism",
-        "Ordoliberalism",
-        "Bleeding-Heart Liberalism",
-        "Geo-Liberalism",
-        "Green Liberalism",
-        "Whiggism",
-        "Muscular Liberalism",
-        "Transatlantic Federalism",
-        "New Deal Liberalism",
-        "Venizelism",
-        "Liberal Social Authoritarianism",
-        "Technoliberalism",
-        "American Model",
-        "Techno-Neoliberalism",
-        "Tsaingwenism",
-        "Liberal Imperialism",
-        "Liberal Meritocracy"
-    ],
-    "Socialist": [
-        "Christian Socialism",
-        "National Bolshevism",
-        "Democratic Socialism",
-        "Conservative Socialism",
-        "Paleosocialism",
-        "Cybernetic Socialism",
-        "Utopian Communitarianism",
-        "Syndicalist Republicanism",
-        "Left-Eurasianism",
-        "Socialist Technoliberalism",
-        "Mugabeism",
-        "Old Left-Populism",
-        "Left-State Liberalism",
-        "American Technocracy",
-        "Fabian Socialism",
-        "Ujamaa"
-    ],
-    "Marxist": [
-        "Italian Left Communism",
-        "Juche",
-        "Mao Zedong Thought",
-        "Marxism Leninism Maoism",
-        "Trotskyism",
-        "Marxism-Leninism",
-        "Stalinism",
-        "Titoism",
-        "Dengism",
-        "Luxemburgism",
-        "Eurocommunism",
-        "Hoxhaism",
-        "Castroism",
-        "Guevarism",
-        "Cyber-Communism",
-        "De Leonism",
-        "National Communism"
-    ],
-    "Left-Libertarian": [
-        "Communalism",
-        "Minarcho-Socialism",
-        "Council Communism",
-        "Libertarian Socialism",
-        "Democratic Confederalism",
-        "Guild Socialism",
-        "Eco-Socialism",
-        "Fourierism",
-        "Gandhian Socialism",
-        "Scythianism",
-        "Proutism"
-    ],
-    "Centre-Libertarian": [
-        "Geolibertarianism",
-        "Social Libertarianism",
-        "Helvetic Model",
-        "Bleeding-Heart Libertarianism",
-        "Minarcho-Distributism",
-        "Pirate Politics",
-        "Agorist Minarchism",
-        "Communal Distributism",
-        "Yangism",
-        "Libertarian Social Democracy",
-        "Progressive Helveticism",
-        "Cosmopolitan Distributism",
-        "Cyber-Federalism"
-    ],
-    "Right-Libertarian": [
-        "Neolibertarianism",
-        "Libertarian Conservatism",
-        "National Libertarianism",
-        "Paleolibertarianism",
-        "Dark Enlightenment",
-        "Cyber-Libertarianism",
-        "Objectivism",
-        "Fusionism",
-        "Minarcho-Avaritionism"
-    ],
-    "Left-Anarchist": [
-        "Anarcho-Syndicalism",
-        "Left-Agorism",
-        "Lys Noir",
-        "Anarcho-Communism",
-        "Solarpunk Anarchism",
-        "Christian Anarchism",
-        "Insurrectionary Anarchism",
-        "Catholic Workerism"
-    ],
-    "Centre-Anarchist": [
-        "Mutualism",
-        "Market Anarchism",
-        "Mutualist Distributism",
-        "Panarchism",
-        "Geoanarchism",
-        "Green Anarchism",
-        "Anarcho-Primitivism",
-        "Post-Anarchism",
-        "Post-left",
-        "Anarcho-Transhumanism",
-        "Ego-Communism",
-        "National-Anarchism",
-        "Ego-Mutualism"
-    ],
-    "Right-Anarchist": [
-        "Anarcho-Capitalism",
-        "Hoppeanism",
-        "Bleeding-Heart Anarcho-Capitalism",
-        "Free-Market Anarcho-Distributism",
-        "Traditionalist Anarcho-Distributism",
-        "Crypto-Anarchism",
-        "Avaritionism",
-        "Autarchism",
-        "Agorism"
-    ],
-    "Accelerationist": [
-        "Left-Accelerationism",
-        "Right-Accelerationism",
-        "Effective Accelerationism",
-        "Unconditional Accelerationism"
-    ],
-    "Dystopian": [
-        "Neo-Libertarian Falangism",
-        "Ingsoc",
-        "Neo-Bolshevism",
-        "Obliteration of the Self",
-        "World State Fordism",
-        "Gileadism",
-        "One State Benefactorism",
-        "Cyberpunk Corpostatism",
-        "Fireman Statism",
-        "Soylentism",
-        "Burgundian System",
-        "Russian Imperial Cult"
-    ]
-};
-
 const ideologies = {
     /* ===============================
         1. THIRD POSITION
     =============================== */
     "National Syndicalism": {
+        group: "Third Position",
+        color: "#372f53ff",
         economics: ["syndicalism", "hierarchical_communism"],
         culture: ["reactionary_modernism", "alternative_modernism"],
         authority: ["ethical_statism", "syndicracy"],
@@ -552,6 +297,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Brazilian Integralism": {
+        group: "Third Position",
+        color: "#253f50ff",
         economics: "corporatism",
         culture: "religious_traditionalism",
         authority: "religious_authoritarianism",
@@ -560,6 +307,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Italian Fascism": {
+        group: "Third Position",
+        color: "#663718ff",
         economics: "corporatism",
         culture: "reactionary_modernism",
         authority: "ethical_statism",
@@ -570,6 +319,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Evolianism": {
+        group: "Third Position",
+        color: "#3c2e4bff",
         economics: "feudalism",
         culture: "perennial_traditionalism",
         authority: "aristocracy",
@@ -579,6 +330,8 @@ const ideologies = {
         social_control: "disciplinarianism"
     },
     "Futurism": {
+        group: "Third Position",
+        color: "#2b314eff",
         economics: "corporatism",
         culture: "alternative_modernism",
         authority: "technocracy",
@@ -587,6 +340,8 @@ const ideologies = {
         technology: "prometheanism"
     },
     "National-Socialism": {
+        group: "Third Position",
+        color: "#2B2B2B",
         economics: ["dirigisme", "state_capitalism", "corporatism"],
         culture: "reactionary_modernism",
         authority: "ethical_statism",
@@ -597,6 +352,8 @@ const ideologies = {
         territorial_organization: ["hypercentralism", "centralism"]
     },
     "Agrarian Fascism": {
+        group: "Third Position",
+        color: "#1f421cff",
         economics: "agrarian_socialism",
         culture: "traditionalist_conservatism",
         authority: ["autocracy", "ethical_statism"],
@@ -605,6 +362,8 @@ const ideologies = {
         social_control: "disciplinarianism"
     },
     "Strasserism": {
+        group: "Third Position",
+        color: "#3f1e1eff",
         economics: ["guild_socialism", "social_corporatism", "hierarchical_communism"],
         culture: "reactionary_modernism",
         authority: "ethical_statism",
@@ -614,6 +373,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Falangism": {
+        group: "Third Position",
+        color: "#4a1c1cff",
         economics: ["yellow_socialism", "corporatism"],
         culture: "traditionalist_conservatism",
         authority: "ethical_statism",
@@ -623,6 +384,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Sansepolcrismo": {
+        group: "Third Position",
+        color: "#59331eff",
         economics: "corporatism",
         culture: "progressivism",
         authority: "autocracy",
@@ -631,6 +394,8 @@ const ideologies = {
         technology: "industrialism"
     },
     "Ecofascism": {
+        group: "Third Position",
+        color: "#1b381eff",
         economics: "dirigisme",
         culture: "reactionaryism",
         authority: "ethical_statism",
@@ -640,6 +405,8 @@ const ideologies = {
         social_control: "totalism"
     },
     "Sorelianism": {
+        group: "Third Position",
+        color: "#4a2424ff",
         economics: ["syndicalism", "hierarchical_communism"],
         culture: "alternative_modernism",
         authority: "ethical_statism",
@@ -647,6 +414,8 @@ const ideologies = {
         foreign: "Realpolitik"
     },
     "Legionarianism": {
+        group: "Third Position",
+        color: "#183820ff",
         economics: ["corporatism", "social_corporatism"],
         culture: "religious_traditionalism",
         authority: "religious_authoritarianism",
@@ -655,6 +424,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Peronism": {
+        group: "Third Position",
+        color: "#23506eff",
         economics: ["dirigisme", "social_corporatism"],
         resource_management: "Progressive_Taxation",
         culture: "progressive_conservatism",
@@ -663,6 +434,8 @@ const ideologies = {
         social_control: "civic_paternalism"
     },
     "Techno-Fascism": {
+        group: "Third Position",
+        color: "#2b2e53ff",
         economics: "corporatism",
         culture: "reactionary_modernism",
         authority: "ethical_statism",
@@ -671,6 +444,8 @@ const ideologies = {
         technology: "transhumanism"
     },
     "National Solidarity": {
+        group: "Third Position",
+        color: "#4f2b38ff",
         economics: "yellow_socialism",
         culture: "reactionary_modernism",
         authority: "autocracy",
@@ -678,6 +453,8 @@ const ideologies = {
         foreign: "Imperialism"
     },
     "Clerical Fascism": {
+        group: "Third Position",
+        color: "#58542cff",
         economics: "corporatism",
         culture: "religious_traditionalism",
         authority: "religious_authoritarianism",
@@ -687,6 +464,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Rexism": {
+        group: "Third Position",
+        color: "#461b2eff",
         economics: "corporatism",
         culture: "religious_traditionalism",
         authority: "religious_authoritarianism",
@@ -694,14 +473,18 @@ const ideologies = {
         foreign: "armed_neutrality"
     },
     "Ba'athism": {
+        group: "Third Position",
+        color: "#1e4d2bff",
         economics: "state_capitalism",
-        resource_management: "Progressive_Taxation",
+        resource_management: ["state_enterprise_revenue", "Progressive_Taxation"],
         culture: "alternative_modernism",
         authority: "autocracy",
         nation: "pan_nationalism",
         foreign: "Imperialism"
     },
     "Cosmist Vanguardism": {
+        group: "Third Position",
+        color: "#36214f",
         economics: "state_capitalism",
         culture: "alternative_modernism",
         authority: "ethical_statism",
@@ -709,6 +492,8 @@ const ideologies = {
         technology: "extropianism"
     },
     "Duginism": {
+        group: "Third Position",
+        color: "#3d1833",
         economics: "corporatism",
         culture: "perennial_traditionalism",
         authority: "autocracy",
@@ -717,6 +502,8 @@ const ideologies = {
         social_control: "legal_moralism"
     },
     "Fiumanism": {
+        group: "Third Position",
+        color: "#542238",
         economics: "social_corporatism",
         culture: ["alternative_modernism", "reactionary_modernism"],
         authority: ["ethical_statism", "autocracy"],
@@ -725,6 +512,8 @@ const ideologies = {
         social_control: "permissivism"
     },
     "Eneasism": {
+        group: "Third Position",
+        color: "#1e4638",
         economics: ["dirigisme", "state_capitalism"],
         resource_management: "Progressive_Taxation",
         culture: ["traditionalist_conservatism", "conservatism"],
@@ -736,6 +525,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Social Nationalism": {
+        group: "Third Position",
+        color: "#592834",
         economics: ["rhine_capitalism", "social_market"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: ["traditionalist_conservatism", "religious_traditionalism"],
@@ -747,6 +538,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Ethnocacerismo": {
+        group: "Third Position",
+        color: "#6b1d1d",
         economics: ["state_socialism", "agrarian_socialism"],
         resource_management: "collective_distribution",
         culture: ["reactionaryism", "traditionalist_conservatism"],
@@ -758,6 +551,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "National Primitivism": {
+        group: "Third Position",
+        color: "#2b3d1f",
         economics: ["corporatism", "distributism"],
         resource_management: "collective_distribution",
         culture: ["reactionaryism", "perennial_traditionalism"],
@@ -769,6 +564,8 @@ const ideologies = {
         territorial_organization: ["centralism", "regionalism"]
     },
     "Social-Bonapartism": {
+        group: "Third Position",
+        color: "#1f3a60",
         economics: "dirigisme",
         resource_management: "Progressive_Taxation",
         culture: ["alternative_modernism", "reactionary_modernism", "progressive_conservatism"],
@@ -780,6 +577,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Tridemism": {
+        group: "Third Position",
+        color: "#002b80",
         economics: "dirigisme",
         resource_management: ["lvt", "mixed_lvt"],
         authority: "meritocracy",
@@ -789,6 +588,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Nationalist Kemalism": {
+        group: "Third Position",
+        color: "#5c2020",
         economics: ["dirigisme", "corporatism", "state_capitalism"],
         resource_management: ["Progressive_Taxation", "flat_taxation"],
         culture: ["conservatism", "reactionary_modernism", "progressive_conservatism"],
@@ -800,6 +601,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "National Collectivism": {
+        group: "Third Position",
+        color: "#421212",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "reactionary_modernism",
@@ -811,6 +614,8 @@ const ideologies = {
         territorial_organization: ["hypercentralism", "centralism"]
     },
     "Nazi-Maoism": {
+        group: "Third Position",
+        color: "#7a1a1a",
         economics: "agrarian_socialism",
         resource_management: "collective_distribution",
         culture: "reactionary_modernism",
@@ -822,6 +627,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Savinkovism": {
+        group: "Third Position",
+        color: "#5c3317",
         economics: ["dirigisme", "corporatism"],
         resource_management: "Progressive_Taxation",
         culture: "reactionary_modernism",
@@ -833,6 +640,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Mosleyism": {
+        group: "Third Position",
+        color: "#1a1a36",
         economics: "corporatism",
         culture: "reactionary_modernism",
         authority: ["ethical_statism", "syndicracy"],
@@ -843,6 +652,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Revolutionary Nationalism": {
+        group: "Third Position",
+        color: "#59202cff",
         economics: ["guild_socialism", "syndicalism", "market_socialism", "agrarian_socialism"],
         resource_management: ["collective_distribution", "Progressive_Taxation", "Confiscatory_Taxation"],
         culture: ["alternative_modernism", "social_progressivism", "progressivism"],
@@ -857,6 +668,8 @@ const ideologies = {
         2. REACTIONARY
     =============================== */
     "Volkism": {
+        group: "Reactionary",
+        color: "#3b1515ff",
         economics: ["agrarian_socialism", "feudalism"],
         culture: "reactionaryism",
         authority: "autocracy",
@@ -865,13 +678,18 @@ const ideologies = {
         social_control: "legal_moralism"
     },
     "Optimateism": {
+        group: "Reactionary",
+        color: "#21273dff",
         economics: ["feudalism", "cameralism"],
+        resource_management: "regressive_taxation",
         culture: "traditionalist_conservatism",
         authority: "aristocracy",
         foreign: "Imperialism",
         social_control: "legal_moralism"
     },
     "Integralism": {
+        group: "Reactionary",
+        color: "#63a9c5ff",
         economics: ["social_distributism", "distributism", "corporatism"],
         culture: "religious_traditionalism",
         authority: "religious_authoritarianism",
@@ -879,6 +697,8 @@ const ideologies = {
         territorial_organization: ["regionalism", "centralism", "subsidiarity"]
     },
     "National Capitalism": {
+        group: "Reactionary",
+        color: "#77632aff",
         economics: "laissez_faire",
         resource_management: "tariff_funding",
         culture: "reactionaryism",
@@ -887,6 +707,8 @@ const ideologies = {
         foreign: "Imperialism"
     },
     "Carlism": {
+        group: "Reactionary",
+        color: "#822424ff",
         economics: ["distributism", "corporatism"],
         culture: "religious_traditionalism",
         authority: "absolute",
@@ -895,6 +717,8 @@ const ideologies = {
         territorial_organization: ["regionalism", "federalism"]
     },
     "Autocratic Monarchism": {
+        group: "Reactionary",
+        color: "#1d233dff",
         economics: ["cameralism", "feudalism", "dirigisme", "state_capitalism"],
         culture: "traditionalist_conservatism",
         authority: "absolute",
@@ -903,6 +727,8 @@ const ideologies = {
         technology: ["industrialism", "instrumentalism"]
     },
     "Theocratic Distributism": {
+        group: "Reactionary",
+        color: "#634727ff",
         economics: "distributism",
         culture: "religious_traditionalism",
         authority: "theocracy",
@@ -910,7 +736,10 @@ const ideologies = {
         foreign: "Isolationism"
     },
     "Reactionary Feudalism": {
+        group: "Reactionary",
+        color: "#2c1c38ff",
         economics: "feudalism",
+        resource_management: "regressive_taxation",
         culture: "reactionaryism",
         authority: "aristocracy",
         nation: "cultural_nationalism",
@@ -918,6 +747,8 @@ const ideologies = {
         social_control: "legal_moralism"
     },
     "Neo-Absolutism": {
+        group: "Reactionary",
+        color: "#1a1e36ff",
         economics: "state_capitalism",
         culture: "neoreactionaryism",
         authority: "absolute",
@@ -925,6 +756,8 @@ const ideologies = {
         foreign: "Realpolitik"
     },
     "Aristocratic Cameralism": {
+        group: "Reactionary",
+        color: "#2f3825ff",
         economics: "cameralism",
         culture: "reactionaryism",
         authority: "aristocracy",
@@ -932,6 +765,8 @@ const ideologies = {
         foreign: "Isolationism"
     },
     "Feudal Monarchism": {
+        group: "Reactionary",
+        color: "#2a2d47ff",
         economics: "feudalism",
         culture: ["religious_traditionalism", "traditionalist_conservatism"],
         authority: "absolute",
@@ -941,13 +776,17 @@ const ideologies = {
         territorial_organization: "suzerainty"
     },
     "Clerical Monarchism": {
+        group: "Reactionary",
+        color: "#442b57ff",
         economics: "cameralism",
         culture: "religious_traditionalism",
-        authority: "religious_authoritarianism",
+        authority: "semi_constitutional",
         nation: "religious_nationalism",
         foreign: "Non_Interventionism"
     },
     "Developmental Theocracy": {
+        group: "Reactionary",
+        color: "#614e2d",
         economics: "third_way",
         culture: "traditionalist_conservatism",
         authority: "theocracy",
@@ -955,6 +794,8 @@ const ideologies = {
         technology: "industrialism"
     },
     "Classical Eurasianism": {
+        group: "Reactionary",
+        color: "#263e36",
         economics: "dirigisme",
         culture: "traditionalist_conservatism",
         authority: "meritocracy",
@@ -964,6 +805,8 @@ const ideologies = {
         territorial_organization: ["federalism", "suzerainty"]
     },
     "Mladorossism": {
+        group: "Reactionary",
+        color: "#1c2e47",
         economics: "state_socialism",
         culture: ["traditionalist_conservatism", "religious_traditionalism"],
         authority: "absolute",
@@ -971,6 +814,8 @@ const ideologies = {
         social_control: "regimentalism"
     },
     "National Social Capitalism": {
+        group: "Reactionary",
+        color: "#635324",
         economics: ["social_market", "rhine_capitalism"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: ["reactionaryism", "traditionalist_conservatism"],
@@ -982,6 +827,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Right-State Liberalism": {
+        group: "Reactionary",
+        color: "#3b5675",
         economics: "laissez_faire",
         resource_management: "flat_taxation",
         culture: ["progressivism", "civil_liberalism"],
@@ -993,16 +840,20 @@ const ideologies = {
         territorial_organization: ["hypercentralism", "centralism"]
     },
     "Monarquia Syndicalista": {
+        group: "Reactionary",
+        color: "#1b4370",
         economics: "syndicalism",
         resource_management: "Progressive_Taxation",
         culture: "religious_traditionalism",
-        authority: ["constitutional", "syndicracy"],
+        authority: ["constitutional", "semi_constitutional"],
         nation: "cultural_nationalism",
         foreign: "Non_Interventionism",
         social_control: "disciplinarianism",
         territorial_organization: ["regionalism", "subsidiarity"]
     },
     "Serenissimism": {
+        group: "Reactionary",
+        color: "#7d1d2b",
         economics: ["cameralism", "corporatism"],
         resource_management: "tariff_funding",
         culture: "traditionalist_conservatism",
@@ -1017,6 +868,8 @@ const ideologies = {
         3. CONSERVATIVE
     =============================== */
     "National Conservatism": {
+        group: "Conservative",
+        color: "#002366",
         economics: "residualism",
         resource_management: "Progressive_Taxation",
         culture: ["conservatism", "traditionalist_conservatism"],
@@ -1027,6 +880,8 @@ const ideologies = {
         territorial_organization: ["centralism", "federalism", "regionalism"]
     },
     "Paleoconservatism": {
+        group: "Conservative",
+        color: "#442d52ff",
         economics: ["distributism", "free_market_distributism", "dirigisme", "cameralism", "paternalistic_capitalism", "residualism"],
         resource_management: ["tariff_funding", "flat_taxation"],
         culture: "paleoconservatism",
@@ -1036,6 +891,8 @@ const ideologies = {
         social_control: "legal_moralism"
     },
     "Neoconservatism": {
+        group: "Conservative",
+        color: "#25257aff",
         economics: "residualism",
         culture: ["liberal_conservatism", "progressive_conservatism", "conservative_liberalism"],
         authority: "representative_democracy",
@@ -1043,6 +900,8 @@ const ideologies = {
         foreign: "Interventionism"
     },
     "Mesoconservatism": {
+        group: "Conservative",
+        color: "#3c1e5fff",
         economics: "residualism",
         culture: ["traditionalist_conservatism", "conservatism"],
         authority: "representative_democracy",
@@ -1051,6 +910,8 @@ const ideologies = {
         social_control: "legal_moralism"
     },
     "Red Toryism": {
+        group: "Conservative",
+        color: "#5e345eff",
         economics: ["paternalistic_capitalism", "social_distributism"],
         resource_management: "Progressive_Taxation",
         culture: "traditionalist_conservatism",
@@ -1059,6 +920,8 @@ const ideologies = {
         foreign: "Non_Interventionism"
     },
     "Green Conservatism": {
+        group: "Conservative",
+        color: "#284f37ff",
         economics: "social_market",
         culture: ["conservatism", "traditionalist_conservatism"],
         authority: "representative_democracy",
@@ -1066,6 +929,8 @@ const ideologies = {
         technology: "conservationism"
     },
     "Clerical Conservatism": {
+        group: "Conservative",
+        color: "#3e386eff",
         economics: "paternalistic_capitalism",
         culture: "religious_traditionalism",
         authority: "representative_democracy",
@@ -1074,6 +939,8 @@ const ideologies = {
         social_control: "legal_moralism"
     },
     "Gaullism": {
+        group: "Conservative",
+        color: "#1c3866ff",
         economics: "dirigisme",
         culture: ["conservatism", "alternative_modernism"],
         authority: "representative_democracy",
@@ -1083,6 +950,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Free-Market Conservatism": {
+        group: "Conservative",
+        color: "#2b4d7aff",
         economics: "laissez_faire",
         resource_management: ["flat_taxation", "tariff_funding"],
         culture: "conservatism",
@@ -1093,6 +962,8 @@ const ideologies = {
         territorial_organization: ["federalism", "centralism", "regionalism"]
     },
     "Agrarian Conservatism": {
+        group: "Conservative",
+        color: "#4d4a27ff",
         economics: "distributism",
         culture: ["conservatism", "traditionalist_conservatism"],
         authority: "representative_democracy",
@@ -1100,15 +971,19 @@ const ideologies = {
         technology: "agrarianism"
     },
     "Liberal Toryism": {
+        group: "Conservative",
+        color: "#206095",
         economics: "keynesianism",
         culture: "progressive_conservatism",
         authority: ["representative_democracy", "constitutional"],
-        nation: "cultural_nationalism", 
+        nation: "cultural_nationalism",
         foreign: "Globalism",
         social_control: "civic_paternalism",
         territorial_organization: ["centralism", "regionalism"]
     },
     "Social Gaullism": {
+        group: "Conservative",
+        color: "#274878",
         economics: ["yellow_socialism", "neo_corporatism"],
         resource_management: "Progressive_Taxation",
         culture: "progressive_conservatism",
@@ -1120,6 +995,8 @@ const ideologies = {
         territorial_organization: ["regionalism", "centralism"]
     },
     "Neo-Gaullism": {
+        group: "Conservative",
+        color: "#1f569c",
         economics: "rhine_capitalism",
         culture: "liberal_conservatism",
         authority: "representative_democracy",
@@ -1130,6 +1007,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Bonapartist Gaullism": {
+        group: "Conservative",
+        color: "#193561",
         economics: "dirigisme",
         resource_management: "Progressive_Taxation",
         culture: "conservatism",
@@ -1141,6 +1020,8 @@ const ideologies = {
         territorial_organization: "hypercentralism"
     },
     "One-Nation Conservatism": {
+        group: "Conservative",
+        color: "#1a4380",
         economics: ["paternalistic_capitalism", "social_market", "keynesianism"],
         resource_management: "Progressive_Taxation",
         culture: ["progressive_conservatism", "liberal_conservatism"],
@@ -1152,6 +1033,8 @@ const ideologies = {
         territorial_organization: ["regionalism", "centralism"]
     },
     "Conservative Technoliberalism": {
+        group: "Conservative",
+        color: "#2d5f7a",
         economics: ["social_market", "basic_income_capitalism"],
         resource_management: "flat_taxation",
         culture: ["liberal_conservatism", "conservatism"],
@@ -1163,6 +1046,8 @@ const ideologies = {
         territorial_organization: ["federalism", "regionalism"]
     },
     "Right-Social Authoritarianism": {
+        group: "Conservative",
+        color: "#3a496b",
         economics: ["third_way", "residualism"],
         resource_management: ["flat_taxation", "Progressive_Taxation", "mixed_lvt"],
         culture: ["liberal_conservatism", "conservatism"],
@@ -1174,6 +1059,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Kjærsgaardism": {
+        group: "Conservative",
+        color: "#8c2e2e",
         economics: "rhine_capitalism",
         resource_management: "Progressive_Taxation",
         culture: "traditionalist_conservatism",
@@ -1184,6 +1071,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Kekkonism": {
+        group: "Conservative",
+        color: "#235368",
         economics: "neo_corporatism",
         culture: "progressive_conservatism",
         authority: "representative_democracy",
@@ -1193,10 +1082,12 @@ const ideologies = {
         territorial_organization: ["centralism", "regionalism"]
     },
     "Putinism": {
+        group: "Conservative",
+        color: "#1c385c",
         economics: ["state_capitalism", "dirigisme", "corporatocracy"],
         resource_management: "flat_taxation",
         culture: ["conservatism", "traditionalist_conservatism"],
-        authority: "autocracy",
+        authority: ["autocracy", "oligarchy"],
         nation: "civilizationism",
         foreign: ["Imperialism", "Realpolitik", "irredentism"],
         technology: ["industrialism", "instrumentalism"],
@@ -1204,10 +1095,12 @@ const ideologies = {
         territorial_organization: ["centralism", "regionalism"]
     },
     "Post-Soviet Autocracy": {
+        group: "Conservative",
+        color: "#385266",
         economics: ["state_capitalism", "corporatocracy"],
         resource_management: ["flat_taxation", "Progressive_Taxation"],
         culture: "conservatism",
-        authority: "autocracy",
+        authority: ["autocracy", "oligarchy"],
         nation: "civic_nationalism",
         foreign: "Realpolitik",
         technology: "industrialism",
@@ -1219,6 +1112,8 @@ const ideologies = {
         4. CENTRIST
     =============================== */
     "Radicalism": {
+        group: "Centrist",
+        color: "#a15c8dff",
         economics: ["social_solidarity_economy", "social_market"],
         culture: ["civil_liberalism", "secular_humanism"],
         authority: ["representative_democracy", "referendum_democracy", "demarchy"],
@@ -1226,6 +1121,8 @@ const ideologies = {
         foreign: "Internationalism"
     },
     "Third Way": {
+        group: "Centrist",
+        color: "#58789eff",
         economics: "third_way",
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "civil_liberalism",
@@ -1235,6 +1132,8 @@ const ideologies = {
         technology: "post_industrialism"
     },
     "Christian Democracy": {
+        group: "Centrist",
+        color: "#3C5A99",
         economics: ["social_market", "paternalistic_capitalism"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: ["liberal_conservatism", "conservative_liberalism", "progressive_conservatism"],
@@ -1243,14 +1142,18 @@ const ideologies = {
         foreign: "Internationalism"
     },
     "Compassionate Conservatism": {
+        group: "Centrist",
+        color: "#314a8fff",
         economics: "residualism",
         culture: ["progressive_conservatism", "conservative_liberalism"],
         authority: "representative_democracy",
         nation: "civic_nationalism",
-        foreign: ["Globalism", "Interventionism"],
+        foreign: "Globalism",
         social_control: "civic_paternalism"
     },
     "Rockefeller Republicanism": {
+        group: "Centrist",
+        color: "#692828ff",
         economics: ["keynesianism", "social_market"],
         culture: "liberal_conservatism",
         authority: "representative_democracy",
@@ -1258,6 +1161,8 @@ const ideologies = {
         foreign: ["Realpolitik", "Internationalism"]
     },
     "Democratic Transhumanism": {
+        group: "Centrist",
+        color: "#277a94",
         economics: "basic_income_capitalism",
         culture: ["progressivism", "social_progressivism"],
         authority: "representative_democracy",
@@ -1266,6 +1171,8 @@ const ideologies = {
         technology: ["transhumanism", "technogaianism"]
     },
     "Neo-Solidarism": {
+        group: "Centrist",
+        color: "#6e5d31",
         economics: "social_solidarity_economy",
         culture: "social_progressivism",
         authority: "representative_democracy",
@@ -1274,7 +1181,10 @@ const ideologies = {
         technology: ["ecomodernism", "environmentalism"]
     },
     "Steppe Eurasianism": {
+        group: "Centrist",
+        color: "#2d6b63",
         economics: ["dirigisme", "state_capitalism"],
+        resource_management: "state_enterprise_revenue",
         culture: "progressive_conservatism",
         authority: "technocracy",
         nation: "civilizationism",
@@ -1282,6 +1192,8 @@ const ideologies = {
         social_control: "civic_paternalism"
     },
     "Classical Kemalism": {
+        group: "Centrist",
+        color: "#b82929",
         economics: "dirigisme",
         resource_management: "Progressive_Taxation",
         culture: ["progressivism", "secular_humanism"],
@@ -1293,6 +1205,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Catholic Social Teaching": {
+        group: "Centrist",
+        color: "#5c3d75",
         economics: ["paternalistic_capitalism", "social_corporatism"],
         resource_management: "Progressive_Taxation",
         culture: ["progressive_conservatism", "conservatism"],
@@ -1304,6 +1218,8 @@ const ideologies = {
         territorial_organization: ["regionalism", "confederalism", "federalism", "subsidiarity"]
     },
     "Bleeding-Heart Authoritarianism": {
+        group: "Centrist",
+        color: "#6e5485",
         economics: ["ordnungspolitik", "laissez_faire"],
         resource_management: "flat_taxation",
         culture: ["progressivism", "social_progressivism"],
@@ -1315,6 +1231,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Austro-Corporatism": {
+        group: "Centrist",
+        color: "#9e2f43ff",
         economics: "neo_corporatism",
         culture: ["liberal_conservatism", "progressive_conservatism"],
         authority: "representative_democracy",
@@ -1323,6 +1241,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Davos System": {
+        group: "Centrist",
+        color: "#00487c",
         economics: ["rhine_capitalism", "third_way"],
         resource_management: ["mixed_lvt", "Progressive_Taxation"],
         culture: ["progressivism", "civil_liberalism"],
@@ -1338,7 +1258,9 @@ const ideologies = {
         5. CENTRE-LEFT
     =============================== */
     "Nordic Model": {
-        economics: "neo_corporatism",
+        group: "Centre-Left",
+        color: "#fa6161ff",
+        economics: ["neo_corporatism", "ghent_system"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: ["social_progressivism", "civil_liberalism"],
         authority: "representative_democracy",
@@ -1348,7 +1270,9 @@ const ideologies = {
         territorial_organization: ["centralism", "federalism", "regionalism"]
     },
     "Social Democracy": {
-        economics: ["social_market", "rhine_capitalism", "keynesianism"],
+        group: "Centre-Left",
+        color: "#FF3333",
+        economics: ["social_market", "rhine_capitalism", "keynesianism", "ghent_system"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "social_progressivism",
         authority: "representative_democracy",
@@ -1359,7 +1283,9 @@ const ideologies = {
         territorial_organization: ["federalism", "centralism", "regionalism"]
     },
     "Conservative Social Democracy": {
-        economics: ["social_market", "social_solidarity_economy"],
+        group: "Centre-Left",
+        color: "#c92b2bff",
+        economics: ["social_market", "rhine_capitalism", "keynesianism", "ghent_system"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "conservatism",
         authority: "representative_democracy",
@@ -1367,6 +1293,8 @@ const ideologies = {
         foreign: ["Internationalism", "Realpolitik", "armed_neutrality"]
     },
     "Social Distributism": {
+        group: "Centre-Left",
+        color: "#cf5338ff",
         economics: "social_distributism",
         resource_management: ["Progressive_Taxation", "mixed_lvt", "lvt"],
         culture: ["social_progressivism", "civil_liberalism"],
@@ -1375,14 +1303,18 @@ const ideologies = {
         foreign: "alter_globalism"
     },
     "Liberal Socialism": {
+        group: "Centre-Left",
+        color: "#d14b4bff",
         economics: "market_socialism",
-        resource_management: ["Progressive_Taxation", "mixed_lvt"],
+        resource_management: ["state_enterprise_revenue", "Progressive_Taxation", "mixed_lvt"],
         culture: "civil_liberalism",
         authority: "representative_democracy",
         nation: "civic_nationalism",
         foreign: ["Internationalism", "Globalism"]
     },
     "Social Georgism": {
+        group: "Centre-Left",
+        color: "#478f54ff",
         economics: "social_market",
         resource_management: ["lvt", "mixed_lvt"],
         culture: "social_progressivism",
@@ -1391,6 +1323,8 @@ const ideologies = {
         foreign: ["Globalism", "Internationalism"]
     },
     "Agrarian Social Democracy": {
+        group: "Centre-Left",
+        color: "#a84b36ff",
         economics: ["social_distributism", "social_market"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "progressive_conservatism",
@@ -1400,13 +1334,17 @@ const ideologies = {
         technology: "agrarianism"
     },
     "Progressive Corporatism": {
-        economics: ["neo_corporatism", "rhine_capitalism"],
+        group: "Centre-Left",
+        color: "#c74242ff",
+        economics: ["neo_corporatism", "rhine_capitalism", "ghent_system"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "social_progressivism",
         authority: "representative_democracy",
         foreign: "Internationalism"
     },
     "Left-Gaullism": {
+        group: "Centre-Left",
+        color: "#214c78",
         economics: ["dirigisme", "social_solidarity_economy"],
         resource_management: "Progressive_Taxation",
         culture: "social_progressivism",
@@ -1415,6 +1353,8 @@ const ideologies = {
         foreign: "armed_neutrality"
     },
     "Green Social Democracy": {
+        group: "Centre-Left",
+        color: "#2e8555",
         economics: ["social_market", "keynesianism"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: ["social_progressivism", "progressivism"],
@@ -1426,6 +1366,8 @@ const ideologies = {
         territorial_organization: ["federalism", "regionalism", "centralism"]
     },
     "Geo-Social Democracy": {
+        group: "Centre-Left",
+        color: "#3b9468",
         economics: ["social_corporatism", "keynesianism"],
         resource_management: ["lvt", "mixed_lvt"],
         culture: ["social_progressivism", "progressivism"],
@@ -1437,6 +1379,8 @@ const ideologies = {
         territorial_organization: ["federalism", "centralism", "regionalism"]
     },
     "Christian Social Democracy": {
+        group: "Centre-Left",
+        color: "#a8384b",
         economics: ["social_solidarity_economy", "social_market"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "progressive_conservatism",
@@ -1448,6 +1392,8 @@ const ideologies = {
         territorial_organization: ["federalism", "regionalism"]
     },
     "Police Labourism": {
+        group: "Centre-Left",
+        color: "#8c2735",
         economics: ["social_corporatism", "keynesianism"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: ["social_progressivism", "progressive_conservatism"],
@@ -1459,6 +1405,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Left Kemalism": {
+        group: "Centre-Left",
+        color: "#d92b2b",
         economics: ["state_socialism", "market_socialism"],
         resource_management: "Confiscatory_Taxation",
         culture: "social_progressivism",
@@ -1470,8 +1418,10 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Left-Social Authoritarianism": {
+        group: "Centre-Left",
+        color: "#8f2424",
         economics: ["social_corporatism", "guild_socialism", "dirigisme"],
-        resource_management: ["Progressive_Taxation", "mixed_lvt"],
+        resource_management: ["state_enterprise_revenue", "Progressive_Taxation", "mixed_lvt"],
         culture: ["progressive_conservatism", "alternative_modernism", "social_progressivism"],
         authority: "autocracy",
         nation: ["pan_nationalism", "civic_nationalism"],
@@ -1481,8 +1431,10 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Progressive Social Authoritarianism": {
+        group: "Centre-Left",
+        color: "#9e2a45",
         economics: ["state_capitalism", "social_corporatism"],
-        resource_management: ["Progressive_Taxation", "mixed_lvt"],
+        resource_management: ["state_enterprise_revenue", "Progressive_Taxation", "mixed_lvt"],
         culture: ["progressivism", "social_progressivism"],
         authority: ["autocracy", "partocracy"],
         nation: "civic_nationalism",
@@ -1492,6 +1444,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Left-Wing Populism": {
+        group: "Centre-Left",
+        color: "#db3246",
         economics: ["keynesianism", "market_socialism"],
         resource_management: "Confiscatory_Taxation",
         culture: "social_progressivism",
@@ -1503,6 +1457,8 @@ const ideologies = {
         territorial_organization: ["federalism", "regionalism"]
     },
     "Left-Social Democracy": {
+        group: "Centre-Left",
+        color: "#c42735",
         economics: "market_socialism",
         resource_management: "Confiscatory_Taxation",
         culture: "social_progressivism",
@@ -1514,6 +1470,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Social-Helveticism": {
+        group: "Centre-Left",
+        color: "#cf3838",
         economics: ["social_market", "rhine_capitalism", "keynesianism"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "social_progressivism",
@@ -1524,6 +1482,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Longism": {
+        group: "Centre-Left",
+        color: "#a8501f",
         economics: ["keynesianism", "paternalistic_capitalism"],
         resource_management: "Confiscatory_Taxation",
         culture: "progressive_conservatism",
@@ -1539,6 +1499,8 @@ const ideologies = {
         6. LIBERAL
     =============================== */
     "Classical Liberalism": {
+        group: "Liberal",
+        color: "#71beebff",
         economics: "laissez_faire",
         resource_management: ["flat_taxation", "tariff_funding", "lvt", "Voluntaryism"],
         culture: "civil_liberalism",
@@ -1549,6 +1511,8 @@ const ideologies = {
         territorial_organization: ["federalism", "centralism", "regionalism"]
     },
     "Neoliberalism": {
+        group: "Liberal",
+        color: "#54ABC7",
         economics: ["residualism", "laissez_faire"],
         resource_management: "flat_taxation",
         culture: ["civil_liberalism", "progressivism"],
@@ -1558,6 +1522,8 @@ const ideologies = {
         technology: ["post_industrialism", "extropianism"]
     },
     "National Liberalism": {
+        group: "Liberal",
+        color: "#3D5A80",
         economics: "laissez_faire",
         resource_management: "flat_taxation",
         culture: "conservative_liberalism",
@@ -1566,6 +1532,8 @@ const ideologies = {
         foreign: "Realpolitik"
     },
     "Social Liberalism": {
+        group: "Liberal",
+        color: "#4B92DB",
         economics: "social_market",
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: ["civil_liberalism", "social_progressivism", "progressivism"],
@@ -1577,6 +1545,8 @@ const ideologies = {
         territorial_organization: ["federalism", "centralism", "regionalism"]
     },
     "Ordoliberalism": {
+        group: "Liberal",
+        color: "#518699",
         economics: "ordnungspolitik",
         culture: ["conservative_liberalism", "liberal_conservatism"],
         authority: "representative_democracy",
@@ -1584,6 +1554,8 @@ const ideologies = {
         foreign: ["Globalism", "Internationalism"]
     },
     "Bleeding-Heart Liberalism": {
+        group: "Liberal",
+        color: "#5ca0d3ff",
         economics: "basic_income_capitalism",
         resource_management: "Progressive_Taxation",
         culture: "social_progressivism",
@@ -1593,6 +1565,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Geo-Liberalism": {
+        group: "Liberal",
+        color: "#4f9e61ff",
         economics: ["basic_income_capitalism", "laissez_faire"],
         resource_management: ["lvt", "mixed_lvt"],
         culture: "civil_liberalism",
@@ -1601,6 +1575,8 @@ const ideologies = {
         foreign: "Globalism"
     },
     "Green Liberalism": {
+        group: "Liberal",
+        color: "#38a169ff",
         economics: "social_market",
         resource_management: "Progressive_Taxation",
         culture: "civil_liberalism",
@@ -1610,6 +1586,8 @@ const ideologies = {
         technology: "environmentalism"
     },
     "Whiggism": {
+        group: "Liberal",
+        color: "#846594ff",
         economics: "laissez_faire",
         culture: "conservative_liberalism",
         authority: "constitutional",
@@ -1617,6 +1595,8 @@ const ideologies = {
         foreign: "Realpolitik"
     },
     "Muscular Liberalism": {
+        group: "Liberal",
+        color: "#2b6cb0",
         economics: ["third_way", "residualism"],
         culture: "civil_liberalism",
         authority: "representative_democracy",
@@ -1625,6 +1605,8 @@ const ideologies = {
         social_control: "civic_paternalism"
     },
     "Transatlantic Federalism": {
+        group: "Liberal",
+        color: "#4688b8",
         economics: ["ordnungspolitik", "social_market", "third_way"],
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "civil_liberalism",
@@ -1636,6 +1618,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "New Deal Liberalism": {
+        group: "Liberal",
+        color: "#3474b4",
         economics: "keynesianism",
         resource_management: "Progressive_Taxation",
         culture: ["civil_liberalism", "progressive_conservatism"],
@@ -1647,6 +1631,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Venizelism": {
+        group: "Liberal",
+        color: "#2e6da4",
         economics: ["social_solidarity_economy", "social_market"],
         resource_management: "Progressive_Taxation",
         culture: ["conservative_liberalism", "liberal_conservatism"],
@@ -1658,6 +1644,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Liberal Social Authoritarianism": {
+        group: "Liberal",
+        color: "#385e82",
         economics: ["third_way", "keynesianism"],
         resource_management: "Progressive_Taxation",
         culture: ["social_progressivism", "civil_liberalism"],
@@ -1669,6 +1657,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Technoliberalism": {
+        group: "Liberal",
+        color: "#3399b8",
         economics: "ordnungspolitik",
         resource_management: "Progressive_Taxation",
         culture: "civil_liberalism",
@@ -1680,6 +1670,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "American Model": {
+        group: "Liberal",
+        color: "#244c8a",
         economics: ["laissez_faire", "residualism"],
         resource_management: "Progressive_Taxation",
         culture: ["civil_liberalism", "conservative_liberalism"],
@@ -1691,6 +1683,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Techno-Neoliberalism": {
+        group: "Liberal",
+        color: "#33738f",
         economics: ["residualism", "laissez_faire"],
         resource_management: "flat_taxation",
         culture: ["civil_liberalism", "progressivism"],
@@ -1702,6 +1696,8 @@ const ideologies = {
         territorial_organization: ["centralism", "federalism", "regionalism"]
     },
     "Tsaingwenism": {
+        group: "Liberal",
+        color: "#1b8a36",
         economics: "third_way",
         resource_management: ["Progressive_Taxation", "mixed_lvt"],
         culture: "progressivism",
@@ -1713,6 +1709,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Liberal Imperialism": {
+        group: "Liberal",
+        color: "#2a5f78",
         economics: ["laissez_faire", "ordnungspolitik"],
         resource_management: ["flat_taxation", "Progressive_Taxation"],
         culture: ["conservative_liberalism", "civil_liberalism", "liberal_conservatism"],
@@ -1723,6 +1721,8 @@ const ideologies = {
         territorial_organization: ["federalism", "centralism", "regionalism"]
     },
     "Liberal Meritocracy": {
+        group: "Liberal",
+        color: "#2b82a3",
         economics: ["social_market", "third_way"],
         resource_management: "Progressive_Taxation",
         culture: "civil_liberalism",
@@ -1733,11 +1733,13 @@ const ideologies = {
         social_control: "civil_libertarianism",
         territorial_organization: ["federalism", "centralism"]
     },
-    
+
     /* ===============================
         7. SOCIALIST
     =============================== */
     "Christian Socialism": {
+        group: "Socialist",
+        color: "#8B0000",
         economics: ["utopian_socialism", "guild_socialism"],
         culture: ["social_progressivism", "progressive_conservatism"],
         authority: "representative_democracy",
@@ -1745,6 +1747,8 @@ const ideologies = {
         foreign: "Non_Interventionism"
     },
     "National Bolshevism": {
+        group: "Socialist",
+        color: "#690000ff",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: ["perennial_traditionalism", "reactionary_modernism"],
@@ -1753,6 +1757,8 @@ const ideologies = {
         foreign: "Imperialism"
     },
     "Democratic Socialism": {
+        group: "Socialist",
+        color: "#E34234",
         economics: ["market_socialism", "free_socialism", "state_socialism"],
         culture: "social_progressivism",
         authority: "representative_democracy",
@@ -1760,6 +1766,8 @@ const ideologies = {
         foreign: ["alter_globalism", "Internationalism"]
     },
     "Conservative Socialism": {
+        group: "Socialist",
+        color: "#7e1e1eff",
         economics: "state_socialism",
         resource_management: "Confiscatory_Taxation",
         culture: ["conservatism", "traditionalist_conservatism"],
@@ -1768,6 +1776,8 @@ const ideologies = {
         foreign: "Realpolitik"
     },
     "Paleosocialism": {
+        group: "Socialist",
+        color: "#77223eff",
         economics: "state_socialism",
         resource_management: "Confiscatory_Taxation",
         culture: "paleoconservatism",
@@ -1775,13 +1785,18 @@ const ideologies = {
         foreign: "Isolationism"
     },
     "Cybernetic Socialism": {
-        economics: ["state_socialism", "guild_socialism"],
+        group: "Socialist",
+        color: "#822639ff",
+        economics: "cybernetic_socialism",
+        resource_management: ["Progressive_Taxation", "Confiscatory_Taxation"],
         culture: ["social_progressivism", "progressivism"],
-        authority: ["technocracy", "digital_democracy"],
+        authority: ["digital_democracy", "councilism"],
         foreign: "Internationalism",
         technology: "prometheanism"
     },
     "Utopian Communitarianism": {
+        group: "Socialist",
+        color: "#963629ff",
         economics: "utopian_socialism",
         resource_management: ["collective_distribution", "Voluntaryism"],
         culture: ["social_progressivism", "progressivism"],
@@ -1792,6 +1807,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Syndicalist Republicanism": {
+        group: "Socialist",
+        color: "#a82020ff",
         economics: "syndicalism",
         resource_management: ["collective_distribution", "Progressive_Taxation"],
         culture: "social_progressivism",
@@ -1802,6 +1819,8 @@ const ideologies = {
         territorial_organization: ["federalism", "centralism", "regionalism", "subsidiarity"]
     },
     "Left-Eurasianism": {
+        group: "Socialist",
+        color: "#782222",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "alternative_modernism",
@@ -1811,6 +1830,8 @@ const ideologies = {
         social_control: "regimentalism"
     },
     "Socialist Technoliberalism": {
+        group: "Socialist",
+        color: "#bd334b",
         economics: "market_socialism",
         resource_management: ["Progressive_Taxation", "Confiscatory_Taxation"],
         culture: ["progressivism", "civil_liberalism"],
@@ -1822,6 +1843,8 @@ const ideologies = {
         territorial_organization: ["federalism", "regionalism"]
     },
     "Mugabeism": {
+        group: "Socialist",
+        color: "#2f5926",
         economics: ["agrarian_socialism", "state_socialism"],
         resource_management: ["Confiscatory_Taxation", "collective_distribution"],
         culture: ["conservatism", "traditionalist_conservatism"],
@@ -1833,6 +1856,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Old Left-Populism": {
+        group: "Socialist",
+        color: "#822424",
         economics: ["state_socialism", "agrarian_socialism"],
         resource_management: "Confiscatory_Taxation",
         culture: ["conservatism", "traditionalist_conservatism"],
@@ -1844,6 +1869,8 @@ const ideologies = {
         territorial_organization: ["centralism", "regionalism"]
     },
     "Left-State Liberalism": {
+        group: "Socialist",
+        color: "#702963",
         economics: ["state_capitalism", "dirigisme"],
         resource_management: "Progressive_Taxation",
         culture: ["postmodernism", "progressivism"],
@@ -1855,6 +1882,8 @@ const ideologies = {
         territorial_organization: ["hypercentralism", "centralism"]
     },
     "American Technocracy": {
+        group: "Socialist",
+        color: "#1d4e89",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "progressivism",
@@ -1866,6 +1895,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Fabian Socialism": {
+        group: "Socialist",
+        color: "#9e2a2b",
         economics: ["state_socialism", "dirigisme"],
         resource_management: "Progressive_Taxation",
         culture: "progressivism",
@@ -1877,6 +1908,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Ujamaa": {
+        group: "Socialist",
+        color: "#1b7a42",
         economics: "agrarian_socialism",
         resource_management: "collective_distribution",
         culture: "progressive_conservatism",
@@ -1892,6 +1925,8 @@ const ideologies = {
         8. MARXIST
     =============================== */
     "Italian Left Communism": {
+        group: "Marxist",
+        color: "#B22222",
         economics: "communization",
         resource_management: "collective_distribution",
         culture: ["progressivism", "social_progressivism"],
@@ -1900,6 +1935,8 @@ const ideologies = {
         foreign: "Internationalism"
     },
     "Juche": {
+        group: "Marxist",
+        color: "#C00000",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: ["conservatism", "traditionalist_conservatism", "reactionary_modernism"],
@@ -1910,6 +1947,8 @@ const ideologies = {
         social_control: "regimentalism"
     },
     "Mao Zedong Thought": {
+        group: "Marxist",
+        color: "#EE1C25",
         economics: "agrarian_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -1918,6 +1957,8 @@ const ideologies = {
         foreign: "Realpolitik"
     },
     "Marxism Leninism Maoism": {
+        group: "Marxist",
+        color: "#ED1C24",
         economics: "agrarian_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -1926,6 +1967,8 @@ const ideologies = {
         foreign: ["Internationalism", "Interventionism", "alter_globalism"]
     },
     "Trotskyism": {
+        group: "Marxist",
+        color: "#CC0000",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -1934,6 +1977,8 @@ const ideologies = {
         foreign: "Internationalism"
     },
     "Marxism-Leninism": {
+        group: "Marxist",
+        color: "#CD0000",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -1942,6 +1987,8 @@ const ideologies = {
         foreign: ["Internationalism", "Interventionism"]
     },
     "Stalinism": {
+        group: "Marxist",
+        color: "#A52A2A",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "conservatism",
@@ -1953,8 +2000,10 @@ const ideologies = {
         territorial_organization: ["centralism", "hypercentralism"]
     },
     "Titoism": {
+        group: "Marxist",
+        color: "#bb4747ff",
         economics: "market_socialism",
-        resource_management: "collective_distribution",
+        resource_management: ["state_enterprise_revenue", "collective_distribution"],
         culture: "social_progressivism",
         authority: "partocracy",
         nation: "civic_nationalism",
@@ -1962,7 +2011,10 @@ const ideologies = {
         territorial_organization: ["federalism", "regionalism"]
     },
     "Dengism": {
+        group: "Marxist",
+        color: "#DE2910",
         economics: "state_capitalism",
+        resource_management: "state_enterprise_revenue",
         culture: "alternative_modernism",
         authority: "partocracy",
         nation: "civic_nationalism",
@@ -1972,6 +2024,8 @@ const ideologies = {
         territorial_organization: ["centralism", "regionalism"]
     },
     "Luxemburgism": {
+        group: "Marxist",
+        color: "#ad1818ff",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -1980,6 +2034,8 @@ const ideologies = {
         foreign: "Internationalism"
     },
     "Eurocommunism": {
+        group: "Marxist",
+        color: "#bd2828ff",
         economics: "market_socialism",
         resource_management: ["Progressive_Taxation", "Confiscatory_Taxation"],
         culture: "social_progressivism",
@@ -1988,6 +2044,8 @@ const ideologies = {
         foreign: "Internationalism"
     },
     "Hoxhaism": {
+        group: "Marxist",
+        color: "#781414ff",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "conservatism",
@@ -1998,6 +2056,8 @@ const ideologies = {
         social_control: "totalism"
     },
     "Castroism": {
+        group: "Marxist",
+        color: "#b82323ff",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2007,6 +2067,8 @@ const ideologies = {
         technology: "industrialism"
     },
     "Guevarism": {
+        group: "Marxist",
+        color: "#c71e1eff",
         economics: "agrarian_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2014,14 +2076,19 @@ const ideologies = {
         foreign: "Interventionism"
     },
     "Cyber-Communism": {
-        economics: "state_socialism",
+        group: "Marxist",
+        color: "#872235ff",
+        economics: "cybernetic_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
         authority: "technocracy",
+        nation: "Cosmopolitanism",
         foreign: "Internationalism",
         technology: "prometheanism"
     },
     "De Leonism": {
+        group: "Marxist",
+        color: "#a32121ff",
         economics: "syndicalism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2031,6 +2098,8 @@ const ideologies = {
         technology: "industrialism"
     },
     "National Communism": {
+        group: "Marxist",
+        color: "#b81d24",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2046,6 +2115,8 @@ const ideologies = {
         9. LEFT-LIBERTARIAN
     =============================== */
     "Communalism": {
+        group: "Left-Libertarian",
+        color: "#bb5030ff",
         economics: "free_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2056,6 +2127,8 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism"]
     },
     "Minarcho-Socialism": {
+        group: "Left-Libertarian",
+        color: "#FF4D4D",
         economics: ["free_socialism", "market_socialism"],
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2063,6 +2136,8 @@ const ideologies = {
         foreign: "Non_Interventionism"
     },
     "Council Communism": {
+        group: "Left-Libertarian",
+        color: "#740909ff",
         economics: ["free_socialism", "communization"],
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2071,6 +2146,8 @@ const ideologies = {
         foreign: "Internationalism"
     },
     "Libertarian Socialism": {
+        group: "Left-Libertarian",
+        color: "#ac3232ff",
         economics: ["free_socialism", "parecon"],
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2081,6 +2158,8 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism"]
     },
     "Democratic Confederalism": {
+        group: "Left-Libertarian",
+        color: "#387a38ff",
         economics: ["free_socialism", "parecon"],
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2092,6 +2171,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Guild Socialism": {
+        group: "Left-Libertarian",
+        color: "#a83e20ff",
         economics: "guild_socialism",
         resource_management: ["collective_distribution", "Progressive_Taxation", "Confiscatory_Taxation"],
         culture: "social_progressivism",
@@ -2101,6 +2182,8 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism", "federalism"]
     },
     "Eco-Socialism": {
+        group: "Left-Libertarian",
+        color: "#2f6b36ff",
         economics: "free_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2109,6 +2192,8 @@ const ideologies = {
         technology: ["conservationism", "environmentalism"]
     },
     "Fourierism": {
+        group: "Left-Libertarian",
+        color: "#a64966",
         economics: "utopian_socialism",
         culture: "social_progressivism",
         authority: ["communalism", "anarchism"],
@@ -2117,6 +2202,8 @@ const ideologies = {
         social_control: "permissivism"
     },
     "Gandhian Socialism": {
+        group: "Left-Libertarian",
+        color: "#94552b",
         economics: "market_socialism",
         culture: "religious_traditionalism",
         authority: "communalism",
@@ -2127,13 +2214,17 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Scythianism": {
+        group: "Left-Libertarian",
+        color: "#8c4e20",
         economics: "agrarian_socialism",
         culture: "alternative_modernism",
-        authority: ["referendum_democracy", "anarchism"],
+        authority: ["referendum_democracy", "anarchism", "ochlocracy"],
         nation: "civilizationism",
         social_control: "permissivism"
     },
     "Proutism": {
+        group: "Left-Libertarian",
+        color: "#c45a25",
         economics: ["free_socialism", "market_socialism"],
         resource_management: "collective_distribution",
         culture: ["progressivism", "social_progressivism"],
@@ -2149,6 +2240,8 @@ const ideologies = {
         10. CENTRE-LIBERTARIAN
     =============================== */
     "Geolibertarianism": {
+        group: "Centre-Libertarian",
+        color: "#709e3cff",
         economics: "laissez_faire",
         resource_management: "lvt",
         culture: "civil_liberalism",
@@ -2157,6 +2250,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Social Libertarianism": {
+        group: "Centre-Libertarian",
+        color: "#eebb2fff",
         economics: "basic_income_capitalism",
         resource_management: "lvt",
         culture: "social_progressivism",
@@ -2166,6 +2261,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Helvetic Model": {
+        group: "Centre-Libertarian",
+        color: "#77ccccff",
         economics: ["ordnungspolitik", "social_market", "laissez_faire"],
         culture: ["civil_liberalism", "conservative_liberalism"],
         authority: "referendum_democracy",
@@ -2175,6 +2272,8 @@ const ideologies = {
         territorial_organization: ["confederalism", "federalism"]
     },
     "Bleeding-Heart Libertarianism": {
+        group: "Centre-Libertarian",
+        color: "#887f00ff",
         economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: ["progressivism", "social_progressivism"],
@@ -2184,6 +2283,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Minarcho-Distributism": {
+        group: "Centre-Libertarian",
+        color: "#ad8326ff",
         economics: ["free_market_distributism", "distributism"],
         culture: "traditionalist_conservatism",
         authority: "minarchism",
@@ -2191,6 +2292,8 @@ const ideologies = {
         technology: "neoluddism"
     },
     "Pirate Politics": {
+        group: "Centre-Libertarian",
+        color: "#5d43a6ff",
         economics: "basic_income_capitalism",
         culture: ["civil_liberalism", "social_progressivism"],
         authority: "digital_democracy",
@@ -2200,6 +2303,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Agorist Minarchism": {
+        group: "Centre-Libertarian",
+        color: "#73802eff",
         economics: "countereconomics",
         culture: "civil_liberalism",
         authority: "minarchism",
@@ -2207,6 +2312,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Communal Distributism": {
+        group: "Centre-Libertarian",
+        color: "#a65d28ff",
         economics: "social_distributism",
         culture: "social_progressivism",
         authority: "communalism",
@@ -2215,6 +2322,8 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism"]
     },
     "Yangism": {
+        group: "Centre-Libertarian",
+        color: "#4a77b5",
         economics: "basic_income_capitalism",
         resource_management: "Progressive_Taxation",
         culture: ["progressivism", "social_progressivism"],
@@ -2226,6 +2335,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Libertarian Social Democracy": {
+        group: "Centre-Libertarian",
+        color: "#e07a38",
         economics: ["social_market", "basic_income_capitalism"],
         resource_management: ["lvt", "Progressive_Taxation", "mixed_lvt"],
         culture: "social_progressivism",
@@ -2237,6 +2348,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Progressive Helveticism": {
+        group: "Centre-Libertarian",
+        color: "#43afa1ff",
         economics: "social_market",
         culture: ["progressivism", "social_progressivism"],
         authority: "referendum_democracy",
@@ -2247,6 +2360,8 @@ const ideologies = {
         territorial_organization: ["federalism", "confederalism"]
     },
     "Cosmopolitan Distributism": {
+        group: "Centre-Libertarian",
+        color: "#4871a7ff",
         economics: "social_distributism",
         resource_management: ["collective_distribution", "Progressive_Taxation"],
         culture: "social_progressivism",
@@ -2258,6 +2373,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Cyber-Federalism": {
+        group: "Centre-Libertarian",
+        color: "#20808a",
         economics: ["social_solidarity_economy", "social_market", "ordnungspolitik"],
         resource_management: ["flat_taxation", "mixed_lvt"],
         culture: ["conservative_liberalism", "civil_liberalism"],
@@ -2273,6 +2390,8 @@ const ideologies = {
         11. RIGHT-LIBERTARIAN
     =============================== */
     "Neolibertarianism": {
+        group: "Right-Libertarian",
+        color: "#B8860B",
         economics: "laissez_faire",
         resource_management: "flat_taxation",
         culture: "civil_liberalism",
@@ -2283,6 +2402,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Libertarian Conservatism": {
+        group: "Right-Libertarian",
+        color: "#c5b30fff",
         economics: "laissez_faire",
         resource_management: "flat_taxation",
         culture: ["conservatism", "liberal_conservatism", "conservative_liberalism", "traditionalist_conservatism"],
@@ -2293,6 +2414,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "National Libertarianism": {
+        group: "Right-Libertarian",
+        color: "#6b5d2fff",
         economics: "laissez_faire",
         resource_management: "flat_taxation",
         culture: ["paleoconservatism", "conservatism"],
@@ -2303,6 +2426,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Paleolibertarianism": {
+        group: "Right-Libertarian",
+        color: "#72406aff",
         economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: ["paleoconservatism", "traditionalist_conservatism"],
@@ -2312,15 +2437,30 @@ const ideologies = {
         social_control: "civil_libertarianism",
         territorial_organization: ["confederalism", "federalism"]
     },
-    "Dark Enlightenment": {
-        economics: ["laissez_faire", "cameralism"],
+    "Yarvinism": {
+        group: "Right-Libertarian",
+        color: "#6d5000ff",
+        economics: ["cameralism", "laissez_faire"],
+        resource_management: ["flat_taxation", "regressive_taxation"],
         culture: "neoreactionaryism",
         authority: "neocameralism",
+        technology: ["instrumentalism", "industrialism"],
+        social_control: ["securitism", "disciplinarianism"],
+        territorial_organization: "patchwork"
+    },
+    "Landianism": {
+        group: "Right-Libertarian",
+        color: "#4a3819ff",
+        economics: ["laissez_faire", "countereconomics"],
+        culture: "neoreactionaryism",
+        authority: ["neocameralism", "polycentrism"],
         technology: ["technocapitalism", "posthumanism"],
-        social_control: ["securitism", "totalism"],
-        territorial_organization: ["centralism", "hypercentralism"]
+        social_control: "permissivism",
+        territorial_organization: ["patchwork", "confederalism"]
     },
     "Cyber-Libertarianism": {
+        group: "Right-Libertarian",
+        color: "#3b8094ff",
         economics: "laissez_faire",
         culture: "civil_liberalism",
         authority: "minarchism",
@@ -2330,6 +2470,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Objectivism": {
+        group: "Right-Libertarian",
+        color: "#256285ff",
         economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: ["civil_liberalism", "secular_humanism"],
@@ -2340,6 +2482,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Fusionism": {
+        group: "Right-Libertarian",
+        color: "#7c7224ff",
         economics: "laissez_faire",
         culture: "traditionalist_conservatism",
         authority: ["minarchism", "representative_democracy"],
@@ -2350,6 +2494,8 @@ const ideologies = {
         territorial_organization: "federalism"
     },
     "Minarcho-Avaritionism": {
+        group: "Right-Libertarian",
+        color: "#8c7e1e",
         economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: "postmodernism",
@@ -2363,6 +2509,8 @@ const ideologies = {
         12. LEFT-ANARCHIST
     =============================== */
     "Anarcho-Syndicalism": {
+        group: "Left-Anarchist",
+        color: "#941313",
         economics: "syndicalism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2373,6 +2521,8 @@ const ideologies = {
         territorial_organization: "confederalism"
     },
     "Left-Agorism": {
+        group: "Left-Anarchist",
+        color: "#632f2fff",
         economics: "countereconomics",
         resource_management: ["collective_distribution", "Voluntaryism"],
         culture: "social_progressivism",
@@ -2383,6 +2533,8 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism"]
     },
     "Lys Noir": {
+        group: "Left-Anarchist",
+        color: "#242424ff",
         economics: ["agrarian_socialism", "feudalism"],
         culture: "reactionaryism",
         authority: "anarcho_monarchism",
@@ -2393,6 +2545,8 @@ const ideologies = {
         territorial_organization: ["regionalism", "confederalism"]
     },
     "Anarcho-Communism": {
+        group: "Left-Anarchist",
+        color: "#a11111ff",
         economics: "communization",
         resource_management: "collective_distribution",
         culture: ["social_progressivism", "progressivism"],
@@ -2404,10 +2558,12 @@ const ideologies = {
         territorial_organization: ["confederalism", "municipalism"]
     },
     "Solarpunk Anarchism": {
+        group: "Left-Anarchist",
+        color: "#428a47ff",
         economics: "free_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
-        authority: "communalism",
+        authority: ["anarchism", "communalism"],
         nation: "Cosmopolitanism",
         foreign: "alter_globalism",
         technology: ["technogaianism", "convivialism"],
@@ -2415,6 +2571,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Christian Anarchism": {
+        group: "Left-Anarchist",
+        color: "#802222ff",
         economics: ["utopian_socialism", "distributism"],
         resource_management: "Voluntaryism",
         culture: "religious_traditionalism",
@@ -2425,6 +2583,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Insurrectionary Anarchism": {
+        group: "Left-Anarchist",
+        color: "#851212ff",
         economics: ["communization", "free_socialism"],
         resource_management: "collective_distribution",
         culture: ["postmodernism", "social_progressivism"],
@@ -2435,6 +2595,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Catholic Workerism": {
+        group: "Left-Anarchist",
+        color: "#7a2020",
         economics: ["mutual_distributism", "utopian_socialism"],
         resource_management: "collective_distribution",
         culture: "religious_traditionalism",
@@ -2450,6 +2612,8 @@ const ideologies = {
         13. CENTRE-ANARCHIST
     =============================== */
     "Mutualism": {
+        group: "Centre-Anarchist",
+        color: "#db4804ff",
         economics: "mutualism",
         culture: ["civil_liberalism", "social_progressivism"],
         authority: "anarchism",
@@ -2459,6 +2623,8 @@ const ideologies = {
         territorial_organization: "confederalism"
     },
     "Market Anarchism": {
+        group: "Centre-Anarchist",
+        color: "#C74A0A",
         economics: ["market_socialism", "mutualism"],
         culture: "civil_liberalism",
         authority: "anarchism",
@@ -2468,6 +2634,8 @@ const ideologies = {
         territorial_organization: ["confederalism", "municipalism"]
     },
     "Mutualist Distributism": {
+        group: "Centre-Anarchist",
+        color: "#b8531dff",
         economics: "mutual_distributism",
         culture: ["traditionalist_conservatism", "social_progressivism"],
         authority: "anarchism",
@@ -2477,15 +2645,20 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism"]
     },
     "Panarchism": {
+        group: "Centre-Anarchist",
+        color: "#7f73bdff",
         economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: "civil_liberalism",
         authority: "polycentrism",
         nation: "Cosmopolitanism",
         foreign: "Non_Interventionism",
-        social_control: "permissivism"
+        social_control: "permissivism",
+        territorial_organization: "patchwork"
     },
     "Geoanarchism": {
+        group: "Centre-Anarchist",
+        color: "#8cb148ff",
         economics: ["laissez_faire", "mutualism"],
         resource_management: "lvt",
         culture: "civil_liberalism",
@@ -2496,6 +2669,8 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism"]
     },
     "Green Anarchism": {
+        group: "Centre-Anarchist",
+        color: "#1f6b2aff",
         economics: "free_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2507,14 +2682,19 @@ const ideologies = {
         territorial_organization: ["confederalism", "municipalism"]
     },
     "Anarcho-Primitivism": {
+        group: "Centre-Anarchist",
+        color: "#234d20ff",
         economics: "free_socialism",
         authority: "anarchism",
         nation: "Tribalism",
         foreign: "Isolationism",
         technology: "primitivism",
-        social_control: "permissivism"
+        social_control: "permissivism",
+        territorial_organization: "anti_organizationalism"
     },
     "Post-Anarchism": {
+        group: "Centre-Anarchist",
+        color: "#520000ff",
         economics: "free_socialism",
         culture: "postmodernism",
         authority: "anarchism",
@@ -2524,14 +2704,19 @@ const ideologies = {
         territorial_organization: "confederalism"
     },
     "Post-left": {
+        group: "Centre-Anarchist",
+        color: "#700000",
         economics: "communization",
         resource_management: "collective_distribution",
         culture: ["postmodernism", "amoralism"],
         authority: "anarchism",
         nation: "egoism",
-        social_control: "permissivism"
+        social_control: "permissivism",
+        territorial_organization: "anti_organizationalism"
     },
     "Anarcho-Transhumanism": {
+        group: "Centre-Anarchist",
+        color: "#3a6073ff",
         economics: ["free_socialism", "mutualism", "communization"],
         culture: "social_progressivism",
         authority: "anarchism",
@@ -2540,6 +2725,8 @@ const ideologies = {
         territorial_organization: "confederalism"
     },
     "Ego-Communism": {
+        group: "Centre-Anarchist",
+        color: "#005a5aff",
         economics: "communization",
         resource_management: "collective_distribution",
         culture: ["postmodernism", "amoralism"],
@@ -2550,6 +2737,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "National-Anarchism": {
+        group: "Centre-Anarchist",
+        color: "#533027ff",
         economics: ["distributism", "mutual_distributism"],
         culture: ["perennial_traditionalism", "reactionaryism"],
         authority: "anarchism",
@@ -2560,6 +2749,8 @@ const ideologies = {
         territorial_organization: "municipalism"
     },
     "Ego-Mutualism": {
+        group: "Centre-Anarchist",
+        color: "#c26b1aff",
         economics: "mutualism",
         culture: ["postmodernism", "civil_liberalism"],
         authority: "anarchism",
@@ -2573,7 +2764,9 @@ const ideologies = {
         14. RIGHT-ANARCHIST
     =============================== */
     "Anarcho-Capitalism": {
-        economics: ["laissez_faire", "countereconomics"],
+        group: "Right-Anarchist",
+        color: "#D4CB20",
+        economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: "civil_liberalism",
         authority: ["anarchism", "polycentrism"],
@@ -2583,16 +2776,20 @@ const ideologies = {
         territorial_organization: ["confederalism", "municipalism"]
     },
     "Hoppeanism": {
+        group: "Right-Anarchist",
+        color: "#e0bf00ff",
         economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: ["paleoconservatism", "reactionaryism"],
-        authority: ["anarchism", "anarcho_monarchism"],
+        authority: "anarcho_monarchism",
         nation: ["communitarianism", "Tribalism"],
         foreign: ["Non_Interventionism", "Isolationism"],
         social_control: "disciplinarianism",
-        territorial_organization: ["municipalism", "confederalism"]
+        territorial_organization: ["patchwork", "municipalism", "confederalism"]
     },
     "Bleeding-Heart Anarcho-Capitalism": {
+        group: "Right-Anarchist",
+        color: "#faca47ff",
         economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: ["social_progressivism", "progressivism"],
@@ -2603,6 +2800,8 @@ const ideologies = {
         territorial_organization: "confederalism"
     },
     "Traditionalist Anarcho-Distributism": {
+        group: "Right-Anarchist",
+        color: "#a8811eff",
         economics: "distributism",
         resource_management: "Voluntaryism",
         culture: ["religious_traditionalism", "traditionalist_conservatism"],
@@ -2614,6 +2813,8 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism"]
     },
     "Crypto-Anarchism": {
+        group: "Right-Anarchist",
+        color: "#3f7a8cff",
         economics: ["countereconomics", "laissez_faire"],
         resource_management: "Voluntaryism",
         culture: "civil_liberalism",
@@ -2624,6 +2825,8 @@ const ideologies = {
         social_control: "civil_libertarianism"
     },
     "Avaritionism": {
+        group: "Right-Anarchist",
+        color: "#aeb645ff",
         economics: ["laissez_faire", "countereconomics"],
         resource_management: "Voluntaryism",
         culture: ["postmodernism", "amoralism"],
@@ -2633,6 +2836,8 @@ const ideologies = {
         social_control: "permissivism"
     },
     "Autarchism": {
+        group: "Right-Anarchist",
+        color: "#c2a632ff",
         economics: "laissez_faire",
         resource_management: "Voluntaryism",
         culture: "civil_liberalism",
@@ -2642,6 +2847,8 @@ const ideologies = {
         social_control: ["civil_libertarianism", "permissivism"]
     },
     "Free-Market Anarcho-Distributism": {
+        group: "Right-Anarchist",
+        color: "#c49823ff",
         economics: "free_market_distributism",
         resource_management: "Voluntaryism",
         culture: ["traditionalist_conservatism", "civil_liberalism"],
@@ -2651,6 +2858,8 @@ const ideologies = {
         territorial_organization: ["municipalism", "confederalism"]
     },
     "Agorism": {
+        group: "Right-Anarchist",
+        color: "#8c821eff",
         economics: "countereconomics",
         resource_management: "Voluntaryism",
         culture: "civil_liberalism",
@@ -2665,6 +2874,8 @@ const ideologies = {
         15. ACCELERATIONIST
     =============================== */
     "Left-Accelerationism": {
+        group: "Accelerationist",
+        color: "#c93c3cff",
         economics: "free_socialism",
         resource_management: "collective_distribution",
         culture: "social_progressivism",
@@ -2673,19 +2884,26 @@ const ideologies = {
         technology: "prometheanism"
     },
     "Right-Accelerationism": {
+        group: "Accelerationist",
+        color: "#75631eff",
         economics: "countereconomics",
         resource_management: "Voluntaryism",
         culture: "postmodernism",
         authority: "anarchism",
-        technology: "technocapitalism"
+        technology: "technocapitalism",
+        territorial_organization: "patchwork"
     },
     "Effective Accelerationism": {
+        group: "Accelerationist",
+        color: "#d69e15ff",
         economics: "laissez_faire",
         culture: ["progressivism", "civil_liberalism"],
         authority: "minarchism",
         technology: "extropianism"
     },
     "Unconditional Accelerationism": {
+        group: "Accelerationist",
+        color: "#1f1f1fff",
         economics: "laissez_faire",
         culture: ["postmodernism", "amoralism"],
         authority: "anarchism",
@@ -2697,6 +2915,8 @@ const ideologies = {
         16. DYSTOPIAN
     =============================== */
     "Neo-Libertarian Falangism": {
+        group: "Dystopian",
+        color: "#726e3aff",
         economics: "yellow_socialism",
         culture: "religious_traditionalism",
         authority: "minarchism",
@@ -2708,6 +2928,8 @@ const ideologies = {
     },
     // 1984 Superstates
     "Ingsoc": {
+        group: "Dystopian",
+        color: "#1a1a24",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "postmodernism",
@@ -2718,6 +2940,8 @@ const ideologies = {
         territorial_organization: "hypercentralism"
     },
     "Neo-Bolshevism": {
+        group: "Dystopian",
+        color: "#631515",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         authority: "partocracy",
@@ -2727,6 +2951,8 @@ const ideologies = {
         territorial_organization: "hypercentralism"
     },
     "Obliteration of the Self": {
+        group: "Dystopian",
+        color: "#4a3818",
         economics: "state_socialism",
         culture: "alternative_modernism",
         authority: "ethical_statism",
@@ -2736,6 +2962,8 @@ const ideologies = {
     },
     // Brave New World (Huxley)
     "World State Fordism": {
+        group: "Dystopian",
+        color: "#2b5c70",
         economics: "state_capitalism",
         authority: ["technocracy", "meritocracy"],
         foreign: "Globalism",
@@ -2745,6 +2973,8 @@ const ideologies = {
     },
     // The Handmaid's Tale (Atwood)
     "Gileadism": {
+        group: "Dystopian",
+        color: "#631b26",
         culture: "religious_traditionalism",
         authority: ["theocracy", "religious_authoritarianism"],
         nation: "religious_nationalism",
@@ -2753,6 +2983,8 @@ const ideologies = {
     },
     // We (Zamyatin)
     "One State Benefactorism": {
+        group: "Dystopian",
+        color: "#4a708b",
         culture: "progressivism",
         authority: ["technocracy", "autocracy"],
         technology: ["prometheanism", "industrialism"],
@@ -2761,9 +2993,12 @@ const ideologies = {
     },
     // Cyberpunk Megacorporatism
     "Cyberpunk Corpostatism": {
+        group: "Dystopian",
+        color: "#822987",
         economics: "corporatocracy",
+        resource_management: "regressive_taxation",
         culture: "neoreactionaryism",
-        authority: "neocameralism",
+        authority: ["neocameralism", "oligarchy"],
         nation: "egoism",
         foreign: "Imperialism",
         technology: "transhumanism",
@@ -2772,6 +3007,8 @@ const ideologies = {
     },
     // Fahrenheit 451 (Bradbury)
     "Fireman Statism": {
+        group: "Dystopian",
+        color: "#a33612",
         economics: "state_capitalism",
         culture: "postmodernism",
         authority: "autocracy",
@@ -2781,6 +3018,8 @@ const ideologies = {
         territorial_organization: "centralism"
     },
     "Soylentism": {
+        group: "Dystopian",
+        color: "#4b6336",
         economics: "state_capitalism",
         culture: "reactionary_modernism",
         authority: "autocracy",
@@ -2791,6 +3030,8 @@ const ideologies = {
     },
     // TNO
     "Burgundian System": {
+        group: "Dystopian",
+        color: "#1b122c",
         economics: "state_socialism",
         resource_management: "collective_distribution",
         culture: "reactionary_modernism",
@@ -2802,6 +3043,8 @@ const ideologies = {
         territorial_organization: "hypercentralism"
     },
     "Russian Imperial Cult": {
+        group: "Dystopian",
+        color: "#3a152d",
         economics: "state_capitalism",
         resource_management: "confiscatory_taxation",
         culture: "religious_traditionalism",
@@ -2812,294 +3055,37 @@ const ideologies = {
         social_control: "disciplinarianism",
         territorial_organization: "hypercentralism"
     }
-}
-    /*
-    "": {
-        economics: [""],
-        resource_management: [""],
-        culture: [""],
-        authority: [""],
-        nation: [""],
-        foreign: [""],
-        social_control: [""],
-        territorial_organization: [""]
-    },
-    */
-
-const labelColors = {
-    "No exact match": "#5C5C5C",
-
-    /* 1. Third Position */
-    "National Syndicalism": "#372f53ff",
-    "Clerical Fascism": "#58542cff",
-    "Brazilian Integralism": "#253f50ff",
-    "Italian Fascism": "#663718ff",
-    "Peronism": "#23506eff",
-    "Ba'athism": "#1e4d2bff",
-    "Sansepolcrismo": "#59331eff",
-    "Evolianism": "#3c2e4bff",
-    "Futurism": "#2b314eff",
-    "National-Socialism": "#2B2B2B",
-    "Strasserism": "#3f1e1eff",
-    "Falangism": "#4a1c1cff",
-    "Agrarian Fascism": "#1f421cff",
-    "Ecofascism": "#1b381eff",
-    "Sorelianism": "#4a2424ff",
-    "Rexism": "#461b2eff",
-    "Legionarianism": "#183820ff",
-    "Techno-Fascism": "#2b2e53ff",
-    "National Solidarity": "#4f2b38ff",
-    "Cosmist Vanguardism": "#36214f",
-    "Duginism": "#3d1833",
-    "Fiumanism": "#542238",
-    "Eneasism": "#1e4638",
-    "Social Nationalism": "#592834",
-    "Ethnocacerismo": "#6b1d1d",
-    "National Primitivism": "#2b3d1f",
-    "Social-Bonapartism": "#1f3a60",
-    "Tridemism": "#002b80",
-    "Nationalist Kemalism": "#5c2020",
-    "National Collectivism": "#421212",
-    "Nazi-Maoism": "#7a1a1a",
-    "Savinkovism": "#5c3317",
-    "Mosleyism": "#1a1a36",
-    "Revolutionary Nationalism": "#59202cff",
-
-    /* 2. Reactionary */
-    "Volkism": "#3b1515ff",
-    "Optimateism": "#21273dff",
-    "Integralism": "#63a9c5ff",
-    "National Capitalism": "#77632aff",
-    "Feudal Monarchism": "#2a2d47ff",
-    "Carlism": "#822424ff",
-    "Autocratic Monarchism": "#1d233dff",
-    "Theocratic Distributism": "#634727ff",
-    "Reactionary Feudalism": "#2c1c38ff",
-    "Clerical Monarchism": "#442b57ff",
-    "Neo-Absolutism": "#1a1e36ff",
-    "Aristocratic Cameralism": "#2f3825ff",
-    "Developmental Theocracy": "#614e2d",
-    "Classical Eurasianism": "#263e36",
-    "Mladorossism": "#1c2e47",
-    "National Social Capitalism": "#635324",
-    "Right-State Liberalism": "#3b5675",
-    "Monarquia Syndicalista": "#1b4370",
-    "Serenissimism": "#7d1d2b",
-
-    /* 3. Conservative */
-    "National Conservatism": "#002366",
-    "Paleoconservatism": "#442d52ff",
-    "Neoconservatism": "#25257aff",
-    "Mesoconservatism": "#3c1e5fff",
-    "Red Toryism": "#5e345eff",
-    "Green Conservatism": "#284f37ff",
-    "Clerical Conservatism": "#3e386eff",
-    "Gaullism": "#1c3866ff",
-    "Free-Market Conservatism": "#2b4d7aff",
-    "Agrarian Conservatism": "#4d4a27ff",
-    "Liberal Toryism": "#206095",
-    "Social Gaullism": "#274878",
-    "Neo-Gaullism": "#1f569c",
-    "Bonapartist Gaullism": "#193561",
-    "One-Nation Conservatism": "#1a4380",
-    "Conservative Technoliberalism": "#2d5f7a",
-    "Right-Social Authoritarianism": "#3a496b",
-    "Kjærsgaardism": "#8c2e2e",
-    "Kekkonism": "#235368",
-    "Putinism": "#1c385c",
-    "Post-Soviet Autocracy": "#385266",
-
-    /* 4. Centrist */
-    "Radicalism": "#a15c8dff",
-    "Third Way": "#58789eff",
-    "Christian Democracy": "#3C5A99",
-    "Compassionate Conservatism": "#314a8fff",
-    "Rockefeller Republicanism": "#692828ff",
-    "Democratic Transhumanism": "#277a94",
-    "Neo-Solidarism": "#6e5d31",
-    "Steppe Eurasianism": "#2d6b63",
-    "Classical Kemalism": "#b82929",
-    "Catholic Social Teaching": "#5c3d75",
-    "Bleeding-Heart Authoritarianism": "#6e5485",
-    "Austro-Corporatism": "#9e2f43ff",
-    "Davos System": "#00487c",
-
-    /* 5. Centre-Left */
-    "Nordic Model": "#fa6161ff",
-    "Social Democracy": "#FF3333",
-    "Conservative Social Democracy": "#c92b2bff",
-    "Social Distributism": "#cf5338ff",
-    "Liberal Socialism": "#d14b4bff",
-    "Social Georgism": "#478f54ff",
-    "Agrarian Social Democracy": "#a84b36ff",
-    "Progressive Corporatism": "#c74242ff",
-    "Left-Gaullism": "#214c78",
-    "Green Social Democracy": "#2e8555",
-    "Geo-Social Democracy": "#3b9468",
-    "Christian Social Democracy": "#a8384b",
-    "Police Labourism": "#8c2735",
-    "Left-Social Authoritarianism": "#8f2424",
-    "Progressive Social Authoritarianism": "#9e2a45",
-    "Left-Wing Populism": "#db3246",
-    "Left-Social Democracy": "#c42735",
-    "Social-Helveticism": "#cf3838",
-    "Left Kemalism": "#d92b2b",
-    "Longism": "#a8501f",
-
-    /* 6. Liberal */
-    "Classical Liberalism": "#71beebff",
-    "Neoliberalism": "#54ABC7",
-    "National Liberalism": "#3D5A80",
-    "Social Liberalism": "#4B92DB",
-    "Ordoliberalism": "#518699",
-    "Bleeding-Heart Liberalism": "#5ca0d3ff",
-    "Geo-Liberalism": "#4f9e61ff",
-    "Green Liberalism": "#38a169ff",
-    "Whiggism": "#846594ff",
-    "Muscular Liberalism": "#2b6cb0",
-    "Transatlantic Federalism": "#4688b8",
-    "New Deal Liberalism": "#3474b4",
-    "Venizelism": "#2e6da4",
-    "Liberal Social Authoritarianism": "#385e82",
-    "Technoliberalism": "#3399b8",
-    "American Model": "#244c8a",
-    "Techno-Neoliberalism": "#33738f",
-    "Tsaingwenism": "#1b8a36",
-    "Liberal Imperialism": "#2a5f78",
-    "Liberal Meritocracy": "#2b82a3",
-
-    /* 7. Socialist */
-    "Christian Socialism": "#8B0000",
-    "National Bolshevism": "#690000ff",
-    "Democratic Socialism": "#E34234",
-    "Conservative Socialism": "#7e1e1eff",
-    "Paleosocialism": "#77223eff",
-    "Cybernetic Socialism": "#822639ff",
-    "Utopian Communitarianism": "#963629ff",
-    "Syndicalist Republicanism": "#a82020ff",
-    "Left-Eurasianism": "#782222",
-    "Socialist Technoliberalism": "#bd334b",
-    "Mugabeism": "#2f5926",
-    "Old Left-Populism": "#822424",
-    "Left-State Liberalism": "#702963",
-    "American Technocracy": "#1d4e89",
-    "Fabian Socialism": "#9e2a2b",
-    "Ujamaa": "#1b7a42",
-
-    /* 8. Marxist */
-    "Italian Left Communism": "#B22222",
-    "Juche": "#C00000",
-    "Mao Zedong Thought": "#EE1C25",
-    "Marxism Leninism Maoism": "#ED1C24",
-    "Trotskyism": "#CC0000",
-    "Marxism-Leninism": "#CD0000",
-    "Stalinism": "#A52A2A",
-    "Titoism": "#bb4747ff",
-    "Dengism": "#DE2910",
-    "Luxemburgism": "#ad1818ff",
-    "Eurocommunism": "#bd2828ff",
-    "Hoxhaism": "#781414ff",
-    "Castroism": "#b82323ff",
-    "Guevarism": "#c71e1eff",
-    "Cyber-Communism": "#872235ff",
-    "De Leonism": "#a32121ff",
-    "National Communism": "#b81d24",
-
-    /* 9. Left-Libertarian */
-    "Communalism": "#bb5030ff",
-    "Minarcho-Socialism": "#FF4D4D",
-    "Council Communism": "#740909ff",
-    "Libertarian Socialism": "#ac3232ff",
-    "Democratic Confederalism": "#387a38ff",
-    "Guild Socialism": "#a83e20ff",
-    "Eco-Socialism": "#2f6b36ff",
-    "Fourierism": "#a64966",
-    "Gandhian Socialism": "#94552b",
-    "Scythianism": "#8c4e20",
-    "Proutism": "#c45a25",
-
-    /* 10. Centre-Libertarian */
-    "Geolibertarianism": "#709e3cff",
-    "Social Libertarianism": "#eebb2fff",
-    "Helvetic Model": "#77ccccff",
-    "Bleeding-Heart Libertarianism": "#887f00ff",
-    "Minarcho-Distributism": "#ad8326ff",
-    "Pirate Politics": "#5d43a6ff",
-    "Agorist Minarchism": "#73802eff",
-    "Communal Distributism": "#a65d28ff",
-    "Yangism": "#4a77b5",
-    "Libertarian Social Democracy": "#e07a38",
-    "Progressive Helveticism": "#43afa1ff",
-    "Cosmopolitan Distributism": "#4871a7ff",
-    "Cyber-Federalism": "#20808a",
-
-    /* 11. Right-Libertarian */
-    "Neolibertarianism": "#B8860B",
-    "Libertarian Conservatism": "#c5b30fff",
-    "National Libertarianism": "#6b5d2fff",
-    "Paleolibertarianism": "#72406aff",
-    "Dark Enlightenment": "#6d5000ff",
-    "Cyber-Libertarianism": "#3b8094ff",
-    "Objectivism": "#256285ff",
-    "Fusionism": "#7c7224ff",
-    "Minarcho-Avaritionism": "#8c7e1e",
-
-    /* 12. Left-Anarchist */
-    "Anarcho-Syndicalism": "#941313",
-    "Left-Agorism": "#632f2fff",
-    "Lys Noir": "#242424ff",
-    "Anarcho-Communism": "#a11111ff",
-    "Solarpunk Anarchism": "#428a47ff",
-    "Christian Anarchism": "#802222ff",
-    "Insurrectionary Anarchism": "#851212ff",
-    "Catholic Workerism": "#7a2020",
-
-    /* 13. Centre-Anarchist */
-    "Mutualism": "#db4804ff",
-    "Market Anarchism": "#C74A0A",
-    "Mutualist Distributism": "#b8531dff",
-    "Panarchism": "#7f73bdff",
-    "Geoanarchism": "#8cb148ff",
-    "Green Anarchism": "#1f6b2aff",
-    "Anarcho-Primitivism": "#234d20ff",
-    "Post-Anarchism": "#520000ff",
-    "Post-left": "#700000",
-    "Anarcho-Transhumanism": "#3a6073ff",
-    "Ego-Communism": "#005a5aff",
-    "National-Anarchism": "#533027ff",
-    "Ego-Mutualism": "#c26b1aff",
-
-    /* 14. Right-Anarchist */
-    "Anarcho-Capitalism": "#D4CB20",
-    "Hoppeanism": "#e0bf00ff",
-    "Bleeding-Heart Anarcho-Capitalism": "#faca47ff",
-    "Free-Market Anarcho-Distributism": "#c49823ff",
-    "Traditionalist Anarcho-Distributism": "#a8811eff",
-    "Crypto-Anarchism": "#3f7a8cff",
-    "Avaritionism": "#aeb645ff",
-    "Autarchism": "#c2a632ff",
-    "Agorism": "#8c821eff",
-
-    /* 15. Accelerationist */
-    "Left-Accelerationism": "#c93c3cff",
-    "Right-Accelerationism": "#75631eff",
-    "Effective Accelerationism": "#d69e15ff",
-    "Unconditional Accelerationism": "#1f1f1fff",
-
-    /* 16. Dystopian */
-    "Neo-Libertarian Falangism": "#726e3aff",
-    "Ingsoc": "#1a1a24",
-    "Neo-Bolshevism": "#631515",
-    "Obliteration of the Self": "#4a3818",
-    "World State Fordism": "#2b5c70",
-    "Gileadism": "#631b26",
-    "One State Benefactorism": "#4a708b",
-    "Cyberpunk Corpostatism": "#822987",
-    "Fireman Statism": "#a33612",
-    "Soylentism": "#4b6336",
-    "Burgundian System": "#1b122c",
-    "Russian Imperial Cult": "#3a152d"
 };
+/*
+"": {
+    group: "",
+    color: "#",
+    economics: [""],
+    resource_management: [""],
+    culture: [""],
+    authority: [""],
+    nation: [""],
+    foreign: [""],
+    technology: [""],
+    social_control: [""],
+    territorial_organization: [""]
+},
+*/
+
+const ideologyGroups = {};
+const labelColors = {
+    "No exact match": "#5C5C5C"
+};
+
+for (const [name, data] of Object.entries(ideologies)) {
+    (ideologyGroups[data.group] ??= []).push(name);
+    labelColors[name] = data.color;
+
+    Object.defineProperties(data, {
+        group: { enumerable: false },
+        color: { enumerable: false }
+    });
+}
 
 const iconSources = {
     // economics
@@ -3133,10 +3119,12 @@ const iconSources = {
     "utopian_socialism": "https://www.reddit.com/r/leftistvexillology/comments/1cryitt/possible_flags_for_the_utopian_community_of/",
     "agrarian_socialism": "https://polcompball.wiki/Agrarian_Socialism",
     "feudalism": "https://en.wikipedia.org/wiki/File:Flag_of_medieval_France.png",
-    "cameralism": "",
+    "cameralism": "ai",
     "parecon": "https://libcom.org/article/parecon-or-libertarian-communism",
     "corporatocracy": "https://quark88.github.io/ideosorter/",
     "hierarchical_communism": "ai",
+    "cybernetic_socialism": "ai",
+    "ghent_system": "ai",
 
     // resource_management
     "Voluntaryism": "https://en.wikipedia.org/wiki/File:VforVoluntary_normal.svg",
@@ -3144,10 +3132,12 @@ const iconSources = {
     "flat_taxation": "",
     "Progressive_Taxation": "",
     "Confiscatory_Taxation": "",
-    "collective_distribution": "https://commons.wikimedia.org/wiki/File:Hammer_and_sickle.svg",
-    "mixed_lvt": "https://quark88.github.io/ideosorter/",
+    "collective_distribution": "ai",
+    "mixed_lvt": "https://www.redbubble.com/i/poster/Georgist-Symbol-by-selfreference2/122142872/flk2",
     "tariff_funding": "https://wiki.polcompball.co.uk/Protectionism",
     "fair_tax": "https://www.moran.senate.gov/public/index.cfm/fairtax",
+    "regressive_taxation": "",
+    "state_enterprise_revenue": "ai",
 
     // culture
     "postmodernism": "https://commons.wikimedia.org/wiki/File:Chaos_star.svg",
@@ -3157,10 +3147,10 @@ const iconSources = {
     "conservative_liberalism": "https://polcompball.wiki/Conservative_Liberalism",
     "liberal_conservatism": "https://polcompball.wiki/Liberal_Conservatism",
     "progressive_conservatism": "https://polcompball.wiki/Progressive_Conservatism",
-    "conservatism": "https://commons.wikimedia.org/wiki/File:Republicanlogo.svg",
+    "conservatism": "ai",
     "traditionalist_conservatism": "https://wiki.polcompball.co.uk/File:Trad_flag.svg",
     "reactionaryism": "https://polcompball.wiki/Reactionaryism",
-    "paleoconservatism": "https://www.reddit.com/r/vexillology/comments/i80yuz/flag_for_the_american_paleoconservative_movement/",
+    "paleoconservatism": "ai",
     "neoreactionaryism": "https://polcompball.wiki/Neoreactionaryism",
     "religious_traditionalism": "https://commons.wikimedia.org/wiki/File:Traditionalist_Catholicism_Symbol.jpg",
     "perennial_traditionalism": "",
@@ -3182,16 +3172,19 @@ const iconSources = {
     "communalism": "https://historica.fandom.com/wiki/Collectivism",
     "digital_democracy": "https://digitaldemocracy.world/digital-democracy/",
     "constitutional": "",
-    "minarchism": "https://commons.wikimedia.org/wiki/File:Gadsden_flag.svg",
+    "minarchism": "https://commons.wikimedia.org/wiki/File:Minarchist_Flag.jpg",
     "meritocracy": "https://commons.wikimedia.org/wiki/File:Meritocracy_symbol.jpg",
     "technocracy": "https://commons.wikimedia.org/wiki/File:TechnocracyMonad.svg",
-    "stratocracy": "https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_the_Hellenic_Republic_(1973-1974).svg",
-    "aristocracy": "",
+    "stratocracy": "ai",
+    "aristocracy": "ai",
     "anarcho_monarchism": "https://www.reddit.com/r/vexillology/comments/aqt0of/flag_of_anarchomonarchy/",
     "neocameralism": "",
     "syndicracy": "https://kaiserreich.wiki/Syndicalist_Workers_League",
     "demarchy": "https://www.sortitionfoundation.org/lab",
-    "polycentrism": "https://www.reddit.com/r/vexillology/comments/erclso/the_flag_of_ancient_athens_after_winning_the/",
+    "polycentrism": "ai",
+    "oligarchy": "https://wiki.polcompball.co.uk/Oligarchy",
+    "semi_constitutional": "ai",
+    "ochlocracy": "ai",
 
     // nation
     "Cosmopolitanism": "https://commons.wikimedia.org/wiki/File:International_Flag_of_Planet_Earth.svg",
@@ -3245,7 +3238,7 @@ const iconSources = {
     "civil_libertarianism": "https://wiki.polcompball.co.uk/File:Civilbert_flag.svg",
     "permissivism": "",
     "civic_paternalism": "https://wiki.polcompball.co.uk/Paternalism",
-    "legal_moralism": "https://philosophyball.miraheze.org/wiki/Moralism",
+    "legal_moralism": "ai",
     "securitism": "",
     "disciplinarianism": "",
     "regimentalism": "",
@@ -3261,5 +3254,7 @@ const iconSources = {
     "centralism": "",
     "hypercentralism": "https://www.reddit.com/r/vexillology/comments/1h5uzl8/created_flags_for_my_fictional_totalitarian/",
     "subsidiarity": "ai",
-    "suzerainty": "ai"
+    "suzerainty": "ai",
+    "anti_organizationalism": "https://www.britannica.com/topic/anarchism",
+    "patchwork": "ai"
 };

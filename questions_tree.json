@@ -6,12 +6,14 @@
       "uk": "Що має бути основою економіки?",
       "ru": "Что должно лежать в основе экономики?",
       "de": "Was sollte das Fundament der Wirtschaft sein?",
+      "es": "¿Cuál debería ser la base de la economía?",
       "options": [
         {
           "en": "Private businesses operating in a free or regulated market",
           "uk": "Приватний бізнес, що працює в умовах вільного або регульованого ринку",
           "ru": "Частный бизнес, работающий в условиях свободного или регулируемого рынка",
           "de": "Privatunternehmen in einer freien oder regulierten Marktwirtschaft",
+          "es": "Empresas privadas operando en un mercado libre o regulado",
           "next": "e_market_1"
         },
         {
@@ -19,6 +21,7 @@
           "uk": "Державні підприємства або робітничі колективи замість приватного капіталізму",
           "ru": "Государственные предприятия или рабочие коллективы вместо частного капитализма",
           "de": "Staatseigene Industrien oder arbeiterselbstverwaltete Kollektive statt Privatkapitalismus",
+          "es": "Industrias estatales o colectivos gestionados por los trabajadores en lugar del capitalismo privado",
           "next": "e_social_1"
         },
         {
@@ -26,6 +29,7 @@
           "uk": "Широка дрібна сімейна власність, державні гільдії або традиційна земельна ієрархія",
           "ru": "Широкая мелкая семейная собственность, государственные гильдии или традиционная земельная иерархия",
           "de": "Breit gestreutes kleines Familieneigentum, staatlich konzessionierte Gilden oder eine traditionelle Landhierarchie",
+          "es": "Pequeña propiedad familiar ampliamente distribuida, gremios autorizados por el Estado o una jerarquía agraria tradicional",
           "next": "e_alt_1"
         }
       ]
@@ -36,12 +40,14 @@
       "uk": "Наскільки активно держава має втручатися в ринок?",
       "ru": "Насколько активно государство должно участвовать в экономике?",
       "de": "Wie stark sollte der Staat in den Markt eingreifen?",
+      "es": "¿Qué grado de intervención debería tener el gobierno en el mercado?",
       "options": [
         {
           "en": "Keep the market completely free with minimal or no government interference",
           "uk": "Залишати ринок повністю вільним із мінімальним втручанням держави або без нього",
           "ru": "Сохранять рынок полностью свободным с минимальным вмешательством государства или без него",
           "de": "Den Markt völlig frei halten mit minimaler oder gar keiner staatlichen Einmischung",
+          "es": "Mantener el mercado completamente libre con una intervención gubernamental mínima o nula",
           "next": "e_market_free"
         },
         {
@@ -49,6 +55,7 @@
           "uk": "Поєднувати приватне підприємництво з державним регулюванням, суспільними послугами та наглядом",
           "ru": "Сочетать частное предпринимательство с государственным регулированием и общественными услугами",
           "de": "Privatwirtschaft mit staatlicher Regulierung, öffentlichen Diensten und Aufsicht verbinden",
+          "es": "Combinar la empresa privada con la regulación gubernamental, los servicios públicos y la supervisión",
           "next": "e_market_mixed"
         }
       ]
@@ -59,12 +66,14 @@
       "uk": "У чому головна мета нерегульованого вільного ринку?",
       "ru": "В чём главная цель нерегулируемого свободного рынка?",
       "de": "Was ist der Hauptzweck eines unregulierten freien Marktes?",
+      "es": "¿Cuál es el propósito principal de un mercado libre no regulado?",
       "options": [
         {
           "en": "To let businesses trade freely under basic laws protecting property and contracts",
           "uk": "Дозволити бізнесу вільно торгувати за базових законів про захист власності та контрактів",
           "ru": "Позволить бизнесу свободно торговать при базовых законах о защите собственности и контрактов",
           "de": "Unternehmen freien Handel unter grundlegenden Gesetzen zum Schutz von Eigentum und Verträgen zu ermöglichen",
+          "es": "Permitir que las empresas comercien libremente bajo leyes básicas que protejan la propiedad y los contratos",
           "next": "laissez_faire"
         },
         {
@@ -72,6 +81,7 @@
           "uk": "Використовувати сірі й чорні ринки, щоб обійти, знекровити та замінити державу",
           "ru": "Использовать серые и чёрные рынки, чтобы обойти, ослабить и заменить государство",
           "de": "Grau- und Schwarzmärkte zu nutzen, um den Staat zu umgehen, auszutrocknen und zu ersetzen",
+          "es": "Utilizar mercados grises y negros para eludir, dejar sin recursos y reemplazar al Estado",
           "next": "countereconomics"
         }
       ]
@@ -82,12 +92,14 @@
       "uk": "Якою має бути головна мета державної економічної політики?",
       "ru": "Какой должна быть главная цель государственной экономической политики?",
       "de": "Was sollte das Hauptziel staatlicher Wirtschaftspolitik sein?",
+      "es": "¿Cuál debería ser el objetivo principal de la política económica del gobierno?",
       "options": [
         {
           "en": "Providing social safety nets, public healthcare, and wealth redistribution",
           "uk": "Забезпечення соціального захисту, державної медицини та перерозподілу багатства",
           "ru": "Обеспечение социальной защиты, здравоохранения и перераспределения доходов",
           "de": "Soziale Sicherungsnetze, öffentliche Gesundheitsversorgung und Vermögensumverteilung bereitzustellen",
+          "es": "Proporcionar redes de seguridad social, sanidad pública y redistribución de la riqueza",
           "next": "e_market_welfare"
         },
         {
@@ -95,6 +107,7 @@
           "uk": "Підтримка зайнятості, стабільного зростання та державно-приватних інновацій",
           "ru": "Поддержка занятости, стабильного роста и государственно-частных инноваций",
           "de": "Beschäftigung, stabiles Wachstum und öffentlich-private Innovationen zu fördern",
+          "es": "Impulsar el empleo, el crecimiento estable y la innovación público-privada",
           "next": "e_market_macro"
         },
         {
@@ -102,6 +115,7 @@
           "uk": "Пряма координація національної стратегії між державою, бізнесом і профспілками",
           "ru": "Прямая координация национальной экономики между государством, бизнесом и профсоюзами",
           "de": "Die nationale Strategie direkt zwischen Staat, Unternehmen und Gewerkschaften zu koordinieren",
+          "es": "Coordinar la estrategia nacional directamente entre el Estado, las empresas y los sindicatos",
           "next": "e_market_coordination"
         }
       ]
@@ -112,12 +126,14 @@
       "uk": "Наскільки масштабними мають бути соціальні програми та регулювання ринку?",
       "ru": "Насколько масштабными должны быть социальные программы и регулирование рынка?",
       "de": "Wie umfangreich sollten Sozialprogramme und Marktregeln sein?",
+      "es": "¿Qué alcance deberían tener los programas de bienestar y las normas del mercado?",
       "options": [
         {
           "en": "Universal welfare that protects every citizen and holds companies socially accountable",
           "uk": "Загальна система соцзахисту для кожного громадянина та соціальна відповідальність бізнесу",
           "ru": "Всеобщая система соцзащиты для каждого гражданина и высокая социальная ответственность бизнеса",
           "de": "Universelle Wohlfahrt, die jeden Bürger schützt und Unternehmen sozial in die Pflicht nimmt",
+          "es": "Bienestar universal que proteja a cada ciudadano y exija responsabilidad social a las empresas",
           "next": "e_social_universal"
         },
         {
@@ -125,6 +141,7 @@
           "uk": "Скромніша соцпідтримка для подолання бідності за низьких податків і свободи бізнесу",
           "ru": "Более скромная соцзащита для борьбы с бедностью при низких налогах и свободе бизнеса",
           "de": "Ein schlankeres Sicherheitsnetz zur Armutslinderung bei niedrigen Steuern und unternehmerischer Freiheit",
+          "es": "Una red de seguridad más ligera que alivie la pobreza manteniendo bajos los impuestos y libres a las empresas",
           "next": "e_social_targeted"
         }
       ]
@@ -135,12 +152,14 @@
       "uk": "Як мають поєднуватися загальний соцзахист і регульований ринок?",
       "ru": "Как должны сочетаться всеобщая соцзащита и регулируемый рынок?",
       "de": "Wie sollten universelle Wohlfahrt und ein regulierter Markt zusammenwirken?",
+      "es": "¿Cómo deberían funcionar juntos el bienestar universal y un mercado regulado?",
       "options": [
         {
           "en": "Pair competitive markets with public healthcare, pensions, and strict anti-monopoly laws",
           "uk": "Поєднувати конкурентний ринок із державною медициною, пенсіями та суворим антимонопольним законодавством",
           "ru": "Сочетать конкурентный рынок с бесплатной медициной, пенсиями и строгими законами против монополий",
           "de": "Wettbewerbsmärkte mit öffentlicher Gesundheitsversorgung, Renten und strengen Kartellgesetzen verbinden",
+          "es": "Combinar mercados competitivos con sanidad pública, pensiones y estrictas leyes antimonopolio",
           "next": "social_market"
         },
         {
@@ -148,6 +167,7 @@
           "uk": "Надати працівникам місця в радах директорів і орієнтувати банки на довгострокову стабільність замість швидкого прибутку",
           "ru": "Дать рабочим места в советах директоров и ориентировать банки на долгосрочную стабильность",
           "de": "Arbeitnehmern Sitze in Unternehmensgremien geben und Banken auf langfristige Stabilität statt schnellen Profit ausrichten",
+          "es": "Dar representación a los trabajadores en los consejos de administración y enfocar los bancos en la estabilidad a largo plazo frente al beneficio rápido",
           "next": "rhine_capitalism"
         },
         {
@@ -155,6 +175,7 @@
           "uk": "Зобов'язати роботодавців і державу дбати про сім'ї працівників та підтримувати класову злагоду",
           "ru": "Обязать работодателей и государство заботиться о семьях работников и сохранять согласие в обществе",
           "de": "Arbeitgeber und Staat verpflichten, für Arbeiterfamilien zu sorgen und Klassenharmonie zu wahren",
+          "es": "Exigir a los empleadores y al Estado que cuiden de las familias de los trabajadores y mantengan la armonía de clases",
           "next": "paternalistic_capitalism"
         },
         {
@@ -162,6 +183,7 @@
           "uk": "Будувати економіку навколо кредитних спілок, фондів взаємодопомоги та робітничих кооперативів",
           "ru": "Опереть экономику на кредитные союзы, фонды взаимопомощи и рабочие кооперативы",
           "de": "Die Wirtschaft auf Kreditgenossenschaften, Hilfskassen und Arbeitergenossenschaften aufbauen",
+          "es": "Construir la economía en torno a cooperativas de crédito, fondos de ayuda mutua y cooperativas gestionadas por trabajadores",
           "next": "social_solidarity_economy"
         }
       ]
@@ -172,12 +194,14 @@
       "uk": "Як базова соціальна підтримка має працювати поряд із вільним ринком?",
       "ru": "Как базовая социальная поддержка должна работать рядом со свободным рынком?",
       "de": "Wie sollte grundlegende soziale Unterstützung neben einem freien Markt funktionieren?",
+      "es": "¿Cómo debería funcionar el apoyo social básico junto con un mercado libre?",
       "options": [
         {
           "en": "Enforce fair competition, break up cartels, and keep inflation low with modest welfare",
           "uk": "Захищати чесну конкуренцію, ліквідовувати картелі та стримувати інфляцію за помірної соцдопомоги",
           "ru": "Защищать честную конкуренцию, дробить картели и сдерживать инфляцию при умеренной соцпомощи",
           "de": "Fairen Wettbewerb durchsetzen, Kartelle zerschlagen und die Inflation bei moderater Wohlfahrt niedrig halten",
+          "es": "Garantizar la competencia leal, desmantelar cárteles y mantener baja la inflación con un bienestar modesto",
           "next": "ordnungspolitik"
         },
         {
@@ -185,6 +209,7 @@
           "uk": "Надавати мінімальну допомогу лише найбіднішим громадянам, залишаючи бізнес дерегульованим",
           "ru": "Помогать только самым бедным гражданам, оставляя бизнес без лишнего регулирования",
           "de": "Minimale Hilfe ausschließlich für die Ärmsten bieten und Unternehmen dereguliert lassen",
+          "es": "Ofrecer una ayuda mínima estrictamente a los ciudadanos más pobres dejando las empresas desreguladas",
           "next": "residualism"
         },
         {
@@ -192,7 +217,16 @@
           "uk": "Замінити складні соціальні виплати й мінімальну зарплату безумовним базовим доходом для всіх",
           "ru": "Заменить сложные пособия и минимальную зарплату безусловным базовым доходом для всех",
           "de": "Komplexe Sozialsysteme und Mindestlöhne durch ein bedingungsloses Grundeinkommen für alle ersetzen",
+          "es": "Reemplazar el bienestar complejo y los salarios mínimos por una renta básica universal pagada a todos",
           "next": "basic_income_capitalism"
+        },
+        {
+          "en": "Delegate unemployment insurance and welfare administration to trade unions rather than state bureaucracies",
+          "uk": "Передати страхування від безробіття та розподіл соціальної допомоги профспілкам замість державної бюрократії",
+          "ru": "Передать страхование от безработицы и распределение социальных пособий профсоюзам вместо государственной бюрократии",
+          "de": "Arbeitslosenversicherung und Sozialleistungen an Gewerkschaften statt an staatliche Bürokratien delegieren",
+          "es": "Delegar el seguro de desempleo y la administración del bienestar en los sindicatos en lugar de las burocracias estatales",
+          "next": "ghent_system"
         }
       ]
     },
@@ -202,12 +236,14 @@
       "uk": "Як держава має підтримувати економічну стабільність і робочі місця?",
       "ru": "Как государство должно поддерживать экономическую стабильность и занятость?",
       "de": "Wie sollte der Staat wirtschaftliche Stabilität und Arbeitsplätze sichern?",
+      "es": "¿Cómo debería el gobierno apoyar la estabilidad económica y el empleo?",
       "options": [
         {
           "en": "Increase public spending and build infrastructure to boost demand during downturns",
           "uk": "Збільшувати державні витрати та будувати інфраструктуру для стимулювання попиту під час спадів",
           "ru": "Увеличивать госрасходы и строить инфраструктуру для стимулирования спроса во время спадов",
           "de": "Öffentliche Ausgaben erhöhen und Infrastruktur bauen, um die Nachfrage in Abschwüngen anzukurbeln",
+          "es": "Aumentar el gasto público y construir infraestructuras para estimular la demanda durante las recesiones",
           "next": "keynesianism"
         },
         {
@@ -215,6 +251,7 @@
           "uk": "Використовувати державно-приватне партнерство, перекваліфікацію кадрів і гнучкі трудові правила",
           "ru": "Развивать государственно-частное партнёрство, переобучение кадров и гибкий рынок труда",
           "de": "Öffentlich-private Partnerschaften, Umschulungen und flexible Arbeitsmarktregeln nutzen",
+          "es": "Utilizar asociaciones público-privadas, recualificación laboral y normas laborales flexibles",
           "next": "third_way"
         }
       ]
@@ -225,12 +262,14 @@
       "uk": "Як держава має координувати ключові галузі та працю?",
       "ru": "Как государство должно координировать ключевые отрасли и труд?",
       "de": "Wie sollte der Staat Schlüsselindustrien und Arbeit koordinieren?",
+      "es": "¿Cómo debería el Estado coordinar las principales industrias y el trabajo?",
       "options": [
         {
           "en": "Direct investment and plan growth in priority national industries",
           "uk": "Спрямовувати інвестиції та планувати розвиток пріоритетних національних галузей",
           "ru": "Направлять инвестиции и планировать развитие приоритетных отраслей страны",
           "de": "Investitionen lenken und Wachstum in vorrangigen nationalen Industrien planen",
+          "es": "Dirigir la inversión y planificar el crecimiento en industrias nacionales prioritarias",
           "next": "dirigisme"
         },
         {
@@ -238,6 +277,7 @@
           "uk": "Укладати загальнонаціональні угоди щодо зарплат і цін між державою, роботодавцями та профспілками",
           "ru": "Заключать общенациональные соглашения о зарплатах и ценах между государством, бизнесом и профсоюзами",
           "de": "Nationale Lohn- und Preisabkommen zwischen Staat, Arbeitgebern und Gewerkschaften aushandeln",
+          "es": "Negociar acuerdos nacionales de salarios y precios entre el Estado, los empleadores y los sindicatos",
           "next": "neo_corporatism"
         },
         {
@@ -245,6 +285,7 @@
           "uk": "Надавати державні монополії та правові привілеї панівним мегакорпораціям",
           "ru": "Предоставлять государственные монополии и правовые привилегии господствующим мегакорпорациям",
           "de": "Staatlich gestützte Monopole und Rechtsprivilegien an marktbeherrschende Megakonzerne vergeben",
+          "es": "Otorgar monopolios respaldados por el Estado y privilegios legales a megacorporaciones dominantes",
           "next": "corporatocracy"
         }
       ]
@@ -255,12 +296,14 @@
       "uk": "Хто має контролювати усуспільнену промисловість і власність?",
       "ru": "Кто должен управлять обобществлённой промышленностью и собственностью?",
       "de": "Wer sollte vergesellschaftete Industrien und Eigentum kontrollieren?",
+      "es": "¿Quién debería controlar las industrias y propiedades socializadas?",
       "options": [
         {
           "en": "A centralized state acting on behalf of society",
           "uk": "Централізована держава, що діє від імені суспільства",
           "ru": "Централизованное государство, действующее от имени всего общества",
           "de": "Ein zentralisierter Staat, der im Namen der Gesellschaft handelt",
+          "es": "Un Estado centralizado que actúe en nombre de la sociedad",
           "next": "e_social_state"
         },
         {
@@ -268,6 +311,7 @@
           "uk": "Працівники та місцеві громади, які керують виробництвом напряму",
           "ru": "Рабочие и местные общины, управляющие производством напрямую",
           "de": "Arbeiter und lokale Gemeinschaften, die die Produktion direkt verwalten",
+          "es": "Trabajadores y comunidades locales gestionando la producción directamente",
           "next": "e_social_worker"
         }
       ]
@@ -278,12 +322,14 @@
       "uk": "Як мають працювати державні підприємства?",
       "ru": "Как должны работать государственные предприятия?",
       "de": "Wie sollten staatseigene Unternehmen arbeiten?",
+      "es": "¿Cómo deberían operar las empresas de propiedad estatal?",
       "options": [
         {
           "en": "Compete for profit on the global market to strengthen state finances and power",
           "uk": "Конкурувати заради прибутку на світовому ринку для зміцнення фінансів і могутності держави",
           "ru": "Конкурировать ради прибыли на мировом рынке для укрепления финансов и мощи государства",
           "de": "Auf dem Weltmarkt gewinnorientiert konkurrieren, um Staatsfinanzen und Staatsmacht zu stärken",
+          "es": "Competir por beneficios en el mercado global para fortalecer las finanzas y el poder del Estado",
           "next": "state_capitalism"
         },
         {
@@ -291,7 +337,16 @@
           "uk": "Виробляти блага за державним планом безпосередньо для потреб людей без гонитви за прибутком",
           "ru": "Производить блага по государственному плану для нужд людей без погони за прибылью",
           "de": "Güter nach einem öffentlichen Plan direkt für den menschlichen Bedarf ohne Gewinnstreben produzieren",
+          "es": "Producir bienes bajo un plan público directamente para las necesidades humanas sin buscar beneficios",
           "next": "state_socialism"
+        },
+        {
+          "en": "Coordinate production and distribution dynamically using computer networks and real-time data feedback",
+          "uk": "Динамічно координувати виробництво та розподіл за допомогою комп'ютерних мереж і даних у реальному часі",
+          "ru": "Динамически координировать производство и распределение с помощью компьютерных сетей и данных в реальном времени",
+          "de": "Produktion und Verteilung dynamisch über Computernetzwerke und Echtzeit-Datenfeedback koordinieren",
+          "es": "Coordinar la producción y distribución dinámicamente mediante redes informáticas y retroalimentación de datos en tiempo real",
+          "next": "cybernetic_socialism"
         }
       ]
     },
@@ -301,12 +356,14 @@
       "uk": "Як має бути організоване виробництво під управлінням працівників?",
       "ru": "Как должно быть организовано производство под управлением рабочих?",
       "de": "Wie sollte arbeiterselbstverwaltete Produktion organisiert sein?",
+      "es": "¿Cómo debería organizarse la producción gestionada por los trabajadores?",
       "options": [
         {
           "en": "Worker-owned cooperatives competing and trading in an open market",
           "uk": "Робітничі кооперативи, що конкурують і торгують на відкритому ринку",
           "ru": "Рабочие кооперативы, конкурирующие и торгующие на открытом рынке",
           "de": "Arbeitergenossenschaften, die auf einem offenen Markt konkurrieren und Handel treiben",
+          "es": "Cooperativas propiedad de los trabajadores compitiendo y comerciando en un mercado abierto",
           "next": "market_socialism"
         },
         {
@@ -314,6 +371,7 @@
           "uk": "Добровільні самодостатні громади, мирно створені поза панівною економічною системою",
           "ru": "Добровольные самодостаточные общины, мирно создаваемые вне привычной системы",
           "de": "Freiwillige, selbstversorgende Gemeinschaften, die friedlich außerhalb der Mainstream-Wirtschaft aufgebaut werden",
+          "es": "Comunidades voluntarias y autosuficientes construidas pacíficamente al margen de la economía convencional",
           "next": "utopian_socialism"
         },
         {
@@ -321,6 +379,7 @@
           "uk": "Робітничі федерації або місцеві комуни, що функціонують без ринкової економіки",
           "ru": "Рабочие федерации или местные коммуны, работающие без рыночной экономики",
           "de": "Arbeiterföderationen oder lokale Kommunen, die ohne Marktwirtschaft arbeiten",
+          "es": "Federaciones obreras o comunas locales operando sin una economía de mercado",
           "next": "e_social_nonmarket"
         }
       ]
@@ -331,12 +390,14 @@
       "uk": "Що має прийти на зміну ринковій економіці?",
       "ru": "Что должно прийти на смену рыночной экономике?",
       "de": "Was sollte die Marktwirtschaft ersetzen?",
+      "es": "¿Qué debería reemplazar a la economía de mercado?",
       "options": [
         {
           "en": "Worker-run unions, craft guilds, or mutual credit networks between producers",
           "uk": "Робітничі профспілки, ремісничі гільдії або мережі взаємного кредиту між виробниками",
           "ru": "Рабочие профсоюзы, ремесленные гильдии или сети взаимного кредита между производителями",
           "de": "Arbeitergeführte Gewerkschaften, Handwerksgilden oder gegenseitige Kreditnetzwerke zwischen Produzenten",
+          "es": "Sindicatos dirigidos por trabajadores, gremios artesanales o redes de crédito mutuo entre productores",
           "next": "e_social_producer"
         },
         {
@@ -344,6 +405,7 @@
           "uk": "Децентралізовані комуни, партисипативні ради або негайне скасування грошей",
           "ru": "Децентрализованные коммуны, партисипативные советы или немедленная отмена денег",
           "de": "Dezentrale Kommunen, partizipatorische Räte oder die sofortige Abschaffung des Geldes",
+          "es": "Comunas descentralizadas, consejos participativos o la abolición inmediata del dinero",
           "next": "e_social_commune"
         }
       ]
@@ -354,12 +416,14 @@
       "uk": "Як виробники мають організовувати працю та обмін без капіталізму?",
       "ru": "Как производители должны организовывать труд и обмен без капитализма?",
       "de": "Wie sollten Produzenten Arbeit und Austausch ohne Kapitalismus organisieren?",
+      "es": "¿Cómo deberían organizar el trabajo y el intercambio los productores sin capitalismo?",
       "options": [
         {
           "en": "Direct labor-for-labor exchange and interest-free mutual credit between producers",
           "uk": "Прямий обмін праці на працю та безвідсотковий взаємний кредит між виробниками",
           "ru": "Прямой обмен труда на труд и беспроцентный взаимный кредит между производителями",
           "de": "Direkter Tausch von Arbeit gegen Arbeit und zinsfreier gegenseitiger Kredit zwischen Produzenten",
+          "es": "Intercambio directo de trabajo por trabajo y crédito mutuo sin intereses entre productores",
           "next": "mutualism"
         },
         {
@@ -367,6 +431,7 @@
           "uk": "Демократичні профспілки, що безпосередньо керують кожною галуззю",
           "ru": "Демократические профсоюзы, напрямую управляющие каждой отраслью",
           "de": "Demokratische Gewerkschaften, die jeden Industriezweig direkt verwalten",
+          "es": "Sindicatos democráticos gestionando directamente cada industria",
           "next": "syndicalism"
         },
         {
@@ -374,6 +439,7 @@
           "uk": "Самоврядні ремісничі та галузеві гільдії, що узгоджують виробництво із суспільством",
           "ru": "Самоуправляемые ремесленные и отраслевые гильдии, согласующие производство с обществом",
           "de": "Selbstverwaltete Handwerks- und Berufsgilden, die die Produktion mit der Öffentlichkeit abstimmen",
+          "es": "Gremios artesanales y comerciales autogobernados coordinando la producción con el público",
           "next": "guild_socialism"
         }
       ]
@@ -384,12 +450,14 @@
       "uk": "Як громади мають координувати виробництво та розподіл?",
       "ru": "Как общины должны координировать производство и распределение?",
       "de": "Wie sollten Gemeinschaften Produktion und Verteilung koordinieren?",
+      "es": "¿Cómo deberían coordinar la producción y distribución las comunidades?",
       "options": [
         {
           "en": "Decentralized local communes based on voluntary cooperation and personal freedom",
           "uk": "Децентралізовані місцеві комуни, засновані на добровільній співпраці та особистій свободі",
           "ru": "Децентрализованные местные коммуны, основанные на добровольном сотрудничестве и личной свободе",
           "de": "Dezentrale lokale Kommunen auf Basis freiwilliger Kooperation und persönlicher Freiheit",
+          "es": "Comunas locales descentralizadas basadas en la cooperación voluntaria y la libertad personal",
           "next": "free_socialism"
         },
         {
@@ -397,6 +465,7 @@
           "uk": "Децентралізоване демократичне планування через багаторівневі ради працівників і споживачів",
           "ru": "Децентрализованное демократическое планирование через многоуровневые советы работников и потребителей",
           "de": "Dezentrale demokratische Planung durch verschachtelte Arbeiter- und Konsumentenräte",
+          "es": "Planificación democrática descentralizada mediante consejos anidados de trabajadores y consumidores",
           "next": "parecon"
         },
         {
@@ -404,6 +473,7 @@
           "uk": "Негайне скасування грошей, зарплат і будь-якої купівлі-продажу",
           "ru": "Немедленная отмена денег, зарплат и любой купли-продажи",
           "de": "Die sofortige Abschaffung von Geld, Löhnen sowie Kaufen und Verkaufen",
+          "es": "La abolición inmediata del dinero, los salarios y la compraventa",
           "next": "communization"
         }
       ]
@@ -414,12 +484,14 @@
       "uk": "Яка альтернативна економічна модель має визначати життя суспільства?",
       "ru": "Какая альтернативная экономическая модель должна определять жизнь общества?",
       "de": "Welches alternative Wirtschaftsmodell sollte die Gesellschaft lenken?",
+      "es": "¿Qué modelo económico alternativo debería regir la sociedad?",
       "options": [
         {
           "en": "Widespread ownership of small farms, workshops, and family businesses",
           "uk": "Широке володіння невеликими фермами, майстернями та сімейним бізнесом",
           "ru": "Широкое владение небольшими фермами, мастерскими и семейным бизнесом",
           "de": "Breit gestreutes Eigentum an kleinen Höfen, Werkstätten und Familienbetrieben",
+          "es": "Propiedad ampliamente distribuida de pequeñas granjas, talleres y empresas familiares",
           "next": "e_distrib_split"
         },
         {
@@ -427,6 +499,7 @@
           "uk": "Об'єднання працівників і галузей у засновані державою корпоративні групи",
           "ru": "Объединение работников и отраслей в учреждённые государством корпорации",
           "de": "Organisation von Arbeitern und Industrien in staatlich konzessionierten Korporationen",
+          "es": "Organizar a trabajadores e industrias en grupos corporativos autorizados por el Estado",
           "next": "e_corporatist_split"
         },
         {
@@ -434,6 +507,7 @@
           "uk": "Традиційна аграрна ієрархія на основі дворянських маєтків, земельних повинностей і особистої вірності",
           "ru": "Традиционная аграрная иерархия на основе дворянских владений, повинностей и личной верности",
           "de": "Eine traditionelle ländliche Hierarchie auf Basis von Adelsgütern, Landpflichten und Treue",
+          "es": "Una jerarquía rural tradicional basada en haciendas nobiliarias, deberes agrarios y lealtad",
           "next": "feudalism"
         }
       ]
@@ -444,12 +518,14 @@
       "uk": "Як слід досягати широкого поширення дрібної власності?",
       "ru": "Как следует добиваться широкого распространения мелкой собственности?",
       "de": "Wie sollte eine breite Streuung von Kleineigentum erreicht werden?",
+      "es": "¿Cómo debería lograrse una propiedad a pequeña escala ampliamente distribuida?",
       "options": [
         {
           "en": "Through peasant land access, cooperative networks, or anti-monopoly taxes",
           "uk": "Через доступ селян до землі, кооперативні мережі або антимонопольні податки",
           "ru": "Через доступ крестьян к земле, кооперативные сети или налоги против монополий",
           "de": "Durch bäuerlichen Landzugang, Genossenschaftsnetzwerke oder Antimonopolsteuern",
+          "es": "Mediante el acceso campesino a la tierra, redes cooperativas o impuestos antimonopolio",
           "next": "e_distrib_left"
         },
         {
@@ -457,6 +533,7 @@
           "uk": "Через сімейний бізнес, місцеву автономію та вільні приватні договори",
           "ru": "Через семейный бизнес, местное самоуправление и свободные частные договоры",
           "de": "Durch Familienunternehmen, lokale Autonomie und freie Privatverträge",
+          "es": "Mediante empresas familiares, autonomía local y contratos privados libres",
           "next": "e_distrib_right"
         }
       ]
@@ -467,12 +544,14 @@
       "uk": "Що має стати головною опорою такого кооперативного розподілу власності?",
       "ru": "Что должно стать главной опорой такого кооперативного распределения собственности?",
       "de": "Worauf sollte diese genossenschaftliche Eigentumsverteilung gründen?",
+      "es": "¿Sobre qué debería sustentarse esta distribución cooperativa de la propiedad?",
       "options": [
         {
           "en": "Small-scale peasant farming and collective access to agricultural land",
           "uk": "Дрібне селянське господарство та колективний доступ до сільськогосподарської землі",
           "ru": "Мелкое крестьянское хозяйство и коллективный доступ к сельскохозяйственной земле",
           "de": "Kleinbäuerliche Landwirtschaft und kollektiver Zugang zu landwirtschaftlichem Boden",
+          "es": "Agricultura campesina a pequeña escala y acceso colectivo a la tierra agrícola",
           "next": "agrarian_socialism"
         },
         {
@@ -480,6 +559,7 @@
           "uk": "Прогресивні податки та дії держави для подрібнення великих корпорацій",
           "ru": "Прогрессивные налоги и меры государства по дроблению крупных корпораций",
           "de": "Progressive Steuern und staatliche Maßnahmen zur Zerschlagung von Großkonzernen",
+          "es": "Impuestos progresivos y acción estatal para dividir las grandes corporaciones",
           "next": "social_distributism"
         },
         {
@@ -487,6 +567,7 @@
           "uk": "Місцеві кредитні спілки, банки взаємодопомоги та добровільні кооперативи",
           "ru": "Местные кредитные союзы, банки взаимопомощи и добровольные кооперативы",
           "de": "Lokale Kreditgenossenschaften, Hilfsbanken und freiwillige Genossenschaften",
+          "es": "Cooperativas de crédito locales, bancos de ayuda mutua y cooperativas voluntarias",
           "next": "mutual_distributism"
         }
       ]
@@ -497,12 +578,14 @@
       "uk": "Як слід захищати дрібну сімейну власність?",
       "ru": "Как следует защищать мелкую семейную собственность?",
       "de": "Wie sollte kleines Familieneigentum geschützt werden?",
+      "es": "¿Cómo debería protegerse la pequeña propiedad familiar?",
       "options": [
         {
           "en": "Use local institutions and laws to support small enterprises and prevent monopolies",
           "uk": "Використовувати місцеві інститути та закони для підтримки малих підприємств і запобігання монополіям",
           "ru": "Использовать местные институты и законы для поддержки малого бизнеса и защиты от монополий",
           "de": "Lokale Institutionen und Gesetze nutzen, um Kleinbetriebe zu fördern und Monopole zu verhindern",
+          "es": "Utilizar instituciones y leyes locales para apoyar a las pequeñas empresas y prevenir monopolios",
           "next": "distributism"
         },
         {
@@ -510,6 +593,7 @@
           "uk": "Скасувати всі державні привілеї, щоб малий бізнес природно перемагав монополії на вільному ринку",
           "ru": "Отменить все государственные привилегии, чтобы малый бизнес сам побеждал монополии на свободном рынке",
           "de": "Alle staatlichen Privilegien abschaffen, damit Kleinbetriebe Monopole im freien Markt natürlich übertreffen",
+          "es": "Eliminar todos los privilegios estatales para que las pequeñas empresas superen naturalmente a los monopolios en un mercado libre",
           "next": "free_market_distributism"
         }
       ]
@@ -520,12 +604,14 @@
       "uk": "Якою має бути головна мета координованих державою галузевих об'єднань?",
       "ru": "Какой должна быть главная цель государственных отраслевых корпораций?",
       "de": "Was sollte das Hauptziel staatlich koordinierter Industriekörperschaften sein?",
+      "es": "¿Cuál debería ser el objetivo principal de los organismos industriales coordinados por el Estado?",
       "options": [
         {
           "en": "Uniting employers and workers under state authority to serve national goals",
           "uk": "Об'єднання роботодавців і працівників під владою держави заради національних цілей",
           "ru": "Объединение работодателей и рабочих под властью государства ради национальных целей",
           "de": "Arbeitgeber und Arbeiter unter staatlicher Autorität für nationale Ziele vereinen",
+          "es": "Unir a empleadores y trabajadores bajo la autoridad del Estado para servir a los objetivos nacionales",
           "next": "corporatism"
         },
         {
@@ -533,6 +619,7 @@
           "uk": "Надання профспілкам сильного законного представництва в державних економічних радах",
           "ru": "Предоставление профсоюзам сильного законного представительства в экономических советах страны",
           "de": "Arbeitergewerkschaften eine starke gesetzliche Vertretung in staatlichen Wirtschaftsräten geben",
+          "es": "Dar a los sindicatos obreros una fuerte representación legal dentro de los consejos económicos estatales",
           "next": "social_corporatism"
         },
         {
@@ -540,6 +627,7 @@
           "uk": "Заохочення корпоративних профспілок, що співпрацюють із керівництвом заради частки в прибутку замість страйків",
           "ru": "Создание внутризаводских профсоюзов, сотрудничающих с руководством ради доли в прибыли вместо забастовок",
           "de": "Betriebsgewerkschaften fördern, die für Gewinnbeteiligung mit Arbeitgebern kooperieren statt zu streiken",
+          "es": "Fomentar sindicatos de empresa que cooperen con los jefes para repartir beneficios en lugar de hacer huelgas",
           "next": "yellow_socialism"
         },
         {
@@ -547,6 +635,7 @@
           "uk": "Передати корпоративну власність працівникам зі збереженням технічної ієрархії та єдності держави",
           "ru": "Передать корпоративную собственность работникам при сохранении технической иерархии и единства государства",
           "de": "Unternehmenseigentum auf die Arbeiter übertragen und dabei technische Hierarchie und Staatseinheit bewahren",
+          "es": "Transferir la propiedad corporativa a los trabajadores preservando la jerarquía técnica y la unidad del Estado",
           "next": "hierarchical_communism"
         },
         {
@@ -554,6 +643,7 @@
           "uk": "Управління національною економікою силами державних урядовців як єдиним господарством для наповнення скарбниці",
           "ru": "Управление экономикой страны силами чиновников как единым хозяйством для пополнения казны",
           "de": "Staatsbeamte die Volkswirtschaft wie einen Haushalt führen lassen, um die Staatskasse zu mehren",
+          "es": "Hacer que funcionarios estatales gestionen la economía nacional como un hogar para hacer crecer el tesoro público",
           "next": "cameralism"
         }
       ]
@@ -592,7 +682,9 @@
     { "id": "free_market_distributism" },
     { "id": "parecon" },
     { "id": "corporatocracy" },
-    { "id": "hierarchical_communism" }
+    { "id": "hierarchical_communism" },
+    { "id": "cybernetic_socialism" },
+    { "id": "ghent_system" }
   ],
   "resource_management": [
     {
@@ -601,12 +693,14 @@
       "uk": "Як мають фінансуватися суспільні послуги та розподілятися спільне багатство?",
       "ru": "Как должны финансироваться общественные нужды и распределяться общее богатство?",
       "de": "Wie sollten öffentliche Dienste finanziert und gemeinsamer Wohlstand verteilt werden?",
+      "es": "¿Cómo deberían financiarse los servicios públicos y distribuirse la riqueza común?",
       "options": [
         {
           "en": "Tax personal incomes, corporate profits, and capital",
           "uk": "Оподатковувати особисті доходи, прибутки корпорацій і капітал",
           "ru": "Облагать налогами личные доходы, прибыль компаний и капитал",
           "de": "Persönliche Einkommen, Unternehmensgewinne und Kapital besteuern",
+          "es": "Gravar los ingresos personales, los beneficios corporativos y el capital",
           "next": "r_production"
         },
         {
@@ -614,6 +708,7 @@
           "uk": "Оподатковувати вартість неосвоєної землі та природних ресурсів",
           "ru": "Облагать налогом стоимость земли и природные ресурсы",
           "de": "Den Wert unbebauten Bodens und natürlicher Ressourcen besteuern",
+          "es": "Gravar el valor de la tierra no mejorada y los recursos naturales",
           "next": "r_land"
         },
         {
@@ -621,20 +716,23 @@
           "uk": "Замінити податки на доходи податками з продажу або імпортними митами",
           "ru": "Заменить подоходные налоги налогами с продаж или импортными пошлинами",
           "de": "Einkommensteuern durch Konsumsteuern oder Importzölle ersetzen",
+          "es": "Reemplazar los impuestos sobre la renta por impuestos sobre las ventas o aranceles de importación",
           "next": "r_non_income"
         },
         {
-          "en": "Abolish taxes and wages completely and distribute goods directly by need",
-          "uk": "Повністю скасувати податки й зарплати та розподіляти блага безпосередньо за потребами",
-          "ru": "Полностью отменить налоги и зарплаты и распределять блага напрямую по потребностям",
-          "de": "Steuern und Löhne vollständig abschaffen und Güter direkt nach Bedarf verteilen",
-          "next": "collective_distribution"
+          "en": "Rely on state-owned enterprises or collective public ownership to fund society",
+          "uk": "Спиратися на державні підприємства або колективну суспільну власність для фінансування суспільства",
+          "ru": "Опираться на государственные предприятия или коллективную общественную собственность для финансирования общества",
+          "de": "Auf staatliche Unternehmen oder kollektives Gemeineigentum zur Finanzierung der Gesellschaft setzen",
+          "es": "Depender de empresas estatales o de la propiedad pública colectiva para financiar la sociedad",
+          "next": "r_public"
         },
         {
           "en": "Fund public services strictly through voluntary donations and user fees",
           "uk": "Фінансувати суспільні послуги виключно за рахунок добровільних внесків і плати за користування",
           "ru": "Финансировать общественные услуги только за счёт добровольных взносов и платы за пользование",
           "de": "Öffentliche Dienste ausschließlich durch freiwillige Spenden und Nutzungsgebühren finanzieren",
+          "es": "Financiar los servicios públicos estrictamente mediante donaciones voluntarias y tarifas por uso",
           "next": "Voluntaryism"
         }
       ]
@@ -645,12 +743,14 @@
       "uk": "Як мають бути влаштовані податки на доходи та багатство?",
       "ru": "Как должны быть устроены налоги на доходы и богатство?",
       "de": "Wie sollten Einkommen- und Vermögensteuern aufgebaut sein?",
+      "es": "¿Cómo deberían estructurarse los impuestos sobre la renta y la riqueza?",
       "options": [
         {
           "en": "Charge everyone the same flat tax percentage regardless of income",
           "uk": "Стягувати з усіх єдиний фіксований відсоток податку незалежно від доходу",
           "ru": "Взимать со всех единый плоский процент налога независимо от дохода",
           "de": "Von jedem unabhängig vom Einkommen denselben einheitlichen Steuersatz erheben",
+          "es": "Cobrar a todos el mismo porcentaje de impuesto plano independientemente de sus ingresos",
           "next": "flat_taxation"
         },
         {
@@ -658,6 +758,7 @@
           "uk": "Застосовувати прогресивну шкалу, де люди з вищими доходами сплачують вищу ставку податку",
           "ru": "Использовать прогрессивную шкалу, при которой более богатые платят более высокий процент",
           "de": "Einen progressiven Tarif verwenden, bei dem Besserverdienende einen höheren Steuersatz zahlen",
+          "es": "Utilizar una escala progresiva donde quienes ganan más paguen un tipo impositivo más alto",
           "next": "Progressive_Taxation"
         },
         {
@@ -665,7 +766,16 @@
           "uk": "Застосовувати майже 100% конфіскаційні податки на надбагатство та велику спадщину",
           "ru": "Применять почти стопроцентные конфискационные налоги на сверхбогатство и крупное наследство",
           "de": "Nahezu 100 % konfiskatorische Steuern auf extreme Vermögen und große Erbschaften anwenden",
+          "es": "Aplicar impuestos confiscatorios cercanos al 100 % sobre la riqueza extrema y las grandes herencias",
           "next": "Confiscatory_Taxation"
+        },
+        {
+          "en": "Place a higher effective tax burden on lower earners through fixed head taxes, income caps, or levies on basic goods",
+          "uk": "Покласти вище ефективне податкове навантаження на людей із нижчими доходами через фіксовані подушні податки або збори на базові товари",
+          "ru": "Возложить более высокую эффективную налоговую нагрузку на людей с низкими доходами через фиксированные подушные налоги или сборы на базовые товары",
+          "de": "Geringverdiener durch pauschale Kopfsteuern, Einkommensobergrenzen oder Abgaben auf Grundgüter effektiver stärker belasten",
+          "es": "Imponer una carga fiscal efectiva mayor a quienes ganan menos mediante impuestos fijos por cabeza, topes de ingresos o gravámenes sobre bienes básicos",
+          "next": "regressive_taxation"
         }
       ]
     },
@@ -675,12 +785,14 @@
       "uk": "Наскільки сильно держава має покладатися на податок на вартість землі?",
       "ru": "Насколько сильно государство должно полагаться на налог на стоимость земли?",
       "de": "Wie stark sollte sich der Staat auf eine Bodenwertsteuer stützen?",
+      "es": "¿En qué medida debería depender el gobierno de un Impuesto sobre el Valor de la Tierra?",
       "options": [
         {
           "en": "Make land value the single tax and abolish all taxes on income, trade, and buildings",
           "uk": "Зробити податок на вартість землі єдиним податком і скасувати всі податки на доходи, торгівлю та будівлі",
           "ru": "Сделать налог на землю единственным и отменить все налоги на доходы, торговлю и постройки",
           "de": "Den Bodenwert zur einzigen Steuer machen und alle Steuern auf Einkommen, Handel und Gebäude abschaffen",
+          "es": "Hacer del valor de la tierra el impuesto único y abolir todos los impuestos sobre la renta, el comercio y los edificios",
           "next": "lvt"
         },
         {
@@ -688,6 +800,7 @@
           "uk": "Використовувати податок на вартість землі як основну базу бюджету поряд зі звичайними податками на суспільні послуги",
           "ru": "Сделать налог на землю основой бюджета и дополнить его обычными налогами на общественные нужды",
           "de": "Die Bodenwertsteuer als Hauptfinanzierungsbasis neben regulären Steuern für öffentliche Dienste nutzen",
+          "es": "Usar el impuesto sobre el valor de la tierra como base principal de ingresos junto con impuestos estándar para los servicios públicos",
           "next": "mixed_lvt"
         }
       ]
@@ -698,12 +811,14 @@
       "uk": "Як держава має фінансувати себе без оподаткування доходів чи інвестицій?",
       "ru": "Как государство должно финансировать себя без налогов на доходы и инвестиции?",
       "de": "Wie sollte sich der Staat finanzieren, ohne Einkommen oder Investitionen zu besteuern?",
+      "es": "¿Cómo debería financiarse el Estado sin gravar los ingresos ni la inversión?",
       "options": [
         {
           "en": "Charge a single national sales tax on retail purchases instead of income and payroll taxes",
           "uk": "Стягувати єдиний загальнонаціональний податок із роздрібних покупок замість податків на доходи та зарплати",
           "ru": "Взимать единый общенациональный налог с розничных продаж вместо налогов на доходы и зарплаты",
           "de": "Eine einzige nationale Verkaufssteuer auf Einzelhandelskäufe statt Einkommen- und Lohnsteuern erheben",
+          "es": "Cobrar un único impuesto nacional sobre las ventas minoristas en lugar de impuestos sobre la renta y las nóminas",
           "next": "fair_tax"
         },
         {
@@ -711,7 +826,34 @@
           "uk": "Фінансувати державу за рахунок імпортних тарифів і митних зборів замість внутрішніх податків",
           "ru": "Финансировать государство за счёт импортных тарифов и таможенных пошлин вместо внутренних налогов",
           "de": "Den Staat durch Importzölle und Handelsabgaben statt durch inländische Steuern finanzieren",
+          "es": "Financiar el gobierno mediante aranceles de importación y derechos de aduana en lugar de impuestos internos",
           "next": "tariff_funding"
+        }
+      ]
+    },
+    {
+      "id": "r_public",
+      "en": "How should public enterprises and common resources fund society?",
+      "uk": "Як державні підприємства та спільні ресурси мають фінансувати суспільство?",
+      "ru": "Как государственные предприятия и общие ресурсы должны финансировать общество?",
+      "de": "Wie sollten öffentliche Unternehmen und gemeinsame Ressourcen die Gesellschaft finanzieren?",
+      "es": "¿Cómo deberían financiar la sociedad las empresas públicas y los recursos comunes?",
+      "options": [
+        {
+          "en": "Fund social spending mainly through profits and dividends from state-owned enterprises alongside regular taxes",
+          "uk": "Фінансувати соціальні витрати переважно за рахунок прибутків і дивідендів державних підприємств поряд із податками",
+          "ru": "Финансировать социальные расходы преимущественно за счёт прибыли и дивидендов госпредприятий наряду с налогами",
+          "de": "Sozialausgaben vorrangig durch Gewinne und Dividenden staatlicher Unternehmen neben regulären Steuern finanzieren",
+          "es": "Financiar el gasto social principalmente mediante los beneficios y dividendos de empresas estatales junto con impuestos regulares",
+          "next": "state_enterprise_revenue"
+        },
+        {
+          "en": "Abolish taxes, money, and wages completely and distribute goods directly by need",
+          "uk": "Повністю скасувати податки, гроші й зарплати та розподіляти блага безпосередньо за потребами",
+          "ru": "Полностью отменить налоги, деньги и зарплаты и распределять блага напрямую по потребностям",
+          "de": "Steuern, Geld und Löhne vollständig abschaffen und Güter direkt nach Bedarf verteilen",
+          "es": "Abolir por completo los impuestos, el dinero y los salarios y distribuir los bienes directamente según las necesidades",
+          "next": "collective_distribution"
         }
       ]
     },
@@ -723,7 +865,9 @@
     { "id": "flat_taxation" },
     { "id": "Progressive_Taxation" },
     { "id": "Confiscatory_Taxation" },
-    { "id": "collective_distribution" }
+    { "id": "collective_distribution" },
+    { "id": "regressive_taxation" },
+    { "id": "state_enterprise_revenue" }
   ],
   "culture": [
     {
@@ -732,12 +876,14 @@
       "uk": "Як суспільство має ставитися до культурних традицій і соціальних змін?",
       "ru": "Как общество должно относиться к культурным традициям и социальным изменениям?",
       "de": "Wie sollte die Gesellschaft mit kulturellen Traditionen und sozialem Wandel umgehen?",
+      "es": "¿Cómo debería abordar la sociedad las tradiciones culturales y el cambio social?",
       "options": [
         {
           "en": "Reform outdated norms to expand personal freedom and social equality",
           "uk": "Реформувати застарілі норми для розширення особистої свободи та соціальної рівності",
           "ru": "Реформировать устаревшие нормы для расширения личной свободы и социального равенства",
           "de": "Überholte Normen reformieren, um persönliche Freiheit und soziale Gleichheit auszubauen",
+          "es": "Reformar las normas obsoletas para ampliar la libertad personal y la igualdad social",
           "next": "c_prog_1"
         },
         {
@@ -745,6 +891,7 @@
           "uk": "Зберігати перевірені звичаї, конституційний лад і соціальну стабільність",
           "ru": "Сохранять проверенные обычаи, конституционный строй и социальную стабильность",
           "de": "Bewährte Bräuche, verfassungsmäßige Ordnung und gesellschaftliche Stabilität bewahren",
+          "es": "Preservar las costumbres probadas, el orden constitucional y la estabilidad social",
           "next": "c_con_1"
         },
         {
@@ -752,6 +899,7 @@
           "uk": "Відкинути сучасний світський занепад і відновити традиційні або сакральні засади",
           "ru": "Отвергнуть современный светский упадок и восстановить традиционные или сакральные устои",
           "de": "Den modernen säkularen Verfall ablehnen und traditionelle oder heilige Grundlagen wiederherstellen",
+          "es": "Rechazar la decadencia secular moderna y restaurar los cimientos tradicionales o sagrados",
           "next": "c_trad_1"
         },
         {
@@ -759,6 +907,7 @@
           "uk": "Відкинути будь-які сталі моральні кодекси, великі наративи та обов'язкові соціальні норми",
           "ru": "Отвергнуть любые устоявшиеся моральные кодексы, великие нарративы и обязательные социальные нормы",
           "de": "Alle festen Moralkodizes, großen Erzählungen und verbindlichen sozialen Normen ablehnen",
+          "es": "Rechazar todos los códigos morales fijos, grandes relatos y normas sociales vinculantes",
           "next": "c_deconstruct_1"
         }
       ]
@@ -769,12 +918,14 @@
       "uk": "Якою має бути головна мета культурних реформ?",
       "ru": "Какой должна быть главная цель культурных реформ?",
       "de": "Was sollte das Hauptziel kultureller Reformen sein?",
+      "es": "¿Cuál debería ser el objetivo principal de la reforma cultural?",
       "options": [
         {
           "en": "Guarantee equal legal rights and freedom of conscience for every individual",
           "uk": "Гарантувати рівні законні права та свободу совісті для кожної людини",
           "ru": "Гарантировать равные законные права и свободу совести для каждого человека",
           "de": "Gleiche Rechte und Gewissensfreiheit für jedes Individuum garantieren",
+          "es": "Garantizar iguales derechos legales y libertad de conciencia para cada individuo",
           "next": "civil_liberalism"
         },
         {
@@ -782,6 +933,7 @@
           "uk": "Максимізувати особисту свободу способу життя без традиційних соціальних табу",
           "ru": "Максимизировать личную свободу образа жизни без традиционных социальных табу",
           "de": "Maximale persönliche Lebensstilfreiheit ohne traditionelle gesellschaftliche Tabus ermöglichen",
+          "es": "Maximizar la libertad personal de estilo de vida sin tabúes sociales tradicionales",
           "next": "progressivism"
         },
         {
@@ -789,6 +941,7 @@
           "uk": "Активно демонтувати системні упередження, привілеї та соціальні ієрархії",
           "ru": "Активно демонтировать системные предрассудки, привилегии и социальные иерархии",
           "de": "Systemische Vorurteile, Privilegien und soziale Hierarchien aktiv abbauen",
+          "es": "Desmantelar activamente los prejuicios sistémicos, los privilegios y las jerarquías sociales",
           "next": "social_progressivism"
         },
         {
@@ -796,6 +949,7 @@
           "uk": "Базувати етику та суспільство на науковому розумі, емпіризмі та світській людській гідності",
           "ru": "Основывать этику и общество на научном разуме, эмпиризме и светском человеческом достоинстве",
           "de": "Ethik und Gesellschaft auf wissenschaftliche Vernunft, Empirie und säkulare Menschenwürde gründen",
+          "es": "Fundamentar la ética y la sociedad en la razón científica, el empirismo y la dignidad humana secular",
           "next": "secular_humanism"
         }
       ]
@@ -806,12 +960,14 @@
       "uk": "На якій основі слід відкидати традиційну мораль та соціальні норми?",
       "ru": "На каком основании следует отвергать традиционную мораль и социальные нормы?",
       "de": "Auf welcher Grundlage sollten traditionelle Moral und soziale Normen abgelehnt werden?",
+      "es": "¿Sobre qué base deberían rechazarse la moralidad tradicional y las normas sociales?",
       "options": [
         {
           "en": "Deconstruct all claims of objective truth and progress as artificial power constructs",
           "uk": "Деконструювати всі претензії на об'єктивну істину та прогрес як штучні конструкти влади",
           "ru": "Деконструировать все претензии на объективную истину и прогресс как искусственные конструкты власти",
           "de": "Alle Ansprüche auf objektive Wahrheit und Fortschritt als künstliche Machtkonstrukte dekonstruieren",
+          "es": "Deconstruir todas las pretensiones de verdad objetiva y progreso como construcciones artificiales de poder",
           "next": "postmodernism"
         },
         {
@@ -819,6 +975,7 @@
           "uk": "Відкинути будь-яку етику та громадянські обов'язки як ілюзії, утверджуючи власний інтерес і бажання",
           "ru": "Отвергнуть любую этику и гражданские обязанности как иллюзии, утверждая личный интерес и желание",
           "de": "Alle Ethik und Bürgerpflichten als Illusionen verwerfen und individuelles Eigeninteresse sowie Begehren betonen",
+          "es": "Descartar toda ética y deberes cívicos como ilusiones, afirmando el interés propio y el deseo individual",
           "next": "amoralism"
         }
       ]
@@ -829,12 +986,14 @@
       "uk": "Як консерватизм має поєднувати традиції зі змінами та особистою свободою?",
       "ru": "Как консерватизм должен сочетать традиции с переменами и личной свободой?",
       "de": "Wie sollte der Konservatismus Tradition mit Wandel und persönlicher Freiheit ausbalancieren?",
+      "es": "¿Cómo debería equilibrar el conservadurismo la tradición con el cambio y la libertad personal?",
       "options": [
         {
           "en": "Defend established national culture, customs, and institutions as society's bedrock",
           "uk": "Захищати усталену національну культуру, звичаї та інститути як фундамент суспільства",
           "ru": "Защищать устоявшуюся национальную культуру, обычаи и институты как основу общества",
           "de": "Etablierte Nationalkultur, Bräuche und Institutionen als Fundament der Gesellschaft verteidigen",
+          "es": "Defender la cultura nacional, las costumbres y las instituciones establecidas como base de la sociedad",
           "next": "conservatism"
         },
         {
@@ -842,6 +1001,7 @@
           "uk": "Обережно адаптуватися до необхідних суспільних змін, зберігаючи ключові інститути недоторканними",
           "ru": "Осторожно адаптироваться к назревшим переменам, сохраняя ключевые институты",
           "de": "Sich behutsam notwendigen gesellschaftlichen Veränderungen anpassen und dabei Kerninstitutionen bewahren",
+          "es": "Adaptarse con cautela a los cambios sociales necesarios manteniendo intactas las instituciones fundamentales",
           "next": "progressive_conservatism"
         },
         {
@@ -849,6 +1009,7 @@
           "uk": "Поєднувати традиційний моральний порядок із широкими індивідуальними свободами",
           "ru": "Сочетать традиционный нравственный порядок с широкими личными свободами",
           "de": "Traditionelle moralische Ordnung mit starken individuellen Freiheitsrechten verbinden",
+          "es": "Combinar el orden moral tradicional con amplias libertades individuales",
           "next": "c_con_lib_split"
         }
       ]
@@ -859,12 +1020,14 @@
       "uk": "Який принцип має пріоритет при поєднанні свободи та традицій?",
       "ru": "Какой принцип имеет приоритет при сочетании свободы и традиций?",
       "de": "Welches Prinzip hat Vorrang beim Ausgleich zwischen Freiheit und Tradition?",
+      "es": "¿Qué principio tiene prioridad al equilibrar la libertad y la tradición?",
       "options": [
         {
           "en": "Family, faith, and social order come first, with personal liberty exercised within them",
           "uk": "Сім'я, віра та суспільний порядок на першому місці, а особиста свобода реалізується в їхніх межах",
           "ru": "Семья, вера и общественный порядок первичны, а личная свобода реализуется в их рамках",
           "de": "Familie, Glaube und soziale Ordnung stehen an erster Stelle, persönliche Freiheit wird in diesem Rahmen gelebt",
+          "es": "La familia, la fe y el orden social son lo primero, y la libertad personal se ejerce dentro de ellos",
           "next": "liberal_conservatism"
         },
         {
@@ -872,6 +1035,7 @@
           "uk": "Особиста свобода та громадянські права на першому місці за мінімального примусу до моралі",
           "ru": "Личная свобода и гражданские права первичны при минимальном моральном контроле",
           "de": "Individuelle Freiheit und Bürgerrechte stehen an erster Stelle, mit minimaler Durchsetzung von Moral",
+          "es": "La libertad individual y los derechos civiles son lo primero, con una imposición mínima de la moralidad",
           "next": "conservative_liberalism"
         }
       ]
@@ -882,12 +1046,14 @@
       "uk": "Яка основа має прийти на зміну сучасним світським цінностям?",
       "ru": "Какая основа должна прийти на смену современным светским ценностям?",
       "de": "Welche Grundlage sollte moderne säkulare Werte ersetzen?",
+      "es": "¿Qué fundamento debería reemplazar los valores seculares modernos?",
       "options": [
         {
           "en": "Ancestral customs, family continuity, and local community heritage",
           "uk": "Звичаї предків, спадкоємність поколінь і спадщина місцевих громад",
           "ru": "Обычаи предков, преемственность поколений и наследие местных общин",
           "de": "Überlieferte Bräuche, familiäre Kontinuität und lokales Gemeinschaftserbe",
+          "es": "Costumbres ancestrales, continuidad familiar y patrimonio comunitario local",
           "next": "c_trad_organic"
         },
         {
@@ -895,6 +1061,7 @@
           "uk": "Святе Письмо, релігійний закон і вічні метафізичні істини",
           "ru": "Священное Писание, религиозный закон и вечные духовные истины",
           "de": "Heilige Schriften, religiöses Recht und zeitlose metaphysische Wahrheiten",
+          "es": "Escrituras sagradas, ley religiosa y verdades metafísicas atemporales",
           "next": "c_trad_spiritual"
         },
         {
@@ -902,6 +1069,7 @@
           "uk": "Радикальний розрив із ліберальною сучасністю через домодерну реставрацію або революційне відродження",
           "ru": "Радикальный разрыв с либеральной современностью через реставрацию прошлого или революционное обновление",
           "de": "Ein radikaler Bruch mit der liberalen Moderne durch vormoderne Restauration oder revolutionäre Wiedergeburt",
+          "es": "Una ruptura radical con la modernidad liberal mediante la restauración premoderna o el renacimiento revolucionario",
           "next": "c_trad_counter"
         }
       ]
@@ -912,12 +1080,14 @@
       "uk": "Що має слугувати головною опорою цього традиційного укладу життя?",
       "ru": "Что должно служить главной опорой этого традиционного уклада?",
       "de": "Worauf sollte diese traditionelle Lebensweise gründen?",
+      "es": "¿Sobre qué debería sustentarse este modo de vida tradicional?",
       "options": [
         {
           "en": "Natural law, local piety, family duty, and inherited communal bonds",
           "uk": "Природний закон, місцева побожність, сімейний обов'язок і успадковані громадські зв'язки",
           "ru": "Естественный закон, местные традиции, семейный долг и прочные общинные связи",
           "de": "Naturrecht, lokale Frömmigkeit, Familienpflicht und gewachsene Gemeinschaftsbindungen",
+          "es": "Ley natural, piedad local, deber familiar y lazos comunales heredados",
           "next": "traditionalist_conservatism"
         },
         {
@@ -925,6 +1095,7 @@
           "uk": "Історична національна ідентичність, регіональна самобутність і традиційна мораль проти глобалізму",
           "ru": "Историческая национальная идентичность, региональная самобытность и традиционная мораль против глобализма",
           "de": "Historische nationale Identität, regionale Eigenart und traditionelle Moral gegen den Globalismus",
+          "es": "Identidad nacional histórica, singularidad regional y moralidad tradicional frente al globalismo",
           "next": "paleoconservatism"
         }
       ]
@@ -935,12 +1106,14 @@
       "uk": "Яка духовна основа має спрямовувати культуру та мораль?",
       "ru": "Какая духовная основа должна направлять культуру и мораль?",
       "de": "Welche spirituelle Grundlage sollte Kultur und Moral leiten?",
+      "es": "¿Qué fundamento espiritual debería guiar la cultura y la moralidad?",
       "options": [
         {
           "en": "Strict adherence to established religious faith, sacred scripture, and church teaching",
           "uk": "Суворе дотримання усталеної релігійної віри, Святого Письма та церковного вчення",
           "ru": "Строгое следование установленной религии, священным текстам и церковному учению",
           "de": "Strikte Bindung an etablierten religiösen Glauben, heilige Schriften und kirchliche Lehre",
+          "es": "Estricta adhesión a la fe religiosa establecida, las escrituras sagradas y la enseñanza de la Iglesia",
           "next": "religious_traditionalism"
         },
         {
@@ -948,6 +1121,7 @@
           "uk": "Позачасова, універсальна метафізична мудрість, спільна для давніх священних традицій",
           "ru": "Вневременная метафизическая мудрость, общая для древних священных традиций",
           "de": "Eine zeitlose, universelle metaphysische Weisheit, die alten heiligen Traditionen gemeinsam ist",
+          "es": "Una sabiduría metafísica universal y atemporal compartida por las antiguas tradiciones sagradas",
           "next": "perennial_traditionalism"
         }
       ]
@@ -958,12 +1132,14 @@
       "uk": "Як суспільство має подолати ліберальну сучасність?",
       "ru": "Как общество должно преодолеть либеральную современность?",
       "de": "Wie sollte die Gesellschaft die liberale Moderne überwinden?",
+      "es": "¿Cómo debería la sociedad derrocar la modernidad liberal?",
       "options": [
         {
           "en": "Reject Enlightenment ideas and restore pre-modern social roles and virtues",
           "uk": "Відкинути ідеї Просвітництва та відновити домодерні соціальні ролі й чесноти",
           "ru": "Отвергнуть идеи Просвещения и вернуть домодерные социальные роли и добродетели",
           "de": "Ideen der Aufklärung ablehnen und vormoderne soziale Rollen und Tugenden wiederherstellen",
+          "es": "Rechazar las ideas de la Ilustración y restaurar los roles sociales y virtudes premodernos",
           "next": "reactionaryism"
         },
         {
@@ -971,6 +1147,7 @@
           "uk": "Відкинути егалітаризм, визнати природну ієрархію людей і зруйнувати прогресистські догми",
           "ru": "Отвергнуть эгалитаризм, признать естественную иерархию людей и разрушить прогрессистские догмы",
           "de": "Egalitarismus ablehnen, natürliche menschliche Hierarchie anerkennen und progressive Dogmen zerschlagen",
+          "es": "Rechazar el igualitarismo, reconocer la jerarquía humana natural y desmantelar los dogmas progresistas",
           "next": "neoreactionaryism"
         },
         {
@@ -978,6 +1155,7 @@
           "uk": "Поєднати романтичний фольклор і героїчний дух предків із передовими технологіями",
           "ru": "Соединить романтический фольклор и героический дух предков с передовыми технологиями",
           "de": "Romantische Folklore und heroischen Ahnengeist mit Spitzentechnologie verbinden",
+          "es": "Combinar el folclore romántico y el espíritu ancestral heroico con tecnología avanzada",
           "next": "reactionary_modernism"
         },
         {
@@ -985,6 +1163,7 @@
           "uk": "Створити революційну, авангардну сучасність, що повністю замінює буржуазну культуру",
           "ru": "Создать революционную авангардную современность, полностью заменяющую буржуазную культуру",
           "de": "Eine revolutionäre, avantgardistische Moderne schaffen, die die bürgerliche Kultur vollständig ersetzt",
+          "es": "Crear una modernidad revolucionaria y vanguardista que reemplace por completo la cultura burguesa",
           "next": "alternative_modernism"
         }
       ]
@@ -1015,12 +1194,14 @@
       "uk": "Яку владу держава повинна мати над особистістю?",
       "ru": "Какой властью государство должно обладать над личностью?",
       "de": "Wie viel Autorität sollte der Staat über den Einzelnen haben?",
+      "es": "¿Cuánta autoridad debería tener el Estado sobre los individuos?",
       "options": [
         {
           "en": "A sovereign state is necessary to keep order, enforce laws, and govern society",
           "uk": "Суверенна держава необхідна для підтримання порядку, виконання законів і управління суспільством",
           "ru": "Суверенное государство необходимо для поддержания порядка, исполнения законов и управления обществом",
           "de": "Ein souveräner Staat ist notwendig, um Ordnung zu halten, Gesetze durchzusetzen und die Gesellschaft zu regieren",
+          "es": "Un Estado soberano es necesario para mantener el orden, hacer cumplir las leyes y gobernar la sociedad",
           "next": "a_gov_model"
         },
         {
@@ -1028,6 +1209,7 @@
           "uk": "Суворо обмежити державу роллю «нічного сторожа», що захищає життя, власність і контракти",
           "ru": "Строго ограничить государство ролью «ночного сторожа» для защиты жизни, собственности и контрактов",
           "de": "Den Staat strikt auf eine Nachtwächterrolle zum Schutz von Leben, Eigentum und Verträgen begrenzen",
+          "es": "Limitar el Estado estrictamente a un papel de vigilante nocturno que proteja la vida, la propiedad y los contratos",
           "next": "minarchism"
         },
         {
@@ -1035,6 +1217,7 @@
           "uk": "Повністю скасувати державу на користь добровільного бездержавного суспільства",
           "ru": "Полностью упразднить государство в пользу добровольного безгосударственного общества",
           "de": "Den Staat vollständig zugunsten einer freiwilligen, staatenlosen Gesellschaft abschaffen",
+          "es": "Abolir el Estado por completo en favor de una sociedad voluntaria y sin Estado",
           "next": "a_stateless"
         }
       ]
@@ -1045,12 +1228,14 @@
       "uk": "Як мають працювати порядок і координація в бездержавному суспільстві?",
       "ru": "Как должны поддерживаться порядок и координация в безгосударственном обществе?",
       "de": "Wie sollten Ordnung und Koordination in einer staatenlosen Gesellschaft funktionieren?",
+      "es": "¿Cómo deberían funcionar el orden y la coordinación en una sociedad sin Estado?",
       "options": [
         {
           "en": "Through horizontal, decentralized self-management with no rulers or hierarchy",
           "uk": "Через горизонтальне, децентралізоване самоуправління без правителів та ієрархії",
           "ru": "Через горизонтальное децентрализованное самоуправление без правителей и иерархии",
           "de": "Durch horizontale, dezentrale Selbstverwaltung ohne Herrscher oder Hierarchie",
+          "es": "Mediante la autogestión horizontal y descentralizada sin gobernantes ni jerarquías",
           "next": "anarchism"
         },
         {
@@ -1058,6 +1243,7 @@
           "uk": "Під проводом символічного неправлячого монарха, єдине завдання якого — запобігати утворенню нової держави",
           "ru": "Под началом символического неправящего монарха, чья единственная задача — не допустить появления нового государства",
           "de": "Unter einem symbolischen, nicht regierenden Monarchen, dessen einzige Aufgabe darin besteht, einen neuen Staat zu verhindern",
+          "es": "Bajo un monarca simbólico que no gobierna y cuya única tarea es evitar que se forme un nuevo Estado",
           "next": "anarcho_monarchism"
         },
         {
@@ -1065,6 +1251,7 @@
           "uk": "Через конкуруючі приватні правові системи та добровільні юрисдикції, що перетинаються",
           "ru": "Через конкурирующие частные правовые системы и добровольные пересекающиеся юрисдикции",
           "de": "Durch sich überschneidende, konkurrierende private Rechtssysteme und freiwillige Gerichtsbarkeiten",
+          "es": "Mediante sistemas legales privados superpuestos y competidores y jurisdicciones voluntarias",
           "next": "polycentrism"
         }
       ]
@@ -1075,19 +1262,22 @@
       "uk": "Кому має належати верховна влада ухвалення рішень у державі?",
       "ru": "Кому должна принадлежать верховная власть принятия решений в государстве?",
       "de": "Wer sollte die oberste Entscheidungsgewalt im Staat innehaben?",
+      "es": "¿Quién debería ostentar el poder supremo de toma de decisiones en el Estado?",
       "options": [
         {
           "en": "The citizens and popular democratic institutions",
           "uk": "Громадянам і народним демократичним інститутам",
           "ru": "Гражданам и народным демократическим институтам",
           "de": "Die Bürger und demokratische Volksinstitutionen",
+          "es": "Los ciudadanos y las instituciones democráticas populares",
           "next": "a_popular"
         },
         {
-          "en": "A capable elite chosen by merit, expertise, birth, or rank",
-          "uk": "Компетентній еліті, обраній за заслугами, знаннями, походженням або рангом",
-          "ru": "Компетентной элите, отобранной по заслугам, знаниям, происхождению или званию",
-          "de": "Eine fähige Elite, ausgewählt nach Verdienst, Fachwissen, Herkunft oder Rang",
+          "en": "A small elite defined by wealth, merit, expertise, birth, or rank",
+          "uk": "Вузькій еліті, визначеній багатством, заслугами, знаннями, походженням або рангом",
+          "ru": "Узкой элите, определяемой богатством, заслугами, знаниями, происхождением или званием",
+          "de": "Eine kleine Elite, bestimmt durch Reichtum, Verdienst, Fachwissen, Herkunft oder Rang",
+          "es": "Una pequeña élite definida por la riqueza, el mérito, la experiencia, el nacimiento o el rango",
           "next": "a_elite"
         },
         {
@@ -1095,6 +1285,7 @@
           "uk": "Єдиному верховному лідеру, керівній партії або корпоративному керівництву",
           "ru": "Единовластному верховному правителю, правящей партии или корпоративному руководству",
           "de": "Ein einzelner oberster Führer, eine herrschende Partei oder ein Unternehmensvorstand",
+          "es": "Un único líder supremo, un partido gobernante o un ejecutivo corporativo",
           "next": "a_concentrated"
         }
       ]
@@ -1105,12 +1296,14 @@
       "uk": "Як громадяни мають здійснювати свою політичну владу?",
       "ru": "Каким образом граждане должны осуществлять свою политическую власть?",
       "de": "Wie sollten die Bürger ihre politische Macht ausüben?",
+      "es": "¿Cómo deberían ejercer su poder político los ciudadanos?",
       "options": [
         {
           "en": "By electing representatives to pass laws in a parliament",
           "uk": "Обираючи представників для ухвалення законів у парламенті",
           "ru": "Избирая представителей для принятия законов в парламенте",
           "de": "Durch die Wahl von Abgeordneten, die in einem Parlament Gesetze verabschieden",
+          "es": "Eligiendo representantes para aprobar leyes en un parlamento",
           "next": "a_parliamentary"
         },
         {
@@ -1118,6 +1311,7 @@
           "uk": "Голосуючи й ухвалюючи рішення безпосередньо через референдуми, ради або народні збори",
           "ru": "Напрямую принимая решения через референдумы, советы или народные собрания",
           "de": "Durch direkte Abstimmung und Entscheidung über Politik mittels Referenden, Räten oder Versammlungen",
+          "es": "Votando y decidiendo políticas directamente mediante referéndums, consejos o asambleas",
           "next": "a_direct"
         }
       ]
@@ -1128,12 +1322,14 @@
       "uk": "Як має бути влаштований представницький парламент?",
       "ru": "Как должна быть устроена представительная парламентская система?",
       "de": "Wie sollte das repräsentative Parlament aufgebaut sein?",
+      "es": "¿Cómo debería estructurarse el parlamento representativo?",
       "options": [
         {
           "en": "Elected officials govern within a constitutional republic",
           "uk": "Обрані посадовці керують у межах конституційної республіки",
           "ru": "Избранные представители управляют страной в рамках конституционной республики",
           "de": "Gewählte Amtsträger regieren innerhalb einer konstitutionellen Republik",
+          "es": "Funcionarios electos gobiernan dentro de una república constitucional",
           "next": "representative_democracy"
         },
         {
@@ -1141,14 +1337,42 @@
           "uk": "Обраний парламент ділить владу з монархом, обмеженим конституцією",
           "ru": "Избранный парламент разделяет власть с монархом, ограниченным конституцией",
           "de": "Ein gewähltes Parlament teilt die Macht mit einem an eine Verfassung gebundenen Monarchen",
-          "next": "constitutional"
+          "es": "Un parlamento electo comparte el poder con un monarca sujeto a una constitución",
+          "next": "a_monarchy_const"
         },
         {
           "en": "Representation is organized through trade unions, guilds, and occupational syndicates",
           "uk": "Представництво організоване через профспілки, гільдії та професійні синдикати",
           "ru": "Представительство организовано через профсоюзы, гильдии и профессиональные синдикаты",
           "de": "Die Vertretung ist über Gewerkschaften, Gilden und Berufssyndikate organisiert",
+          "es": "La representación se organiza a través de sindicatos, gremios y corporaciones profesionales",
           "next": "syndicracy"
+        }
+      ]
+    },
+    {
+      "id": "a_monarchy_const",
+      "en": "How much real governing power should the constitutional monarch hold?",
+      "uk": "Скільки реальної керівної влади має зберігати конституційний монарх?",
+      "ru": "Сколько реальной правящей власти должен сохранять конституционный монарх?",
+      "de": "Wie viel echte Regierungsgewalt sollte der konstitutionelle Monarch innehaben?",
+      "es": "¿Cuánto poder real de gobierno debería conservar el monarca constitucional?",
+      "options": [
+        {
+          "en": "The monarch serves strictly as a symbolic, ceremonial figurehead while the elected parliament governs",
+          "uk": "Монарх виконує суто символічну, церемоніальну роль, тоді як керує обраний парламент",
+          "ru": "Монарх играет сугубо символическую, церемониальную роль, а управляет страной выборный парламент",
+          "de": "Der Monarch dient rein als symbolisches, zeremonielles Staatsoberhaupt, während das gewählte Parlament regiert",
+          "es": "El monarca sirve estrictamente como figura simbólica y ceremonial mientras gobierna el parlamento electo",
+          "next": "constitutional"
+        },
+        {
+          "en": "The monarch retains real executive, appointment, or veto powers alongside the elected parliament",
+          "uk": "Монарх зберігає реальну виконавчу владу, право призначень або вето поряд із обраним парламентом",
+          "ru": "Монарх сохраняет реальную исполнительную власть, право назначений или вето наряду с выборным парламентом",
+          "de": "Der Monarch behält echte Exekutiv-, Ernennungs- oder Vetorechte neben dem gewählten Parlament",
+          "es": "El monarca conserva poderes ejecutivos, de nombramiento o de veto reales junto con el parlamento electo",
+          "next": "semi_constitutional"
         }
       ]
     },
@@ -1158,12 +1382,14 @@
       "uk": "Якої форми має набувати пряма демократія?",
       "ru": "Какую форму должна принимать прямая демократия?",
       "de": "Welche Form sollte direkte Demokratie annehmen?",
+      "es": "¿Qué forma debería adoptar la democracia directa?",
       "options": [
         {
           "en": "Citizens vote directly on laws through popular initiatives and referendums",
           "uk": "Громадяни голосують безпосередньо за закони через народні ініціативи та референдуми",
           "ru": "Граждане напрямую голосуют за законы через народные инициативы и референдумы",
           "de": "Bürger stimmen über Volksinitiativen und Referenden direkt über Gesetze ab",
+          "es": "Los ciudadanos votan directamente sobre las leyes mediante iniciativas populares y referéndums",
           "next": "referendum_democracy"
         },
         {
@@ -1171,6 +1397,7 @@
           "uk": "Влада належить прямо обраним радам робітників, селян або солдатів",
           "ru": "Власть принадлежит напрямую избираемым советам рабочих, крестьян или солдат",
           "de": "Die Macht liegt bei direkt gewählten Räten aus Arbeitern, Bauern oder Soldaten",
+          "es": "El poder pertenece a consejos directamente elegidos de trabajadores, campesinos o soldados",
           "next": "councilism"
         },
         {
@@ -1178,6 +1405,7 @@
           "uk": "Громадяни керують через місцеві квартальні та муніципальні збори, об'єднані у федерацію",
           "ru": "Граждане управляют через местные квартальные и городские собрания, объединённые в федерацию",
           "de": "Bürger regieren über lokale Nachbarschafts- und Gemeindeversammlungen in einer Föderation",
+          "es": "Los ciudadanos gobiernan a través de asambleas vecinales y municipales locales unidas en una federación",
           "next": "communalism"
         },
         {
@@ -1185,6 +1413,7 @@
           "uk": "Громадяни безперервно пропонують і ухвалюють рішення через відкриті цифрові платформи",
           "ru": "Граждане непрерывно предлагают и принимают решения через открытые цифровые платформы",
           "de": "Bürger schlagen Gesetze kontinuierlich über offene digitale Plattformen vor und stimmen darüber ab",
+          "es": "Los ciudadanos proponen y votan políticas continuamente a través de plataformas digitales abiertas",
           "next": "digital_democracy"
         },
         {
@@ -1192,7 +1421,16 @@
           "uk": "Законодавці та ради обираються шляхом випадкового громадянського жеребкування (сортиції)",
           "ru": "Законодатели и советы избираются путём случайной гражданской жеребьёвки (сортиции)",
           "de": "Gesetzgeber und Räte werden per zufälligem Bürgerlos (Sortition) aus der Bevölkerung ausgewählt",
+          "es": "Los legisladores y consejos son elegidos por sorteo cívico aleatorio (insaculación) entre ciudadanos comunes",
           "next": "demarchy"
+        },
+        {
+          "en": "Unrestrained majority rule driven directly by mass crowds and popular will without constitutional limits",
+          "uk": "Необмежена влада більшості, керована безпосередньо масовим натовпом і народною волею без конституційних обмежень",
+          "ru": "Ничем не ограниченная власть большинства, движимая непосредственно массовой толпой и народной волей без конституционных рамок",
+          "de": "Ungezügelte Mehrheitsherrschaft, direkt getragen von Volksmassen und Volkswillen ohne verfassungsrechtliche Schranken",
+          "es": "Gobierno mayoritario sin restricciones impulsado directamente por multitudes masivas y la voluntad popular sin límites constitucionales",
+          "next": "ochlocracy"
         }
       ]
     },
@@ -1202,12 +1440,14 @@
       "uk": "Яка ознака має давати керівній еліті право управляти?",
       "ru": "Какое качество должно давать правящей элите право управлять?",
       "de": "Welche Qualifikation sollte der herrschenden Elite das Recht zum Regieren geben?",
+      "es": "¿Qué cualificación debería otorgar a la élite gobernante el derecho a gobernar?",
       "options": [
         {
           "en": "Scientific expertise, engineering skill, and data-driven management",
           "uk": "Наукова експертиза, інженерна майстерність та управління на основі даних",
           "ru": "Научные знания, инженерная компетентность и управление на основе данных",
           "de": "Wissenschaftliche Expertise, Ingenieurskunst und datengestützte Steuerung",
+          "es": "Experiencia científica, habilidad en ingeniería y gestión basada en datos",
           "next": "technocracy"
         },
         {
@@ -1215,6 +1455,7 @@
           "uk": "Доведений талант, особисті досягнення та перевірені інтелектуальні здібності",
           "ru": "Доказанный талант, личные достижения и подтверждённые способности",
           "de": "Nachgewiesenes Talent, persönliche Leistung und geprüfte intellektuelle Fähigkeit",
+          "es": "Talento demostrado, logros personales y capacidad intelectual probada",
           "next": "meritocracy"
         },
         {
@@ -1222,6 +1463,7 @@
           "uk": "Спадкове шляхетне походження та довгострокова опіка над суспільством",
           "ru": "Наследственное благородное происхождение и традиционное попечительство над обществом",
           "de": "Ererbte adlige Abstammung und langfristige Verantwortung für die Gesellschaft",
+          "es": "Linaje noble hereditario y tutela a largo plazo de la sociedad",
           "next": "aristocracy"
         },
         {
@@ -1229,7 +1471,16 @@
           "uk": "Вище військове командування, військова дисципліна та стратегічне лідерство",
           "ru": "Высшее военное командование, воинская дисциплина и стратегическое руководство",
           "de": "Hohe militärische Führung, Disziplin und strategische Leitung",
+          "es": "Alto mando militar, disciplina marcial y liderazgo estratégico",
           "next": "stratocracy"
+        },
+        {
+          "en": "Concentrated wealth, corporate ownership, and entrenched economic influence",
+          "uk": "Зосереджене багатство, корпоративна власність і вкорінений економічний вплив",
+          "ru": "Сосредоточенное богатство, корпоративная собственность и укоренившееся экономическое влияние",
+          "de": "Konzentrierter Reichtum, Unternehmenseigentum und verankerter wirtschaftlicher Einfluss",
+          "es": "Riqueza concentrada, propiedad corporativa e influencia económica arraigada",
+          "next": "oligarchy"
         }
       ]
     },
@@ -1239,12 +1490,14 @@
       "uk": "Що має лежати в основі цієї централізованої виконавчої влади?",
       "ru": "Что должно лежать в основе этой централизованной исполнительной власти?",
       "de": "Was sollte das Fundament dieser zentralisierten Exekutivgewalt sein?",
+      "es": "¿Cuál debería ser el fundamento de este poder ejecutivo centralizado?",
       "options": [
         {
           "en": "A dynastic royal bloodline or sacred religious authority",
           "uk": "Династична монарша кров або священна релігійна влада",
           "ru": "Династическая царская кровь или священный религиозный авторитет",
           "de": "Eine dynastische königliche Blutlinie oder heilige religiöse Autorität",
+          "es": "Un linaje real dinástico o una autoridad religiosa sagrada",
           "next": "a_trad_relig"
         },
         {
@@ -1252,6 +1505,7 @@
           "uk": "Сучасний політичний лідер, авангардна партія або сильна централізована держава",
           "ru": "Современный политический лидер, авангардная партия или сильное централизованное государство",
           "de": "Ein moderner politischer Führer, eine Avantgardepartei oder ein starker Zentralstaat",
+          "es": "Un líder político moderno, un partido de vanguardia o un Estado centralizado fuerte",
           "next": "a_secular_auth"
         },
         {
@@ -1259,6 +1513,7 @@
           "uk": "Акціонерна корпорація, якою керує призначений генеральний директор і рада директорів",
           "ru": "Акционерная корпорация, управляемая назначаемым генеральным директором и советом директоров",
           "de": "Eine Aktiengesellschaft, geführt von einem ernannten Geschäftsführer und Verwaltungsrat",
+          "es": "Una sociedad anónima dirigida por un director ejecutivo designado y un consejo de administración",
           "next": "neocameralism"
         }
       ]
@@ -1269,12 +1524,14 @@
       "uk": "Як має правити ця традиційна або релігійна влада?",
       "ru": "Как должна осуществляться эта традиционная или религиозная власть?",
       "de": "Wie sollte diese traditionelle oder religiöse Autorität herrschen?",
+      "es": "¿Cómo debería gobernar esta autoridad tradicional o religiosa?",
       "options": [
         {
           "en": "A hereditary monarch holds absolute, undivided power by dynastic right",
           "uk": "Спадковий монарх володіє абсолютною, неподільною владою за династичним правом",
           "ru": "Наследственный монарх обладает абсолютной и неделимой властью по праву династии",
           "de": "Ein Erbmonarch besitzt absolute, ungeteilte Macht aus dynastischem Recht",
+          "es": "Un monarca hereditario ostenta el poder absoluto e indiviso por derecho dinástico",
           "next": "absolute"
         },
         {
@@ -1282,6 +1539,7 @@
           "uk": "Духовенство або релігійні лідери правлять безпосередньо згідно зі священним законом",
           "ru": "Духовенство или религиозные лидеры правят напрямую по священному закону",
           "de": "Geistliche oder religiöse Führer regieren direkt nach heiligem Gesetz",
+          "es": "El clero o los líderes religiosos gobiernan directamente según la ley sagrada",
           "next": "theocracy"
         },
         {
@@ -1289,6 +1547,7 @@
           "uk": "Світський правитель утримує владу, впроваджуючи та захищаючи релігійну ортодоксію",
           "ru": "Светский правитель удерживает власть, защищая и насаждая религиозную ортодоксию",
           "de": "Ein weltlicher Herrscher stützt seine Macht auf die Durchsetzung und den Schutz religiöser Orthodoxie",
+          "es": "Un gobernante secular mantiene el poder imponiendo y protegiendo la ortodoxia religiosa",
           "next": "religious_authoritarianism"
         }
       ]
@@ -1299,12 +1558,14 @@
       "uk": "Як має бути організована ця централізована світська влада?",
       "ru": "Как должна быть устроена эта централизованная светская власть?",
       "de": "Wie sollte diese zentralisierte weltliche Macht organisiert sein?",
+      "es": "¿Cómo debería organizarse este poder secular centralizado?",
       "options": [
         {
           "en": "A single vanguard party directs the state and mobilizes society",
           "uk": "Єдина авангардна партія спрямовує державу та мобілізує суспільство",
           "ru": "Единая авангардная партия направляет государство и мобилизует общество",
           "de": "Eine einzige Avantgardepartei lenkt den Staat und mobilisiert die Gesellschaft",
+          "es": "Un único partido de vanguardia dirige el Estado y moviliza a la sociedad",
           "next": "partocracy"
         },
         {
@@ -1312,6 +1573,7 @@
           "uk": "Верховний автократ здійснює жорсткий особистий контроль над державним апаратом",
           "ru": "Единовластный автократ осуществляет жёсткий личный контроль над государственным аппаратом",
           "de": "Ein oberster Autokrat übt feste persönliche Kontrolle über den Staatsapparat aus",
+          "es": "Un autócrata supremo ejerce un firme control personal sobre el aparato estatal",
           "next": "autocracy"
         },
         {
@@ -1319,6 +1581,7 @@
           "uk": "Всеохопна етична держава виступає найвищим моральним і духовним авторитетом",
           "ru": "Всеобъемлющее этическое государство выступает высшим нравственным и духовным авторитетом",
           "de": "Ein allumfassender ethischer Staat fungiert als oberste moralische und spirituelle Autorität",
+          "es": "Un Estado ético omnipresente actúa como la suprema autoridad moral y espiritual",
           "next": "ethical_statism"
         }
       ]
@@ -1345,7 +1608,10 @@
     { "id": "neocameralism" },
     { "id": "syndicracy" },
     { "id": "demarchy" },
-    { "id": "polycentrism" }
+    { "id": "polycentrism" },
+    { "id": "oligarchy" },
+    { "id": "semi_constitutional" },
+    { "id": "ochlocracy" }
   ],
   "nation": [
     {
@@ -1354,12 +1620,14 @@
       "uk": "Що має визначати політичну спільноту та її кордони?",
       "ru": "Что должно определять политическое сообщество и его границы?",
       "de": "Was sollte eine politische Gemeinschaft und ihre Grenzen definieren?",
+      "es": "¿Qué debería definir una comunidad política y sus fronteras?",
       "options": [
         {
           "en": "Reject national borders in favor of pure individualism or a borderless world",
           "uk": "Відкинути національні кордони на користь чистого індивідуалізму або світу без кордонів",
           "ru": "Отвергнуть национальные границы в пользу чистого индивидуализма или мира без границ",
           "de": "Nationale Grenzen zugunsten von reinem Individualismus oder einer grenzenlosen Welt ablehnen",
+          "es": "Rechazar las fronteras nacionales en favor del individualismo puro o de un mundo sin fronteras",
           "next": "n_anti_nation"
         },
         {
@@ -1367,6 +1635,7 @@
           "uk": "Визначати належність через спільні громадянські цінності, місцеву громаду або спільну культуру",
           "ru": "Определять принадлежность через общие гражданские ценности, местную общину или общую культуру",
           "de": "Zugehörigkeit über gemeinsame bürgerliche Werte, lokale Gemeinschaft oder gemeinsame Kultur definieren",
+          "es": "Definir la pertenencia mediante valores cívicos compartidos, la comunidad local o una cultura común",
           "next": "n_civic_cultural"
         },
         {
@@ -1374,6 +1643,7 @@
           "uk": "Ґрунтувати належність на спільному походженні, кровній спорідненості та етнічній спадщині",
           "ru": "Основывать принадлежность на общем происхождении, кровном родстве и этническом наследии",
           "de": "Zugehörigkeit in gemeinsamer Abstammung, Blutlinien und ethnischem Erbe verwurzeln",
+          "es": "Arraigar la pertenencia en la ascendencia compartida, los linajes de sangre y el patrimonio étnico",
           "next": "n_ancestral"
         }
       ]
@@ -1384,12 +1654,14 @@
       "uk": "Як люди мають жити без націй і кордонів?",
       "ru": "Как люди должны жить без наций и границ?",
       "de": "Wie sollten Menschen ohne Nationen oder Grenzen zusammenleben?",
+      "es": "¿Cómo debería vivir la gente sin naciones ni fronteras?",
       "options": [
         {
           "en": "Individuals owe loyalty to no group and act purely in their own self-interest",
           "uk": "Люди не зобов'язані вірністю жодній групі й діють виключно у власних інтересах",
           "ru": "Человек не обязан верностью ни одному коллективу и действует исключительно в своих интересах",
           "de": "Individuen schulden keiner Gruppe Loyalität und handeln rein im eigenen Interesse",
+          "es": "Los individuos no deben lealtad a ningún grupo y actúan puramente en su propio interés",
           "next": "egoism"
         },
         {
@@ -1397,6 +1669,7 @@
           "uk": "Усі люди належать до єдиної світової спільноти з рівними правами всюди",
           "ru": "Все люди принадлежат к единому мировому сообществу с равными правами по всей планете",
           "de": "Alle Menschen gehören einer einzigen globalen Gemeinschaft mit gleichen Rechten überall an",
+          "es": "Todos los seres humanos pertenecen a una única comunidad global con iguales derechos en todas partes",
           "next": "Cosmopolitanism"
         }
       ]
@@ -1407,12 +1680,14 @@
       "uk": "Що має об'єднувати членів спільноти?",
       "ru": "Что должно объединять членов сообщества?",
       "de": "Was sollte die Mitglieder der Gemeinschaft verbinden?",
+      "es": "¿Qué debería unir a los miembros de la comunidad?",
       "options": [
         {
           "en": "Equal legal rights and shared citizenship regardless of background",
           "uk": "Рівні законні права та спільне громадянство незалежно від походження",
           "ru": "Равные конституционные права и общее гражданство независимо от происхождения",
           "de": "Gleiche gesetzliche Rechte und gemeinsame Staatsbürgerschaft unabhängig von der Herkunft",
+          "es": "Iguales derechos legales y ciudadanía compartida independientemente del origen",
           "next": "civic_nationalism"
         },
         {
@@ -1420,6 +1695,7 @@
           "uk": "Тісні місцеві сусідства, містечка та безпосереднє громадське життя",
           "ru": "Тесные местные соседства, города и непосредственная общинная жизнь",
           "de": "Eng verbundene Nachbarschaften, Städte und direktes Gemeinschaftsleben vor Ort",
+          "es": "Vecindarios locales unidos, pueblos y vida comunitaria cara a cara",
           "next": "communitarianism"
         },
         {
@@ -1427,6 +1703,7 @@
           "uk": "Спільна культурна, релігійна або цивілізаційна спадщина",
           "ru": "Общее культурное, религиозное или цивилизационное наследие",
           "de": "Ein gemeinsames kulturelles, religiöses oder zivilisatorisches Erbe",
+          "es": "Un patrimonio cultural, religioso o civilizatorio compartido",
           "next": "n_heritage_basis"
         },
         {
@@ -1434,6 +1711,7 @@
           "uk": "Рівне конституційне визнання та автономія для кількох співіснуючих культур і мов",
           "ru": "Равное конституционное признание и автономия для нескольких сосуществующих культур и языков",
           "de": "Gleiche verfassungsmäßige Anerkennung und Autonomie für mehrere koexistierende Kulturen und Sprachen",
+          "es": "Igual reconocimiento constitucional y autonomía para múltiples culturas y lenguas coexistentes",
           "next": "multiculturalism"
         }
       ]
@@ -1444,12 +1722,14 @@
       "uk": "Яка спільна спадщина є найважливішою для ідентичності?",
       "ru": "Какое общее наследие важнее всего для идентичности?",
       "de": "Welches gemeinsame Erbe ist für die Identität am wichtigsten?",
+      "es": "¿Qué patrimonio compartido importa más para la identidad?",
       "options": [
         {
           "en": "A common language, historical customs, and national culture",
           "uk": "Спільна мова, історичні звичаї та національна культура",
           "ru": "Общий язык, исторические обычаи и национальная культура",
           "de": "Eine gemeinsame Sprache, historische Bräuche und nationale Kultur",
+          "es": "Una lengua común, costumbres históricas y cultura nacional",
           "next": "cultural_nationalism"
         },
         {
@@ -1457,6 +1737,7 @@
           "uk": "Спільна релігійна віра, священні традиції та моральний кодекс",
           "ru": "Единая религиозная вера, священные традиции и нравственный уклад",
           "de": "Ein gemeinsamer religiöser Glaube, heilige Traditionen und ein Moralkodex",
+          "es": "Una fe religiosa compartida, tradiciones sagradas y código moral",
           "next": "religious_nationalism"
         },
         {
@@ -1464,6 +1745,7 @@
           "uk": "Живий фольклор, героїчні національні міфи та духовне пробудження народу",
           "ru": "Живой фольклор, героические национальные мифы и духовное пробуждение народа",
           "de": "Lebendige Folklore, heroische Nationalmythen und das spirituelle Erwachen eines Volkes",
+          "es": "Folclore vivo, mitos nacionales heroicos y el despertar espiritual de un pueblo",
           "next": "romantic_nationalism"
         },
         {
@@ -1471,6 +1753,7 @@
           "uk": "Широка цивілізаційна сфера або континентальний простір, що об'єднує споріднені народи",
           "ru": "Широкая цивилизационная сфера или континентальный мир, объединяющий родственные народы",
           "de": "Ein breiter Zivilisationsraum oder Kontinentalverbund verwandter Völker",
+          "es": "Una amplia esfera civilizatoria o espacio continental que una a pueblos emparentados",
           "next": "civilizationism"
         }
       ]
@@ -1481,12 +1764,14 @@
       "uk": "У якому масштабі спільне походження має організовувати суспільство?",
       "ru": "В каком масштабе общее происхождение должно организовывать общество?",
       "de": "In welchem Maßstab sollte gemeinsame Abstammung die Gesellschaft organisieren?",
+      "es": "¿A qué escala debería organizar la sociedad la ascendencia compartida?",
       "options": [
         {
           "en": "Small, decentralized clans and local tribal kinship groups",
           "uk": "Невеликі децентралізовані клани та місцеві родоплемінні групи",
           "ru": "Небольшие децентрализованные кланы и местные родоплеменные группы",
           "de": "Kleine, dezentrale Clans und lokale Stammesverwandtschaftsgruppen",
+          "es": "Pequeños clanes descentralizados y grupos tribales locales de parentesco",
           "next": "Tribalism"
         },
         {
@@ -1494,6 +1779,7 @@
           "uk": "Суверенна національна держава, що належить окремому етносу на його батьківщині",
           "ru": "Суверенное национальное государство, принадлежащее единому этносу на его исторической родине",
           "de": "Ein souveräner Nationalstaat einer bestimmten ethnischen Gruppe in ihrer Heimat",
+          "es": "Un Estado-nación soberano perteneciente a un grupo étnico distinto en su tierra natal",
           "next": "ethnic_nationalism"
         },
         {
@@ -1501,6 +1787,7 @@
           "uk": "Ширший союз, що охоплює кілька споріднених народів або цілу расу",
           "ru": "Более широкий союз, объединяющий родственные народы или целую расу",
           "de": "Ein größerer Zusammenschluss verwandter Nationen oder einer gesamten Rasse",
+          "es": "Una unión más amplia que abarque múltiples naciones emparentadas o a toda una raza",
           "next": "n_macro_lineage"
         }
       ]
@@ -1511,12 +1798,14 @@
       "uk": "Наскільки широким має бути цей союз за походженням?",
       "ru": "Насколько широким должен быть этот кровнородственный союз?",
       "de": "Wie umfassend sollte dieser Abstammungsverbund sein?",
+      "es": "¿Qué amplitud debería tener esta unión ancestral?",
       "options": [
         {
           "en": "A pan-national federation uniting closely related ethnic groups across borders",
           "uk": "Паннаціональна федерація, що об'єднує близькоспоріднені етнічні групи поверх кордонів",
           "ru": "Пан-национальная федерация, объединяющая родственные этнические группы поверх границ",
           "de": "Eine pannationale Föderation, die eng verwandte ethnische Gruppen über Grenzen hinweg vereint",
+          "es": "Una federación pannacional que una a grupos étnicos estrechamente emparentados a través de las fronteras",
           "next": "pan_nationalism"
         },
         {
@@ -1524,6 +1813,7 @@
           "uk": "Уся раса, об'єднана як єдина біологічна група, зосереджена на расовому збереженні",
           "ru": "Вся раса как единая биологическая общность, сосредоточенная на расовом сохранении",
           "de": "Die gesamte Rasse vereint als eine biologische Gruppe mit Fokus auf Rassenerhalt",
+          "es": "Toda la raza unida como un único grupo biológico centrado en la preservación racial",
           "next": "racial_nationalism"
         }
       ]
@@ -1549,12 +1839,14 @@
       "uk": "Яким має бути головний напрям нашої зовнішньої політики?",
       "ru": "Каким должен быть главный курс нашей внешней политики?",
       "de": "Was sollte die Hauptrichtung unserer Außenpolitik sein?",
+      "es": "¿Cuál debería ser la dirección principal de nuestra política exterior?",
       "options": [
         {
           "en": "Stay neutral and avoid foreign conflicts",
           "uk": "Зберігати нейтралітет та уникати іноземних конфліктів",
           "ru": "Сохранять нейтралитет и избегать участия в чужих конфликтах",
           "de": "Neutral bleiben und ausländische Konflikte meiden",
+          "es": "Mantenerse neutral y evitar conflictos extranjeros",
           "next": "f_neutral"
         },
         {
@@ -1562,6 +1854,7 @@
           "uk": "Зосередитися на національній могутності та стратегічних власних інтересах",
           "ru": "Укреплять мощь страны и отстаивать её стратегические интересы",
           "de": "Auf nationale Macht und strategisches Eigeninteresse konzentrieren",
+          "es": "Centrarse en el poder nacional y el interés propio estratégico",
           "next": "f_power"
         },
         {
@@ -1569,6 +1862,7 @@
           "uk": "Сприяти міжнародній співпраці та глобальній взаємодії",
           "ru": "Развивать международное сотрудничество и глобальное взаимодействие",
           "de": "Internationale Zusammenarbeit und globales Engagement fördern",
+          "es": "Promover la cooperación internacional y el compromiso global",
           "next": "f_coop"
         }
       ]
@@ -1579,19 +1873,22 @@
       "uk": "Як ми маємо залишатися осторонь іноземних конфліктів?",
       "ru": "Как мы должны оставаться в стороне от зарубежных конфликтов?",
       "de": "Wie sollten wir uns aus ausländischen Konflikten heraushalten?",
+      "es": "¿Cómo deberíamos mantenernos al margen de los conflictos extranjeros?",
       "options": [
         {
           "en": "Cut off all political, military, and major economic ties with other countries",
           "uk": "Розірвати всі політичні, військові та великі економічні зв'язки з іншими країнами",
           "ru": "Разорвать все политические, военные и крупные экономические связи с другими странами",
           "de": "Alle politischen, militärischen und größeren wirtschaftlichen Beziehungen zu anderen Ländern abbrechen",
+          "es": "Cortar todos los lazos políticos, militares y económicos importantes con otros países",
           "next": "Isolationism"
         },
         {
           "en": "Keep peaceful trade and diplomacy while staying out of foreign wars",
           "uk": "Підтримувати мирну торгівлю та дипломатію, залишаючись поза іноземними війнами",
-          "ru": "Поддерживать мирную торговлю и дипломатию, но не участвовать в чужих войнах",
+          "ru": "Поддерживать мирную торгівлю и дипломатию, но не участвовать в чужих войнах",
           "de": "Friedlichen Handel und Diplomatie pflegen, aber aus fremden Kriegen heraushalten",
+          "es": "Mantener el comercio pacífico y la diplomacia mientras nos mantenemos fuera de guerras extranjeras",
           "next": "f_neutral_type"
         },
         {
@@ -1599,6 +1896,7 @@
           "uk": "Повністю відмовитися від війни, розпустити наступальні збройні сили та прагнути ненасильницького миру",
           "ru": "Полностью отказаться от войны, распустить наступательные вооружённые силы и стремиться к ненасильственному миру",
           "de": "Dem Krieg vollständig abschwören, Offensivarmeen auflösen und gewaltfreien Frieden anstreben",
+          "es": "Renunciar por completo a la guerra, desmantelar los ejércitos ofensivos y buscar una paz no violenta",
           "next": "pacifism"
         }
       ]
@@ -1609,12 +1907,14 @@
       "uk": "Як слід захищати наш нейтралітет?",
       "ru": "Как следует защищать наш нейтралитет?",
       "de": "Wie sollten wir unsere Neutralität schützen?",
+      "es": "¿Cómo deberíamos proteger nuestra neutralidad?",
       "options": [
         {
           "en": "Avoid all foreign alliances and rely on diplomatic restraint",
           "uk": "Уникати будь-яких іноземних союзів і покладатися на дипломатичну стриманість",
           "ru": "Избегать любых иностранных союзов и полагаться на дипломатическую сдержанность",
           "de": "Alle ausländischen Bündnisse meiden und auf diplomatische Zurückhaltung setzen",
+          "es": "Evitar todas las alianzas extranjeras y confiar en la contención diplomática",
           "next": "Non_Interventionism"
         },
         {
@@ -1622,6 +1922,7 @@
           "uk": "Утримувати сильну, добре озброєну армію для стримування будь-якого нападу на нашу землю",
           "ru": "Содержать сильную, хорошо вооружённую армию для сдерживания любого нападения",
           "de": "Ein starkes, gut bewaffnetes Militär unterhalten, um jeden Angriff auf unser Land abzuschrecken",
+          "es": "Mantener un ejército fuerte y bien armado para disuadir cualquier ataque en nuestro territorio",
           "next": "armed_neutrality"
         }
       ]
@@ -1632,12 +1933,14 @@
       "uk": "Як наша країна має відстоювати свої інтереси за кордоном?",
       "ru": "Как наша страна должна отстаивать свои интересы за рубежом?",
       "de": "Wie sollte unser Land seine Interessen im Ausland verfolgen?",
+      "es": "¿Cómo debería perseguir nuestro país sus intereses en el exterior?",
       "options": [
         {
           "en": "Make pragmatic alliances and balance power to protect national interests",
           "uk": "Укладати прагматичні союзи та балансувати сили для захисту національних інтересів",
           "ru": "Заключать прагматичные союзы и балансировать силы ради национальных интересов",
           "de": "Pragmatische Bündnisse schließen und Machtgleichgewichte zum Schutz nationaler Interessen nutzen",
+          "es": "Establecer alianzas pragmáticas y equilibrar el poder para proteger los intereses nacionales",
           "next": "Realpolitik"
         },
         {
@@ -1645,6 +1948,7 @@
           "uk": "Розширювати територію та контролювати чужі землі й ресурси",
           "ru": "Расширять территорию и устанавливать контроль над чужими землями и ресурсами",
           "de": "Territorium erweitern und fremde Länder sowie Ressourcen kontrollieren",
+          "es": "Expandir el territorio y controlar tierras y recursos extranjeros",
           "next": "Imperialism"
         },
         {
@@ -1652,6 +1956,7 @@
           "uk": "Повернути втрачені історичні землі та об'єднати співвітчизників, розділених кордонами",
           "ru": "Вернуть утраченные исторические земли и объединить соотечественников, разделённых границами",
           "de": "Verlorene historische Heimatgebiete zurückgewinnen und durch Grenzen getrennte Landsleute vereinen",
+          "es": "Reclamar tierras históricas perdidas y unir a los connacionales separados por fronteras",
           "next": "irredentism"
         },
         {
@@ -1659,6 +1964,7 @@
           "uk": "Нарощувати торговельний профіцит, захисні тарифи та стратегічні ресурсні монополії",
           "ru": "Наращивать торговый профицит, защитные тарифы и стратегические ресурсные монополии",
           "de": "Handelsüberschüsse, Schutzzölle und strategische Ressourcenmonopole aufbauen",
+          "es": "Generar superávits comerciales, aranceles protectores y monopolios estratégicos de recursos",
           "next": "mercantilism"
         }
       ]
@@ -1669,12 +1975,14 @@
       "uk": "Якою має бути головна мета міжнародної взаємодії?",
       "ru": "Какой должна быть главная цель международного взаимодействия?",
       "de": "Was sollte das Hauptziel internationalen Engagements sein?",
+      "es": "¿Cuál debería ser el objetivo principal del compromiso internacional?",
       "options": [
         {
           "en": "Enforce global rules and human rights or build a unified world system",
           "uk": "Забезпечувати дотримання глобальних правил і прав людини або будувати єдину світову систему",
           "ru": "Защищать мировой порядок и права человека или строить единую глобальную систему",
           "de": "Globale Regeln und Menschenrechte durchsetzen oder ein vereintes Weltsystem aufbauen",
+          "es": "Hacer cumplir las normas globales y los derechos humanos o construir un sistema mundial unificado",
           "next": "f_global_order"
         },
         {
@@ -1682,6 +1990,7 @@
           "uk": "Будувати рівноправне партнерство між націями або низову глобальну солідарність",
           "ru": "Развивать равноправное партнёрство между странами или низовую мировую солидарность",
           "de": "Gleichberechtigte Partnerschaften zwischen Nationen oder globale Solidarität an der Basis aufbauen",
+          "es": "Construir asociaciones igualitarias entre naciones o solidaridad global de base",
           "next": "f_solidarity"
         }
       ]
@@ -1692,12 +2001,14 @@
       "uk": "Як слід підтримувати світовий порядок і права людини?",
       "ru": "Как следует поддерживать мировой порядок и права человека?",
       "de": "Wie sollten globale Ordnung und Menschenrechte gewahrt werden?",
+      "es": "¿Cómo deberían mantenerse el orden global y los derechos humanos?",
       "options": [
         {
           "en": "Unite countries through open borders, free global trade, and supranational laws",
           "uk": "Об'єднувати країни через відкриті кордони, вільну світову торгівлю та наднаціональні закони",
           "ru": "Объединять страны через открытые границы, свободную торговлю и наднациональные законы",
           "de": "Länder durch offene Grenzen, freien Welthandel und supranationales Recht vereinen",
+          "es": "Unir a los países mediante fronteras abiertas, libre comercio global y leyes supranacionales",
           "next": "Globalism"
         },
         {
@@ -1705,6 +2016,7 @@
           "uk": "Втручатися за кордоном політично чи військово, щоб зупинити агресію та захистити права людини",
           "ru": "Вмешиваться за рубежом политически или военно для пресечения агрессии и защиты прав человека",
           "de": "Politisch oder militärisch im Ausland eingreifen, um Aggression zu stoppen und Menschenrechte zu schützen",
+          "es": "Intervenir en el extranjero política o militarmente para detener la agresión y proteger los derechos humanos",
           "next": "Interventionism"
         }
       ]
@@ -1715,12 +2027,14 @@
       "uk": "Як має працювати транскордонна співпраця?",
       "ru": "Как должно быть устроено сотрудничество между народами?",
       "de": "Wie sollte grenzüberschreitende Zusammenarbeit funktionieren?",
+      "es": "¿Cómo debería funcionar la cooperación transfronteriza?",
       "options": [
         {
           "en": "Cooperate through diplomacy and treaties between independent nation-states",
           "uk": "Співпрацювати через дипломатію та договори між незалежними національними державами",
           "ru": "Сотрудничать через дипломатию и договоры между суверенными государствами",
           "de": "Durch Diplomatie und Verträge zwischen unabhängigen Nationalstaaten zusammenarbeiten",
+          "es": "Cooperar mediante la diplomacia y los tratados entre Estados-nación independientes",
           "next": "Internationalism"
         },
         {
@@ -1728,6 +2042,7 @@
           "uk": "Об'єднувати працівників і низові рухи в усьому світі проти корпоративної глобалізації",
           "ru": "Объединять трудящихся и низовые движения по всему миру против корпоративной глобализации",
           "de": "Arbeiter und Basisbewegungen weltweit gegen Konzernglobalisierung vereinen",
+          "es": "Unir a los trabajadores y movimientos de base de todo el mundo contra la globalización corporativa",
           "next": "alter_globalism"
         }
       ]
@@ -1752,12 +2067,14 @@
       "uk": "Як суспільство має підходити до технологій і виробництва?",
       "ru": "Какой путь развития технологий и производства должно выбрать общество?",
       "de": "Wie sollte die Gesellschaft mit Technologie und Produktion umgehen?",
+      "es": "¿Cómo debería abordar la sociedad la tecnología y la producción?",
       "options": [
         {
           "en": "Move away from heavy machinery toward rural or low-tech living",
           "uk": "Відійти від важкої техніки в бік сільського або низькотехнологічного способу життя",
           "ru": "Отойти от тяжёлой техники в пользу сельского или низкотехнологичного уклада",
           "de": "Sich von schwerer Maschinerie abwenden hin zu ländlichem oder technikarmem Leben",
+          "es": "Alejarse de la maquinaria pesada hacia una vida rural o de baja tecnología",
           "next": "t_rural"
         },
         {
@@ -1765,6 +2082,7 @@
           "uk": "Підтримувати сучасну промисловість, цифрові послуги та екологічний баланс",
           "ru": "Развивать современную промышленность, цифровые услуги и экологический баланс",
           "de": "Moderne Industrie, digitale Dienste und ökologisches Gleichgewicht bewahren",
+          "es": "Mantener la industria moderna, los servicios digitales y el equilibrio medioambiental",
           "next": "t_standard"
         },
         {
@@ -1772,6 +2090,7 @@
           "uk": "Просувати передові технології для перетворення майбутнього",
           "ru": "Развивать передовые технологии для преобразования будущего",
           "de": "Fortschrittliche Hochtechnologien vorantreiben, um die Zukunft neu zu gestalten",
+          "es": "Impulsar tecnologías avanzadas para transformar el futuro",
           "next": "t_future"
         }
       ]
@@ -1782,12 +2101,14 @@
       "uk": "Як суспільство має жити без важкої машинної промисловості?",
       "ru": "Как общество должно жить без тяжёлой машинной промышленности?",
       "de": "Wie sollte die Gesellschaft ohne schwere Maschinenindustrie leben?",
+      "es": "¿Cómo debería vivir la sociedad sin industria de maquinaria pesada?",
       "options": [
         {
           "en": "Build community life around farming, rural culture, and working the land",
           "uk": "Будувати життя громади навколо землеробства, сільської культури та праці на землі",
           "ru": "Строить жизнь вокруг земледелия, сельской культуры и труда на земле",
           "de": "Das Gemeinschaftsleben um Landwirtschaft, ländliche Kultur und Bodenbewirtschaftung aufbauen",
+          "es": "Construir la vida comunitaria en torno a la agricultura, la cultura rural y el trabajo de la tierra",
           "next": "agrarianism"
         },
         {
@@ -1795,6 +2116,7 @@
           "uk": "Спиратися на місцеві ремесла й ручні інструменти, відкидаючи автоматизацію",
           "ru": "Опираться на местные ремёсла и ручной труд, отвергая автоматизацию",
           "de": "Auf lokales Handwerk und Handwerkzeuge setzen und Automatisierung ablehnen",
+          "es": "Confiar en la artesanía local y las herramientas manuales rechazando la automatización",
           "next": "neoluddism"
         },
         {
@@ -1802,6 +2124,7 @@
           "uk": "Повністю відмовитися від цивілізації та землеробства, щоб повернутися до життя мисливців і збирачів",
           "ru": "Полностью отказаться от цивилизации и земледелия ради жизни охотников и собирателей",
           "de": "Zivilisation und Landwirtschaft ganz aufgeben und zum Jäger-und-Sammler-Leben zurückkehren",
+          "es": "Abandonar por completo la civilización y la agricultura para volver a la vida de cazadores-recolectores",
           "next": "primitivism"
         },
         {
@@ -1809,6 +2132,7 @@
           "uk": "Використовувати співмірні людині відкриті та ремонтопридатні інструменти для локальної автономії",
           "ru": "Использовать соразмерные человеку открытые и ремонтопригодные инструменты для локальной автономии",
           "de": "Menschengerechte, offene und reparierbare Werkzeuge nutzen, die lokale Gemeinschaften ohne Entfremdung stärken",
+          "es": "Utilizar herramientas a escala humana, de código abierto y reparables que empoderen a las comunidades locales sin alienación",
           "next": "convivialism"
         }
       ]
@@ -1819,12 +2143,14 @@
       "uk": "Що має бути головним пріоритетом для сучасної промисловості та технологій?",
       "ru": "Что должно быть главным приоритетом современной промышленности и технологий?",
       "de": "Was sollte die Hauptpriorität für moderne Industrie und Technologie sein?",
+      "es": "¿Cuál debería ser la prioridad principal para la industria y la tecnología modernas?",
       "options": [
         {
           "en": "Protect nature and keep industrial activity in balance with the environment",
           "uk": "Захищати природу та зберігати промислову діяльність у рівновазі з довкіллям",
           "ru": "Защищать природу и сохранять баланс между промышленностью и экологией",
           "de": "Die Natur schützen und industrielle Aktivität im Einklang mit der Umwelt halten",
+          "es": "Proteger la naturaleza y mantener la actividad industrial en equilibrio con el medio ambiente",
           "next": "t_eco"
         },
         {
@@ -1832,6 +2158,7 @@
           "uk": "Зосередитися на виробництві, цифровій інфраструктурі та практичних повсякденних інструментах",
           "ru": "Сосредоточиться на производстве, цифровой инфраструктуре и практичных инструментах",
           "de": "Auf Fertigung, digitale Infrastruktur und praktische Alltagswerkzeuge konzentrieren",
+          "es": "Centrarse en la manufactura, la infraestructura digital y las herramientas prácticas cotidianas",
           "next": "t_production"
         }
       ]
@@ -1842,12 +2169,14 @@
       "uk": "Як ми маємо захищати довкілля?",
       "ru": "Как следует защищать окружающую среду?",
       "de": "Wie sollten wir die Umwelt schützen?",
+      "es": "¿Cómo deberíamos proteger el medio ambiente?",
       "options": [
         {
           "en": "Set aside protected wilderness and strictly limit human development",
           "uk": "Виділяти заповідні зони дикої природи та суворо обмежувати господарську забудову",
           "ru": "Создавать заповедные зоны дикой природы и строго ограничивать хозяйственную деятельность",
           "de": "Geschützte Wildnisgebiete ausweisen und menschliche Erschließung streng begrenzen",
+          "es": "Reservar áreas silvestres protegidas y limitar estrictamente el desarrollo humano",
           "next": "conservationism"
         },
         {
@@ -1855,6 +2184,7 @@
           "uk": "Регулювати промисловість за допомогою відновлюваної енергетики, переробки та екологічних стандартів",
           "ru": "Регулировать промышленность с помощью зелёной энергетики, переработки и экостандартов",
           "de": "Industrie durch erneuerbare Energien, Recycling und Nachhaltigkeitsstandards regulieren",
+          "es": "Regular la industria con energías renovables, reciclaje y estándares sostenibles",
           "next": "environmentalism"
         }
       ]
@@ -1865,12 +2195,14 @@
       "uk": "На якому типі промисловості та інструментів слід зосередитися?",
       "ru": "На каком типе промышленности и технологий следует сосредоточиться?",
       "de": "Auf welche Art von Industrie und Werkzeugen sollten wir uns konzentrieren?",
+      "es": "¿En qué tipo de industria y herramientas deberíamos centrarnos?",
       "options": [
         {
           "en": "Prioritize heavy manufacturing, factories, and raw material extraction",
           "uk": "Надавати пріоритет важкій промисловості, заводам і видобутку сировини",
           "ru": "Отдавать приоритет тяжёлой промышленности, заводам и добыче сырья",
           "de": "Schwerindustrie, Fabriken und Rohstoffgewinnung priorisieren",
+          "es": "Priorizar la manufactura pesada, las fábricas y la extracción de materias primas",
           "next": "industrialism"
         },
         {
@@ -1878,6 +2210,7 @@
           "uk": "Переходити від важких заводів до цифрових технологій, інформації та сфери послуг",
           "ru": "Переходить от тяжёлых заводов к цифровым технологиям, информации и сфере услуг",
           "de": "Von schweren Fabriken zu digitaler Technologie, Information und Dienstleistungen übergehen",
+          "es": "Pasar de las fábricas pesadas hacia la tecnología digital, la información y los servicios",
           "next": "post_industrialism"
         },
         {
@@ -1885,6 +2218,7 @@
           "uk": "Ставитися до технологій просто як до нейтрального інструменту для розв'язання практичних повсякденних завдань",
           "ru": "Относиться к технологиям просто как к нейтральному инструменту для практических задач",
           "de": "Technologie schlicht als neutrales Werkzeug zur Lösung praktischer Alltagsprobleme betrachten",
+          "es": "Tratar la tecnología simplemente como una herramienta neutral para resolver problemas prácticos cotidianos",
           "next": "instrumentalism"
         }
       ]
@@ -1895,12 +2229,14 @@
       "uk": "Куди має бути спрямований розвиток передових високих технологій?",
       "ru": "Куда следует направить развитие передовых высоких технологий?",
       "de": "Wohin sollte fortschrittliche Hochtechnologie gelenkt werden?",
+      "es": "¿Hacia dónde debería dirigirse el desarrollo avanzado de alta tecnología?",
       "options": [
         {
           "en": "Transform human biology, upgrade minds, or engineer the biosphere",
           "uk": "На трансформацію біології людини, вдосконалення розуму або інженерію біосфери",
           "ru": "На изменение биологии человека, развитие разума или перестройку биосферы",
           "de": "Die menschliche Biologie transformieren, den Geist erweitern oder die Biosphäre gezielt gestalten",
+          "es": "Transformar la biología humana, mejorar las mentes o aplicar ingeniería a la biosfera",
           "next": "t_future_bio_eco"
         },
         {
@@ -1908,6 +2244,7 @@
           "uk": "На автоматизацію всієї праці для подолання дефіциту або експансію у відкритий космос",
           "ru": "На полную автоматизацию труда ради победы над дефицитом или освоение космоса",
           "de": "Alle Arbeit automatisieren, um Knappheit zu beenden, oder in den Weltraum expandieren",
+          "es": "Automatizar todo el trabajo para acabar con la escasez o expandirse hacia el espacio exterior",
           "next": "t_mastery"
         },
         {
@@ -1915,6 +2252,7 @@
           "uk": "Дозволити швидкому технологічному прискоренню розгортатися вільно без контролю людини",
           "ru": "На свободное технологическое ускорение, неподвластное контролю человека",
           "de": "Rasante technologische Beschleunigung frei und ohne menschliche Kontrolle ablaufen lassen",
+          "es": "Dejar que la rápida aceleración tecnológica avance libremente sin control humano",
           "next": "t_runaway"
         }
       ]
@@ -1925,12 +2263,14 @@
       "uk": "Як передова наука має змінити життя та планету?",
       "ru": "Как передовая наука должна преобразовывать жизнь и планету?",
       "de": "Wie sollte fortschrittliche Wissenschaft Leben und Planet umgestalten?",
+      "es": "¿Cómo debería transformar la ciencia avanzada la vida y el planeta?",
       "options": [
         {
           "en": "Use nuclear power, synthetic food, and dense cities so wild nature can recover on its own",
           "uk": "Використовувати ядерну енергію, синтетичну їжу та компактні міста, щоб дика природа могла відновитися самостійно",
           "ru": "Использовать атомную энергию, синтетическую пищу и компактные города, чтобы природа восстановилась сама",
           "de": "Kernkraft, synthetische Nahrung und dichte Städte nutzen, damit sich die wilde Natur selbst erholen kann",
+          "es": "Usar energía nuclear, alimentos sintéticos y ciudades densas para que la naturaleza silvestre pueda recuperarse por sí sola",
           "next": "ecomodernism"
         },
         {
@@ -1938,6 +2278,7 @@
           "uk": "Вдосконалювати людські тіла й розум за допомогою кібернетики, редагування генів і подовження тривалості життя",
           "ru": "Улучшать тело и разум человека с помощью кибернетики, генной инженерии и продления жизни",
           "de": "Menschliche Körper und Gehirne durch Kybernetik, Gentechnik und längere Lebensspannen verbessern",
+          "es": "Mejorar los cuerpos y mentes humanos mediante cibernética, edición genética y vidas más largas",
           "next": "transhumanism"
         },
         {
@@ -1945,6 +2286,7 @@
           "uk": "Повністю залишити біологію в минулому й завантажити людський розум у синтетичний надрозум",
           "ru": "Полностью отказаться от биологии и перенести сознание в синтетический сверхразум",
           "de": "Die Biologie ganz hinter sich lassen und den menschlichen Geist in synthetische Superintelligenz hochladen",
+          "es": "Dejar atrás la biología por completo y cargar las mentes humanas en una superinteligencia sintética",
           "next": "posthumanism"
         },
         {
@@ -1952,6 +2294,7 @@
           "uk": "Використовувати геоінженерію та чисті біотехнології для активного відновлення й управління екосистемами",
           "ru": "Применять геоинженерию и чистые биотехнологии для активного восстановления экосистем",
           "de": "Geoengineering und saubere Biotechnologie einsetzen, um Ökosysteme aktiv zu reparieren und zu steuern",
+          "es": "Usar geoingeniería y biotecnología limpia para reparar y gestionar activamente los ecosistemas",
           "next": "technogaianism"
         }
       ]
@@ -1962,12 +2305,14 @@
       "uk": "Яка кінцева мета технологічного панування людства?",
       "ru": "Какова главная цель технологического развития человечества?",
       "de": "Was ist das oberste Ziel menschlicher Technologiebeherrschung?",
+      "es": "¿Cuál es el objetivo final del dominio tecnológico humano?",
       "options": [
         {
           "en": "Automate all production to end scarcity and free humans from compulsory labor",
           "uk": "Автоматизувати все виробництво, щоб покласти край дефіциту та звільнити людей від примусової праці",
           "ru": "Автоматизировать всё производство, чтобы устранить дефицит и освободить людей от обязательного труда",
           "de": "Die gesamte Produktion automatisieren, um Knappheit zu beenden und Menschen von Zwangsarbeit zu befreien",
+          "es": "Automatizar toda la producción para acabar con la escasez y liberar a los humanos del trabajo obligatorio",
           "next": "prometheanism"
         },
         {
@@ -1975,6 +2320,7 @@
           "uk": "Безмежно розширюватися Сонячною системою та освоювати космічну енергію",
           "ru": "Бесконечно расселяться по Солнечной системе и осваивать космическую энергию",
           "de": "Endlos im Sonnensystem expandieren und kosmische Energie erschließen",
+          "es": "Expandirse sin límites por el sistema solar y cosechar energía cósmica",
           "next": "extropianism"
         }
       ]
@@ -1985,12 +2331,14 @@
       "uk": "Як суспільство має ставитися до нестримного технологічного прискорення?",
       "ru": "Как следует относиться к неудержимому технологическому ускорению?",
       "de": "Wie sollte die Gesellschaft mit unaufhaltsamer technologischer Beschleunigung umgehen?",
+      "es": "¿Cómo debería tratar la sociedad la aceleración tecnológica imparable?",
       "options": [
         {
           "en": "Speed up market competition and computing power so they outrun government regulation",
           "uk": "Прискорювати ринкову конкуренцію та обчислювальні потужності, щоб вони випереджали державне регулювання",
           "ru": "Ускорять рыночную конкуренцию и вычислительные мощности, чтобы они обгоняли госрегулирование",
           "de": "Marktwettbewerb und Rechenleistung beschleunigen, damit sie staatlicher Regulierung davonlaufen",
+          "es": "Acelerar la competencia del mercado y la potencia de cómputo para que superen la regulación gubernamental",
           "next": "technocapitalism"
         },
         {
@@ -1998,6 +2346,7 @@
           "uk": "Визнати, що технологічне прискорення є нестримною силою поза контролем людини",
           "ru": "Признать, что технологическое ускорение — неуправляемый процесс за пределами человеческой воли",
           "de": "Akzeptieren, dass technologische Beschleunigung eine unaufhaltsame Kraft jenseits menschlicher Kontrolle ist",
+          "es": "Aceptar que la aceleración tecnológica es una fuerza imparable más allá del control humano",
           "next": "techno_fatalism"
         }
       ]
@@ -2027,12 +2376,14 @@
       "uk": "Наскільки сильно держава має контролювати особисте життя та приватні звички?",
       "ru": "Насколько сильно государство должно контролировать личную жизнь и привычки людей?",
       "de": "Wie viel Kontrolle sollte der Staat über das Privatleben und persönliche Gewohnheiten haben?",
+      "es": "¿Cuánto control debería tener el Estado sobre la vida personal y los hábitos privados?",
       "options": [
         {
           "en": "Keep the state out of private life and let individuals make their own personal choices",
           "uk": "Не допускати державу в приватне життя й дозволити людям самостійно робити особистий вибір",
           "ru": "Не допускать государство в частную жизнь и позволить людям самим делать личный выбор",
           "de": "Den Staat aus dem Privatleben heraushalten und Einzelne ihre eigenen Entscheidungen treffen lassen",
+          "es": "Mantener al Estado fuera de la vida privada y dejar que los individuos tomen sus propias decisiones personales",
           "next": "sc_liberty"
         },
         {
@@ -2040,6 +2391,7 @@
           "uk": "Дозволити державі регулювати особисту поведінку заради громадського здоров'я, моралі або суспільного порядку",
           "ru": "Позволить государству регулировать личное поведение ради здоровья общества, морали или порядка",
           "de": "Dem Staat erlauben, persönliches Verhalten für öffentliche Gesundheit, Moral oder soziale Ordnung zu regulieren",
+          "es": "Permitir que el Estado regule el comportamiento personal por la salud pública, la moralidad o el orden social",
           "next": "sc_intervention"
         }
       ]
@@ -2050,12 +2402,14 @@
       "uk": "Що є найважливішим для захисту особистої свободи?",
       "ru": "Что важнее всего для защиты личной свободы?",
       "de": "Was ist am wichtigsten zum Schutz der persönlichen Freiheit?",
+      "es": "¿Qué importa más para proteger la libertad personal?",
       "options": [
         {
           "en": "Safeguard free speech, privacy, and fair trials while strictly limiting police surveillance",
           "uk": "Захищати свободу слова, приватність і справедливий суд, суворо обмежуючи поліцейське стеження",
           "ru": "Защищать свободу слова, тайну частной жизни и честный суд, строго ограничивая слежку полиции",
           "de": "Meinungsfreiheit, Privatsphäre und faire Verfahren sichern und polizeiliche Überwachung strikt begrenzen",
+          "es": "Salvaguardar la libertad de expresión, la privacidad y los juicios justos limitando estrictamente la vigilancia policial",
           "next": "civil_libertarianism"
         },
         {
@@ -2063,6 +2417,7 @@
           "uk": "Гарантувати повну свободу способу життя без законів проти добровільного вибору дорослих або особистих звичок",
           "ru": "Гарантировать полную свободу образа жизни без запретов на добровольный выбор взрослых и личные привычки",
           "de": "Vollständige Lebensstilfreiheit ohne Gesetze gegen einvernehmliche Entscheidungen Erwachsener oder persönliche Laster",
+          "es": "Garantizar una completa libertad de estilo de vida sin leyes contra las decisiones adultas consensuadas o los vicios personales",
           "next": "permissivism"
         },
         {
@@ -2070,6 +2425,7 @@
           "uk": "Покладатися на добровільні норми громади, соціальну репутацію та взаємну довіру замість державної поліції",
           "ru": "Полагаться на добровольные нормы общины, социальную репутацию и взаимное доверие вместо государственной полиции",
           "de": "Auf freiwillige Gemeinschaftsnormen, sozialen Ruf und gegenseitiges Vertrauen statt auf Staatspolizei setzen",
+          "es": "Confiar en las normas comunitarias voluntarias, la reputación social y la confianza mutua en lugar de la policía estatal",
           "next": "reputationalism"
         }
       ]
@@ -2080,12 +2436,14 @@
       "uk": "Навіщо держава має регулювати особисту поведінку?",
       "ru": "Зачем государство должно регулировать личное поведение?",
       "de": "Warum sollte der Staat persönliches Verhalten regulieren?",
+      "es": "¿Por qué debería el Estado regular el comportamiento personal?",
       "options": [
         {
           "en": "To protect public health and safety using taxes and rules without criminalizing private choices",
           "uk": "Щоб захищати громадське здоров'я та безпеку за допомогою податків і правил без криміналізації приватного вибору",
           "ru": "Чтобы защищать здоровье и безопасность людей налогами и правилами без уголовных запретов",
           "de": "Um öffentliche Gesundheit und Sicherheit durch Steuern und Regeln zu schützen, ohne Privates zu kriminalisieren",
+          "es": "Para proteger la salud y la seguridad públicas mediante impuestos y normas sin criminalizar las elecciones privadas",
           "next": "civic_paternalism"
         },
         {
@@ -2093,6 +2451,7 @@
           "uk": "Щоб підтримувати суспільну мораль і сімейні цінності шляхом заборони непристойності та шкідливих вад",
           "ru": "Чтобы защищать общественную мораль и семейные ценности, запрещая непристойности и пороки",
           "de": "Um öffentliche Moral und Familienwerte durch das Verbot von Obszönität und schädlichen Lastern zu wahren",
+          "es": "Para defender la moralidad pública y los valores familiares prohibiendo la obscenidad y los vicios perjudiciales",
           "next": "legal_moralism"
         },
         {
@@ -2100,6 +2459,7 @@
           "uk": "Щоб підтримувати громадську безпеку, сувору соціальну дисципліну або колективну покору",
           "ru": "Чтобы обеспечивать общественную безопасность, строгую дисциплину или коллективное подчинение",
           "de": "Um öffentliche Sicherheit, strenge soziale Disziplin oder kollektiven Gehorsam aufrechtzuerhalten",
+          "es": "Para mantener la seguridad pública, una estricta disciplina social o la obediencia colectiva",
           "next": "sc_order"
         }
       ]
@@ -2110,12 +2470,14 @@
       "uk": "Як слід забезпечувати суспільний порядок і дисципліну?",
       "ru": "Как следует поддерживать общественный порядок и дисциплину?",
       "de": "Wie sollten soziale Ordnung und Disziplin durchgesetzt werden?",
+      "es": "¿Cómo deberían imponerse el orden social y la disciplina?",
       "options": [
         {
           "en": "Use mass surveillance, data tracking, and proactive policing to prevent crime",
           "uk": "Використовувати масове стеження, відстеження даних і превентивну роботу поліції для запобігання злочинам",
           "ru": "Использовать массовое наблюдение, сбор данных и упреждающую работу полиции против преступности",
           "de": "Massenüberwachung, Datenerfassung und präventive Polizeiarbeit zur Verbrechensverhütung einsetzen",
+          "es": "Usar vigilancia masiva, seguimiento de datos y actuación policial preventiva para evitar el delito",
           "next": "securitism"
         },
         {
@@ -2123,6 +2485,7 @@
           "uk": "Забезпечувати суворі суспільні манери, громадянський етикет і покарання за антисоціальну поведінку",
           "ru": "Следить за соблюдением правил поведения в обществе и наказывать за антиобщественные поступки",
           "de": "Strenge öffentliche Umgangsformen, Bürgeretikette und Strafen für antisoziales Verhalten durchsetzen",
+          "es": "Imponer modales públicos estrictos, etiqueta cívica y sanciones por conductas antisociales",
           "next": "disciplinarianism"
         },
         {
@@ -2130,13 +2493,15 @@
           "uk": "Організовувати повсякденне життя громадян безпосередньо навколо колективних цілей держави",
           "ru": "Подчинить повседневную жизнь граждан общим задачам и целям государства",
           "de": "Das tägliche Leben der Bürger direkt an den kollektiven Zielen des Staates ausrichten",
+          "es": "Organizar la vida cotidiana de los ciudadanos directamente en torno a los objetivos colectivos del Estado",
           "next": "sc_regime"
         },
         {
           "en": "Enforce strict criminal law, harsh prison sentences, and strong street policing",
           "uk": "Забезпечувати суворе кримінальне право, жорсткі тюремні строки та посилене вуличне патрулювання",
-          "ru": "Обеспечивать строгое уголовное право, жёсткие тюремные сроки и усиленное уличное патрулирование",
+          "ru": "Обеспечивать строгое уголовное право, жёсткие тюремные сроки и усиленное уличное патрулювання",
           "de": "Strenges Strafrecht, harte Haftstrafen und starke Straßenpolizei durchsetzen",
+          "es": "Aplicar leyes penales estrictas, penas de prisión severas y un fuerte patrullaje callejero",
           "next": "retributivism"
         }
       ]
@@ -2147,12 +2512,14 @@
       "uk": "Наскільки далеко держава має заходити в організації життя громадян?",
       "ru": "Насколько глубоко государство должно организовывать жизнь граждан?",
       "de": "Wie weit sollte der Staat bei der Organisation des Lebens der Bürger gehen?",
+      "es": "¿Hasta dónde debería llegar el Estado en la organización de la vida de los ciudadanos?",
       "options": [
         {
           "en": "Mobilize society through mandatory civic or military service and state youth programs",
           "uk": "Мобілізувати суспільство через обов'язкову громадянську чи військову службу та державні молодіжні програми",
           "ru": "Мобилизовать общество через обязательную службу, государственные молодёжные программы и гражданский долг",
           "de": "Die Gesellschaft durch verpflichtenden Zivil- oder Militärdienst und staatliche Jugendprogramme mobilisieren",
+          "es": "Movilizar a la sociedad mediante el servicio cívico o militar obligatorio y programas juveniles estatales",
           "next": "regimentalism"
         },
         {
@@ -2160,6 +2527,7 @@
           "uk": "Повністю ліквідувати приватне життя, щоб сім'я, думки та совість належали державі",
           "ru": "Полностью упразднить частную жизнь, подчинив семью, мысли и совесть человека государству",
           "de": "Das Privatleben vollständig abschaffen, sodass Familie, Denken und Gewissen dem Staat gehören",
+          "es": "Eliminar por completo la vida privada para que la familia, el pensamiento y la conciencia pertenezcan al Estado",
           "next": "totalism"
         }
       ]
@@ -2182,12 +2550,14 @@
       "uk": "Як політична влада має поділятися між центральним урядом і місцевими громадами?",
       "ru": "Как политическая власть должна распределяться между центром и регионами?",
       "de": "Wie sollte die politische Macht zwischen Zentralregierung und lokalen Gebieten aufgeteilt werden?",
+      "es": "¿Cómo debería dividirse el poder político entre el gobierno central y las áreas locales?",
       "options": [
         {
           "en": "Give primary power to local towns or sovereign states united by voluntary agreement",
           "uk": "Надати основну владу місцевим містам або суверенним штатам, об'єднаним добровільною угодою",
           "ru": "Передать основную власть местным общинам или суверенным землям на основе добровольного союза",
           "de": "Hauptmacht den lokalen Städten oder souveränen Staaten geben, die durch freiwillige Vereinbarung verbunden sind",
+          "es": "Dar el poder principal a los municipios locales o Estados soberanos unidos por acuerdo voluntario",
           "next": "to_decentralized"
         },
         {
@@ -2195,6 +2565,7 @@
           "uk": "Розділити владу між регіональним самоврядуванням і спільним національним урядом",
           "ru": "Разделить власть между региональным самоуправлением и общим национальным правительством",
           "de": "Macht zwischen regionaler Selbstverwaltung und einer gemeinsamen Nationalregierung teilen",
+          "es": "Compartir el poder entre el autogobierno regional y un gobierno nacional común",
           "next": "to_balanced"
         },
         {
@@ -2202,6 +2573,7 @@
           "uk": "Зосередити всю суверенну владу в єдиному центральному національному уряді",
           "ru": "Сосредоточить всю верховную власть в едином центральном правительстве",
           "de": "Alle souveräne Macht in einer einzigen zentralen Nationalregierung vereinen",
+          "es": "Mantener todo el poder soberano unido en un único gobierno nacional central",
           "next": "to_unitary"
         }
       ]
@@ -2212,12 +2584,30 @@
       "uk": "На якому рівні має зосереджуватися децентралізована влада?",
       "ru": "На каком уровне должна находиться эта децентрализованная власть?",
       "de": "Auf welcher Ebene sollte dezentrale Macht gehalten werden?",
+      "es": "¿A qué nivel debería residir el poder descentralizado?",
       "options": [
+        {
+          "en": "Reject any fixed territorial structure or permanent institution in favor of fluid, spontaneous association",
+          "uk": "Відмовитися від будь-якої фіксованої територіальної структури чи постійних інститутів на користь вільних, спонтанних об'єднань",
+          "ru": "Отказаться от любой фиксированной территориальной структуры или постоянных институтов в пользу свободных, спонтанных объединений",
+          "de": "Jede feste territoriale Struktur oder dauerhafte Institution zugunsten flüssiger, spontaner Zusammenschlüsse ablehnen",
+          "es": "Rechazar cualquier estructura territorial fija o institución permanente en favor de la asociación fluida y espontánea",
+          "next": "anti_organizationalism"
+        },
+        {
+          "en": "Break large states into sovereign city-states and micronations so every locality or group is independent",
+          "uk": "Розділити великі держави на суверенні міста-держави й мікронації, щоб кожна місцевість чи група була незалежною",
+          "ru": "Разделить крупные государства на суверенные города-государства и микронации, чтобы каждая местность или группа была независимой",
+          "de": "Große Staaten in souveräne Stadtstaaten und Mikronationen aufteilen, sodass jede Ortschaft oder Gruppe unabhängig ist",
+          "es": "Dividir los grandes Estados en ciudades-Estado soberanas y micronaciones para que cada localidad o grupo sea independiente",
+          "next": "patchwork"
+        },
         {
           "en": "In self-governing cities and local communes linked together by recallable delegates",
           "uk": "У самоврядних містах і місцевих комунах, пов'язаних між собою через відкличних делегатів",
           "ru": "В самоуправляемых городах и местных коммунах, связанных через отзываемых делегатов",
           "de": "In selbstverwalteten Städten und lokalen Kommunen, verbunden durch abberufbare Delegierte",
+          "es": "En ciudades autogobernadas y comunas locales vinculadas entre sí mediante delegados revocables",
           "next": "municipalism"
         },
         {
@@ -2225,6 +2615,7 @@
           "uk": "У суверенних штатах або кантонах, об'єднаних договором із правом вето або виходу",
           "ru": "В суверенных штатах или кантонах, объединённых договором с правом вето и выхода из союза",
           "de": "In souveränen Staaten oder Kantonen, die durch Vertrag mit Veto- und Austrittsrecht verbunden sind",
+          "es": "En Estados soberanos o cantones unidos por tratado con derecho a veto o a separarse",
           "next": "confederalism"
         }
       ]
@@ -2235,12 +2626,14 @@
       "uk": "Як має розподілятися влада між національним урядом і регіонами?",
       "ru": "Как должна делиться власть между национальным правительством и регионами?",
       "de": "Wie sollte die Macht zwischen Nationalregierung und Regionen geteilt werden?",
+      "es": "¿Cómo debería compartirse el poder entre el gobierno nacional y las regiones?",
       "options": [
         {
           "en": "A federation where all states or provinces have constitutional powers the center cannot revoke",
           "uk": "Федерація, де всі штати або провінції мають конституційні повноваження, які центр не може скасувати",
           "ru": "Федерация, где все штаты или области имеют конституционные права, которые центр не может отнять",
           "de": "Eine Föderation, in der alle Bundesstaaten oder Provinzen verfassungsmäßige Rechte haben, die das Zentrum nicht entziehen kann",
+          "es": "Una federación donde todos los Estados o provincias tengan poderes constitucionales que el centro no pueda revocar",
           "next": "federalism"
         },
         {
@@ -2248,6 +2641,7 @@
           "uk": "Єдина країна, що надає особливу автономію та місцеві парламенти окремим регіонам",
           "ru": "Единая страна, дающая особую автономию и местные парламенты отдельным регионам",
           "de": "Ein Einheitsstaat, der bestimmten Regionen besondere Autonomie und eigene Regionalparlamente gewährt",
+          "es": "Un país unificado que otorgue autonomía especial y parlamentos locales a regiones específicas",
           "next": "regionalism"
         },
         {
@@ -2255,6 +2649,7 @@
           "uk": "Рішення мають ухвалюватися найменшою спроможною місцевою громадою і передаватися вище лише за потреби",
           "ru": "Решения должны приниматься наименьшей дееспособной местной общиной и передаваться выше лишь при необходимости",
           "de": "Entscheidungen müssen von der kleinsten fähigen lokalen Gemeinschaft getroffen werden und nur bei Bedarf aufsteigen",
+          "es": "Las decisiones deben ser tomadas por la comunidad local competente más pequeña, elevándose a niveles superiores solo cuando sea necesario",
           "next": "subsidiarity"
         },
         {
@@ -2262,6 +2657,7 @@
           "uk": "Панівний імперський центр здійснює верховну гегемонію над автономними васалами та протекторатами",
           "ru": "Господствующий имперский центр осуществляет верховную гегемонию над автономными вассалами и протекторатами",
           "de": "Ein dominantes imperiales Zentrum übt übergeordnete Hegemonie über autonome Vasallen und Protektorate aus",
+          "es": "Un centro imperial dominante ejerce una hegemonía superior sobre vasallos y protectorados autónomos",
           "next": "suzerainty"
         }
       ]
@@ -2272,12 +2668,14 @@
       "uk": "Наскільки сильним має бути контроль столиці над місцевим управлінням?",
       "ru": "Насколько сильным должен быть контроль столицы над местным управлением?",
       "de": "Wie viel Kontrolle sollte die Hauptstadt über die lokale Verwaltung haben?",
+      "es": "¿Cuánto control debería tener la capital nacional sobre la administración local?",
       "options": [
         {
           "en": "A unified state with one national law where local councils still handle everyday town matters",
           "uk": "Єдина держава з одним національним законом, де місцеві ради все ще вирішують повсякденні справи міст",
           "ru": "Единое государство с общими законами, где местные советы по-прежнему решают повседневные городские дела",
           "de": "Ein Einheitsstaat mit einem nationalen Gesetz, in dem Gemeinderäte noch alltägliche Ortsangelegenheiten regeln",
+          "es": "Un Estado unificado con una sola ley nacional donde los ayuntamientos locales sigan gestionando los asuntos cotidianos",
           "next": "centralism"
         },
         {
@@ -2285,6 +2683,7 @@
           "uk": "Стерти будь-яке місцеве самоврядування та регіональну ідентичність, щоб кожен округ керувався безпосередньо зі столиці",
           "ru": "Упразднить местное самоуправление и региональные различия, подчинив каждый округ напрямую столице",
           "de": "Alle lokale Selbstverwaltung und regionale Identität abschaffen, sodass jeder Bezirk direkt aus der Hauptstadt regiert wird",
+          "es": "Eliminar todo autogobierno local e identidad regional para que cada distrito sea gobernado directamente desde la capital",
           "next": "hypercentralism"
         }
       ]
@@ -2296,6 +2695,8 @@
     { "id": "centralism" },
     { "id": "hypercentralism" },
     { "id": "subsidiarity" },
-    { "id": "suzerainty" }
+    { "id": "suzerainty" },
+    { "id": "anti_organizationalism" },
+    { "id": "patchwork" }
   ]
 }
